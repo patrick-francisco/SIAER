@@ -33,31 +33,46 @@
   Should you have any questions regarding your right to use this Software,
   contact Texas Instruments Incorporated at www.TI.com.
 **************************************************************************************************/
-#include <string.h>
-#include "bsp.h"
-#include "mrfi.h"
-#include "bsp_leds.h"
-#include "bsp_buttons.h"
-#include "nwk_types.h"
-#include "nwk_api.h"
-#include "nwk_frame.h"
-#include "nwk.h"
-#include "uart.h"
-#include "simpliciti.h"
 
+// *************************************************************************************************
+// Include section
+#include <string.h>
+#include "includes.h"
+
+// *************************************************************************************************
+// Prototypes section
+
+// *************************************************************************************************
+// Defines section
+
+// *************************************************************************************************
+// Global Variable section
+
+// *************************************************************************************************
+// Extern section
+extern char ESTADO_RX_UART;
+
+// *************************************************************************************************
+// @fn		main
+// @brief 	laco principal
+// @param 	none
+// @return 	none
+// *************************************************************************************************
 void main (void)
 {
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    // timer
-   // iniciar porta de com
    // iniciar simpliciti
-   // 
+   // iniciar porta de com
    // ------------
    // SIMPLICITI
-   //  ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
-   //  triggar o envio pela serial.
-   //  
+   // 	GUICHE 
+   // 		Ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
+   //  		triggar o envio pela serial.
+   //  	ONIBUS
+   //		Ao	
+   //			
    // criar modo de testes independente: uart - mensagens
    //  
      
@@ -70,6 +85,8 @@ void main (void)
    main_access_point();
    
    #endif
+   
+   ESTADO_RX_UART = RX_LIVRE;
    
  //  initialize_simpliciti_ap();
    
