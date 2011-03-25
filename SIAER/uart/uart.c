@@ -25,7 +25,7 @@
 
 #include "cc430x613x.h"
 
-void main(void)
+void init_uart(void)
 {
   WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
   
@@ -45,8 +45,7 @@ void main(void)
   UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
   UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
 
-  __bis_SR_register(LPM3_bits + GIE);       // Enter LPM3, interrupts enabled
-  __no_operation();                         // For debugger
+
 }
 
 // Echo back RXed character, confirm TX buffer is ready first

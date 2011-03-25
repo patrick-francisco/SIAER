@@ -1,27 +1,18 @@
 /******************************************************************************/
-/* lnk_cc430f6137.cmd - LINKER COMMAND FILE FOR LINKING CC430F6137 PROGRAMS */
-/*                                                                            */
-/*  Ver | dd mmm yyyy | Who  | Description of changes                         */
-/* =====|=============|======|=============================================   */
-/*  0.01| 08 Mar 2004 | A.D. | First prototype                                */
-/*  0.02| 26 Mai 2004 | A.D. | Leading symbol underscores removed,            */
-/*      |             |      | Interrupt vector definition changed            */
-/*  0.03| 22 Jun 2004 | A.D. | File reformatted                               */
+/* lnk_cc430f6137.cmd - LINKER COMMAND FILE FOR LINKING CC430F6137 PROGRAMS     */
 /*                                                                            */
 /*   Usage:  lnk430 <obj files...>    -o <out file> -m <map file> lnk.cmd     */
 /*           cl430  <src files...> -z -o <out file> -m <map file> lnk.cmd     */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
-
 /* These linker options are for command line linking only.  For IDE linking,  */
 /* you should set your linker options in Project Properties                   */
 /* -c                                               LINK USING C CONVENTIONS  */
 /* -stack  0x0100                                   SOFTWARE STACK SIZE       */
 /* -heap   0x0100                                   HEAP AREA SIZE            */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
 
-/*----------------------------------------------------------------------------*/
-/* 'Allocate' peripheral registers at given addresses                         */
-/*----------------------------------------------------------------------------*/
 
 /****************************************************************************/
 /* SPECIFY THE SYSTEM MEMORY MAP                                            */
@@ -32,7 +23,7 @@ MEMORY
     SFR                     : origin = 0x0000, length = 0x0010
     PERIPHERALS_8BIT        : origin = 0x0010, length = 0x00F0
     PERIPHERALS_16BIT       : origin = 0x0100, length = 0x0100
-    RAM                     : origin = 0x1C00, length = 0x07FE
+    RAM                     : origin = 0x1C00, length = 0x0FFE
     INFOA                   : origin = 0x1980, length = 0x0080
     INFOB                   : origin = 0x1900, length = 0x0080
     INFOC                   : origin = 0x1880, length = 0x0080
@@ -196,5 +187,5 @@ SECTIONS
 /* INCLUDE PERIPHERALS MEMORY MAP                                           */
 /****************************************************************************/
 
--l cc430x613x.cmd
+-l cc430f6137.cmd
 

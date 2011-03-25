@@ -59,7 +59,7 @@ static linkID_t sLinkID1 = 0;
 /* How many times to try a Tx and miss an acknowledge before doing a scan */
 #define MISSES_IN_A_ROW  2
 
-void main (void)
+void main_end_device (void)
 {
   BSP_Init();
 

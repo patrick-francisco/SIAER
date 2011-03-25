@@ -1,3 +1,11 @@
+/*----------------------------------------------------------------------------
+ *  Demo Application for SimpliciTI
+ *
+ *  L. Friedman
+ *  Texas Instruments, Inc.
+ *----------------------------------------------------------------------------
+ */
+
 /**********************************************************************************************
   Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
 
@@ -111,16 +119,15 @@ static void    changeChannel(void);
 static volatile uint8_t sPeerFrameSem = 0;
 static volatile uint8_t sJoinSem = 0;
 
-
-/*************** BEGIN interference detection support */
 #ifdef FREQUENCY_AGILITY
+/*     ************** BEGIN interference detection support */
+
 #define INTERFERNCE_THRESHOLD_DBM (-70)
 #define SSIZE    25
 #define IN_A_ROW  3
 static int8_t  sSample[SSIZE];
 static uint8_t sChannel = 0;
 #endif  /* FREQUENCY_AGILITY */
-/***************************************************** */
 
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
@@ -129,8 +136,10 @@ static volatile uint8_t sBlinky = 0;
 
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
-void initialize_simpliciti_ap (void)
+void main_access_point (void)
 {
+  bspIState_t intState;
+
   memset(sSample, 0x0, sizeof(sSample));
   
   BSP_Init();
@@ -160,12 +169,7 @@ void initialize_simpliciti_ap (void)
   {
     toggleLED(1);
   }
-}
 
-void simpliciti_ap_loop (void)
-{
-  bspIState_t intState;
- 
   /* main work loop */
   while (1)
   {
@@ -238,20 +242,6 @@ void simpliciti_ap_loop (void)
     BSP_EXIT_CRITICAL_SECTION(intState);
   }
 
-}
-
-void toggleLED(uint8_t which)
-{
-  if (1 == which)
-  {
-    BSP_TOGGLE_LED1();
-  }
-  else if (2 == which)
-  {
-    BSP_TOGGLE_LED2();
-  }
-
-  return;
 }
 
 /* Runs in ISR context. Reading the frame should be done in the */

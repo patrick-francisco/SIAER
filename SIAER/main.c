@@ -42,8 +42,8 @@
 #include "nwk_api.h"
 #include "nwk_frame.h"
 #include "nwk.h"
+#include "uart.h"
 #include "simpliciti.h"
-#include "app_remap_led.h"
 
 void main (void)
 {
@@ -58,7 +58,16 @@ void main (void)
    //  
    //  
    
+   init_uart();
    
+   #ifdef END_DEVICE
+   main_end_device();
+   
+   #elif ACCESS_POINT
+   
+   main_access_point();
+   
+   #endif
    
  //  initialize_simpliciti_ap();
    

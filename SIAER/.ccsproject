@@ -4,8 +4,8 @@
 <projectOptions>
 <deviceVariant value="CC430F6137"/>
 <deviceEndianness value="little"/>
-<codegenToolVersion value="3.1.0"/>
+<codegenToolVersion value="3.3.1"/>
+<isElfFormat value="false"/>
 <linkerCommandFile value="lnk_cc430f6137.cmd"/>
-<rts value="rts430.lib"/>
-<defaultAssemblyOnly value="false"/>
+<rts value="libc.a"/>
 </projectOptions>
