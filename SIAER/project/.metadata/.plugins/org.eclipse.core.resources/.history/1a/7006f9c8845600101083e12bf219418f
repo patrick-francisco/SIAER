@@ -1,0 +1,3 @@
+# FIXED
+simpliciti/Components/mrfi/radios/family5/mrfi_radio_interface.obj: ../simpliciti/Components/mrfi/radios/family5/mrfi_radio_interface.c
+simpliciti/Components/mrfi/radios/family5/mrfi_radio_interface.obj: ../simpliciti/Components/mrfi/radios/family5/mrfi_radio_interface.h

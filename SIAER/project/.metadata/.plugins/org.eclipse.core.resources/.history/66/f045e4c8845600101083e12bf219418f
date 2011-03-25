@@ -1,0 +1,16 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+OPT_SRCS += \
+../Release/ccsObjs.opt \
+../Release/ccsSrcs.opt 
+
+OPT_SRCS_QUOTED += \
+"../Release/ccsObjs.opt" \
+"../Release/ccsSrcs.opt" 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+

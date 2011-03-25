@@ -1,0 +1,4 @@
+# FIXED
+simpliciti/Components/mrfi/radios/family5/mrfi_radio.obj: ../simpliciti/Components/mrfi/radios/family5/mrfi_radio.c
+simpliciti/Components/mrfi/radios/family5/mrfi_radio.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/string.h
+simpliciti/Components/mrfi/radios/family5/mrfi_radio.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/linkage.h

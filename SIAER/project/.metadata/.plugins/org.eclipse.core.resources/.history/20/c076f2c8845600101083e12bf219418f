@@ -1,0 +1,3 @@
+# FIXED
+simpliciti/Components/bsp/boards/CC430EM/bsp_drivers.obj: ../simpliciti/Components/bsp/boards/CC430EM/bsp_drivers.c
+simpliciti/Components/bsp/boards/CC430EM/bsp_drivers.obj: ../simpliciti/Components/bsp/boards/CC430EM/bsp_driver_defs.h

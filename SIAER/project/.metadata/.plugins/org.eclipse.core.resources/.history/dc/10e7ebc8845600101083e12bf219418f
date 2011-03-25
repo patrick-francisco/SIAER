@@ -1,0 +1,4 @@
+# FIXED
+simpliciti/Applications/application/Access\ Point/main_AP_Async_Listen_autoack.obj: ../simpliciti/Applications/application/Access\ Point/main_AP_Async_Listen_autoack.c
+simpliciti/Applications/application/Access\ Point/main_AP_Async_Listen_autoack.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/string.h
+simpliciti/Applications/application/Access\ Point/main_AP_Async_Listen_autoack.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/linkage.h
