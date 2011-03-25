@@ -58,6 +58,7 @@ void main (void)
    //  
    //  
    
+   
    init_uart();
    
    #ifdef END_DEVICE
