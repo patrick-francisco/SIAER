@@ -23,6 +23,7 @@
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.1779717956" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.455427719" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/application/Access Point}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/random}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/msg}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/project includes}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/uart}&quot;"/>
@@ -56,6 +57,7 @@
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/smpl_nwk_config.dat}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/Access_Point/smpl_config.dat}&quot;"/>
 </option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release.681330917" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.0" valueType="enumerated"/>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.732817433" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.1268417956" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="80" valueType="string"/>

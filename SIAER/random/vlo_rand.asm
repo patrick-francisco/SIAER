@@ -4,7 +4,8 @@
 ;   December 2008
 ;   Built with Code Composer Essentials 3.2.2.1.4
 ;*******************************************************************************
- .cdecls C,LIST,  "msp430x22x4.h"
+; .cdecls C,LIST,  "msp430x22x4.h"
+ .cdecls C,LIST, "cc430x613x.h"
 
             ;Functions
             .def	TI_getRandomIntegerFromVLO

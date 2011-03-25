@@ -265,6 +265,7 @@ static uint8_t sCB(linkID_t lid)
 static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
 {
   /* do something useful */
+  // chamar aqui a funcao de tratamento de dados do ack e do ID do busao
   if (len)
   {
     toggleLED(*msg);

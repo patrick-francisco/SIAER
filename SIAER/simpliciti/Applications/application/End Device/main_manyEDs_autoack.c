@@ -68,13 +68,16 @@ void main_end_device (void)
    * be used. If SMPL_Init() runs before this IOCTL is used the IOCTL call
    * will not take effect. One shot only. The IOCTL call below is conformal.
    */
-#ifdef I_WANT_TO_CHANGE_DEFAULT_ROM_DEVICE_ADDRESS_PSEUDO_CODE
+  addr_t lAddr;
+       
+  // Change network address to value set in calling function
+  for (i=0; i<4; i++)
   {
-    addr_t lAddr;
-
-    createRandomAddress(&lAddr);
-    SMPL_Ioctl(IOCTL_OBJ_ADDR, IOCTL_ACT_SET, &lAddr);
+    lAddr.addr[i] = simpliciti_ed_address[i];
   }
+  
+  SMPL_Ioctl(IOCTL_OBJ_ADDR, IOCTL_ACT_SET, &lAddr);
+
 #endif /* I_WANT_TO_CHANGE_DEFAULT_ROM_DEVICE_ADDRESS_PSEUDO_CODE */
 
   /* Keep trying to join (a side effect of successful initialization) until

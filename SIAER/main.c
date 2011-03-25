@@ -50,8 +50,7 @@
 
 // *************************************************************************************************
 // Extern section
-extern char ESTADO_RX_UART;
-
+unsigned char simpliciti_ed_address[];
 // *************************************************************************************************
 // @fn		main
 // @brief 	laco principal
@@ -75,6 +74,15 @@ void main (void)
    //			
    // criar modo de testes independente: uart - mensagens
    //  
+   
+   // Inicializacao de variaveis globais
+   ESTADO_RX_UART = RX_LIVRE;
+   
+   // Gerar endereco aleatorio para os end devices
+   simpliciti_ed_address[0] = rand();
+   simpliciti_ed_address[1] = rand();   
+   simpliciti_ed_address[2] = rand();   
+   simpliciti_ed_address[3] = rand();
      
    init_uart();
    
@@ -85,11 +93,5 @@ void main (void)
    main_access_point();
    
    #endif
-   
-   ESTADO_RX_UART = RX_LIVRE;
-   
- //  initialize_simpliciti_ap();
-   
-  // simpliciti_ap_loop();
    
 }
