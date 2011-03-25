@@ -1,4 +1,0 @@
-# FIXED
-com\ port/virtual_com_cmds.obj: ../com\ port/virtual_com_cmds.c
-com\ port/virtual_com_cmds.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/string.h
-com\ port/virtual_com_cmds.obj: C:/Program\ Files\ (x86)/Texas\ Instruments/ccsv4/tools/compiler/msp430/include/linkage.h
