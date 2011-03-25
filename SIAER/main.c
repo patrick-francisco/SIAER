@@ -47,7 +47,9 @@
 
 void main (void)
 {
-   // iniciar clock, timer
+   // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
+   //                 ACLK 32KHz     
+   // timer
    // iniciar porta de com
    // iniciar simpliciti
    // 
@@ -56,16 +58,15 @@ void main (void)
    //  ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
    //  triggar o envio pela serial.
    //  
+   // criar modo de testes independente: uart - mensagens
    //  
-   
-   
+     
    init_uart();
    
    #ifdef END_DEVICE
    main_end_device();
    
    #elif ACCESS_POINT
-   
    main_access_point();
    
    #endif
