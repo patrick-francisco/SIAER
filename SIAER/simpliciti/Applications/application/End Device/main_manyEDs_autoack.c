@@ -39,7 +39,7 @@
 #include "nwk_api.h"
 #include "bsp_leds.h"
 #include "bsp_buttons.h"
-
+#include "simpliciti.h"
 #include "app_remap_led.h"
 
 #ifndef APP_AUTO_ACK
@@ -62,7 +62,7 @@ static linkID_t sLinkID1 = 0;
 void main_end_device (void)
 {
   BSP_Init();
-
+ uint8_t i;
   /* If an on-the-fly device address is generated it must be done before the
    * call to SMPL_Init(). If the address is set here the ROM value will not
    * be used. If SMPL_Init() runs before this IOCTL is used the IOCTL call
@@ -76,9 +76,8 @@ void main_end_device (void)
     lAddr.addr[i] = simpliciti_ed_address[i];
   }
   
+  // Muda o endereco do end device
   SMPL_Ioctl(IOCTL_OBJ_ADDR, IOCTL_ACT_SET, &lAddr);
-
-#endif /* I_WANT_TO_CHANGE_DEFAULT_ROM_DEVICE_ADDRESS_PSEUDO_CODE */
 
   /* Keep trying to join (a side effect of successful initialization) until
    * successful. Toggle LEDS to indicate that joining has not occurred.
