@@ -85,14 +85,14 @@ void TrataIntUartRx(char rx)
     switch (ESTADO_RX_UART)
     {
       case RX_LIVRE:
-        if (rx=='$') // Codigo para inicio de recebimento
+        if (rx=='$')                       // Codigo para inicio de recebimento
         {
             ESTADO_RX_UART=RX_RECEBENDO;   // muda flag
             pos_buffer=0;       	       // zera posicao do buffer
         }
         break;
-      case RX_RECEBENDO:        // Caso esteja recebendo uma mensagem
-        if (pos_buffer==0) 		// Se pos_buffer for zero
+      case RX_RECEBENDO:                   // Caso esteja recebendo uma mensagem
+        if (pos_buffer==0) 		           // Se pos_buffer for zero
         {
             tamanho_buffer=(int)rx; 						// primeira mensagem provavelmente contem o tamanho da mensagem a ser transmitida 
             buffer_uart_rx=(char*)calloc(tamanho_buffer,1); // aloca memoria para receber os dados
@@ -126,15 +126,17 @@ void TrataIntUartRx(char rx)
 //			int length		tamanho da mensagem a ser transmitida
 // @return 	none
 // *************************************************************************************************
-void TXString(char* string, int length) // transmitir por uart
+void TXString(char* string, int length)     // transmitir por uart
 {
- /* int pointer;
+  int pointer;
   for( pointer = 0; pointer < length; pointer++)
   {
     volatile int i;
-    UCA0TXBUF = string[pointer];
-    while (!(IFG2&UCA0TXIFG));              // USCI_A0 TX buffer ready?
-  }*/
+//    UCA0TXBUF = string[pointer];
+//    while (!(IFG2&UCA0TXIFG));            // USCI_A0 TX buffer ready?
+    UCA0TXBUF = UCA0RXBUF;                  // TX -> RXed character
+    while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?  
+  }
 }
 
 // *************************************************************************************************
