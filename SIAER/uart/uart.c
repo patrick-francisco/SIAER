@@ -1,28 +1,3 @@
-//******************************************************************************
-//   CC430F613x Demo - USCI_A0, Ultra-Low Pwr UART 9600 Echo ISR, 32kHz ACLK
-//
-//   Description: Echo a received character, RX ISR used. Normal mode is LPM3,
-//   USCI_A0 RX interrupt triggers TX Echo.
-//   ACLK = REFO = 32768Hz, MCLK = SMCLK = DCO ~12MHz
-//   Baud rate divider with 32768Hz XTAL @9600 = 32768Hz/9600 = 3.41
-//   See User Guide for baud rate divider table
-//
-//                CC430F6137
-//             -----------------
-//         /|\|                 |
-//          | |                 |
-//          --|RST              |
-//            |                 |
-//            |     P1.6/UCA0TXD|------------>
-//            |                 | 9600 - 8N1
-//            |     P1.5/UCA0RXD|<------------
-//
-// 
-//   Texas Instruments Inc.
-//   April 2009
-//   Built with CCE Version: 3.2.2 and IAR Embedded Workbench Version: 4.11B
-//******************************************************************************
-
 // *************************************************************************************************
 // Include section
 #include "includes.h"
@@ -45,7 +20,6 @@ char uart_msg[]={"\rUART: "};
 // *************************************************************************************************
 // Extern section
 
-
 // *************************************************************************************************
 // @fn 		init_uart
 // @brief 	inicializa a uart
@@ -61,7 +35,8 @@ void init_uart(void)
   P1MAP5 = PM_UCA0RXD;                      // Configura funcao especial do pino - RX
   PMAPPWD = 0;                              // Trava acesso aos registradores de configuracao do pino
 
-  P1DIR |= BIT6;                            // Setar P1.7 como TX - output
+  P1DIR |= BIT6;                            // Setar P1.6 como TX - output
+  P1DIR &= BIT5;                            // Setar P1.5 como rX - input
   P1SEL |= BIT5 + BIT6;                     // P1.5 & P1.6 com funcao de UART
   
   UCA0CTL1 |= UCSWRST;                      // **Put state machine in reset**
@@ -70,7 +45,7 @@ void init_uart(void)
   UCA0BR1 = 0x00;                           //
   UCA0MCTL = UCBRS_3+UCBRF_0;               // Modulation UCBRSx=3, UCBRFx=0
   UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
-  UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrupt
+  UCA0IE |= UCRXIE;                         // Enable USCI_A0 RX interrup
 }
 
 // *************************************************************************************************
@@ -132,9 +107,7 @@ void TXString(char* string, int length)     // transmitir por uart
   for( pointer = 0; pointer < length; pointer++)
   {
     volatile int i;
-//    UCA0TXBUF = string[pointer];
-//    while (!(IFG2&UCA0TXIFG));            // USCI_A0 TX buffer ready?
-    UCA0TXBUF = UCA0RXBUF;                  // TX -> RXed character
+    UCA0TXBUF = string[pointer];
     while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?  
   }
 }
@@ -159,7 +132,8 @@ __interrupt void USCI_A0_ISR(void)
   //  IntUartRx(rx);
   
     while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
-    UCA0TXBUF = UCA0RXBUF;                  // TX -> RXed character
+    //UCA0TXBUF = UCA0RXBUF;                  // TX -> RXed character
+    TrataIntUartRx(UCA0RXBUF);
     break;
   case 4:break;                             // Vector 4 - TXIFG
   default: break;  

@@ -138,6 +138,8 @@
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.1411722468" name="Level of printf support required (--printf_support)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.2134561976" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.1753339961" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/project includes}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/msg}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/application/Access Point}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/uart}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications}&quot;"/>
@@ -162,13 +164,13 @@
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE.702624190" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="__CCE__"/>
-<listOptionValue builtIn="false" value="EDN_DEVICE"/>
+<listOptionValue builtIn="false" value="END_DEVICE"/>
 <listOptionValue builtIn="false" value="MRFI_CC430"/>
 <listOptionValue builtIn="false" value="__CC430F6137__"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.CMD_FILE.1821221488" name="Read options from specified file (--cmd_file, -@)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.CMD_FILE" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/End_Device/smpl_config.dat}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/smpl_nwk_config.dat}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/Access_Point/smpl_config.dat}&quot;"/>
 </option>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.1983905884" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">

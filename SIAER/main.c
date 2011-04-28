@@ -1,11 +1,3 @@
-/*----------------------------------------------------------------------------
- *  Demo Application for SimpliciTI
- *
- *  L. Friedman
- *  Texas Instruments, Inc.
- *----------------------------------------------------------------------------
- */
-
 /**********************************************************************************************
   Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
 
@@ -76,16 +68,23 @@ void main (void)
    //  
    
    // Inicializacao de variaveis globais
-   ESTADO_RX_UART = RX_LIVRE;
+  /* ESTADO_RX_UART = RX_LIVRE;
    
    // Gerar endereco aleatorio para os end devices
    simpliciti_ed_address[0] = rand();
    simpliciti_ed_address[1] = rand();
    simpliciti_ed_address[2] = rand();
    simpliciti_ed_address[3] = rand();
-     
+    */ 
    init_uart();
+    
+   char splash[] = {"\r\n--------------------------------------------------  \r\n     ****\r\n     ****           eZ430-RF2500\r\n     ******o****    Temperature Sensor Network\r\n********_///_****   Copyright 2009\r\n ******/_//_/*****  Texas Instruments Incorporated\r\n  ** ***(__/*****   All rights reserved.\r\n      *********     SimpliciTI1.1.1\r\n       *****\r\n        ***\r\n--------------------------------------------------\r\n"};
    
+   char output_verbose[] = {"00XXXCBattery"};
+   	
+   	TXString(splash, sizeof splash );
+   	TXString(output_verbose, sizeof output_verbose );
+ 
    #ifdef END_DEVICE
    main_end_device();
    

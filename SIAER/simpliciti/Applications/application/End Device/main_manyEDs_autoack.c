@@ -62,23 +62,23 @@ static linkID_t sLinkID1 = 0;
 void main_end_device (void)
 {
   BSP_Init();
- uint8_t i;
+  uint8_t i;
   /* If an on-the-fly device address is generated it must be done before the
    * call to SMPL_Init(). If the address is set here the ROM value will not
    * be used. If SMPL_Init() runs before this IOCTL is used the IOCTL call
    * will not take effect. One shot only. The IOCTL call below is conformal.
    */
   addr_t lAddr;
-       
+    
   // Change network address to value set in calling function
-  for (i=0; i<4; i++)
+  /*for (i=0; i<4; i++)
   {
     lAddr.addr[i] = simpliciti_ed_address[i];
   }
-  
+
   // Muda o endereco do end device
   SMPL_Ioctl(IOCTL_OBJ_ADDR, IOCTL_ACT_SET, &lAddr);
-
+*/
   /* Keep trying to join (a side effect of successful initialization) until
    * successful. Toggle LEDS to indicate that joining has not occurred.
    */
@@ -156,8 +156,13 @@ static void linkTo()
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
 
       /* Set TID and designate which LED to toggle */
-      msg[1] = ++sTid;
-      msg[0] = (button == 1) ? 1 : 2;
+      
+      
+      msg[1] = 'M';
+      msg[0] = 'A';
+      
+      //msg[1] = ++sTid;
+      //msg[0] = (button == 1) ? 1 : 2;
       done = 0;
       while (!done)
       {

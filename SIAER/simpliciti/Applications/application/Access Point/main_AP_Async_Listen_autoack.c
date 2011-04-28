@@ -1,11 +1,3 @@
-/*----------------------------------------------------------------------------
- *  Demo Application for SimpliciTI
- *
- *  L. Friedman
- *  Texas Instruments, Inc.
- *----------------------------------------------------------------------------
- */
-
 /**********************************************************************************************
   Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
 
@@ -139,9 +131,9 @@ static volatile uint8_t sBlinky = 0;
 void main_access_point (void)
 {
   bspIState_t intState;
-
+#ifdef FREQUENCY_AGILITY
   memset(sSample, 0x0, sizeof(sSample));
-  
+  #endif  /* FREQUENCY_AGILITY */
   BSP_Init();
 
   /* If an on-the-fly device address is generated it must be done before the
@@ -213,7 +205,11 @@ void main_access_point (void)
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
         {
           processMessage(sLID[i], msg, len);
-
+          
+          TXString(msg, sizeof msg); 
+//          transmitData( i, sigInfo.sigInfo.rssi, (char*)msg );
+        
+          
           BSP_ENTER_CRITICAL_SECTION(intState);
           sPeerFrameSem--;
           BSP_EXIT_CRITICAL_SECTION(intState);
@@ -268,7 +264,9 @@ static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
   // chamar aqui a funcao de tratamento de dados do ack e do ID do busao
   if (len)
   {
-    toggleLED(*msg);
+  //	TrataMsg(*msg);
+//    toggleLED(*msg);
+      toggleLED(1);
   }
   return;
 }
