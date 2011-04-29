@@ -43,14 +43,17 @@
 // *************************************************************************************************
 // Extern section
 unsigned char simpliciti_ed_address[];
+unsigned char simpliciti_msg[];
 // *************************************************************************************************
 // @fn		main
 // @brief 	laco principal
 // @param 	none
 // @return 	none
 // *************************************************************************************************
+
 void main (void)
 {
+	
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    // timer

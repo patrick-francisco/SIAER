@@ -34,7 +34,7 @@
 #include "nwk_api.h"
 #include "nwk_frame.h"
 #include "nwk.h"
-
+#include "simpliciti.h"
 #include "app_remap_led.h"
 
 #ifndef APP_AUTO_ACK
@@ -164,16 +164,14 @@ void main_access_point (void)
       for (i=0; i<sNumCurrentPeers; ++i)
       {
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
-        {
-        	
+        {        	
           processMessage(sLID[i], msg, len);
           
         //  TXString(msg, sizeof msg);
         // criar funcao para tratar a mensagem antes de enviar por UART para a aplicacao do guiche
-          TXString(msg, 2); 
+          TXString(msg, RF_MSG_SIZE); 
 //          transmitData( i, sigInfo.sigInfo.rssi, (char*)msg );
         
-          
           BSP_ENTER_CRITICAL_SECTION(intState);
           sPeerFrameSem--;
           BSP_EXIT_CRITICAL_SECTION(intState);

@@ -27,12 +27,7 @@
 **************************************************************************************************/
 
 //  CRIAR METODO PARA RECEBER MENSAGEM DO AP
-//  
-//
-//
-//
-//
-
+// 
 #include "bsp.h"
 #include "mrfi.h"
 #include "nwk_types.h"
@@ -155,8 +150,8 @@ static void linkTo()
       /* get radio ready...awakens in idle state */
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
 
-      msg[0] = 'M';
-      msg[1] = 'A';
+      simpliciti_msg[0] = 'M';
+      simpliciti_msg[1] = 'P';
       
       //msg[1] = ++sTid;
       //msg[0] = (button == 1) ? 1 : 2;
@@ -170,7 +165,7 @@ static void linkTo()
         {
  
           // Montar a mensagem e enviar para o GUICHE
-          if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, msg, sizeof(msg), SMPL_TXOPTION_ACKREQ)))
+          if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
             /* Message acked. We're done. Toggle LED 1 to indicate ack received. */
             toggleLED(1);
