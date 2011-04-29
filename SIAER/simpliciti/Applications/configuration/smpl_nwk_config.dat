@@ -65,7 +65,7 @@
 --define=EXTENDED_API
 
 # Remove '#' corruption to enable security. 
-#--define=SMPL_SECURE
+--define=SMPL_SECURE
 
 # Remove '#' to enable NV object support
 #--define=NVOBJECT_SUPPORT

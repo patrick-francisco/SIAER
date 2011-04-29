@@ -78,8 +78,8 @@ void TrataIntUartRx(char rx)
         if (rx=='$') // terminou de receber
         {
             ESTADO_RX_UART=RX_LIVRE;
-            //TXString(uart_msg,7);
-            //TXString(buffer_uart_rx,tamanho_buffer); 	// transmite um ack
+            TXString(uart_msg,7);
+            TXString(buffer_uart_rx,tamanho_buffer); 	// transmite um ack
             TrataMsg(buffer_uart_rx); 					//Apos receber todos os dados, chama funcao que ira decodificar a mensagem
             free(buffer_uart_rx); 						// libera espaco alocado
             buffer_uart_rx = 0;     					//boa pratica de programacao
@@ -121,19 +121,20 @@ void TXString(char* string, int length)     // transmitir por uart
 #pragma vector=USCI_A0_VECTOR
 __interrupt void USCI_A0_ISR(void)
 {
+  char rx;
+
   switch(__even_in_range(UCA0IV,4))
   {
   case 0:break;                             // Vector 0 - no interrupt
   case 2:                                   // Vector 2 - RXIFG
-  
   // SIAER 
-  //  char rx;
-  //  rx = UCA0RXBUF;
-  //  IntUartRx(rx);
+
+    rx = UCA0RXBUF;
+    TrataIntUartRx(rx);
   
-    while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
+    //while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?
     //UCA0TXBUF = UCA0RXBUF;                  // TX -> RXed character
-    TrataIntUartRx(UCA0RXBUF);
+    //TrataIntUartRx(UCA0RXBUF);
     break;
   case 4:break;                             // Vector 4 - TXIFG
   default: break;  

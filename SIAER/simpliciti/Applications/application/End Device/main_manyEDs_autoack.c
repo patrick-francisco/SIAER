@@ -1,10 +1,3 @@
-/*----------------------------------------------------------------------------
- *  Demo Application for SimpliciTI
- *
- *  L. Friedman
- *  Texas Instruments, Inc.
- *---------------------------------------------------------------------------- */
-
 /**********************************************************************************************
   Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
 
@@ -32,6 +25,13 @@
   Should you have any questions regarding your right to use this Software,
   contact Texas Instruments Incorporated at www.TI.com.
 **************************************************************************************************/
+
+//  CRIAR METODO PARA RECEBER MENSAGEM DO AP
+//  
+//
+//
+//
+//
 
 #include "bsp.h"
 #include "mrfi.h"
@@ -71,14 +71,14 @@ void main_end_device (void)
   addr_t lAddr;
     
   // Change network address to value set in calling function
-  /*for (i=0; i<4; i++)
+  for (i=0; i<4; i++)
   {
     lAddr.addr[i] = simpliciti_ed_address[i];
   }
 
   // Muda o endereco do end device
   SMPL_Ioctl(IOCTL_OBJ_ADDR, IOCTL_ACT_SET, &lAddr);
-*/
+
   /* Keep trying to join (a side effect of successful initialization) until
    * successful. Toggle LEDS to indicate that joining has not occurred.
    */
@@ -155,11 +155,8 @@ static void linkTo()
       /* get radio ready...awakens in idle state */
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
 
-      /* Set TID and designate which LED to toggle */
-      
-      
-      msg[1] = 'M';
-      msg[0] = 'A';
+      msg[0] = 'M';
+      msg[1] = 'A';
       
       //msg[1] = ++sTid;
       //msg[0] = (button == 1) ? 1 : 2;
@@ -171,6 +168,8 @@ static void linkTo()
         /* Try sending message MISSES_IN_A_ROW times looking for ack */
         for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
         {
+ 
+          // Montar a mensagem e enviar para o GUICHE
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, msg, sizeof(msg), SMPL_TXOPTION_ACKREQ)))
           {
             /* Message acked. We're done. Toggle LED 1 to indicate ack received. */

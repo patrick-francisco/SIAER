@@ -43,55 +43,16 @@
 
 void toggleLED(uint8_t);
 
-/**************************** COMMENTS ON ASYNC LISTEN APPLICATION ***********************
-Summary:
-  This AP build includes implementation of an unknown number of end device peers in
-  addition to AP functionality. In this scenario all End Devices establish a link to
-  the AP and only to the AP. The AP acts as a data hub. All End Device peers are on
-  the AP and not on other distinct ED platforms.
+// CRIAR METODO PARA ENVIAR MENSAGEM PARA O ED
+// FILTRAR MENSAGEM E EENVIAR VIA UART
+// 
+//
+//
+//
+//
+//
 
-  There is still a limit to the number of peers supported on the AP that is defined
-  by the macro NUM_CONNECTIONS. The AP will support NUM_CONNECTIONS or fewer peers
-  but the exact number does not need to be known at build time.
-
-  In this special but common scenario SimpliciTI restricts each End Device object to a
-  single connection to the AP. If multiple logical connections are required these must
-  be accommodated by supporting contexts in the application payload itself.
-
-Solution overview:
-  When a new peer connection is required the AP main loop must be notified. In essence
-  the main loop polls a semaphore to know whether to begin listening for a peer Link
-  request from a new End Device. There are two solutions: automatic notification and
-  external notification. The only difference between the automatic notification
-  solution and the external notification solution is how the listen semaphore is
-  set. In the external notification solution the sempahore is set by the user when the
-  AP is stimulated for example by a button press or a commend over a serial link. In the
-  automatic scheme the notification is accomplished as a side effect of a new End Device
-  joining.
-
-  The Rx callback must be implemented. When the callback is invoked with a non-zero
-  Link ID the handler could set a semaphore that alerts the main work loop that a
-  SMPL_Receive() can be executed successfully on that Link ID.
-
-  If the callback conveys an argument (LinkID) of 0 then a new device has joined the
-  network. A SMPL_LinkListen() should be executed.
-
-  Whether the joining device supports ED objects is indirectly inferred on the joining
-  device from the setting of the NUM_CONNECTIONS macro. The value of this macro should
-  be non-zero only if ED objects exist on the device. This macro is always non-zero
-  for ED-only devices. But Range Extenders may or may not support ED objects. The macro
-  should be be set to 0 for REs that do not also support ED objects. This prevents the
-  Access Point from reserving resources for a joinng device that does not support any
-  End Device Objects and it prevents the AP from executing a SMPL_LinkListen(). The
-  Access Point will not ever see a Link frame if the joining device does not support
-  any connections.
-
-  Each joining device must execute a SMPL_Link() after receiving the join reply from the
-  Access Point. The Access Point will be listening.
-
-*************************** END COMMENTS ON ASYNC LISTEN APPLICATION ********************/
-
-/************  THIS SOURCE FILE REPRESENTS THE AUTOMATIC NOTIFICATION SOLUTION ************/
+extern void TXString (char* string, int length);
 
 /* reserve space for the maximum possible peer Link IDs */
 static linkID_t sLID[NUM_CONNECTIONS] = {0};
@@ -204,9 +165,12 @@ void main_access_point (void)
       {
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
         {
+        	
           processMessage(sLID[i], msg, len);
           
-          TXString(msg, sizeof msg); 
+        //  TXString(msg, sizeof msg);
+        // criar funcao para tratar a mensagem antes de enviar por UART para a aplicacao do guiche
+          TXString(msg, 2); 
 //          transmitData( i, sigInfo.sigInfo.rssi, (char*)msg );
         
           
@@ -260,6 +224,8 @@ static uint8_t sCB(linkID_t lid)
 
 static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
 {
+	
+      toggleLED(2);
   /* do something useful */
   // chamar aqui a funcao de tratamento de dados do ack e do ID do busao
   if (len)

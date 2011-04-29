@@ -62,29 +62,24 @@ void main (void)
    // 		Ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
    //  		triggar o envio pela serial.
    //  	ONIBUS
-   //		Ao	
-   //			
+   //		Ao			
    // criar modo de testes independente: uart - mensagens
    //  
    
    // Inicializacao de variaveis globais
-  /* ESTADO_RX_UART = RX_LIVRE;
-   
+    ESTADO_RX_UART = RX_LIVRE;
    // Gerar endereco aleatorio para os end devices
    simpliciti_ed_address[0] = rand();
    simpliciti_ed_address[1] = rand();
    simpliciti_ed_address[2] = rand();
    simpliciti_ed_address[3] = rand();
-    */ 
+
    init_uart();
-    
-   char splash[] = {"\r\n--------------------------------------------------  \r\n     ****\r\n     ****           eZ430-RF2500\r\n     ******o****    Temperature Sensor Network\r\n********_///_****   Copyright 2009\r\n ******/_//_/*****  Texas Instruments Incorporated\r\n  ** ***(__/*****   All rights reserved.\r\n      *********     SimpliciTI1.1.1\r\n       *****\r\n        ***\r\n--------------------------------------------------\r\n"};
-   
-   char output_verbose[] = {"00XXXCBattery"};
+   while (!BSP_BUTTON1());
+        
+   char splash[] = {"\r\n--------------------------------------------------  \r\n     ****\r\n     ****           SIAER RF900\r\n     ******o****    Rastreamento inteligente\r\n********_///_**** \r\n ******/_//_/*****  Texas Instruments Incorporated\r\n  ** ***(__/*****   All rights reserved.\r\n      *********     SimpliciTI1.1.1\r\n       *****\r\n        ***\r\n--------------------------------------------------\r\n"};
    	
-   	TXString(splash, sizeof splash );
-   	TXString(output_verbose, sizeof output_verbose );
- 
+   TXString(splash, sizeof splash ); 
    #ifdef END_DEVICE
    main_end_device();
    
