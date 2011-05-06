@@ -53,7 +53,6 @@ unsigned char simpliciti_msg[];
 
 void main (void)
 {
-	
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    // timer
@@ -65,7 +64,7 @@ void main (void)
    // 		Ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
    //  		triggar o envio pela serial.
    //  	ONIBUS
-   //		Ao			
+   //		Ao
    // criar modo de testes independente: uart - mensagens
    //  
    

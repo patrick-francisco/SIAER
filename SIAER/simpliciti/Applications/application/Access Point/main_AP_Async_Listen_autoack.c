@@ -164,7 +164,7 @@ void main_access_point (void)
       for (i=0; i<sNumCurrentPeers; ++i)
       {
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
-        {        	
+        {
           processMessage(sLID[i], msg, len);
           
         //  TXString(msg, sizeof msg);
