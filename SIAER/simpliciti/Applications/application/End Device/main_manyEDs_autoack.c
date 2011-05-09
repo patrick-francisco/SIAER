@@ -153,8 +153,6 @@ static void linkTo()
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
             // Message acked. We're done. Toggle LED 1 to indicate ack received. 
-            
-            ed_send_request=0;
             toggleLED(1);
             break;
           }
@@ -183,12 +181,14 @@ static void linkTo()
         {
 	        // Wait shortly for host reply
 			SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
-			NWK_DELAY(10);
+			//NWK_DELAY(10);
 	  	
 			// Check if a command packet was received
-			while (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
+			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
 			{
-				TrataMsgSimpliciti(simpliciti_msg, TIPO_ONIBUS);
+				TrataMsgSimpliciti(simpliciti_msg, len, TIPO_ONIBUS);
+				ed_send_request=0;
+				done = 1;
 	  		}
         }
       }

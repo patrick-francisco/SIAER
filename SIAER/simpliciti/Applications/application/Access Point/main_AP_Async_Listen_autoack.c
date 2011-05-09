@@ -179,6 +179,10 @@ void main_access_point (void)
 	                    simpliciti_msg[7] = 'G' ;
 	                    simpliciti_msg[8] = 'H' ;
 	                    simpliciti_msg[9] = 'J' ;
+	                    
+	                    BSP_ENTER_CRITICAL_SECTION(intState);
+				        sPeerFrameSem--;
+				        BSP_EXIT_CRITICAL_SECTION(intState);  
 
 	                    // Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);
@@ -190,9 +194,6 @@ void main_access_point (void)
 				            break;
 				          }*/
 				          
-				          BSP_ENTER_CRITICAL_SECTION(intState);
-				          sPeerFrameSem--;
-				          BSP_EXIT_CRITICAL_SECTION(intState);  
 		                break;
 	            }
 	       }
