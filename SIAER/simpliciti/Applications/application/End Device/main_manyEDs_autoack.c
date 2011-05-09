@@ -48,6 +48,9 @@ static void linkTo(void);
 static uint8_t  sTid = 0;
 static linkID_t sLinkID1 = 0;
 
+volatile uint8_t ed_send_request = 0;
+
+
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
@@ -98,15 +101,18 @@ void main_end_device (void)
   /* Unconditional link to AP which is listening due to successful join. */
   linkTo();
 
-  while (1) ;
+  while (1);
 }
 
 static void linkTo()
 {
   uint8_t     msg[2];
   uint8_t     button, misses, done;
+  uint8_t   len, i;	
+  uint8_t      noAck;
+  smplStatus_t rc;
 
-  /* Keep trying to link... */
+  // Keep trying to link...
   while (SMPL_SUCCESS != SMPL_Link(&sLinkID1))
   {
     toggleLED(1);
@@ -124,23 +130,16 @@ static void linkTo()
     toggleLED(1);
   }
   
-  while(1);
-/*
   // sleep until button press... 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
 
   // Implementar metodo de escuta. Esperar pelo Access Point
   while (1)
   {
-      uint8_t      noAck;
-      smplStatus_t rc;
-
+  	if(ed_send_request)
+  	{
       // get radio ready...awakens in idle state 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
-
-      simpliciti_msg[0] = 'M';
-      simpliciti_msg[1] = 'P';
-      
       done = 0;
       while (!done)
       {
@@ -149,11 +148,13 @@ static void linkTo()
         // Try sending message MISSES_IN_A_ROW times looking for ack 
         for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
         {
- 
+        	simpliciti_msg[0] = ED_READY_2_RECEIVE;       	
           // Montar a mensagem e enviar para o GUICHE
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
             // Message acked. We're done. Toggle LED 1 to indicate ack received. 
+            
+            ed_send_request=0;
             toggleLED(1);
             break;
           }
@@ -180,15 +181,23 @@ static void linkTo()
         }
         else
         {
-          // Got the ack or we don't care. We're done. 
-          done = 1;
+	        // Wait shortly for host reply
+			SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
+			NWK_DELAY(10);
+	  	
+			// Check if a command packet was received
+			while (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
+			{
+				TrataMsgSimpliciti(simpliciti_msg, TIPO_ONIBUS);
+	  		}
         }
       }
 
       // radio back to sleep 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
+  	}
   }
-  */
+
   // Reiniciar em caso de perda de conexao.
   
   

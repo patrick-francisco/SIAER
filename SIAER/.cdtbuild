@@ -143,6 +143,7 @@
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.2134561976" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.1753339961" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/project includes}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/timer}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/msg}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/application/Access Point}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/uart}&quot;"/>

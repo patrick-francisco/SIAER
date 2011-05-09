@@ -43,7 +43,7 @@
 // *************************************************************************************************
 // Extern section
 unsigned char simpliciti_ed_address[];
-unsigned char simpliciti_msg[];
+char simpliciti_msg[];
 // *************************************************************************************************
 // @fn		main
 // @brief 	laco principal

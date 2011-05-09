@@ -66,8 +66,6 @@ static void    changeChannel(void);
 static volatile uint8_t sPeerFrameSem = 0;
 static volatile uint8_t sJoinSem = 0;
 
-
-
 #ifdef FREQUENCY_AGILITY
 /*     ************** BEGIN interference detection support */
 
@@ -80,8 +78,7 @@ static uint8_t sChannel = 0;
 
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
-volatile uint8_t stoggle = 0;
-unsigned char ed_data[RF_MSG_SIZE];
+char ed_data[RF_MSG_SIZE];
 /*     ************** END interference detection support                       */
 
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
@@ -153,12 +150,9 @@ void main_access_point (void)
       sJoinSem--;
       BSP_EXIT_CRITICAL_SECTION(intState);
     }
-      simpliciti_msg[0] = 'M';
-      simpliciti_msg[1] = 'P';
-      
-    /* Have we received a frame on one of the ED connections?
-     * No critical section -- it doesn't really matter much if we miss a poll
-     */
+     
+    // Have we received a frame on one of the ED connections?
+    // No critical section -- it doesn't really matter much if we miss a poll
     
     if (sPeerFrameSem)
     {
@@ -167,18 +161,28 @@ void main_access_point (void)
     	// Continuously try to receive end device packets
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], ed_data, &len))
         {
-	        // Sync packets are either R2R (2 byte) or data (19 byte) long
-	        if (len > 2)
-	        {
 	          // Indicate received packet
 	          toggleLED(1);
+	          toggleLED(2);
 	          // Decode end device packet
 	          switch (ed_data[0])
 	          {
-	              case ED_READY_2_RECEIVE: 
+	              case ED_READY_2_RECEIVE:
 	                    len = RF_MSG_SIZE;
+	                    simpliciti_msg[0] = 'A' ;
+	                    simpliciti_msg[1] = 'B' ;
+	                    simpliciti_msg[2] = 'C' ;
+	                    simpliciti_msg[3] = 'D' ;
+	                    simpliciti_msg[4] = 'e' ;
+	                    simpliciti_msg[5] = 'F' ;
+	                    simpliciti_msg[6] = 'F' ;
+	                    simpliciti_msg[7] = 'G' ;
+	                    simpliciti_msg[8] = 'H' ;
+	                    simpliciti_msg[9] = 'J' ;
+
 	                    // Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);
+	                   
 	                    /* if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLID[i], simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
 				          {
 				            // Message acked. We're done. Toggle LED 1 to indicate ack received. 
@@ -186,9 +190,12 @@ void main_access_point (void)
 				            break;
 				          }*/
 				          
-	                    break;
-	             }
-	        }
+				          BSP_ENTER_CRITICAL_SECTION(intState);
+				          sPeerFrameSem--;
+				          BSP_EXIT_CRITICAL_SECTION(intState);  
+		                break;
+	            }
+	       }
       	}
    	 }
     }
@@ -225,7 +232,6 @@ void main_access_point (void)
     
     
   }
-}
 
 /* Runs in ISR context. Reading the frame should be done in the */
 /* application thread not in the ISR thread. */
