@@ -57,6 +57,7 @@ static linkID_t sLinkID1 = 0;
 void main_end_device (void)
 {
   BSP_Init();
+  
   uint8_t i;
   /* If an on-the-fly device address is generated it must be done before the
    * call to SMPL_Init(). If the address is set here the ROM value will not
@@ -122,93 +123,75 @@ static void linkTo()
   {
     toggleLED(1);
   }
-
-  /* sleep until button press... */
+  
+  while(1);
+/*
+  // sleep until button press... 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
 
+  // Implementar metodo de escuta. Esperar pelo Access Point
   while (1)
   {
-    button = 0;
-    /* Send a message when either button pressed */
-    if (BSP_BUTTON1())
-    {
-      SPIN_ABOUT_A_QUARTER_SECOND;  /* debounce... */
-      /* Message to toggle LED 1. */
-      button = 1;
-    }
-    else if (BSP_BUTTON2())
-    {
-      SPIN_ABOUT_A_QUARTER_SECOND;  /* debounce... */
-      /* Message to toggle LED 2. */
-      button = 2;
-    }
-    if (button)
-    {
       uint8_t      noAck;
       smplStatus_t rc;
 
-      /* get radio ready...awakens in idle state */
+      // get radio ready...awakens in idle state 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
 
       simpliciti_msg[0] = 'M';
       simpliciti_msg[1] = 'P';
       
-      //msg[1] = ++sTid;
-      //msg[0] = (button == 1) ? 1 : 2;
       done = 0;
       while (!done)
       {
         noAck = 0;
 
-        /* Try sending message MISSES_IN_A_ROW times looking for ack */
+        // Try sending message MISSES_IN_A_ROW times looking for ack 
         for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
         {
  
           // Montar a mensagem e enviar para o GUICHE
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
-            /* Message acked. We're done. Toggle LED 1 to indicate ack received. */
+            // Message acked. We're done. Toggle LED 1 to indicate ack received. 
             toggleLED(1);
             break;
           }
           if (SMPL_NO_ACK == rc)
           {
-            /* Count ack failures. Could also fail becuase of CCA and
-             * we don't want to scan in this case.
-             */
+            // Count ack failures. Could also fail becuase of CCA and
+            //  we don't want to scan in this case.
+            // 
             noAck++;
           }
         }
         if (MISSES_IN_A_ROW == noAck)
         {
-          /* Message not acked. Toggle LED 2. */
+          // Message not acked. Toggle LED 2.              
           toggleLED(2);
 #ifdef FREQUENCY_AGILITY
-          /* Assume we're on the wrong channel so look for channel by
-           * using the Ping to initiate a scan when it gets no reply. With
-           * a successful ping try sending the message again. Otherwise,
-           * for any error we get we will wait until the next button
-           * press to try again.
-           */
           if (SMPL_SUCCESS != SMPL_Ping(sLinkID1))
           {
             done = 1;
           }
 #else
           done = 1;
-#endif  /* FREQUENCY_AGILITY */
+#endif  // FREQUENCY_AGILITY 
         }
         else
         {
-          /* Got the ack or we don't care. We're done. */
+          // Got the ack or we don't care. We're done. 
           done = 1;
         }
       }
 
-      /* radio back to sleep */
+      // radio back to sleep 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
-    }
   }
+  */
+  // Reiniciar em caso de perda de conexao.
+  
+  
 }
 
 
@@ -224,4 +207,3 @@ void toggleLED(uint8_t which)
   }
   return;
 }
-

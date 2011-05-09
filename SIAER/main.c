@@ -50,6 +50,7 @@ unsigned char simpliciti_msg[];
 // @param 	none
 // @return 	none
 // *************************************************************************************************
+extern void Timer1_Init(void);
 
 void main (void)
 {
@@ -76,18 +77,23 @@ void main (void)
    simpliciti_ed_address[2] = rand();
    simpliciti_ed_address[3] = rand();
 
+   Timer1_Init();
+  // Timer0_Stop();
    init_uart();
-   while (!BSP_BUTTON1());
-        
+   //while (!BSP_BUTTON1());
+      
    char splash[] = {"\r\n--------------------------------------------------  \r\n     ****\r\n     ****           SIAER RF900\r\n     ******o****    Rastreamento inteligente\r\n********_///_**** \r\n ******/_//_/*****  Texas Instruments Incorporated\r\n  ** ***(__/*****   All rights reserved.\r\n      *********     SimpliciTI1.1.1\r\n       *****\r\n        ***\r\n--------------------------------------------------\r\n"};
-   	
+ 
    TXString(splash, sizeof splash ); 
+   
    #ifdef END_DEVICE
    main_end_device();
    
    #elif ACCESS_POINT
    main_access_point();
    
-   #endif
+   #endif   
    
 }
+
+

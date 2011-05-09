@@ -23,6 +23,7 @@
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.1779717956" name="Silicon version (--silicon_version, -v)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.mspx" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.455427719" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/application/Access Point}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/timer}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/random}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/msg}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/project includes}&quot;"/>
@@ -117,6 +118,9 @@
 </resourceConfiguration>
 <resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.877504015./SIAER/uart/uart.c" name="uart.c" rcbsApplicability="disable" resourcePath="/SIAER/uart/uart.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/uart/uart.c">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/uart/uart.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.877504015./SIAER/timer/timer.c" name="timer.c" rcbsApplicability="disable" resourcePath="/SIAER/timer/timer.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/timer/timer.c">
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/timer/timer.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509"/>
 </resourceConfiguration>
 </configuration>
 <configuration artifactExtension="out" artifactName="SIAER" description="" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305" name="Onibus - End Device" parent="com.ti.ccstudio.buildDefinitions.MSP430.Release">

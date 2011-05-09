@@ -46,12 +46,6 @@ void toggleLED(uint8_t);
 // CRIAR METODO PARA ENVIAR MENSAGEM PARA O ED
 // FILTRAR MENSAGEM E EENVIAR VIA UART
 // 
-//
-//
-//
-//
-//
-
 extern void TXString (char* string, int length);
 
 /* reserve space for the maximum possible peer Link IDs */
@@ -72,6 +66,8 @@ static void    changeChannel(void);
 static volatile uint8_t sPeerFrameSem = 0;
 static volatile uint8_t sJoinSem = 0;
 
+
+
 #ifdef FREQUENCY_AGILITY
 /*     ************** BEGIN interference detection support */
 
@@ -84,14 +80,17 @@ static uint8_t sChannel = 0;
 
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
-
+volatile uint8_t stoggle = 0;
+unsigned char ed_data[RF_MSG_SIZE];
 /*     ************** END interference detection support                       */
 
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
 void main_access_point (void)
 {
+  uint8_t   len, i;	
   bspIState_t intState;
+  
 #ifdef FREQUENCY_AGILITY
   memset(sSample, 0x0, sizeof(sSample));
   #endif  /* FREQUENCY_AGILITY */
@@ -123,7 +122,8 @@ void main_access_point (void)
     toggleLED(1);
   }
 
-  /* main work loop */
+  // main work loop
+   
   while (1)
   {
     /* Wait for the Join semaphore to be set by the receipt of a Join frame from a
@@ -133,17 +133,18 @@ void main_access_point (void)
      * to an ISR and the ISR could set a semaphore that is checked by a function
      * call here, or a command shell running in support of a serial connection
      * could set a semaphore that is checked by a function call.
-     */
+     */     
+     
     if (sJoinSem && (sNumCurrentPeers < NUM_CONNECTIONS))
     {
-      /* listen for a new connection */
+      // listen for a new connection
       while (1)
       {
         if (SMPL_SUCCESS == SMPL_LinkListen(&sLID[sNumCurrentPeers]))
         {
           break;
         }
-        /* Implement fail-to-link policy here. otherwise, listen again. */
+        // Implement fail-to-link policy here. otherwise, listen again.
       }
 
       sNumCurrentPeers++;
@@ -152,15 +153,54 @@ void main_access_point (void)
       sJoinSem--;
       BSP_EXIT_CRITICAL_SECTION(intState);
     }
-
+      simpliciti_msg[0] = 'M';
+      simpliciti_msg[1] = 'P';
+      
     /* Have we received a frame on one of the ED connections?
      * No critical section -- it doesn't really matter much if we miss a poll
      */
+    
     if (sPeerFrameSem)
+    {
+      for (i=0; i<sNumCurrentPeers; ++i)
+      {
+    	// Continuously try to receive end device packets
+        if (SMPL_SUCCESS == SMPL_Receive(sLID[i], ed_data, &len))
+        {
+	        // Sync packets are either R2R (2 byte) or data (19 byte) long
+	        if (len > 2)
+	        {
+	          // Indicate received packet
+	          toggleLED(1);
+	          // Decode end device packet
+	          switch (ed_data[0])
+	          {
+	              case ED_READY_2_RECEIVE: 
+	                    len = RF_MSG_SIZE;
+	                    // Send reply packet to end device
+	                    SMPL_Send(sLID[i], simpliciti_msg, len);
+	                    /* if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLID[i], simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
+				          {
+				            // Message acked. We're done. Toggle LED 1 to indicate ack received. 
+				            toggleLED(1);
+				            break;
+				          }*/
+				          
+	                    break;
+	             }
+	        }
+      	}
+   	 }
+    }
+      
+    
+    
+     
+    /*if (sPeerFrameSem)
     {
       uint8_t     msg[MAX_APP_PAYLOAD], len, i;
 
-      /* process all frames waiting */
+      // process all frames waiting 
       for (i=0; i<sNumCurrentPeers; ++i)
       {
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
@@ -168,8 +208,10 @@ void main_access_point (void)
           processMessage(sLID[i], msg, len);
           
         //  TXString(msg, sizeof msg);
+        
         // criar funcao para tratar a mensagem antes de enviar por UART para a aplicacao do guiche
-          TXString(msg, RF_MSG_SIZE); 
+          TXString(msg, RF_MSG_SIZE);
+          
 //          transmitData( i, sigInfo.sigInfo.rssi, (char*)msg );
         
           BSP_ENTER_CRITICAL_SECTION(intState);
@@ -178,28 +220,11 @@ void main_access_point (void)
         }
       }
     }
-    if (BSP_BUTTON1())
-    {
-      SPIN_ABOUT_A_QUARTER_SECOND;  /* debounce */
-      changeChannel();
-    }
-    else
-    {
-      checkChangeChannel();
-    }
-    BSP_ENTER_CRITICAL_SECTION(intState);
-    if (sBlinky)
-    {
-      if (++sBlinky >= 0xF)
-      {
-        sBlinky = 1;
-        toggleLED(1);
-        toggleLED(2);
-      }
-    }
-    BSP_EXIT_CRITICAL_SECTION(intState);
+    */
+    
+    
+    
   }
-
 }
 
 /* Runs in ISR context. Reading the frame should be done in the */
@@ -209,7 +234,6 @@ static uint8_t sCB(linkID_t lid)
   if (lid)
   {
     sPeerFrameSem++;
-    sBlinky = 0;
   }
   else
   {
@@ -222,14 +246,10 @@ static uint8_t sCB(linkID_t lid)
 
 static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
 {
-	
-      toggleLED(2);
-  /* do something useful */
   // chamar aqui a funcao de tratamento de dados do ack e do ID do busao
   if (len)
   {
   //	TrataMsg(*msg);
-//    toggleLED(*msg);
       toggleLED(1);
   }
   return;
