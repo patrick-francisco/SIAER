@@ -44,6 +44,7 @@
 // Extern section
 unsigned char simpliciti_ed_address[];
 char simpliciti_msg[];
+struct rf_buffer buffer_a_transmitir[];
 // *************************************************************************************************
 // @fn		main
 // @brief 	laco principal
@@ -81,19 +82,15 @@ void main (void)
   // Timer0_Stop();
    init_uart();
    //while (!BSP_BUTTON1());
-      
-   char splash[] = {"\r\n--------------------------------------------------  \r\n     ****\r\n     ****           SIAER RF900\r\n     ******o****    Rastreamento inteligente\r\n********_///_**** \r\n ******/_//_/*****  Texas Instruments Incorporated\r\n  ** ***(__/*****   All rights reserved.\r\n      *********     SimpliciTI1.1.1\r\n       *****\r\n        ***\r\n--------------------------------------------------\r\n"};
- 
-   TXString(splash, sizeof splash ); 
-   
+
    #ifdef END_DEVICE
-   main_end_device();
+   //main_end_device();
    
    #elif ACCESS_POINT
-   main_access_point();
+  // main_access_point();
    
    #endif   
-   
+   while(1);
 }
 
 

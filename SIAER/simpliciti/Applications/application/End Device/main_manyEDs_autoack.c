@@ -106,9 +106,8 @@ void main_end_device (void)
 
 static void linkTo()
 {
-  uint8_t     msg[2];
-  uint8_t     button, misses, done;
-  uint8_t   len, i;	
+  uint8_t     misses, done;
+  uint8_t   len;	
   uint8_t      noAck;
   smplStatus_t rc;
 
