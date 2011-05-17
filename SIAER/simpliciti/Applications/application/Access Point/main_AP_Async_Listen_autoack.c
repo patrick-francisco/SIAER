@@ -169,6 +169,16 @@ void main_access_point (void)
 	          {
 	              case ED_READY_2_RECEIVE:
 	                    len = RF_MSG_SIZE;
+	                    
+	                    // Pegar os dados do buffer
+	                    // o bus envia a cada segundo seus dados e o R2R.
+	                    // criar metodo para receber os dados atraves do ed_data
+	                    // verificar os bytes referentes ao id do bus
+	                    // usar um for pra achar o id no buffer
+	                    // transmitir o q der.
+	                    
+	                    encode_siaer_data( );
+	                    
 	                    simpliciti_msg[0] = 'A' ;
 	                    simpliciti_msg[1] = 'B' ;
 	                    simpliciti_msg[2] = 'C' ;
@@ -179,13 +189,13 @@ void main_access_point (void)
 	                    simpliciti_msg[7] = 'G' ;
 	                    simpliciti_msg[8] = 'H' ;
 	                    simpliciti_msg[9] = 'J' ;
-	                    
-	                    BSP_ENTER_CRITICAL_SECTION(intState);
-				        sPeerFrameSem--;
-				        BSP_EXIT_CRITICAL_SECTION(intState);  
-
+	                  
 	                    // Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);
+	                   
+	                     BSP_ENTER_CRITICAL_SECTION(intState);
+				         sPeerFrameSem--;
+				         BSP_EXIT_CRITICAL_SECTION(intState);  
 	                   
 	                    /* if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLID[i], simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
 				          {

@@ -147,8 +147,13 @@ static void linkTo()
         // Try sending message MISSES_IN_A_ROW times looking for ack 
         for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
         {
-        	simpliciti_msg[0] = ED_READY_2_RECEIVE;       	
+        	     	
           // Montar a mensagem e enviar para o GUICHE
+          // criar metodo com o bus id como polling
+          simpliciti_msg[0] = ED_READY_2_RECEIVE;  
+        
+        
+        	
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
             // Message acked. We're done. Toggle LED 1 to indicate ack received. 
@@ -198,8 +203,6 @@ static void linkTo()
   }
 
   // Reiniciar em caso de perda de conexao.
-  
-  
 }
 
 
