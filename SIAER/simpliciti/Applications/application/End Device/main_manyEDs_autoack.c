@@ -36,12 +36,17 @@
 #include "bsp_buttons.h"
 #include "simpliciti.h"
 #include "app_remap_led.h"
+#include "includes.h"
 
 #ifndef APP_AUTO_ACK
 #error ERROR: Must define the macro APP_AUTO_ACK for this application.
 #endif
 
 void toggleLED(uint8_t);
+
+extern void Encode_siaer_data_onibus();
+
+extern void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo);
 
 static void linkTo(void);
 
@@ -150,9 +155,8 @@ static void linkTo()
         	     	
           // Montar a mensagem e enviar para o GUICHE
           // criar metodo com o bus id como polling
-          simpliciti_msg[0] = ED_READY_2_RECEIVE;  
-        
-        
+          
+  		 Encode_siaer_data_onibus();
         	
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
@@ -190,7 +194,9 @@ static void linkTo()
 			// Check if a command packet was received
 			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
 			{
-				TrataMsgSimpliciti(simpliciti_msg, len, TIPO_ONIBUS);
+				//TrataMsgSimpliciti(simpliciti_msg, len, RECEBEU_BARCODE);
+				ReportEventUart(simpliciti_msg, len, RECEBEU_BARCODE);
+				
 				ed_send_request=0;
 				done = 1;
 	  		}

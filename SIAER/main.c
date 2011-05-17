@@ -50,6 +50,7 @@ void main (void)
    simpliciti_ed_address[2] = rand();
    simpliciti_ed_address[3] = rand();
 
+   InitBusGuiche();
    Timer1_Init();
   // Timer0_Stop();
    init_uart();

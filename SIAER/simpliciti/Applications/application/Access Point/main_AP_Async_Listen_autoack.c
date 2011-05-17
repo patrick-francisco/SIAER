@@ -177,14 +177,14 @@ void main_access_point (void)
 	                    // usar um for pra achar o id no buffer
 	                    // transmitir o q der.
 	                    
-	                    Encode_siaer_data(ed_data);
+	                    Encode_siaer_data_guiche(ed_data);
 	                    
 	                   	// Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);
 	                   
 	                     BSP_ENTER_CRITICAL_SECTION(intState);
 				         sPeerFrameSem--;
-				         BSP_EXIT_CRITICAL_SECTION(intState);  
+				         BSP_EXIT_CRITICAL_SECTION(intState);
 	                   
 	                    /* if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLID[i], simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
 				          {
