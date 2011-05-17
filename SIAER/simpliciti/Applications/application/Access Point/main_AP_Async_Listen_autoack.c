@@ -177,20 +177,9 @@ void main_access_point (void)
 	                    // usar um for pra achar o id no buffer
 	                    // transmitir o q der.
 	                    
-	                    encode_siaer_data( );
+	                    Encode_siaer_data(ed_data);
 	                    
-	                    simpliciti_msg[0] = 'A' ;
-	                    simpliciti_msg[1] = 'B' ;
-	                    simpliciti_msg[2] = 'C' ;
-	                    simpliciti_msg[3] = 'D' ;
-	                    simpliciti_msg[4] = 'e' ;
-	                    simpliciti_msg[5] = 'F' ;
-	                    simpliciti_msg[6] = 'F' ;
-	                    simpliciti_msg[7] = 'G' ;
-	                    simpliciti_msg[8] = 'H' ;
-	                    simpliciti_msg[9] = 'J' ;
-	                  
-	                    // Send reply packet to end device
+	                   	// Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);
 	                   
 	                     BSP_ENTER_CRITICAL_SECTION(intState);
