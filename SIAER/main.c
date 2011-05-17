@@ -27,6 +27,7 @@ extern void Timer1_Init(void);
 
 void main (void)
 {
+   char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    // timer
@@ -55,7 +56,8 @@ void main (void)
   // Timer0_Stop();
    init_uart();
    //while (!BSP_BUTTON1());
-
+   
+   TrataMsg(teste);
    #ifdef END_DEVICE
    //main_end_device();
    
