@@ -159,7 +159,7 @@ void main_access_point (void)
       for (i=0; i<sNumCurrentPeers; ++i)
       {
     	// Continuously try to receive end device packets
-        if (SMPL_SUCCESS == SMPL_Receive(sLID[i], (uint8_t*)ed_data, &len))
+        if (SMPL_SUCCESS == SMPL_Receive(sLID[i], ed_data, &len))
         {
 	          // Indicate received packet
 	          toggleLED(1);
@@ -180,7 +180,7 @@ void main_access_point (void)
 	                    Encode_siaer_data_guiche(ed_data);
 	                    
 	                   	// Send reply packet to end device
-	                    SMPL_Send(sLID[i], (uint8_t*)simpliciti_msg, len);
+	                    SMPL_Send(sLID[i], simpliciti_msg, len);
 	                   
 	                     BSP_ENTER_CRITICAL_SECTION(intState);
 				         sPeerFrameSem--;
