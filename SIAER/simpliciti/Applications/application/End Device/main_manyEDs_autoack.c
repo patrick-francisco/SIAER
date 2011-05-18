@@ -137,6 +137,10 @@ static void linkTo()
   // sleep until button press... 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
 
+  Onibus.EST_CONEXAO = CONECTED;
+  
+  //ReportEventUart (char simpliciti_msg[], unsigned char tamanho, BUS_CHEGOU);
+	
   // Implementar metodo de escuta. Esperar pelo Access Point
   while (1)
   {

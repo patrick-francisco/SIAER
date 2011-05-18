@@ -259,6 +259,7 @@ void AddBarcodeBuffer(char* msg)
 // *******************************************
 void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 {
+	/*
 	char splash[] = {"\r\n"};	
 	switch (tipo)
 	{
@@ -270,6 +271,23 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 	case TIPO_GUICHE:
 		break;
 	}
+	*/
+	  switch(Onibus.EST_CONEXAO)
+      {   
+		case CONECTADO:   
+			   Onibus.DST[0] = simpliciti_msg[];
+			   Onibus.DST[1] = simpliciti_msg[];
+			   			   
+			   TXString(simpliciti_msg, tamanho); 		   
+			   TXString(splash, sizeof (splash) ); 
+			break;
+			
+		case TIPO_GUICHE:
+			break;
+	      
+      }
+      
+	
 }
 
 // *************************************************************************************************
@@ -279,7 +297,7 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 // ****************************************************
 void Encode_siaer_data_guiche(char mensagem_recebida[])
 {
-	char i,cont;
+	 char i,cont;
 	 for (i=0;i<CONEXOES_POSSIVEIS;i++)
 	 {
         if (mensagem_recebida[2] == buffer_a_transmitir[i].DST[0] && mensagem_recebida[1]==buffer_a_transmitir[i].DST[1])

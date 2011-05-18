@@ -30,6 +30,7 @@ extern void Encode_siaer_data_onibus(void);
 
 #define ON  0xFF
 #define OFF 0x00
+#define CONECTADO 0x01
 
 #define CONEXOES_POSSIVEIS  8
 #define POLL_MSG_SIZE         8
