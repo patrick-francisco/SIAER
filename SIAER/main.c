@@ -14,9 +14,7 @@
 
 // *************************************************************************************************
 // Extern section
-unsigned char simpliciti_ed_address[];
-char simpliciti_msg[];
-struct rf_buffer buffer_a_transmitir[];
+
 // *************************************************************************************************
 // @fn		main
 // @brief 	laco principal
@@ -27,7 +25,13 @@ extern void Timer1_Init(void);
 extern void InitBusGuiche(void);
 void main (void)
 {
-   char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
+	
+	simpliciti_msg[0]=0;
+	simpliciti_msg[1]=0;
+	simpliciti_msg[2]=0;
+	simpliciti_msg[3]=0;
+	simpliciti_msg[4]=0;
+   //char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    // timer

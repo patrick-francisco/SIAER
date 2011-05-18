@@ -18,7 +18,6 @@
 #include "simpliciti.h"
 
 
-
 // REMOVER TUDO ISSO ANTES DO FIM DO PROJETO
 #define INIT_BUS	    0x01
 #define	INIT_GUI	    0x02

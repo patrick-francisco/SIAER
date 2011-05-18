@@ -7,15 +7,14 @@
 
 // *************************************************************************************************
 // Prototypes section
-extern void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void ReportEvent (char simpliciti_msg[], unsigned char tamanho, char tipo);
 extern void MontaBusMsg (char funcid);
 extern void MontaTslMsg (char funcid, char mensagem_recebida[]);
-
 extern void TrataMsg(char* msg);
+
 extern void AddBarcodeBuffer(char* msg);
-extern void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void Encode_siaer_data_guiche(char mensagem_recebida[]);
+extern void ReportEvent (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void TrataMsgSimpliciti(unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void Encode_siaer_data_guiche(unsigned char mensagem_recebida[]);
 extern void Encode_siaer_data_onibus(void);
 
 // *************************************************************************************************

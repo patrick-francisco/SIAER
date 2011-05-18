@@ -5,11 +5,10 @@
 // *************************************************************************************************
 // Prototypes section
 void TrataMsg(char* msg);
-void ReportEvent (char simpliciti_msg[], unsigned char tamanho, char tipo);
 void MontaBusMsg (char funcid);
-void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho,char tipo);
-void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo);
-void Encode_siaer_data_guiche(char mensagem_recebida[]);
+void TrataMsgSimpliciti(unsigned char simpliciti_msg[], unsigned char tamanho,char tipo);
+void ReportEventUart (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+void Encode_siaer_data_guiche(unsigned char mensagem_recebida[]);
 void Encode_siaer_data_onibus();
 
 
@@ -24,6 +23,8 @@ struct siaer_frame msg;
 char SRC[2]={0x00,0x00};
 char DST[2]={0x00,0x00};
 
+unsigned char simpliciti_ed_address[];
+struct rf_buffer buffer_a_transmitir[];
 
 // *************************************************************************************************
 // Extern section
@@ -184,7 +185,7 @@ void MontaTslMsg (char funcid, char mensagem_recebida[])
 // @return 	none
 // *************************************************************************************************
 
-void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo)
+void ReportEventUart (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo)
 {
     int i;
     char msg[]="$123$";
@@ -257,7 +258,7 @@ void AddBarcodeBuffer(char* msg)
 // @fn		AddBarcodeBuffer
 // @brief 	Somente para testes. Joga na uart o q receber via RF
 // *******************************************
-void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
+void TrataMsgSimpliciti(unsigned char simpliciti_msg[], unsigned char tamanho, char tipo)
 {
 	/*
 	char splash[] = {"\r\n"};	
@@ -310,7 +311,7 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 // @brief 	Empacota os dados para serem enviados via RF pelo guiche
 // @param   tipo de mensagem recebida
 // ****************************************************
-void Encode_siaer_data_guiche(char mensagem_recebida[])
+void Encode_siaer_data_guiche(unsigned char mensagem_recebida[])
 {
 	 char i,cont;
 	 for (i=0;i<CONEXOES_POSSIVEIS;i++)
