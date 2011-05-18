@@ -1,0 +1,8 @@
+#CCS files#
+###########
+
+*.opt
+*.obj
+*.mk
+*.out
+*.pp
