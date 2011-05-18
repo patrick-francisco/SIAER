@@ -199,38 +199,6 @@ void main_access_point (void)
       	}
    	 }
     }
-      
-    
-    
-     
-    /*if (sPeerFrameSem)
-    {
-      uint8_t     msg[MAX_APP_PAYLOAD], len, i;
-
-      // process all frames waiting 
-      for (i=0; i<sNumCurrentPeers; ++i)
-      {
-        if (SMPL_SUCCESS == SMPL_Receive(sLID[i], msg, &len))
-        {
-          processMessage(sLID[i], msg, len);
-          
-        //  TXString(msg, sizeof msg);
-        
-        // criar funcao para tratar a mensagem antes de enviar por UART para a aplicacao do guiche
-          TXString(msg, RF_MSG_SIZE);
-          
-//          transmitData( i, sigInfo.sigInfo.rssi, (char*)msg );
-        
-          BSP_ENTER_CRITICAL_SECTION(intState);
-          sPeerFrameSem--;
-          BSP_EXIT_CRITICAL_SECTION(intState);
-        }
-      }
-    }
-    */
-    
-    
-    
   }
 
 /* Runs in ISR context. Reading the frame should be done in the */
