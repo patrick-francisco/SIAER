@@ -155,7 +155,6 @@ static void linkTo()
         // Try sending message MISSES_IN_A_ROW times looking for ack 
         for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
         {
-        	     	
           // Montar a mensagem e enviar para o GUICHE
           // criar metodo com o bus id como polling
          
