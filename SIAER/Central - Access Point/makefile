@@ -6,6 +6,7 @@ SHELL = cmd.exe
 
 EMPTY := 
 SPACE := $(EMPTY) $(EMPTY)
+CG_TOOL_ROOT := C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430
 
 ORDERED_OBJS += \
 $(GEN_CMDS_QUOTED) \
@@ -39,16 +40,26 @@ RMDIR := RMDIR /S/Q
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include subdir.mk
--include uart/subdir.mk
--include timer/subdir.mk
--include simpliciti/Configuration/nwk_applications/subdir.mk
--include simpliciti/Configuration/nwk/subdir.mk
--include simpliciti/Configuration/mrfi/subdir.mk
--include simpliciti/Configuration/bsp/subdir.mk
--include simpliciti/Applications/application/End\ Device/subdir.mk
--include simpliciti/Applications/application/Access\ Point/subdir.mk
--include msg/subdir.mk
+-include subdir_vars.mk
+-include uart/subdir_vars.mk
+-include timer/subdir_vars.mk
+-include simpliciti/Configuration/nwk_applications/subdir_vars.mk
+-include simpliciti/Configuration/nwk/subdir_vars.mk
+-include simpliciti/Configuration/mrfi/subdir_vars.mk
+-include simpliciti/Configuration/bsp/subdir_vars.mk
+-include simpliciti/Applications/application/End\ Device/subdir_vars.mk
+-include simpliciti/Applications/application/Access\ Point/subdir_vars.mk
+-include msg/subdir_vars.mk
+-include subdir_rules.mk
+-include uart/subdir_rules.mk
+-include timer/subdir_rules.mk
+-include simpliciti/Configuration/nwk_applications/subdir_rules.mk
+-include simpliciti/Configuration/nwk/subdir_rules.mk
+-include simpliciti/Configuration/mrfi/subdir_rules.mk
+-include simpliciti/Configuration/bsp/subdir_rules.mk
+-include simpliciti/Applications/application/End\ Device/subdir_rules.mk
+-include simpliciti/Applications/application/Access\ Point/subdir_rules.mk
+-include msg/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -134,10 +145,27 @@ endif
 all: SIAER.out
 
 # Tool invocations
-SIAER.out: $(GEN_CMDS) $(CMD_SRCS) $(OBJS)
+SIAER.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Linker'
-	"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/msp430/bin/cl430" --cmd_file="C:\Users\Patrick\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat" --cmd_file="C:\Users\Patrick\SIAER\SIAER\simpliciti\Applications\configuration\Access_Point\smpl_config.dat"  -vmspx -g --define=__CCE__ --define=ACCESS_POINT --define=MRFI_CC430 --define=__CC430F6137__ --diag_warning=225 --printf_support=minimal -z -m"SIAER.map" --stack_size=80 --heap_size=80 --use_hw_mpy=F5 --warn_sections -i"C:/Program Files (x86)/Texas Instruments/ccsv4/msp430/include" -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/msp430/lib" -i"C:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/msp430/include" --reread_libs --rom_model -o "SIAER.out" $(ORDERED_OBJS)
+	@echo 'Flags: --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\Access_Point\smpl_config.dat"  -vmspx -g --define=__CCE__ --define=ACCESS_POINT --define=MRFI_CC430 --define=__CC430F6137__ --diag_warning=225 --printf_support=minimal -z -m"SIAER.map" --stack_size=80 --heap_size=80 --use_hw_mpy=F5 --warn_sections -i"C:/Arquivos de programas/Texas Instruments/ccsv4/msp430/include" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/lib" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/include" --reread_libs --rom_model'
+	$(shell echo --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\Access_Point\smpl_config.dat" > "ccsLinker.opt")
+	$(shell echo -vmspx >> "ccsLinker.opt")
+	$(shell echo -g >> "ccsLinker.opt")
+	$(shell echo --define=__CCE__ --define=ACCESS_POINT --define=MRFI_CC430 --define=__CC430F6137__ >> "ccsLinker.opt")
+	$(shell echo --diag_warning=225 >> "ccsLinker.opt")
+	$(shell echo --printf_support=minimal >> "ccsLinker.opt")
+	$(shell echo -z >> "ccsLinker.opt")
+	$(shell echo -m"SIAER.map" >> "ccsLinker.opt")
+	$(shell echo --stack_size=80 >> "ccsLinker.opt")
+	$(shell echo --heap_size=80 >> "ccsLinker.opt")
+	$(shell echo --use_hw_mpy=F5 >> "ccsLinker.opt")
+	$(shell echo --warn_sections >> "ccsLinker.opt")
+	$(shell echo -i"C:/Arquivos de programas/Texas Instruments/ccsv4/msp430/include" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/lib" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/include" >> "ccsLinker.opt")
+	$(shell echo --reread_libs >> "ccsLinker.opt")
+	$(shell echo --rom_model >> "ccsLinker.opt")
+	$(shell type "ccsObjs.opt" >> "ccsLinker.opt")
+	"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/bin/cl430" -@"ccsLinker.opt" -o "SIAER.out"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
