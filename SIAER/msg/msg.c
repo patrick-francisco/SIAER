@@ -272,22 +272,37 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 		break;
 	}
 	*/
-	  switch(Onibus.EST_CONEXAO)
-      {   
-		case CONECTADO:   
-			   Onibus.DST[0] = simpliciti_msg[];
-			   Onibus.DST[1] = simpliciti_msg[];
-			   			   
-			   TXString(simpliciti_msg, tamanho); 		   
-			   TXString(splash, sizeof (splash) ); 
-			break;
-			
-		case TIPO_GUICHE:
-			break;
-	      
-      }
-      
-	
+    switch(simpliciti_msg[5]) //  funcid
+    {
+      case POLLING:
+        if (Onibus.EST_CONEXAO==OFF)
+        {
+          // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
+          // implementar no codigo para primeira conexao
+            Onibus.EST_CONEXAO=CONECTADO;
+            Onibus.DST[0]=simpliciti_msg[1];  // src[0]
+            Onibus.DST[1]=simpliciti_msg[2];  //msg_ptr->src[1];
+            ReportEventUart(simpliciti_msg,0,BUS_CHEGOU);
+            // Mandar ACK
+        }
+        break;
+      case POLLING2:
+          // Mandar um ACK2 
+          // feito apos a conexao estar feita, para manter contato com o bus
+        
+        break;
+      default:
+            if (simpliciti_msg[5] & TX_BARCODE)
+            {
+              // mandar via uart
+              ReportEventUart(simpliciti_msg, tamanho, RECEBEU_BARCODE);
+              
+              // mandar ack
+              //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
+              // bar_ack.data[0]=msg_ptr->funcid&0x3F;
+              // WITX_frame(bar_ack);
+            }
+        }
 }
 
 // *************************************************************************************************
@@ -325,8 +340,24 @@ void Encode_siaer_data_guiche(char mensagem_recebida[])
 // ****************************************************
 void Encode_siaer_data_onibus()
 {
-  	simpliciti_msg[0] = ED_READY_2_RECEIVE;
-  	simpliciti_msg[1] = Onibus.id_bus[0];
-  	simpliciti_msg[2] = Onibus.id_bus[1];
+	switch(Onibus.EST_CONEXAO)
+	{
+	 case OFF:
+	 	Onibus.EST_CONEXAO=CONECTADO;
+	   	simpliciti_msg[0] = ED_READY_2_RECEIVE;
+  		simpliciti_msg[1] = Onibus.id_bus[0];
+  		simpliciti_msg[2] = Onibus.id_bus[1];
+	 	break;
+	 case CONECTADO:
+		Onibus.EST_CONEXAO=ON;
+	   	simpliciti_msg[0] = ED_READY_2_RECEIVE;
+  		simpliciti_msg[1] = Onibus.id_bus[0];
+  		simpliciti_msg[2] = Onibus.id_bus[1];
+		break;
+	 case ON:
+	   	simpliciti_msg[0] = ED_READY_2_RECEIVE;
+	  	simpliciti_msg[1] = Onibus.id_bus[0];
+	  	simpliciti_msg[2] = Onibus.id_bus[1];
+	  	break;
+	}
 }
-

@@ -136,9 +136,7 @@ static void linkTo()
   
   // sleep until button press... 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
-
-  Onibus.EST_CONEXAO = CONECTED;
-  
+ 
   //ReportEventUart (char simpliciti_msg[], unsigned char tamanho, BUS_CHEGOU);
 	
   // Implementar metodo de escuta. Esperar pelo Access Point
@@ -198,8 +196,8 @@ static void linkTo()
 			// Check if a command packet was received
 			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
 			{
-				//TrataMsgSimpliciti(simpliciti_msg, len, RECEBEU_BARCODE);
-				ReportEventUart(simpliciti_msg, len, RECEBEU_BARCODE);
+				TrataMsgSimpliciti(simpliciti_msg, len, RECEBEU_BARCODE);
+				//ReportEventUart(simpliciti_msg, len, RECEBEU_BARCODE);
 				
 				ed_send_request=0;
 				done = 1;
