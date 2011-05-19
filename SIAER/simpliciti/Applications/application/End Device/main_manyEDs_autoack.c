@@ -51,7 +51,7 @@ static void linkTo(void);
 static uint8_t  sTid = 0;
 static linkID_t sLinkID1 = 0;
 
-volatile uint8_t ed_send_request = 0;
+volatile char ed_send_request = 0;
 
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)

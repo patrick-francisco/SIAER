@@ -7,8 +7,6 @@
 
 // *************************************************************************************************
 // Prototypes section
-extern void MontaBusMsg (char funcid);
-extern void MontaTslMsg (char funcid, char mensagem_recebida[]);
 extern void TrataMsg(char* msg);
 
 extern void AddBarcodeBuffer(char* msg);
@@ -33,18 +31,16 @@ extern void Encode_siaer_data_onibus(void);
 #define SIAER_DATA_SIZE 20
 #define BUFFER_SIZE 9
 
-#define NOT_TXED              0x80
-#define TXED                  0x40
-#define IS_IN_BUS             0x20
-#define BUF_STATUS_POS        0
-#define IS_NOT_IN_BUS         0x00  
-#define TX_BARCODE_BUF_SIZE 10
-
 #define TRUE        0xFF
 #define FALSE       0x00
 
 #define INIT_BUS    0x01
 #define INIT_GUI    0x02
+
+#define BUF_STATUS_POS 0
+#define NOT_TXED  0x80
+#define TX_BARCODE_BUF_SIZE 10 
+
 
 //estrutura básica de frame uart/wi
 #define PKT_OFF         1 //offset pelo byte[0]=28

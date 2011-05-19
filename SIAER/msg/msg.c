@@ -4,7 +4,6 @@
 // *************************************************************************************************
 // Prototypes section
 void TrataMsg(char* msg);
-void MontaBusMsg (char funcid);
 void TrataMsgSimpliciti(char tipo);
 void ReportEventUart (char tipo);
 void Encode_siaer_data_guiche();
@@ -17,10 +16,13 @@ void Encode_siaer_data_onibus();
 // Global Variable section
 struct BUS Onibus;
 struct GUICHE Guiche;
+
 struct siaer_frame msg;
 unsigned char simpliciti_msg[RF_MSG_SIZE];
+
 char SRC[2]={0x00,0x00};
 char DST[2]={0x00,0x00};
+
 unsigned char simpliciti_ed_address[];
 struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
 
@@ -29,15 +31,20 @@ struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
 void InitBusGuiche() //todo mundo nulo 
 {
     int i=0;
+
+	DST[0]=1;
+	DST[0]=0;
     for (i=0;i<2;i++)
     {
-        Onibus.id_bus[i]=0x00;
-        Guiche.cidade[i]=0x00;
-        Onibus.ativo=0x00;
-        Guiche.cidade[i]=0x00;
+        Onibus.id_bus[i]=0;
+        Guiche.cidade[i]=0;
+        Onibus.ativo=0;
+        Guiche.cidade[i]=0;
     }
     for (i=0;i<7;i++)
-      Onibus.placa[i]=0x00;
+    {
+      Onibus.placa[i]=0;
+    }
     Onibus.EST_CONEXAO=OFF;
 }
 
@@ -64,7 +71,10 @@ void set_bus_guiche(char *msg)
           Onibus.placa[i]=msg[i+8];
         }
        
-     //   main_end_device();
+	   #ifdef END_DEVICE
+	   	//main_end_device();
+	   #endif
+
         break;
         
       case INIT_GUI:
@@ -73,8 +83,11 @@ void set_bus_guiche(char *msg)
         Guiche.cidade[1]=msg[7];
         SRC[0]=Guiche.cidade[0];
         SRC[1]=Guiche.cidade[1];
-       
-        main_access_point();
+   
+	   #ifdef ACCESS_POINT
+	   	main_access_point();
+	   #endif
+
         break;
     }
 }

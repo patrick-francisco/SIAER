@@ -10,7 +10,7 @@ void Timer1_Init(void);
 void Timer1_Start(void);
 void Timer1_Stop(void);
 
-extern volatile uint8_t ed_send_request;
+extern volatile char ed_send_request;
 
 // *************************************************************************************************
 // Defines section
