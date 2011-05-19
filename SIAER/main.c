@@ -63,7 +63,7 @@ void main (void)
    
   // TrataMsg(teste);
    #ifdef END_DEVICE
-   //main_end_device();
+   main_end_device();
    
    #elif ACCESS_POINT
    main_access_point();
