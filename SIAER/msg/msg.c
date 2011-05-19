@@ -318,6 +318,10 @@ void Encode_siaer_data_guiche(char mensagem_recebida[])
 	        break;
           }
 	 }
+	 simpliciti_msg[1] = 1;
+     simpliciti_msg[2] = 3;
+     simpliciti_msg[3] = 2;
+     simpliciti_msg[4] = 0;
 }
 
 // *************************************************************************************************
