@@ -17,13 +17,25 @@
 <stringAttribute key="com.ti.ccstudio.debug.core.DISPLAY_NAME_FORMAT" value="SIAER [Central - Access Point] - {0}"/>
 <stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_OPTION" value="full"/>
 <stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList/&gt;&#13;&#10;"/>
+<<<<<<< HEAD
 <stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="C:\Users\Patrick\SIAER\SIAER\Central - Access Point\SIAER.out"/>
 <stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;C:\Users\Patrick\SIAER\SIAER\Onibus - End Device\SIAER.out&quot; time=&quot;Mon May 09 17:17:51 ACT 2011&quot; time_long=&quot;1304979471052&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\Onibus - End Device\SIAER.out&quot; time=&quot;Wed May 18 13:42:31 ACT 2011&quot; time_long=&quot;1305744151125&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Users\Patrick\SIAER\SIAER\Central - Access Point\SIAER.out&quot; time=&quot;Wed May 18 14:08:58 ACT 2011&quot; time_long=&quot;1305745738657&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
 <stringAttribute key="CCEDebugOptions.CPU_NAME" value="TI MSP430 USB1/MSP430"/>
+=======
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\Onibus - End Device\SIAER.out"/>
+>>>>>>> 99defdb150b9febbdcc33d2e16c9649523e19074
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="SIAER"/>
-<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
+<stringAttribute key="CCEDebugOptions.CPU_NAME" value="TI MSP430 USB1/MSP430"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;C:\Users\Patrick\SIAER\SIAER\Onibus - End Device\SIAER.out&quot; time=&quot;Mon May 09 19:17:51 BRT 2011&quot; time_long=&quot;1304979471052&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Users\Patrick\SIAER\SIAER\Central - Access Point\SIAER.out&quot; time=&quot;Tue May 17 18:22:01 BRT 2011&quot; time_long=&quot;1305667321406&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\Onibus - End Device\SIAER.out&quot; time=&quot;Wed May 18 16:09:00 BRT 2011&quot; time_long=&quot;1305745740906&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
 <booleanAttribute key="CCEDebugOptions.FORBID_DEVICE_MODIFICATION" value="true"/>
+<<<<<<< HEAD
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Central - Access Point/SIAER.out"/>
 <stringAttribute key="com.ti.ccstudio.debug.core.BUILD_CONFIGURATION" value="Central - Access Point"/>
 <stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_FILE" value="C:\Users\Patrick\SIAER\SIAER\CC430F6137.ccxml"/>
+=======
+<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Onibus - End Device/SIAER.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.BUILD_CONFIGURATION" value="Onibus - End Device"/>
+<stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_FILE" value="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\CC430F6137.ccxml"/>
+>>>>>>> 99defdb150b9febbdcc33d2e16c9649523e19074
 </launchConfiguration>
