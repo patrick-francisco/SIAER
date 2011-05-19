@@ -1,7 +1,6 @@
 --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\End_Device\smpl_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat" 
 -vmspx 
 -g 
--O2 
 --define=__CCE__ --define=END_DEVICE --define=MRFI_CC430 --define=__CC430F6137__ 
 --diag_warning=225 
 --printf_support=minimal 

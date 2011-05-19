@@ -148,11 +148,10 @@ all: SIAER.out
 SIAER.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Linker'
-	@echo 'Flags: --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\End_Device\smpl_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat"  -vmspx -g -O2 --define=__CCE__ --define=END_DEVICE --define=MRFI_CC430 --define=__CC430F6137__ --diag_warning=225 --printf_support=minimal -z -m"SIAER.map" --stack_size=80 --heap_size=80 --use_hw_mpy=F5 --warn_sections -i"C:/Arquivos de programas/Texas Instruments/ccsv4/msp430/include" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/lib" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/include" --reread_libs --rom_model'
+	@echo 'Flags: --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\End_Device\smpl_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat"  -vmspx -g --define=__CCE__ --define=END_DEVICE --define=MRFI_CC430 --define=__CC430F6137__ --diag_warning=225 --printf_support=minimal -z -m"SIAER.map" --stack_size=80 --heap_size=80 --use_hw_mpy=F5 --warn_sections -i"C:/Arquivos de programas/Texas Instruments/ccsv4/msp430/include" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/lib" -i"C:/Arquivos de programas/Texas Instruments/ccsv4/tools/compiler/msp430/include" --reread_libs --rom_model'
 	$(shell echo --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\End_Device\smpl_config.dat" --cmd_file="C:\Documents and Settings\Patrick\Meus documentos\SIAER\SIAER\simpliciti\Applications\configuration\smpl_nwk_config.dat" > "ccsLinker.opt")
 	$(shell echo -vmspx >> "ccsLinker.opt")
 	$(shell echo -g >> "ccsLinker.opt")
-	$(shell echo -O2 >> "ccsLinker.opt")
 	$(shell echo --define=__CCE__ --define=END_DEVICE --define=MRFI_CC430 --define=__CC430F6137__ >> "ccsLinker.opt")
 	$(shell echo --diag_warning=225 >> "ccsLinker.opt")
 	$(shell echo --printf_support=minimal >> "ccsLinker.opt")

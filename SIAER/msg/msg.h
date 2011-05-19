@@ -12,9 +12,9 @@ extern void MontaTslMsg (char funcid, char mensagem_recebida[]);
 extern void TrataMsg(char* msg);
 
 extern void AddBarcodeBuffer(char* msg);
-extern void ReportEvent (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void TrataMsgSimpliciti(unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void Encode_siaer_data_guiche(unsigned char mensagem_recebida[]);
+extern void ReportEvent (char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void Encode_siaer_data_guiche(char mensagem_recebida[]);
 extern void Encode_siaer_data_onibus(void);
 
 // *************************************************************************************************
@@ -22,10 +22,8 @@ extern void Encode_siaer_data_onibus(void);
 #define   CLEAR_SIAER_FRM_DATA(ptr)         int i;                          \
                                             for (i=0;i<SIAER_DATA_SIZE;i++) \
                                             ptr[i]=0x00;
-
 #define TRUE        0xFF
 #define FALSE       0x00
-
 
 #define ON  0xFF
 #define OFF 0x00

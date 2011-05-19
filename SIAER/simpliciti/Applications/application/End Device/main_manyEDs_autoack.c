@@ -55,7 +55,7 @@ static linkID_t sLinkID1 = 0;
 
 volatile uint8_t ed_send_request = 0;
 
-unsigned char simpliciti_msg[];
+char simpliciti_msg[];
 
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
@@ -157,12 +157,12 @@ static void linkTo()
         {
           // Montar a mensagem e enviar para o GUICHE
           // criar metodo com o bus id como polling
-         
-	      Encode_siaer_data_onibus();
+          Encode_siaer_data_onibus();
           if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
           {
             // Message acked. We're done. Toggle LED 1 to indicate ack received. 
             toggleLED(1);
+           	ed_send_request=0;
             break;
           }
           if (SMPL_NO_ACK == rc)
@@ -190,7 +190,7 @@ static void linkTo()
         {
 	        // Wait shortly for host reply
 			SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
-			//NWK_DELAY(10);
+			NWK_DELAY(10);
 	  	
 			// Check if a command packet was received
 			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)

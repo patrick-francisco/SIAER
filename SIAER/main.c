@@ -25,12 +25,6 @@ extern void Timer1_Init(void);
 extern void InitBusGuiche(void);
 void main (void)
 {
-	
-	simpliciti_msg[0]=0;
-	simpliciti_msg[1]=0;
-	simpliciti_msg[2]=0;
-	simpliciti_msg[3]=0;
-	simpliciti_msg[4]=0;
    //char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
@@ -63,7 +57,7 @@ void main (void)
    
   // TrataMsg(teste);
    #ifdef END_DEVICE
-   main_end_device();
+   //main_end_device();
    
    #elif ACCESS_POINT
    main_access_point();
