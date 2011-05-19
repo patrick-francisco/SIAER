@@ -15,6 +15,7 @@ extern void main_access_point(void);
 
 // 4 byte device address overrides device address set during compile time
 extern unsigned char simpliciti_ed_address[4];
-extern char simpliciti_msg[RF_MSG_SIZE];
+extern unsigned char simpliciti_msg[RF_MSG_SIZE];
 extern char ed_data[RF_MSG_SIZE];
+
 #endif /*SIMPLICITI_H_*/

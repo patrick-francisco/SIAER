@@ -46,16 +46,12 @@ void toggleLED(uint8_t);
 
 extern void Encode_siaer_data_onibus();
 
-extern void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo);
-
 static void linkTo(void);
 
 static uint8_t  sTid = 0;
 static linkID_t sLinkID1 = 0;
 
 volatile uint8_t ed_send_request = 0;
-
-char simpliciti_msg[];
 
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
@@ -195,8 +191,8 @@ static void linkTo()
 			// Check if a command packet was received
 			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
 			{
-				TrataMsgSimpliciti(simpliciti_msg, len, RECEBEU_BARCODE);
-				//ReportEventUart(simpliciti_msg, len, RECEBEU_BARCODE);
+				TrataMsgSimpliciti(RECEBEU_BARCODE);
+				//ReportEventUart(RECEBEU_BARCODE);
 				
 				ed_send_request=0;
 				done = 1;

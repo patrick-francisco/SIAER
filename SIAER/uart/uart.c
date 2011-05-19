@@ -1,7 +1,7 @@
 // *************************************************************************************************
 // Include section
 #include "includes.h"
-
+#include "uart.h"
 // *************************************************************************************************
 // Prototypes section
 
@@ -15,7 +15,7 @@ char ESTADO_RX_UART;
 char *buffer_uart_rx;
 int pos_buffer=0;
 int tamanho_buffer=0;
-char uart_msg[]={"\rUART: "};
+char uart_msg[] ={"\ruart: "};
 
 // *************************************************************************************************
 // Extern section

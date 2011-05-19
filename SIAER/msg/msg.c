@@ -1,16 +1,14 @@
 // *************************************************************************************************
 // Include section
-#include "includes.h"
-
+#include "msg.h"
 // *************************************************************************************************
 // Prototypes section
 void TrataMsg(char* msg);
 void MontaBusMsg (char funcid);
-void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho,char tipo);
-void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo);
-void Encode_siaer_data_guiche(char mensagem_recebida[]);
+void TrataMsgSimpliciti(char tipo);
+void ReportEventUart (char tipo);
+void Encode_siaer_data_guiche();
 void Encode_siaer_data_onibus();
-
 
 // *************************************************************************************************
 // Defines section
@@ -20,11 +18,11 @@ void Encode_siaer_data_onibus();
 struct BUS Onibus;
 struct GUICHE Guiche;
 struct siaer_frame msg;
+unsigned char simpliciti_msg[RF_MSG_SIZE];
 char SRC[2]={0x00,0x00};
 char DST[2]={0x00,0x00};
-
 unsigned char simpliciti_ed_address[];
-struct rf_buffer buffer_a_transmitir[];
+struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
 
 // *************************************************************************************************
 // Extern section
@@ -58,11 +56,15 @@ void set_bus_guiche(char *msg)
       case INIT_BUS:
         Onibus.ativo=TRUE;
         for (i=0;i<2;i++)
+        {
           Onibus.id_bus[i]=msg[i+6];
+        }
         for (i=0;i<8;i++)
+        {
           Onibus.placa[i]=msg[i+8];
+        }
        
-        main_end_device();
+     //   main_end_device();
         break;
         
       case INIT_GUI:
@@ -144,6 +146,7 @@ void MontaBusMsg (char funcid)
 // *************************************************************************************************
 void MontaTslMsg (char funcid, char mensagem_recebida[])
 {
+	/*
     int j,i=0;
     struct siaer_frame msg;
     msg.funcid=funcid;
@@ -172,8 +175,11 @@ void MontaTslMsg (char funcid, char mensagem_recebida[])
 		//msg.size = BARCODE_MSG_SIZE;
        
        for (j=1;j<TX_BARCODE_BUF_SIZE+1;j++)
+       {
          msg.data[j-1]=buffer_a_transmitir[i].buffer[j][0];
+       }
     }
+    */
 }
 
 // *************************************************************************************************
@@ -185,7 +191,7 @@ void MontaTslMsg (char funcid, char mensagem_recebida[])
 // @return 	none
 // *************************************************************************************************
 
-void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo)
+void ReportEventUart (char tipo)
 {
     int i;
     char msg[]="$123$";
@@ -206,16 +212,25 @@ void ReportEventUart (char simpliciti_msg[], unsigned char tamanho, char tipo)
               break;
               
             case RECEBEU_BARCODE:
+            //  msg2[1]=type;
+	        //  msg2[2]=SysTimeslots[timeslot].DST[0];
+	        //  msg2[3]=SysTimeslots[timeslot].DST[1];
+	        //  for (i=0;i<TX_BARCODE_BUF_SIZE+3;i++)
+	        //    msg2[i+4]=SysTimeslots[timeslot].buffer[i][0];
+	        //  msg2[4]&=0x3f;
+	        //  msg2[14]=0x24;
+	        //  TXString(msg2,15);
+             
               msg2[1]=tipo;
               msg2[2]=Onibus.DST[0];
               msg2[3]=Onibus.DST[1];
+              msg2[4]&=0x3f;
               for (i=0;i<TX_BARCODE_BUF_SIZE+4;i++)
-                msg2[i+4]=simpliciti_msg[5+i];
-              msg2[14]=0x24;
+                msg2[i+4]=simpliciti_msg[5+i];             
+			  msg2[14]=0x24;
               TXString(msg2,15); 
               break;
         }
-        
     }
 }
 
@@ -260,7 +275,7 @@ void AddBarcodeBuffer(char* msg)
 // @fn		AddBarcodeBuffer
 // @brief 	Somente para testes. Joga na uart o q receber via RF
 // *******************************************
-void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
+void TrataMsgSimpliciti(char tipo)
 {
     switch(simpliciti_msg[5]) //  funcid
     {
@@ -269,7 +284,7 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
           // implementar no codigo para primeira conexao
             Onibus.DST[0]=simpliciti_msg[1];  // src[0]
             Onibus.DST[1]=simpliciti_msg[2];  //msg_ptr->src[1];
-            ReportEventUart(simpliciti_msg, 0, BUS_CHEGOU);
+            ReportEventUart(BUS_CHEGOU);
             // Mandar ACK
         
         break;
@@ -282,7 +297,7 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
             if (simpliciti_msg[5] & TX_BARCODE)
             {
               // mandar via uart
-              ReportEventUart(simpliciti_msg, tamanho, RECEBEU_BARCODE);
+              ReportEventUart(RECEBEU_BARCODE);
               
               // mandar ack
               //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
@@ -297,12 +312,12 @@ void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo)
 // @brief 	Empacota os dados para serem enviados via RF pelo guiche
 // @param   tipo de mensagem recebida
 // ****************************************************
-void Encode_siaer_data_guiche(char mensagem_recebida[])
+void Encode_siaer_data_guiche()
 {
 	 char i,cont;
 	 for (i=0;i<CONEXOES_POSSIVEIS;i++)
 	 {
-        if (mensagem_recebida[2] == buffer_a_transmitir[i].DST[0] && mensagem_recebida[1]==buffer_a_transmitir[i].DST[1])
+        if (ed_data[2] == buffer_a_transmitir[i].DST[0] && ed_data[1]==buffer_a_transmitir[i].DST[1])
           {
           	// O que sera transmitido
      		simpliciti_msg[1] = buffer_a_transmitir[i].SRC[0];
@@ -322,6 +337,7 @@ void Encode_siaer_data_guiche(char mensagem_recebida[])
      simpliciti_msg[2] = 3;
      simpliciti_msg[3] = 2;
      simpliciti_msg[4] = 0;
+     
 }
 
 // *************************************************************************************************

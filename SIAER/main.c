@@ -1,7 +1,10 @@
 // *************************************************************************************************
 // Include section
 #include <string.h>
-#include "includes.h"
+//#include "includes.h"
+#include "msg.h"
+#include "uart.h"
+#include "timer.h"
 
 // *************************************************************************************************
 // Prototypes section
@@ -11,6 +14,7 @@
 
 // *************************************************************************************************
 // Global Variable section
+
 
 // *************************************************************************************************
 // Extern section
@@ -43,15 +47,15 @@ void main (void)
    
    // Inicializacao de variaveis globais
     ESTADO_RX_UART = RX_LIVRE;
+
    // Gerar endereco aleatorio para os end devices
-   simpliciti_ed_address[0] = rand();
-   simpliciti_ed_address[1] = rand();
-   simpliciti_ed_address[2] = rand();
-   simpliciti_ed_address[3] = rand();
+//   simpliciti_ed_address[0] = rand();
+//  simpliciti_ed_address[1] = rand();
+//   simpliciti_ed_address[2] = rand();
+//   simpliciti_ed_address[3] = rand();
 
    InitBusGuiche();
    Timer1_Init();
-  // Timer0_Stop();
    init_uart();
    //while (!BSP_BUTTON1());
    
@@ -60,9 +64,9 @@ void main (void)
    //main_end_device();
    
    #elif ACCESS_POINT
-   main_access_point();
+  // main_access_point();
    
-   #endif   
+   #endif
    while(1);
 }
 

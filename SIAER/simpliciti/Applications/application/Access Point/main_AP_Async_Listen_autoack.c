@@ -177,7 +177,7 @@ void main_access_point (void)
 	                    // usar um for pra achar o id no buffer
 	                    // transmitir o q der.
 	                    
-	                    Encode_siaer_data_guiche(ed_data);
+	                    Encode_siaer_data_guiche();
 	                    
 	                   	// Send reply packet to end device
 	                    SMPL_Send(sLID[i], simpliciti_msg, len);

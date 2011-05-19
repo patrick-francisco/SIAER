@@ -1,9 +1,6 @@
 #ifndef INCLUDES_H_
 #define INCLUDES_H_
 
-#include <string.h>
-#include <stdlib.h>
-
 #include "cc430x613x.h"
 #include "uart.h"
 #include "msg.h"
@@ -16,7 +13,6 @@
 #include "nwk_frame.h"
 #include "nwk.h"
 #include "simpliciti.h"
-
 
 // REMOVER TUDO ISSO ANTES DO FIM DO PROJETO
 #define INIT_BUS	    0x01

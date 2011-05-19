@@ -12,16 +12,13 @@ extern void MontaTslMsg (char funcid, char mensagem_recebida[]);
 extern void TrataMsg(char* msg);
 
 extern void AddBarcodeBuffer(char* msg);
-extern void ReportEvent (char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void TrataMsgSimpliciti(char simpliciti_msg[], unsigned char tamanho, char tipo);
-extern void Encode_siaer_data_guiche(char mensagem_recebida[]);
+extern void ReportEvent (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void TrataMsgSimpliciti(char tipo);
+extern void Encode_siaer_data_guiche(void);
 extern void Encode_siaer_data_onibus(void);
 
 // *************************************************************************************************
 // Defines section
-#define   CLEAR_SIAER_FRM_DATA(ptr)         int i;                          \
-                                            for (i=0;i<SIAER_DATA_SIZE;i++) \
-                                            ptr[i]=0x00;
 #define TRUE        0xFF
 #define FALSE       0x00
 
@@ -29,7 +26,7 @@ extern void Encode_siaer_data_onibus(void);
 #define OFF 0x00
 #define CONECTADO 0x01
 
-#define CONEXOES_POSSIVEIS  8
+#define CONEXOES_POSSIVEIS    8
 #define POLL_MSG_SIZE         8
 #define BAR_ACK_MSG_SIZE      7    
 
@@ -49,7 +46,6 @@ extern void Encode_siaer_data_onibus(void);
 #define INIT_BUS    0x01
 #define INIT_GUI    0x02
 
-
 //estrutura básica de frame uart/wi
 #define PKT_OFF         1 //offset pelo byte[0]=28
 #define SIZE            0
@@ -60,7 +56,6 @@ extern void Encode_siaer_data_onibus(void);
 #define FUNCID          5
 #define DATA            6
 #define HDR_SIZE        6
-
                                            
 // *************************************************************************************************
 // Global Variable section
@@ -82,7 +77,7 @@ struct GUICHE
 	char cidade[2];
 	char ativo;
 };
-extern struct GUICHE guiche;
+extern struct GUICHE Guiche;
 
 struct siaer_frame
 {
@@ -110,7 +105,6 @@ struct rf_buffer
        char buffer[TX_BARCODE_BUF_SIZE+1][BUFFER_SIZE];
        //BUFFER DA UART!
 };
-extern struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
 
 // *************************************************************************************************
 // Extern section
