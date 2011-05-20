@@ -64,7 +64,7 @@ void main (void)
    //main_end_device();
    
    #elif ACCESS_POINT
-  // main_access_point();
+   main_access_point();
    
    #endif
    while(1);
