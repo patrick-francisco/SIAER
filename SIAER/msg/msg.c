@@ -368,8 +368,10 @@ void Encode_siaer_data_guiche()
                 }
                 break;
     }*/
-	char i;
-	 char cont;
+
+	char j, k, i, cont;
+	char etwas_tx=FALSE;;
+	
 	 	switch(ed_data[5]) // funcid
 	 	{
 	 		// Achou um novo onibus. Atribuir um novo buffer a ele.
@@ -387,29 +389,55 @@ void Encode_siaer_data_guiche()
 				num_onibus_conectados++;
 		        break;
 		    
-		    case POLL2_ACK:
 				// Soh mantem a conexao
 				// for para cada onibus.
+		    case POLL2_ACK:
 				 for (i=0; i < num_onibus_conectados; i++)
 		          {
 		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
 		          	{
 						buffer_a_transmitir[i].TIMEOUT=0;
+						// verificar se tem algo para transmitir.
 		          	}
 		          }
 		        break;
 		        
 		    // Onibus recebeu o barcode. Verificar qual dentre eles no buffer e mandar mais caso necessario.            
 	        case TX_BARCODE_ACK:
-	          for (i=0; i<num_onibus_conectados; ++i)
+			 for (i=0; i < num_onibus_conectados; i++)
 	          {
-	             
+	          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2])) // verifica o destinatario correto 
+	          	{
+					if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]&TXED) // caso transmitiu com sucesso
+	                {
+	               		// manda resposta positiva pro programa do guiche
+	                    ReportEventUart(RECEBEU_BARCODE); 
+	                    
+	                	for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++) // zera o buffer
+	                	{
+	                 		buffer_a_transmitir[i].buffer[j][0]=0x00;
+	                	}
+	                    for (k=1;k<BUFFER_SIZE;k++) // copia o buffer 2 para o 1, o 3 para o 2...
+	                    {
+	                        for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
+	                     	{
+	                            buffer_a_transmitir[i].buffer[j][k-1]=buffer_a_transmitir[i].buffer[j][k];
+	                     	}  
+	                        if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][k]&NOT_TXED)
+	                        {
+	                        	// Ainda tem algo no buffer
+	                          	etwas_tx=TRUE;
+	                        }
+	                    }
+	                    if (etwas_tx==FALSE)
+	                    {
+	                      // Nao tem mais nada no buffer
+	                      //DisableTslProcess(timeslot,BARCODE_PROC);   
+	                    }
+	            	}
+	          	}
 	          }
-		        for (cont=1;i<TX_BARCODE_BUF_SIZE+1;i++)
-					{
-						// coloca o top da lista buffer na mensagem a ser enviada
-			 			simpliciti_msg[cont+5] = buffer_a_transmitir[i].buffer[cont][0];
-					}
+				       
 	           break;      
 	 }
 }

@@ -91,4 +91,5 @@ __interrupt void TIMER1_A0_ISR(void)
     // verificar se desconectou. 
     // organizar o buffer
     // decrementar o num de onibus conectados.
+    // buffer. estado conexao = OFF;
 }

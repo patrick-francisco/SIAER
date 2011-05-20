@@ -37,9 +37,10 @@ extern void Encode_siaer_data_onibus(void);
 #define INIT_BUS    0x01
 #define INIT_GUI    0x02
 
-#define BUF_STATUS_POS 0
-#define NOT_TXED  0x80
-#define TX_BARCODE_BUF_SIZE 10 
+#define BUF_STATUS_POS 		  0
+#define NOT_TXED              0x80
+#define TXED                  0x40
+#define TX_BARCODE_BUF_SIZE   10 
 
 
 //estrutura básica de frame uart/wi
