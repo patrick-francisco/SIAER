@@ -72,7 +72,7 @@ void set_bus_guiche(char *msg)
         }
        
 	   #ifdef END_DEVICE
-	   	//main_end_device();
+	   	main_end_device();
 	   #endif
 
         break;
