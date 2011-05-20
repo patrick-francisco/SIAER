@@ -49,6 +49,15 @@ void InitBusGuiche() //todo mundo nulo
       Onibus.placa[i]=0;
     }
     Onibus.EST_CONEXAO=OFF;
+    
+   /* for(i=0; i<CONEXOES_POSSIVEIS; i++)
+    {
+    	buffer_a_transmitir[i].EST_CONEXAO=OFF;
+    	for(j=0; j<CONEXOES_POSSIVEIS; j++)
+    	{	
+    		buffer_a_transmitir[i].buffer[j];	
+    	}
+    }*/
 }
 
 
@@ -275,7 +284,9 @@ void AddBarcodeBuffer(char* msg)
 	                {
 	                  buffer_a_transmitir[i].buffer[j][i]=msg[j-1+HDR_SIZE];
 	                }
-	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i]|=NOT_TXED;
+	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i] |= NOT_TXED;
+	                buffer_a_transmitir[i].ENVIAR_BUFFER = TRUE;
+	              // flag avisando q tem mensagem pra transmitir.
 	              //  EnableTslProcess(tsl,BARCODE_PROC);
 	                break;
 	            }
@@ -341,7 +352,7 @@ void Encode_siaer_data_guiche()
 		 		simpliciti_msg[5] = POLLING; // funcid
 
 		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[1]; // DST = ID DO BUS
-		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[2]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].DST[1] = ed_data[2]; // DST = ID DO BUS
 		 		buffer_a_transmitir[num_onibus_conectados].EST_CONEXAO = ON; 	// Buffer esta em uso. Sera livre qnd ocorrer desconexao.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
@@ -356,10 +367,32 @@ void Encode_siaer_data_guiche()
 		          {
 		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
 		          	{
-						buffer_a_transmitir[i].TIMEOUT=0;
-						ReportEventUart(BUS_CHEGOU,i);
-						// verificar se tem algo para transmitir.
-		          	}
+		          		buffer_a_transmitir[i].TIMEOUT=0;
+		          		
+		          		// Se ha algo no buffer, enviar.				    	
+						if( buffer_a_transmitir[i].ENVIAR_BUFFER == TRUE)
+						{
+							simpliciti_msg[0] = 16;
+      						simpliciti_msg[1] = Guiche.cidade[0]; // source
+      						simpliciti_msg[2] = Guiche.cidade[1]; // source
+      						
+      						simpliciti_msg[3] = buffer_a_transmitir[i].DST[0]; // source
+      						simpliciti_msg[4] = buffer_a_transmitir[i].DST[1]; // source
+      						simpliciti_msg[5] = (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0])&0x7F; // source
+
+       						for (j=1; j<TX_BARCODE_BUF_SIZE+1; j++)
+       						{
+       							simpliciti_msg[j+5] = buffer_a_transmitir[i].buffer[j][0];
+       						}
+							// carregar dados a serem enviados
+							buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]&=0x7F;
+    						buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]|=TXED;
+						}
+						else
+						{
+							ReportEventUart(BUS_CHEGOU,i);
+						}
+					}
 		          }
 		        break;
 		        

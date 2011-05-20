@@ -97,6 +97,7 @@ struct processo
 struct rf_buffer
 {
        char EST_CONEXAO;
+       char ENVIAR_BUFFER;
        char TIMEOUT; // conta a cada segunda e zera a cada mensagem recebida. Ao chegar a um valor maximo, reconhece que o onibus partiu.
        char SRC[2];
        char DST[2];
