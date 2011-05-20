@@ -27,6 +27,7 @@ char DST[2]={0x00,0x00};
 
 unsigned char simpliciti_ed_address[];
 struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
+char num_onibus_conectados=0;
 
 // *************************************************************************************************
 // Extern section
@@ -367,25 +368,43 @@ void Encode_siaer_data_guiche()
                 }
                 break;
     }*/
-	char i=0;
+	char i;
 	 char cont;
 	 	switch(ed_data[5]) // funcid
 	 	{
+	 		// Achou um novo onibus. Atribuir um novo buffer a ele.
 	 		 case POLL_ACK:
 		 		// O que sera transmitido
 		 		simpliciti_msg[1] = Guiche.cidade[0]; // SRC
 		 		simpliciti_msg[2] = Guiche.cidade[1];
 		 		simpliciti_msg[5] = POLLING; // funcid
 
-		 		buffer_a_transmitir[i].DST[0] = ed_data[1]; //dst
-		 		buffer_a_transmitir[i].DST[0] = ed_data[2];
-		 		buffer_a_transmitir[i].EST_CONEXAO = ON;
-		 		buffer_a_transmitir[i].SRC[0]=Guiche.cidade[0];
-		 		buffer_a_transmitir[i].SRC[1]=Guiche.cidade[1];
-
+		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[1]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[2]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].EST_CONEXAO = ON; 	// Buffer esta em uso. Sera livre qnd ocorrer desconexao.
+		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
+		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
+				num_onibus_conectados++;
 		        break;
-		                
+		    
+		    case POLL2_ACK:
+				// Soh mantem a conexao
+				// for para cada onibus.
+				 for (i=0; i < num_onibus_conectados; i++)
+		          {
+		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
+		          	{
+						buffer_a_transmitir[i].TIMEOUT=0;
+		          	}
+		          }
+		        break;
+		        
+		    // Onibus recebeu o barcode. Verificar qual dentre eles no buffer e mandar mais caso necessario.            
 	        case TX_BARCODE_ACK:
+	          for (i=0; i<num_onibus_conectados; ++i)
+	          {
+	             
+	          }
 		        for (cont=1;i<TX_BARCODE_BUF_SIZE+1;i++)
 					{
 						// coloca o top da lista buffer na mensagem a ser enviada

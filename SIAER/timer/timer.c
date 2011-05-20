@@ -85,4 +85,10 @@ __interrupt void TIMER1_A0_ISR(void)
     TA1CCTL0 |= CCIE;
 	
     ed_send_request = 1;
+    
+    //
+    // incrementar todos os timeouts dos buffers.
+    // verificar se desconectou. 
+    // organizar o buffer
+    // decrementar o num de onibus conectados.
 }
