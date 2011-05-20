@@ -297,8 +297,8 @@ void TrataMsgSimpliciti(char tipo)
       case POLLING:
           // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
           // implementar no codigo para primeira conexao
-            Onibus.DST[0]=simpliciti_msg[3];  // src[0]
-            Onibus.DST[1]=simpliciti_msg[4];  //msg_ptr->src[1];
+            Onibus.DST[0]=simpliciti_msg[1];  // src[0]
+            Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
             ReportEventUart(BUS_CHEGOU);
             // Mandar ACK
         
