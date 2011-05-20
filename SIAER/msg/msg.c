@@ -341,7 +341,7 @@ void Encode_siaer_data_guiche()
 		 		simpliciti_msg[5] = POLLING; // funcid
 
 		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[1]; // DST = ID DO BUS
-		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[2]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].DST[1] = ed_data[2]; // DST = ID DO BUS
 		 		buffer_a_transmitir[num_onibus_conectados].EST_CONEXAO = ON; 	// Buffer esta em uso. Sera livre qnd ocorrer desconexao.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
