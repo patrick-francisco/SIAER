@@ -10,7 +10,7 @@
 extern void TrataMsg(char* msg);
 
 extern void AddBarcodeBuffer(char* msg);
-extern void ReportEvent (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void ReportEventUart (char tipo, char id_onibus);
 extern void TrataMsgSimpliciti(char tipo);
 extern void Encode_siaer_data_guiche(void);
 extern void Encode_siaer_data_onibus(void);
@@ -23,6 +23,7 @@ extern void Encode_siaer_data_onibus(void);
 #define ON  0xFF
 #define OFF 0x00
 #define CONECTADO 0x01
+#define ACK_BARCODE 0xBB
 
 #define CONEXOES_POSSIVEIS    8
 #define POLL_MSG_SIZE         8
