@@ -10,7 +10,7 @@
 extern void TrataMsg(char* msg);
 
 extern void AddBarcodeBuffer(char* msg);
-extern void ReportEvent (unsigned char simpliciti_msg[], unsigned char tamanho, char tipo);
+extern void ReportEventUart (char tipo, char id_onibus);
 extern void TrataMsgSimpliciti(char tipo);
 extern void Encode_siaer_data_guiche(void);
 extern void Encode_siaer_data_onibus(void);
@@ -23,6 +23,7 @@ extern void Encode_siaer_data_onibus(void);
 #define ON  0xFF
 #define OFF 0x00
 #define CONECTADO 0x01
+#define ACK_BARCODE 0xBB
 
 #define CONEXOES_POSSIVEIS    8
 #define POLL_MSG_SIZE         8
@@ -37,9 +38,10 @@ extern void Encode_siaer_data_onibus(void);
 #define INIT_BUS    0x01
 #define INIT_GUI    0x02
 
-#define BUF_STATUS_POS 0
-#define NOT_TXED  0x80
-#define TX_BARCODE_BUF_SIZE 10 
+#define BUF_STATUS_POS 		  0
+#define NOT_TXED              0x80
+#define TXED                  0x40
+#define TX_BARCODE_BUF_SIZE   10 
 
 
 //estrutura básica de frame uart/wi
@@ -95,6 +97,7 @@ struct processo
 struct rf_buffer
 {
        char EST_CONEXAO;
+       char TIMEOUT; // conta a cada segunda e zera a cada mensagem recebida. Ao chegar a um valor maximo, reconhece que o onibus partiu.
        char SRC[2];
        char DST[2];
        char funcid;
@@ -102,6 +105,8 @@ struct rf_buffer
        //BUFFER DA UART!
 };
 
+
+extern char num_onibus_conectados;
 // *************************************************************************************************
 // Extern section
 #endif

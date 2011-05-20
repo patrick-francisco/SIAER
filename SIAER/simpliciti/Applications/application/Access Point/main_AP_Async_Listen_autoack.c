@@ -78,7 +78,7 @@ static uint8_t sChannel = 0;
 
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
-char ed_data[RF_MSG_SIZE];
+unsigned char ed_data[RF_MSG_SIZE];
 /*     ************** END interference detection support                       */
 
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)

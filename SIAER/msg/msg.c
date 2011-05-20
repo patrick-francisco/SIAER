@@ -5,7 +5,7 @@
 // Prototypes section
 void TrataMsg(char* msg);
 void TrataMsgSimpliciti(char tipo);
-void ReportEventUart (char tipo);
+void ReportEventUart (char tipo, char id_onibus);
 void Encode_siaer_data_guiche();
 void Encode_siaer_data_onibus();
 
@@ -27,6 +27,7 @@ char DST[2]={0x00,0x00};
 
 unsigned char simpliciti_ed_address[];
 struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
+char num_onibus_conectados=0;
 
 // *************************************************************************************************
 // Extern section
@@ -161,40 +162,7 @@ void MontaBusMsg (char funcid)
 // *************************************************************************************************
 void MontaTslMsg (char funcid, char mensagem_recebida[])
 {
-	/*
-    int j,i=0;
-    struct siaer_frame msg;
-    msg.funcid=funcid;
-    msg.src[0]=buffer_a_transmitir[i].SRC[0];
-    msg.src[1]=buffer_a_transmitir[i].SRC[1];
-    
-    msg.size = POLL_MSG_SIZE;
-    msg.data[0]=msg.src[0];
-    msg.data[1]=msg.src[1];
-    if (funcid==POLLING)
-    {
-       msg.dst[0]=0x00;
-       msg.dst[1]=0x00;
-    }
-    if (funcid==POLLING2)
-    {
-       msg.dst[0]=buffer_a_transmitir[i].DST[0];
-       msg.dst[1]=buffer_a_transmitir[i].DST[1];
-    }
-    if (funcid&TX_BARCODE)
-    {
-       msg.funcid=(buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0])&0x7F;
-       msg.dst[0]=buffer_a_transmitir[i].DST[0];
-       msg.dst[1]=buffer_a_transmitir[i].DST[1];
-       
-		//msg.size = BARCODE_MSG_SIZE;
-       
-       for (j=1;j<TX_BARCODE_BUF_SIZE+1;j++)
-       {
-         msg.data[j-1]=buffer_a_transmitir[i].buffer[j][0];
-       }
-    }
-    */
+
 }
 
 // *************************************************************************************************
@@ -206,17 +174,52 @@ void MontaTslMsg (char funcid, char mensagem_recebida[])
 // @return 	none
 // *************************************************************************************************
 
-void ReportEventUart (char tipo)
+void ReportEventUart (char tipo, char id_onibus)
 {
     int i;
     char msg[]="$123$";
     char msg2[]="$SS12345678$";
+	
+	if (Guiche.ativo==TRUE)
+	{
+	    switch (tipo)
+	    {
+	        case BUS_CHEGOU:
+	        case BUS_PARTIU:
+	          msg[0]=0x24;
+	          msg[1]=tipo;
+	          msg[2]=buffer_a_transmitir[id_onibus].DST[0];
+	          msg[3]=buffer_a_transmitir[id_onibus].DST[1];
+	          msg[4]=0x24;
+	          TXString(msg,5);
+	          break;
+	        case RECEBEU_BARCODE:
+	          msg2[0]=0x24;
+	          msg2[1]=tipo;
+	          msg2[2]=buffer_a_transmitir[id_onibus].DST[0];
+	          msg2[3]=buffer_a_transmitir[id_onibus].DST[1];
+	          for (i=0;i<TX_BARCODE_BUF_SIZE+5;i++)
+	            msg2[i+4]=buffer_a_transmitir[id_onibus].buffer[i][0];
+	          msg2[4]&=0x3f;
+	          TXString(msg2,15);
+	          break;
+	    }
+	}
 
     if (Onibus.ativo==TRUE)
     {
         switch(tipo)
         {
             case BUS_CHEGOU:
+   			msg[0]=0x24;
+            msg[1]=tipo;
+            msg[2]=Onibus.DST[0];
+            msg[3]=Onibus.DST[1];
+            msg[4]=0x24;
+            TXString(msg,5);
+            Onibus.EST_CONEXAO = CONECTADO;
+ 			break;          
+ 			 
             case BUS_PARTIU:
               msg[0]=0x24;
               msg[1]=tipo;
@@ -224,26 +227,21 @@ void ReportEventUart (char tipo)
               msg[3]=Onibus.DST[1];
               msg[4]=0x24;
               TXString(msg,5);
+              Onibus.EST_CONEXAO = OFF;
               break;
               
             case RECEBEU_BARCODE:
-            //  msg2[1]=type;
-	        //  msg2[2]=SysTimeslots[timeslot].DST[0];
-	        //  msg2[3]=SysTimeslots[timeslot].DST[1];
-	        //  for (i=0;i<TX_BARCODE_BUF_SIZE+3;i++)
-	        //    msg2[i+4]=SysTimeslots[timeslot].buffer[i][0];
-	        //  msg2[4]&=0x3f;
-	        //  msg2[14]=0x24;
-	        //  TXString(msg2,15);
-             
               msg2[1]=tipo;
               msg2[2]=Onibus.DST[0];
               msg2[3]=Onibus.DST[1];
               msg2[4]&=0x3f;
               for (i=0;i<TX_BARCODE_BUF_SIZE+4;i++)
+              {
                 msg2[i+4]=simpliciti_msg[5+i];             
-			  msg2[14]=0x24;
+              }
+			  //msg2[14]=0x24;
               TXString(msg2,15); 
+              Onibus.EST_CONEXAO = ACK_BARCODE;
               break;
         }
     }
@@ -299,7 +297,8 @@ void TrataMsgSimpliciti(char tipo)
           // implementar no codigo para primeira conexao
             Onibus.DST[0]=simpliciti_msg[1];  // src[0]
             Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
-            ReportEventUart(BUS_CHEGOU);
+            ReportEventUart(BUS_CHEGOU,NULL);
+            Onibus.EST_CONEXAO = CONECTADO;
             // Mandar ACK
         
         break;
@@ -312,8 +311,8 @@ void TrataMsgSimpliciti(char tipo)
             if (simpliciti_msg[5] & TX_BARCODE)
             {
               // mandar via uart
-              ReportEventUart(RECEBEU_BARCODE);
-              
+              ReportEventUart(RECEBEU_BARCODE,NULL);
+              Onibus.EST_CONEXAO = ACK_BARCODE;
               // mandar ack
               //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
               // bar_ack.data[0]=msg_ptr->funcid&0x3F;
@@ -329,69 +328,77 @@ void TrataMsgSimpliciti(char tipo)
 // ****************************************************
 void Encode_siaer_data_guiche()
 {
-	/* 
-       switch(msg_ptr->funcid)
-        {
-            case POLL_ACK:
-                SysTimeslots[timeslot].DST[0]=msg_ptr->src[0];
-                SysTimeslots[timeslot].DST[1]=msg_ptr->src[1];
-                SysTimeslots[timeslot].list_processos[POL_PROC].estado=ESTADO_2;
-                break;
-            case POLL2_ACK:
-                //if (SysTimeslots[timeslot].SRC[0]==msg_ptr->dst[0] && SysTimeslots[timeslot].SRC[1]==msg_ptr->dst[1])
-                if (IS_MSG_FOR_ME_GUICHE(msg_ptr,timeslot))
-                {
-                   SysTimeslots[timeslot].list_processos[POL2_PROC].estado=ESTADO_2;                   
-                }
-                break;
-        case TX_BARCODE_ACK:
-                if (SysTimeslots[timeslot].buffer[BUF_STATUS_POS][0]&TXED)
-                {
-                    ReportEvent(BARCODE_REC,timeslot,NULL);
-                    
-                    for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
-                     SysTimeslots[timeslot].buffer[j][0]=0x00;
-                    
-                    for (i=1;i<BUFFER_SIZE;i++)
-                    {
-                        for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
-                            SysTimeslots[timeslot].buffer[j][i-1]=SysTimeslots[timeslot].buffer[j][i];
-                        
-                        if (SysTimeslots[timeslot].buffer[BUF_STATUS_POS][i]&NOT_TXED)
-                        {
-                          etwas_tx=TRUE;
-                        }
-                    }
-                    if (etwas_tx==FALSE)
-                      DisableTslProcess(timeslot,BARCODE_PROC);   
-                }
-                break;
-    }*/
-	char i=0;
-	 char cont;
+	char j, k, i;
+	char etwas_tx=FALSE;;
+	
 	 	switch(ed_data[5]) // funcid
 	 	{
+	 		// Achou um novo onibus. Atribuir um novo buffer a ele.
 	 		 case POLL_ACK:
 		 		// O que sera transmitido
 		 		simpliciti_msg[1] = Guiche.cidade[0]; // SRC
 		 		simpliciti_msg[2] = Guiche.cidade[1];
 		 		simpliciti_msg[5] = POLLING; // funcid
 
-		 		buffer_a_transmitir[i].DST[0] = ed_data[1]; //dst
-		 		buffer_a_transmitir[i].DST[0] = ed_data[2];
-		 		buffer_a_transmitir[i].EST_CONEXAO = ON;
-		 		buffer_a_transmitir[i].SRC[0]=Guiche.cidade[0];
-		 		buffer_a_transmitir[i].SRC[1]=Guiche.cidade[1];
-
+		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[1]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].DST[0] = ed_data[2]; // DST = ID DO BUS
+		 		buffer_a_transmitir[num_onibus_conectados].EST_CONEXAO = ON; 	// Buffer esta em uso. Sera livre qnd ocorrer desconexao.
+		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
+		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
+				num_onibus_conectados++;
+				
 		        break;
-		                
+		    
+				// Soh mantem a conexao
+				// for para cada onibus.
+		    case POLL2_ACK:
+				 for (i=0; i < num_onibus_conectados; i++)
+		          {
+		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
+		          	{
+						buffer_a_transmitir[i].TIMEOUT=0;
+						ReportEventUart(BUS_CHEGOU,i);
+						// verificar se tem algo para transmitir.
+		          	}
+		          }
+		        break;
+		        
+		    // Onibus recebeu o barcode. Verificar qual dentre eles no buffer e mandar mais caso necessario.            
 	        case TX_BARCODE_ACK:
-		        for (cont=1;i<TX_BARCODE_BUF_SIZE+1;i++)
-					{
-						// coloca o top da lista buffer na mensagem a ser enviada
-			 			simpliciti_msg[cont+5] = buffer_a_transmitir[i].buffer[cont][0];
-					}
-	           break;      
+			 for (i=0; i < num_onibus_conectados; i++)
+	          {
+	          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2])) // verifica o destinatario correto 
+	          	{
+					if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]&TXED) // caso transmitiu com sucesso
+	                {
+	               		// manda resposta positiva pro programa do guiche
+	                    ReportEventUart(RECEBEU_BARCODE,i); 
+	                    
+	                	for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++) // zera o buffer
+	                	{
+	                 		buffer_a_transmitir[i].buffer[j][0]=0x00;
+	                	}
+	                    for (k=1;k<BUFFER_SIZE;k++) // copia o buffer 2 para o 1, o 3 para o 2...
+	                    {
+	                        for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
+	                     	{
+	                            buffer_a_transmitir[i].buffer[j][k-1]=buffer_a_transmitir[i].buffer[j][k];
+	                     	}
+	                        if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][k]&NOT_TXED)
+	                        {
+	                        	// Ainda tem algo no buffer
+	                          	etwas_tx=TRUE;
+	                        }
+	                    }
+	                    if (etwas_tx==FALSE)
+	                    {
+	                      // Nao tem mais nada no buffer
+	                      //DisableTslProcess(timeslot,BARCODE_PROC);   
+	                    }
+	            	}
+	          	}
+	          }
+	         break;      
 	 }
 }
 // *************************************************************************************************
@@ -401,16 +408,35 @@ void Encode_siaer_data_guiche()
 // ****************************************************
 void Encode_siaer_data_onibus()
 {
-	//switch(Onibus.EST_CONEXAO)
-	//{
-	   	simpliciti_msg[0] = ED_READY_2_RECEIVE;
-	   	
-  		simpliciti_msg[1] = Onibus.id_bus[0]; // src 0
-  		simpliciti_msg[2] = Onibus.id_bus[1]; // src 1
-	 	
-	 	simpliciti_msg[3] = 0; // dst 0 
-  		simpliciti_msg[4] = 0; // dst 1
-	 	simpliciti_msg[5] = POLL_ACK;
-	 
+	switch(Onibus.EST_CONEXAO)
+	{
+		case OFF:
+		   	simpliciti_msg[0] = ED_READY_2_RECEIVE;
+	  		simpliciti_msg[1] = Onibus.id_bus[0]; // src 0
+	  		simpliciti_msg[2] = Onibus.id_bus[1]; // src 1
+		 	simpliciti_msg[3] = 0; // dst 0 
+	  		simpliciti_msg[4] = 0; // dst 1
+		 	simpliciti_msg[5] = POLL_ACK;
+			break;
 	
+		case CONECTADO:
+			// fazer poll 2
+		 	simpliciti_msg[0] = ED_READY_2_RECEIVE;
+	  		simpliciti_msg[1] = Onibus.id_bus[0]; // src 0
+	  		simpliciti_msg[2] = Onibus.id_bus[1]; // src 1
+		 	simpliciti_msg[3] = 0; // dst 0 
+	  		simpliciti_msg[4] = 0; // dst 1
+		 	simpliciti_msg[5] = POLL2_ACK;
+		break;
+		
+		case ACK_BARCODE:
+			// montar mensagem de ack
+			simpliciti_msg[0] = ED_READY_2_RECEIVE;
+	  		simpliciti_msg[1] = Onibus.id_bus[0]; // src 0
+	  		simpliciti_msg[2] = Onibus.id_bus[1]; // src 1
+		 	simpliciti_msg[3] = 0; // dst 0 
+	  		simpliciti_msg[4] = 0; // dst 1
+		 	simpliciti_msg[5] = TX_BARCODE_ACK;
+		break;
+	}
 }

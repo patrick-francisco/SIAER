@@ -58,7 +58,7 @@
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/smpl_nwk_config.dat}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/Access_Point/smpl_config.dat}&quot;"/>
 </option>
-<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release.681330917" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL._none" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release.681330917" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.0" valueType="enumerated"/>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.732817433" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.1268417956" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="80" valueType="string"/>
@@ -177,7 +177,6 @@
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/End_Device/smpl_config.dat}&quot;"/>
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/smpl_nwk_config.dat}&quot;"/>
 </option>
-<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release.1353436444" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL._none" valueType="enumerated"/>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.1983905884" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.1548588813" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="80" valueType="string"/>
@@ -238,7 +237,7 @@
 <resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305./SIAER/uart/uart.c" name="uart.c" rcbsApplicability="disable" resourcePath="/SIAER/uart/uart.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.1532611394">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.1532611394" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406"/>
 </resourceConfiguration>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305./SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c" name="main_AP_Async_Listen_autoack.c" rcbsApplicability="disable" resourcePath="/SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406./SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c">
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305./SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c" name="main_AP_Async_Listen_autoack.c" rcbsApplicability="disable" resourcePath="/SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406./SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406./SIAER/simpliciti/Applications/application/Access Point/main_AP_Async_Listen_autoack.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406"/>
 </resourceConfiguration>
 </configuration>
