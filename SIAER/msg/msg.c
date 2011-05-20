@@ -162,40 +162,7 @@ void MontaBusMsg (char funcid)
 // *************************************************************************************************
 void MontaTslMsg (char funcid, char mensagem_recebida[])
 {
-	/*
-    int j,i=0;
-    struct siaer_frame msg;
-    msg.funcid=funcid;
-    msg.src[0]=buffer_a_transmitir[i].SRC[0];
-    msg.src[1]=buffer_a_transmitir[i].SRC[1];
-    
-    msg.size = POLL_MSG_SIZE;
-    msg.data[0]=msg.src[0];
-    msg.data[1]=msg.src[1];
-    if (funcid==POLLING)
-    {
-       msg.dst[0]=0x00;
-       msg.dst[1]=0x00;
-    }
-    if (funcid==POLLING2)
-    {
-       msg.dst[0]=buffer_a_transmitir[i].DST[0];
-       msg.dst[1]=buffer_a_transmitir[i].DST[1];
-    }
-    if (funcid&TX_BARCODE)
-    {
-       msg.funcid=(buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0])&0x7F;
-       msg.dst[0]=buffer_a_transmitir[i].DST[0];
-       msg.dst[1]=buffer_a_transmitir[i].DST[1];
-       
-		//msg.size = BARCODE_MSG_SIZE;
-       
-       for (j=1;j<TX_BARCODE_BUF_SIZE+1;j++)
-       {
-         msg.data[j-1]=buffer_a_transmitir[i].buffer[j][0];
-       }
-    }
-    */
+
 }
 
 // *************************************************************************************************
@@ -214,6 +181,7 @@ void ReportEventUart (char tipo, char id_onibus)
     char msg2[]="$SS12345678$";
 	
 	if (Guiche.ativo==TRUE)
+	{
 	    switch (tipo)
 	    {
 	        case BUS_CHEGOU:
@@ -236,6 +204,7 @@ void ReportEventUart (char tipo, char id_onibus)
 	          TXString(msg2,15);
 	          break;
 	    }
+	}
 
     if (Onibus.ativo==TRUE)
     {
@@ -267,8 +236,10 @@ void ReportEventUart (char tipo, char id_onibus)
               msg2[3]=Onibus.DST[1];
               msg2[4]&=0x3f;
               for (i=0;i<TX_BARCODE_BUF_SIZE+4;i++)
+              {
                 msg2[i+4]=simpliciti_msg[5+i];             
-			  msg2[14]=0x24;
+              }
+			  //msg2[14]=0x24;
               TXString(msg2,15); 
               Onibus.EST_CONEXAO = ACK_BARCODE;
               break;
@@ -467,4 +438,5 @@ void Encode_siaer_data_onibus()
 	  		simpliciti_msg[4] = 0; // dst 1
 		 	simpliciti_msg[5] = TX_BARCODE_ACK;
 		break;
+	}
 }
