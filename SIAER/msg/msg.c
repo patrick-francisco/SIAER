@@ -74,7 +74,7 @@ void set_bus_guiche(char *msg)
         }
        
 	   #ifdef END_DEVICE
-	   	//main_end_device();
+	   	main_end_device();
 	   #endif
 
         break;
@@ -330,7 +330,7 @@ void TrataMsgSimpliciti(char tipo)
 void Encode_siaer_data_guiche()
 {
 	 char i,cont;
-	/* for (i=0;i<CONEXOES_POSSIVEIS;i++)
+	 for (i=0;i<CONEXOES_POSSIVEIS;i++)
 	 {
         if (ed_data[2] == buffer_a_transmitir[i].DST[0] && ed_data[1]==buffer_a_transmitir[i].DST[1])
           {
@@ -347,7 +347,8 @@ void Encode_siaer_data_guiche()
 			}
 	        break;
           }
-	 }*/
+	 }
+	 
 	 simpliciti_msg[1] = 0;
      simpliciti_msg[2] = 1;
      simpliciti_msg[3] = 3;
