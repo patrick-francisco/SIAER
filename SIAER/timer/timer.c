@@ -86,7 +86,7 @@ __interrupt void TIMER1_A0_ISR(void)
 	
     ed_send_request = 1;
 
-  
+  Incrementa_timeout();
     //
     // incrementar todos os timeouts dos buffers.
     // verificar se desconectou. 
