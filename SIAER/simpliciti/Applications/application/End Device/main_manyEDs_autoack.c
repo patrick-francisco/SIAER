@@ -131,8 +131,6 @@ static void linkTo()
   
   // sleep until button press... 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
- 
-  //ReportEventUart (char simpliciti_msg[], unsigned char tamanho, BUS_CHEGOU);
 	
   // Implementar metodo de escuta. Esperar pelo Access Point
   while (1)
@@ -201,11 +199,14 @@ static void linkTo()
       // radio back to sleep 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
   	}
+  	else if(Onibus.EST_CONEXAO == DESCONEXAO)
+  	{
+	  	break;
+  	}
   }
-
+  main_end_device();
   // Reiniciar em caso de perda de conexao.
 }
-
 
 void toggleLED(uint8_t which)
 {

@@ -81,9 +81,9 @@ void TrataIntUartRx(char rx)
             ESTADO_RX_UART=RX_LIVRE;
             TXString(uart_msg,7);
             TXString(buffer_uart_rx,tamanho_buffer); 	// transmite um ack
-            TrataMsg(buffer_uart_rx); 					//Apos receber todos os dados, chama funcao que ira decodificar a mensagem
+            TrataMsg(buffer_uart_rx); 					// Apos receber todos os dados, chama funcao que ira decodificar a mensagem
             free(buffer_uart_rx); 						// libera espaco alocado
-            buffer_uart_rx = 0;     					//boa pratica de programacao
+            buffer_uart_rx = 0;     					// boa pratica de programacao
             break;
         }
         else; // se for maior q o buffer
