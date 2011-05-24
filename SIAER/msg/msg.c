@@ -24,9 +24,11 @@ unsigned char simpliciti_msg[RF_MSG_SIZE];
 char SRC[2]={0x00,0x00};
 char DST[2]={0x00,0x00};
 
+
 unsigned char simpliciti_ed_address[];
 struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
 char num_onibus_conectados=0;
+char Conexao;
 
 // *************************************************************************************************
 // Extern section
@@ -73,6 +75,7 @@ void set_bus_guiche(char *msg)
     {
       case INIT_BUS:
         Onibus.ativo=TRUE;
+        Onibus.TIMEOUT=0;
         for (i=0;i<2;i++)
         {
           Onibus.id_bus[i]=msg[i+6];
@@ -484,7 +487,7 @@ void Incrementa_timeout(void)
 	Onibus.TIMEOUT++; 
 	if(Onibus.TIMEOUT > MAX_MISSES)
 	{
-		Onibus.EST_CONEXAO = DESCONEXAO;		
+		Conexao = OFF;
 	}
   #elif ACCESS_POINT
   

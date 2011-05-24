@@ -45,7 +45,7 @@ extern void Incrementa_timeout(void);
 #define TXED                  0x40
 #define TX_BARCODE_BUF_SIZE   10 
 
-#define MAX_MISSES 3 
+#define MAX_MISSES 300 
 
 //estrutura básica de frame uart/wi
 #define PKT_OFF         1 //offset pelo byte[0]=28
@@ -74,6 +74,9 @@ struct BUS
     char buffer[TX_BARCODE_BUF_SIZE+1][BUFFER_SIZE];
 };
 extern struct BUS Onibus;
+
+extern char Conexao;
+
 
 struct GUICHE
 {

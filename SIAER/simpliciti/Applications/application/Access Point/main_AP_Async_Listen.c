@@ -97,7 +97,7 @@ static volatile uint8_t sBlinky = 0;
 
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
-void main (void)
+void main_access_point (void)
 {
   bspIState_t intState;
 
