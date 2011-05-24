@@ -14,7 +14,7 @@ extern void ReportEventUart (char tipo, char id_onibus);
 extern void TrataMsgSimpliciti(char tipo);
 extern void Encode_siaer_data_guiche(void);
 extern void Encode_siaer_data_onibus(void);
-
+extern void Incrementa_timeout(void);
 // *************************************************************************************************
 // Defines section
 #define TRUE        0xFF
@@ -23,6 +23,8 @@ extern void Encode_siaer_data_onibus(void);
 #define ON  0xFF
 #define OFF 0x00
 #define CONECTADO 0x01
+#define DESCONEXAO 0xAA
+
 #define ACK_BARCODE 0xBB
 
 #define CONEXOES_POSSIVEIS    8
@@ -43,6 +45,7 @@ extern void Encode_siaer_data_onibus(void);
 #define TXED                  0x40
 #define TX_BARCODE_BUF_SIZE   10 
 
+#define MAX_MISSES 3 
 
 //estrutura básica de frame uart/wi
 #define PKT_OFF         1 //offset pelo byte[0]=28
@@ -59,9 +62,11 @@ extern void Encode_siaer_data_onibus(void);
 // Global Variable section
 struct BUS
 {
+	
     char id_bus[2];
     char placa[8];
     char ativo;
+	char TIMEOUT;
     char EST_CONEXAO;
     //struct siaer_frame pollack;
     char DST[2];

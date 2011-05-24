@@ -15,7 +15,6 @@ void Encode_siaer_data_onibus();
 // *************************************************************************************************
 // Global Variable section
 
-
 struct BUS Onibus;
 struct GUICHE Guiche;
 
@@ -306,6 +305,7 @@ void TrataMsgSimpliciti(char tipo)
       case POLLING:
           // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
           // implementar no codigo para primeira conexao
+            Onibus.TIMEOUT=0;
             Onibus.DST[0]=simpliciti_msg[1];  // src[0]
             Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
             ReportEventUart(BUS_CHEGOU,NULL);
@@ -314,6 +314,7 @@ void TrataMsgSimpliciti(char tipo)
         
         break;
       case POLLING2:
+	      Onibus.TIMEOUT=0;
           // Mandar um ACK2 
           // feito apos a conexao estar feita, para manter contato com o bus
         
@@ -324,6 +325,7 @@ void TrataMsgSimpliciti(char tipo)
               // mandar via uart
               ReportEventUart(RECEBEU_BARCODE,NULL);
               Onibus.EST_CONEXAO = ACK_BARCODE;
+              Onibus.TIMEOUT=0;
               // mandar ack
               //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
               // bar_ack.data[0]=msg_ptr->funcid&0x3F;
@@ -472,4 +474,29 @@ void Encode_siaer_data_onibus()
 		 	simpliciti_msg[5] = TX_BARCODE_ACK;
 		break;
 	}
+}
+
+
+void Incrementa_timeout(void)
+{
+	short i;
+  #ifdef END_DEVICE
+	Onibus.TIMEOUT++; 
+	if(Onibus.TIMEOUT > MAX_MISSES)
+	{
+		Onibus.EST_CONEXAO = DESCONEXAO;		
+	}
+  #elif ACCESS_POINT
+  
+	for (i=0; i < num_onibus_conectados; i++)
+    {
+ 		buffer_a_transmitir[i].TIMEOUT++;
+ 		if(buffer_a_transmitir[i].TIMEOUT > MAX_MISSES)
+		{
+			buffer_a_transmitir[i].EST_CONEXAO = OFF;
+			// IMPLEMENTAR METODO PARA REINICIAR O BUFFER
+			// REMOVER CONEXAO DO SIMPLICITI
+		}
+    }
+   #endif
 }
