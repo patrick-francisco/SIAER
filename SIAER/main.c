@@ -57,7 +57,6 @@ void main (void)
    InitBusGuiche();
    Timer1_Init();
    init_uart();
-   //while (!BSP_BUTTON1());
    
   // TrataMsg(teste);
    #ifdef END_DEVICE

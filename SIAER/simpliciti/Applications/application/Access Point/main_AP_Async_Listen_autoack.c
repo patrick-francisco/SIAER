@@ -55,13 +55,6 @@ static uint8_t  sNumCurrentPeers = 0;
 /* callback handler */
 static uint8_t sCB(linkID_t);
 
-/* received message handler */
-static void processMessage(linkID_t, uint8_t *, uint8_t);
-
-/* Frequency Agility helper functions */
-static void    checkChangeChannel(void);
-static void    changeChannel(void);
-
 /* work loop semaphores */
 static volatile uint8_t sPeerFrameSem = 0;
 static volatile uint8_t sJoinSem = 0;
@@ -218,68 +211,3 @@ static uint8_t sCB(linkID_t lid)
   return 0;
 }
 
-static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
-{
-  // chamar aqui a funcao de tratamento de dados do ack e do ID do busao
-  if (len)
-  {
-  //	TrataMsg(*msg);
-      toggleLED(1);
-  }
-  return;
-}
-
-static void changeChannel(void)
-{
-#ifdef FREQUENCY_AGILITY
-  freqEntry_t freq;
-
-  if (++sChannel >= NWK_FREQ_TBL_SIZE)
-  {
-    sChannel = 0;
-  }
-  freq.logicalChan = sChannel;
-  SMPL_Ioctl(IOCTL_OBJ_FREQ, IOCTL_ACT_SET, &freq);
-  BSP_TURN_OFF_LED1();
-  BSP_TURN_OFF_LED2();
-  sBlinky = 1;
-#endif
-  return;
-}
-
-/* implement auto-channel-change policy here... */
-static void  checkChangeChannel(void)
-{
-#ifdef FREQUENCY_AGILITY
-  int8_t dbm, inARow = 0;
-
-  uint8_t i;
-
-  memset(sSample, 0x0, SSIZE);
-  for (i=0; i<SSIZE; ++i)
-  {
-    /* quit if we need to service an app frame */
-    if (sPeerFrameSem || sJoinSem)
-    {
-      return;
-    }
-    NWK_DELAY(1);
-    SMPL_Ioctl(IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RSSI, (void *)&dbm);
-    sSample[i] = dbm;
-
-    if (dbm > INTERFERNCE_THRESHOLD_DBM)
-    {
-      if (++inARow == IN_A_ROW)
-      {
-        changeChannel();
-        break;
-      }
-    }
-    else
-    {
-      inARow = 0;
-    }
-  }
-#endif
-  return;
-}

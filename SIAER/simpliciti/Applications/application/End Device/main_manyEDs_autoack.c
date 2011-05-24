@@ -20,8 +20,12 @@ extern void Encode_siaer_data_onibus();
 volatile char ed_send_request = 0;
 
 static void linkTo(void);
+/* Callback handler */
+static uint8_t sCB(linkID_t);
 
 static linkID_t sLinkID1 = 0;
+
+static volatile uint8_t  sPeerFrameSem = 0;
 
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
@@ -53,7 +57,7 @@ void main_end_device (void)
   /* Keep trying to join (a side effect of successful initialization) until
    * successful. Toggle LEDS to indicate that joining has not occurred.
    */
-  while (SMPL_SUCCESS != SMPL_Init(0))
+  while (SMPL_SUCCESS != SMPL_Init(sCB))
   {
     toggleLED(1);
     toggleLED(2);
@@ -72,26 +76,20 @@ void main_end_device (void)
 
   /* Unconditional link to AP which is listening due to successful join. */
   linkTo();
-
-  while (1);
 }
 
 static void linkTo()
 {
-  uint8_t     misses, done;
-  uint8_t   len;	
-  uint8_t      noAck;
-  smplStatus_t rc;
+  uint8_t    done;
 
-  // Keep trying to link...
+  /* Keep trying to link... */
   while (SMPL_SUCCESS != SMPL_Link(&sLinkID1))
   {
     toggleLED(1);
     toggleLED(2);
     SPIN_ABOUT_A_SECOND;
   }
-	Conexao=ON;
-	
+
   /* Turn off LEDs. */
   if (BSP_LED2_IS_ON())
   {
@@ -101,10 +99,12 @@ static void linkTo()
   {
     toggleLED(1);
   }
-  
-  // sleep until button press... 
+
+  /* sleep until button press... */
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
-	
+
+  Conexao=ON;
+
   // Implementar metodo de escuta. Esperar pelo Access Point
   while (Conexao==ON)
   {
@@ -115,51 +115,38 @@ static void linkTo()
       done = 0;
       while (!done)
       {
-        noAck = 0;
-        // Try sending message MISSES_IN_A_ROW times looking for ack 
-        for (misses=0; misses < MISSES_IN_A_ROW; ++misses)
-        {
           // Montar a mensagem e enviar para o GUICHE
           // criar metodo com o bus id como polling
           Encode_siaer_data_onibus();
-          if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
+          if (SMPL_SUCCESS == SMPL_Send(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg)))
           {
-            // Message acked. We're done. Toggle LED 1 to indicate ack received. 
-            toggleLED(1);
-           	ed_send_request=0;
-           	done = 1;
-            break;
-          }
-          if (SMPL_NO_ACK == rc)
-          {
-            // Count ack failures. Could also fail becuase of CCA and
-            //  we don't want to scan in this case.
-            // 
-            noAck++;
-          }
-        }
-        if (MISSES_IN_A_ROW == noAck)
-        {
-          // Message not acked. Toggle LED 2.              
-          toggleLED(2);
-          done = 1;
-        }
-        else
-        {
-	        // Wait shortly for host reply
-			SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
-			NWK_DELAY(4);
-	  	
-			// Check if a command packet was received
-			if (SMPL_Receive(sLinkID1, simpliciti_msg, &len) == SMPL_SUCCESS)
-			{
-				TrataMsgSimpliciti(RECEBEU_BARCODE);
-				
+             SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
+             NWK_REPLY_DELAY();
+             bspIState_t intState;
+             
+              if (!sPeerFrameSem)
+              {
+                /* Try again if we havn't received anything. */
+                continue;
+              }
+              else
+              {
+                uint8_t len;
+
+                BSP_ENTER_CRITICAL_SECTION(intState);
+                sPeerFrameSem--;
+                BSP_EXIT_CRITICAL_SECTION(intState);
+
+                /* We got something. Go get it. */
+                SMPL_Receive(sLinkID1, simpliciti_msg, &len);
+                             
+	            TrataMsgSimpliciti(RECEBEU_BARCODE);
 				ed_send_request=0;
 				done = 1;
-	  		}
+              }
+            } 
         }
-      }
+      
       // radio back to sleep 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
   	}
@@ -180,4 +167,15 @@ void toggleLED(uint8_t which)
     BSP_TOGGLE_LED2();
   }
   return;
+}
+
+static uint8_t sCB(linkID_t lid)
+{
+  if (lid == sLinkID1)
+  {
+    sPeerFrameSem++;
+    return 0;
+  }
+
+  return 1;
 }
