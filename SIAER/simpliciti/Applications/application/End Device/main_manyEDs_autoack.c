@@ -127,6 +127,7 @@ static void linkTo()
             // Message acked. We're done. Toggle LED 1 to indicate ack received. 
             toggleLED(1);
            	ed_send_request=0;
+           	done = 1;
             break;
           }
           if (SMPL_NO_ACK == rc)
