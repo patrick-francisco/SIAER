@@ -43,6 +43,7 @@ void InitBusGuiche() //todo mundo nulo
         Onibus.id_bus[i]=0;
         Guiche.cidade[i]=0;
         Onibus.ativo=0;
+        Guiche.ativo=0;
         Guiche.cidade[i]=0;
     }
     for (i=0;i<7;i++)
@@ -50,7 +51,7 @@ void InitBusGuiche() //todo mundo nulo
       Onibus.placa[i]=0;
     }
     Onibus.EST_CONEXAO=OFF;
-    
+
    /* for(i=0; i<CONEXOES_POSSIVEIS; i++)
     {
     	buffer_a_transmitir[i].EST_CONEXAO=OFF;
