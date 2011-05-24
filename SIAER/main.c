@@ -48,11 +48,11 @@ void main (void)
    // Inicializacao de variaveis globais
     ESTADO_RX_UART = RX_LIVRE;
 
-   // Gerar endereco aleatorio para os end devices
-//   simpliciti_ed_address[0] = rand();
+//  Gerar endereco aleatorio para os end devices
+//  simpliciti_ed_address[0] = rand();
 //  simpliciti_ed_address[1] = rand();
-//   simpliciti_ed_address[2] = rand();
-//   simpliciti_ed_address[3] = rand();
+//  simpliciti_ed_address[2] = rand();
+//  simpliciti_ed_address[3] = rand();
 
    InitBusGuiche();
    Timer1_Init();

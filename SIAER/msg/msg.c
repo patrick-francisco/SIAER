@@ -363,7 +363,7 @@ void Encode_siaer_data_guiche()
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
 				num_onibus_conectados++;
-				
+				ReportEventUart(BUS_CHEGOU,num_onibus_conectados);
 		        break;
 		    
 				// Soh mantem a conexao
@@ -396,7 +396,7 @@ void Encode_siaer_data_guiche()
 						}
 						else
 						{
-							ReportEventUart(BUS_CHEGOU,i);
+							//ReportEventUart(BUS_CHEGOU,i);
 						}
 					}
 		          }
