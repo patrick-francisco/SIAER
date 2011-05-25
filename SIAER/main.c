@@ -1,7 +1,7 @@
 // *************************************************************************************************
 // Include section
 #include <string.h>
-//#include "includes.h"
+#include "includes.h"
 #include "msg.h"
 #include "uart.h"
 #include "timer.h"
@@ -27,38 +27,29 @@
 // *************************************************************************************************
 extern void Timer1_Init(void);
 extern void InitBusGuiche(void);
+
 void main (void)
 {
-   //char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
+  // char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
-   // timer
-   // iniciar simpliciti
-   // iniciar porta de com
-   // ------------
-   // SIMPLICITI
-   // 	GUICHE 
-   // 		Ao receber um dado, tratar o dado recebido e transformar informacao para formato compativel com codigo do marcus
-   //  		triggar o envio pela serial.
-   //  	ONIBUS
-   //		Ao
-   // criar modo de testes independente: uart - mensagens
-   //  
    
    // Inicializacao de variaveis globais
     ESTADO_RX_UART = RX_LIVRE;
 
 //  Gerar endereco aleatorio para os end devices
 //  simpliciti_ed_address[0] = rand();
-//  simpliciti_ed_address[1] = rand();
-//  simpliciti_ed_address[2] = rand();
-//  simpliciti_ed_address[3] = rand();
 
    InitBusGuiche();
    Timer1_Init();
    init_uart();
    
   // TrataMsg(teste);
+  // Vamos testar ver se ele recebe qualquer coisa depois da primeira mensagem de inicializacao.
+	
+	          
+	ReportEventUart(BUS_CHEGOU,0);
+
    #ifdef END_DEVICE
    //main_end_device();
    

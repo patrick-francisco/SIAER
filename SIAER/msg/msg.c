@@ -1,6 +1,7 @@
 // *************************************************************************************************
 // Include section
 #include "msg.h"
+#include "includes.h"
 // *************************************************************************************************
 // Prototypes section
 void TrataMsg(char* msg);
@@ -24,14 +25,20 @@ unsigned char simpliciti_msg[RF_MSG_SIZE];
 char SRC[2]={0x00,0x00};
 char DST[2]={0x00,0x00};
 
-
-unsigned char simpliciti_ed_address[];
 struct rf_buffer buffer_a_transmitir[CONEXOES_POSSIVEIS];
+unsigned char simpliciti_ed_address[];
 char num_onibus_conectados=0;
 char Conexao;
 
 // *************************************************************************************************
 // Extern section
+
+// *************************************************************************************************
+// @fn		InitBusGuiche
+// @brief 	inicializa tanto o onibus quanto o guiche zerados
+// @param 	none
+// @return 	none
+// **************************************************************************************************
 void InitBusGuiche() //todo mundo nulo 
 {
     int i=0;
@@ -52,16 +59,11 @@ void InitBusGuiche() //todo mundo nulo
     }
     Onibus.EST_CONEXAO=OFF;
 
-   /* for(i=0; i<CONEXOES_POSSIVEIS; i++)
+    for(i=0; i<CONEXOES_POSSIVEIS; i++)
     {
     	buffer_a_transmitir[i].EST_CONEXAO=OFF;
-    	for(j=0; j<CONEXOES_POSSIVEIS; j++)
-    	{	
-    		buffer_a_transmitir[i].buffer[j];	
-    	}
-    }*/
+    }
 }
-
 
 // *************************************************************************************************
 // @fn		set_bus_guiche
@@ -138,54 +140,14 @@ void TrataMsg(char* msg)
     }
 }
 
-// *************************************************************************************************
-// @fn		MontaBusMsg
-// @brief 	Monta mensagem a ser transmitida do onibus para o terminal
-// @param 	char funcid 	identificador do tipo de mensagem a ser transmitida
-// @return 	none
-// *************************************************************************************************
-void MontaBusMsg (char funcid)
-{
-    msg.funcid=funcid;
-    msg.src[0]=Onibus.id_bus[0];
-    msg.src[1]=Onibus.id_bus[1];
-    msg.dst[0] =Onibus.DST[0];
-    msg.dst[1] =Onibus.DST[1];
-      
-    switch (funcid)
-    {
-        case POLL_ACK:
-        case POLL2_ACK:
-            msg.size = POLL_MSG_SIZE;
-            msg.data[0]=Onibus.id_bus[0];
-            msg.data[1]=Onibus.id_bus[1];
-            break;
-        case TX_BARCODE_ACK:
-          msg.size = BAR_ACK_MSG_SIZE;
-          msg.data[0] = funcid;
-    }
-}
-// *************************************************************************************************
-// @fn		MontaTslMsg
-// @brief 	Monta mensagem a ser transmitida do onibus para o terminal
-// @param 	char funcid tipo de mensagem
-//			char mensagem_recebida[] o pacote em si
-// @return 	none
-// *************************************************************************************************
-void MontaTslMsg (char funcid, char mensagem_recebida[])
-{
-
-}
-
-// *************************************************************************************************
+// ************************************************************************************************************
 // @fn		ReportEventUart
 // @brief 	Manda pra uart tanto to guiche quanto do onibus informacoes referentes ao funcionamento do programa
 // @param 	char simpliciti_msg[] conjunto de dados
 //			unsigned char tamanho quantidade em bytes
 //			char tipo de mensagem a ser enviada a uart
 // @return 	none
-// *************************************************************************************************
-
+// *************************************************************************************************************
 void ReportEventUart (char tipo, char id_onibus)
 {
     int i;
@@ -200,6 +162,10 @@ void ReportEventUart (char tipo, char id_onibus)
 	        case BUS_PARTIU:
 	          msg[0]=0x24;
 	          msg[1]=tipo;
+	          
+	          buffer_a_transmitir[0].DST[0] = Guiche.cidade[0];
+			  buffer_a_transmitir[0].DST[1] = Guiche.cidade[1];
+	          
 	          msg[2]=buffer_a_transmitir[id_onibus].DST[0];
 	          msg[3]=buffer_a_transmitir[id_onibus].DST[1];
 	          msg[4]=0x24;
@@ -297,11 +263,12 @@ void AddBarcodeBuffer(char* msg)
     		}
     }
 }
-
 // *************************************************************************************************
-// @fn		AddBarcodeBuffer
-// @brief 	Somente para testes. Joga na uart o q receber via RF
-// *******************************************
+// @fn		TrataMsgSimpliciti
+// @brief 	Usado no Onibus. Recebe os dados via RF e trabalha a resposta e triga os eventos UART
+// @param 	tipo de mensagem recebida
+// @return 	none
+// *************************************************************************************************
 void TrataMsgSimpliciti(char tipo)
 {
     switch(simpliciti_msg[5]) //  funcid
@@ -339,10 +306,11 @@ void TrataMsgSimpliciti(char tipo)
 }
 
 // *************************************************************************************************
-// @fn		Encode_siaer_data
-// @brief 	Empacota os dados para serem enviados via RF pelo guiche
-// @param   tipo de mensagem recebida
-// ****************************************************
+// @fn		Encode_siaer_data_guiche
+// @brief 	Usado pelo Guiche. Empacota os dados para serem enviados via RF e triga eventos UART
+// @param 	none, mas usa variaveis globais.
+// @return 	none
+// *************************************************************************************************
 void Encode_siaer_data_guiche()
 {
 	char j, k, i;
@@ -440,11 +408,13 @@ void Encode_siaer_data_guiche()
 	         break;      
 	 }
 }
+
 // *************************************************************************************************
-// @fn		Encode_siaer_data
-// @brief 	Empacota os dados para serem enviados via RF pelo guiche
-// @param   tipo de mensagem recebida
-// ****************************************************
+// @fn		Encode_siaer_data_onibus
+// @brief 	Usado pelo Onibus. Empacota os dados para serem enviados via RF
+// @param 	none
+// @return 	none
+// *************************************************************************************************
 void Encode_siaer_data_onibus()
 {
 	switch(Onibus.EST_CONEXAO)
@@ -480,7 +450,12 @@ void Encode_siaer_data_onibus()
 	}
 }
 
-
+// *************************************************************************************************
+// @fn		Incrementa_timeout
+// @brief 	Usado pelo timer. Aumenta o timeout a cada segundo.
+// @param 	none
+// @return 	none
+// *************************************************************************************************
 void Incrementa_timeout(void)
 {
 	short i;
