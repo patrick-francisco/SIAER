@@ -22,8 +22,8 @@ extern void Incrementa_timeout(void);
 // Extern section
 
 // *************************************************************************************************
-// @fn          Timer0_Init
-// @brief       Set Timer0 to a period of 1 or 2 sec. IRQ TACCR0 is asserted when timer overflows.
+// @fn          Timer1_Init
+// @brief       Set Timer1 para um periodo de 1 or 2 sec. IRQ TACCR0 is asserted when timer overflows.
 // @param       none
 // @return      none
 // *************************************************************************************************
@@ -44,7 +44,7 @@ void Timer1_Init(void)
 }
 
 // *************************************************************************************************
-// @fn          Timer0_Start
+// @fn          Timer1_Start
 // @brief       Start Timer0.
 // @param       none
 // @return      none
@@ -56,7 +56,7 @@ void Timer1_Start(void)
 }
 
 // *************************************************************************************************
-// @fn          Timer0_Stop
+// @fn          Timer1_Stop
 // @brief       Stop and reset Timer0.
 // @param       none
 // @return      none
@@ -71,7 +71,7 @@ void Timer1_Stop(void)
 }
 
 
-// Timer A0 interrupt service routine
+// Timer1 A0 interrupt service routine
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void TIMER1_A0_ISR(void)
 {
@@ -86,11 +86,10 @@ __interrupt void TIMER1_A0_ISR(void)
 	
     ed_send_request = 1;
 
- // Incrementa_timeout();
-    //
     // incrementar todos os timeouts dos buffers.
     // verificar se desconectou. 
     // organizar o buffer
     // decrementar o num de onibus conectados.
     // buffer. estado conexao = OFF;
+ // Incrementa_timeout();
 }

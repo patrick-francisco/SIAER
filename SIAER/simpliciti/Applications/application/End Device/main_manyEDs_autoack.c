@@ -1,5 +1,3 @@
-//  CRIAR METODO PARA RECEBER MENSAGEM DO AP
-// 
 #include "bsp.h"
 #include "mrfi.h"
 #include "nwk_types.h"
@@ -10,10 +8,6 @@
 #include "app_remap_led.h"
 #include "includes.h"
 
-#ifndef APP_AUTO_ACK
-#error ERROR: Must define the macro APP_AUTO_ACK for this application.
-#endif
-
 void toggleLED(uint8_t);
 
 extern void Encode_siaer_data_onibus();
@@ -22,11 +16,8 @@ volatile char ed_send_request = 0;
 static void linkTo(void);
 /* Callback handler */
 static uint8_t sCB(linkID_t);
-
 static linkID_t sLinkID1 = 0;
-
 static volatile uint8_t  sPeerFrameSem = 0;
-
 #define SPIN_ABOUT_A_SECOND   NWK_DELAY(1000)
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
@@ -38,11 +29,6 @@ void main_end_device (void)
   BSP_Init();
   
   uint8_t i;
-  /* If an on-the-fly device address is generated it must be done before the
-   * call to SMPL_Init(). If the address is set here the ROM value will not
-   * be used. If SMPL_Init() runs before this IOCTL is used the IOCTL call
-   * will not take effect. One shot only. The IOCTL call below is conformal.
-   */
   addr_t lAddr;
     
   // Change network address to value set in calling function
@@ -145,6 +131,10 @@ static void linkTo()
 				done = 1;
               }
             } 
+            if (Conexao==OFF)
+            {
+            	break;
+            }
         }
       
       // radio back to sleep 

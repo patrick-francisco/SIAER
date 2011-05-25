@@ -56,10 +56,10 @@
 --define=DEFAULT_JOIN_TOKEN=0x05060708
 
 # Define Frequency Agility as active for this build
---define=FREQUENCY_AGILITY
+#--define=FREQUENCY_AGILITY
 
 # Enable application autoacknowledge support. Requires extended API as well
---define=APP_AUTO_ACK
+#--define=APP_AUTO_ACK
 
 # Enable Extended API
 --define=EXTENDED_API
