@@ -46,9 +46,9 @@ void main (void)
    
   // TrataMsg(teste);
   // Vamos testar ver se ele recebe qualquer coisa depois da primeira mensagem de inicializacao.
-	
-	          
-	ReportEventUart(BUS_CHEGOU,0);
+
+	//Guiche.ativo = TRUE;	          
+   //ReportEventUart(BUS_CHEGOU,0);
 
    #ifdef END_DEVICE
    //main_end_device();

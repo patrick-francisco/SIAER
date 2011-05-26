@@ -163,8 +163,8 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg[0]=0x24;
 	          msg[1]=tipo;
 	          
-	          buffer_a_transmitir[0].DST[0] = Guiche.cidade[0];
-			  buffer_a_transmitir[0].DST[1] = Guiche.cidade[1];
+	          //buffer_a_transmitir[0].DST[0] = 31;
+			  //buffer_a_transmitir[0].DST[1] = 69;
 	          
 	          msg[2]=buffer_a_transmitir[id_onibus].DST[0];
 	          msg[3]=buffer_a_transmitir[id_onibus].DST[1];
@@ -458,7 +458,6 @@ void Encode_siaer_data_onibus()
 // *************************************************************************************************
 void Incrementa_timeout(void)
 {
-	short i;
   #ifdef END_DEVICE
 	Onibus.TIMEOUT++; 
 	if(Onibus.TIMEOUT > MAX_MISSES)
@@ -467,7 +466,7 @@ void Incrementa_timeout(void)
 	}
   #elif ACCESS_POINT
   
-	for (i=0; i < num_onibus_conectados; i++)
+	/*for (i=0; i < num_onibus_conectados; i++)
     {
  		buffer_a_transmitir[i].TIMEOUT++;
  		if(buffer_a_transmitir[i].TIMEOUT > MAX_MISSES)
@@ -477,5 +476,6 @@ void Incrementa_timeout(void)
 			// REMOVER CONEXAO DO SIMPLICITI
 		}
     }
+    */
    #endif
 }

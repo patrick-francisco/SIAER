@@ -68,7 +68,7 @@ static void linkTo()
 {
   uint8_t    done;
 
-  /* Keep trying to link... */
+  // tenta linkar 
   while (SMPL_SUCCESS != SMPL_Link(&sLinkID1))
   {
     toggleLED(1);
@@ -76,7 +76,7 @@ static void linkTo()
     SPIN_ABOUT_A_SECOND;
   }
 
-  /* Turn off LEDs. */
+  // desliga leds
   if (BSP_LED2_IS_ON())
   {
     toggleLED(2);
@@ -86,7 +86,6 @@ static void linkTo()
     toggleLED(1);
   }
 
-  /* sleep until button press... */
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
 
   Conexao=ON;
@@ -96,7 +95,7 @@ static void linkTo()
   {
   	if(ed_send_request)
   	{
-      // get radio ready...awakens in idle state 
+      // acordar radio 
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_AWAKE, 0);
       done = 0;
       while (!done)
@@ -112,7 +111,7 @@ static void linkTo()
              
               if (!sPeerFrameSem)
               {
-                /* Try again if we havn't received anything. */
+                // Tentar novamente caso nao tenha recebido nada.
                 continue;
               }
               else
@@ -130,7 +129,7 @@ static void linkTo()
 				ed_send_request=0;
 				done = 1;
               }
-            } 
+            }
             if (Conexao==OFF)
             {
             	break;
