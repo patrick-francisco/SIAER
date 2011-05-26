@@ -45,7 +45,7 @@ extern void Incrementa_timeout(void);
 #define TXED                  0x40
 #define TX_BARCODE_BUF_SIZE   10 
 
-#define MAX_MISSES 300 
+#define MAX_MISSES 10 
 
 //estrutura básica de frame uart/wi
 #define PKT_OFF         1 //offset pelo byte[0]=28
