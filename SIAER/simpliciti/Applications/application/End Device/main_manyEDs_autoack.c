@@ -89,8 +89,9 @@ static void linkTo()
 
   SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
 
-  Conexao=ON;
-
+	Conexao=ON;
+	Onibus.TIMEOUT=0;
+	
   // Implementar metodo de escuta. Esperar pelo Access Point
   while (Conexao==ON)
   {
@@ -106,6 +107,10 @@ static void linkTo()
           Encode_siaer_data_onibus();
           if (SMPL_SUCCESS == SMPL_Send(sLinkID1, simpliciti_msg, sizeof(simpliciti_msg)))
           {
+          	if (Conexao==OFF)
+            {
+            	break;
+            }
              SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_RXON, 0);
              NWK_REPLY_DELAY();
              bspIState_t intState;
@@ -141,6 +146,7 @@ static void linkTo()
       SMPL_Ioctl( IOCTL_OBJ_RADIO, IOCTL_ACT_RADIO_SLEEP, 0);
   	}
   }
+  sInit_done = 0;
   ReportEventUart(BUS_PARTIU,NULL);
   main_end_device();
   // Reiniciar em caso de perda de conexao.
