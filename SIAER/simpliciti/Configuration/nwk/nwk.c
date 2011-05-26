@@ -1,36 +1,36 @@
 /**************************************************************************************************
-  Filename:       nwk.c
-  Revised:        $Date: 2009-03-11 15:29:07 -0700 (Wed, 11 Mar 2009) $
-  Revision:       $Revision: 19382 $
-  Author          $Author: lfriedman $
-
-  Description:    This file supports the SimpliciTI network layer.
-
-  Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
-
-  IMPORTANT: Your use of this Software is limited to those specific rights granted under
-  the terms of a software license agreement between the user who downloaded the software,
-  his/her employer (which must be your employer) and Texas Instruments Incorporated (the
-  "License"). You may not use this Software unless you agree to abide by the terms of the
-  License. The License limits your use, and you acknowledge, that the Software may not be
-  modified, copied or distributed unless embedded on a Texas Instruments microcontroller
-  or used solely and exclusively in conjunction with a Texas Instruments radio frequency
-  transceiver, which is integrated into your product. Other than for the foregoing purpose,
-  you may not use, reproduce, copy, prepare derivative works of, modify, distribute,
-  perform, display or sell this Software and/or its documentation for any purpose.
-
-  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE PROVIDED “AS IS”
-  WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY
-  WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
-  IN NO EVENT SHALL TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
-  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE
-  THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT LIMITED TO ANY
-  INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST
-  DATA, COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY
-  THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
-
-  Should you have any questions regarding your right to use this Software,
-  contact Texas Instruments Incorporated at www.TI.com.
+*  Filename:       nwk.c
+*  Revised:        $Date: 2009-03-11 15:29:07 -0700 (Wed, 11 Mar 2009) $
+*  Revision:       $Revision: 19382 $
+*  Author          $Author: lfriedman $
+*
+*  Description:    This file supports the SimpliciTI network layer.
+*
+*  Copyright 2007-2009 Texas Instruments Incorporated. All rights reserved.
+*
+*  IMPORTANT: Your use of this Software is limited to those specific rights granted under
+*  the terms of a software license agreement between the user who downloaded the software,
+*  his/her employer (which must be your employer) and Texas Instruments Incorporated (the
+*  "License"). You may not use this Software unless you agree to abide by the terms of the
+*  License. The License limits your use, and you acknowledge, that the Software may not be
+*  modified, copied or distributed unless embedded on a Texas Instruments microcontroller
+*  or used solely and exclusively in conjunction with a Texas Instruments radio frequency
+*  transceiver, which is integrated into your product. Other than for the foregoing purpose,
+*  you may not use, reproduce, copy, prepare derivative works of, modify, distribute,
+*  perform, display or sell this Software and/or its documentation for any purpose.
+*
+*  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE PROVIDED “AS IS”
+*  WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY
+*  WARRANTY OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
+*  IN NO EVENT SHALL TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+*  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER LEGAL EQUITABLE
+*  THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING BUT NOT LIMITED TO ANY
+*  INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST
+*  DATA, COST OF PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY
+*  THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+*
+*  Should you have any questions regarding your right to use this Software,
+*  contact Texas Instruments Incorporated at www.TI.com.
 **************************************************************************************************/
 
 /******************************************************************************
@@ -51,49 +51,49 @@
  */
 /************************* NETWORK MANIFEST CONSTANT SANITY CHECKS ****************************/
 #if !defined(ACCESS_POINT) && !defined(RANGE_EXTENDER) && !defined(END_DEVICE)
-#error ERROR: No SimpliciTI device type defined
+#    error ERROR: No SimpliciTI device type defined
 #endif
 
 #if defined(END_DEVICE) && !defined(RX_POLLS)
-#define RX_USER
+#    define RX_USER
 #endif
 
 #ifndef MAX_HOPS
-#define MAX_HOPS  3
+#    define MAX_HOPS  3
 #elif MAX_HOPS > 4
-#error ERROR: MAX_HOPS must be 4 or fewer
+#    error ERROR: MAX_HOPS must be 4 or fewer
 #endif
 
 #ifndef MAX_APP_PAYLOAD
-#error ERROR: MAX_APP_PAYLOAD must be defined
+#    error ERROR: MAX_APP_PAYLOAD must be defined
 #endif
 
-#if ( MAX_PAYLOAD < MAX_FREQ_APP_FRAME )
-#error ERROR: Application payload size too small for Frequency frame
+#if (MAX_PAYLOAD < MAX_FREQ_APP_FRAME)
+#    error ERROR: Application payload size too small for Frequency frame
 #endif
 
-#if ( MAX_PAYLOAD < MAX_JOIN_APP_FRAME )
-#error ERROR: Application payload size too small for Join frame
+#if (MAX_PAYLOAD < MAX_JOIN_APP_FRAME)
+#    error ERROR: Application payload size too small for Join frame
 #endif
 
-#if ( MAX_PAYLOAD < MAX_LINK_APP_FRAME )
-#error ERROR: Application payload size too small for Link frame
+#if (MAX_PAYLOAD < MAX_LINK_APP_FRAME)
+#    error ERROR: Application payload size too small for Link frame
 #endif
 
-#if ( MAX_PAYLOAD < MAX_MGMT_APP_FRAME )
-#error ERROR: Application payload size too small for Management frame
+#if (MAX_PAYLOAD < MAX_MGMT_APP_FRAME)
+#    error ERROR: Application payload size too small for Management frame
 #endif
 
-#if ( MAX_PAYLOAD < MAX_SEC_APP_FRAME )
-#error ERROR: Application payload size too small for Security frame
+#if (MAX_PAYLOAD < MAX_SEC_APP_FRAME)
+#    error ERROR: Application payload size too small for Security frame
 #endif
 
-#if ( MAX_PAYLOAD < MAX_PING_APP_FRAME )
-#error ERROR: Application payload size too small for Ping frame
+#if (MAX_PAYLOAD < MAX_PING_APP_FRAME)
+#    error ERROR: Application payload size too small for Ping frame
 #endif
 
 #if NWK_FREQ_TBL_SIZE < 1
-#error ERROR: NWK_FREQ_TBL_SIZE must be > 0
+#    error ERROR: NWK_FREQ_TBL_SIZE must be > 0
 #endif
 
 /************************* END NETWORK MANIFEST CONSTANT SANITY CHECKS ************************/
@@ -101,7 +101,7 @@
 /******************************************************************************
  * CONSTANTS AND DEFINES
  */
-#define SYS_NUM_CONNECTIONS   (NUM_CONNECTIONS+1)
+#define SYS_NUM_CONNECTIONS   (NUM_CONNECTIONS + 1)
 
 /* Increment this if the persistentContext_t structure is changed. It will help
  * detect the upgrade context: any saved values will have a version with a
@@ -114,28 +114,30 @@
 /******************************************************************************
  * TYPEDEFS
  */
+
 /* This structure aggregates eveything necessary to save if we want to restore
  * the connection information later.
  */
 typedef struct
 {
-  const uint8_t    structureVersion; /* to dectect upgrades... */
-        uint8_t    numConnections;   /* count includes the UUD port/link ID */
-/* The next two are used to detect overlapping port assignments. When _sending_ a
- * link frame the local port is assigned from the top down. When sending a _reply_
- * the assignment is bottom up. Overlapping assignments are rejected. That said it
- * is extremely unlikely that this will ever happen. If it does the test implemented
- * here is overly cautious (it will reject assignments when it needn't). But we leave
- * it that way on the assumption that it will never happen anyway.
- */
-        uint8_t    curNextLinkPort;
-        uint8_t    curMaxReplyPort;
-        linkID_t   nextLinkID;
+    const uint8_t structureVersion;  /* to dectect upgrades... */
+    uint8_t numConnections;          /* count includes the UUD port/link ID */
+
+    /* The next two are used to detect overlapping port assignments. When _sending_ a
+     * link frame the local port is assigned from the top down. When sending a _reply_
+     * the assignment is bottom up. Overlapping assignments are rejected. That said it
+     * is extremely unlikely that this will ever happen. If it does the test implemented
+     * here is overly cautious (it will reject assignments when it needn't). But we leave
+     * it that way on the assumption that it will never happen anyway.
+     */
+    uint8_t curNextLinkPort;
+    uint8_t curMaxReplyPort;
+    linkID_t nextLinkID;
 #ifdef ACCESS_POINT
-        sfInfo_t   sSandFContext;
+    sfInfo_t sSandFContext;
 #endif
-/* Connection table entries last... */
-        connInfo_t connStruct[SYS_NUM_CONNECTIONS];
+    /* Connection table entries last... */
+    connInfo_t connStruct[SYS_NUM_CONNECTIONS];
 } persistentContext_t;
 
 /******************************************************************************
@@ -152,7 +154,7 @@ static persistentContext_t sPersistInfo = {CONNTABLEINFO_STRUCTURE_VERSION};
  * LOCAL FUNCTIONS
  */
 static uint8_t map_lid2idx(linkID_t, uint8_t *);
-static void    initializeConnection(connInfo_t *);
+static void initializeConnection(connInfo_t *);
 
 /******************************************************************************
  * GLOBAL VARIABLES
@@ -173,49 +175,61 @@ static void    initializeConnection(connInfo_t *);
  *
  * @return   Status of operation.
  */
+
 smplStatus_t nwk_nwkInit(uint8_t (*f)(linkID_t))
 {
-  /* Truly ugly initialization because CCE won't initialize properly. Must
-   * skip first const element. Yuk.
-   */
-  memset((((uint8_t *)&sPersistInfo)+1), 0x0, (sizeof(sPersistInfo)-1));
-  /* OK. The zeroed elements are set. Now go back and do fixups...  */
+    // [BM] Added variable
+    uint8_t i;
 
-  sPersistInfo.numConnections   = SYS_NUM_CONNECTIONS;
-  sPersistInfo.curNextLinkPort  = SMPL_PORT_USER_MAX;
-  sPersistInfo.curMaxReplyPort  = PORT_BASE_NUMBER;
-  sPersistInfo.nextLinkID       = 1;
+    /* Truly ugly initialization because CCE won't initialize properly. Must
+     * skip first const element. Yuk.
+     */
+    memset((((uint8_t *)&sPersistInfo) + 1), 0x0, (sizeof(sPersistInfo) - 1));
+    /* OK. The zeroed elements are set. Now go back and do fixups...  */
 
-  /* initialize globals */
-  nwk_globalsInit();
+    sPersistInfo.numConnections   = SYS_NUM_CONNECTIONS;
+    sPersistInfo.curNextLinkPort  = SMPL_PORT_USER_MAX;
+    sPersistInfo.curMaxReplyPort  = PORT_BASE_NUMBER;
+    sPersistInfo.nextLinkID       = 1;
 
-  /* initialize frame processing */
-  nwk_frameInit(f);
+    /* initialize globals */
+    nwk_globalsInit();
 
-  /* initialize queue manager */
-  nwk_QInit();
-	
-  /* initialize each network application. */
-  nwk_freqInit();
-  nwk_pingInit();
-  nwk_joinInit(f);
-  nwk_mgmtInit();
-  nwk_linkInit();
-  nwk_securityInit();
+    /* initialize frame processing */
+    nwk_frameInit(f);
 
-  /* set up the last connection as the broadcast port mapped to the broadcast Link ID */
-  if (CONNSTATE_FREE == sPersistInfo.connStruct[NUM_CONNECTIONS].connState)
-  {
-    sPersistInfo.connStruct[NUM_CONNECTIONS].connState   = CONNSTATE_CONNECTED;
-    sPersistInfo.connStruct[NUM_CONNECTIONS].hops2target = MAX_HOPS;
-    sPersistInfo.connStruct[NUM_CONNECTIONS].portRx      = SMPL_PORT_USER_BCAST;
-    sPersistInfo.connStruct[NUM_CONNECTIONS].portTx      = SMPL_PORT_USER_BCAST;
-    sPersistInfo.connStruct[NUM_CONNECTIONS].thisLinkID  = SMPL_LINKID_USER_UUD;
-    /* set peer address to broadcast so it is used when Application sends to the broadcast Link ID */
-    memcpy(sPersistInfo.connStruct[NUM_CONNECTIONS].peerAddr, nwk_getBCastAddress(), NET_ADDR_SIZE);
-  }
+    /* initialize queue manager */
+    nwk_QInit();
 
-  return SMPL_SUCCESS;
+    /* initialize each network application. */
+    nwk_freqInit();
+    nwk_pingInit();
+    nwk_joinInit(f);
+    nwk_mgmtInit();
+    nwk_linkInit();
+    nwk_securityInit();
+
+    // [BM] Workaround to enable stack restarting
+    for (i = 0; i < SYS_NUM_CONNECTIONS; ++i)
+    {
+        sPersistInfo.connStruct[i].connState = CONNSTATE_FREE;
+    }
+
+    /* set up the last connection as the broadcast port mapped to the broadcast Link ID */
+    if (CONNSTATE_FREE == sPersistInfo.connStruct[NUM_CONNECTIONS].connState)
+    {
+        sPersistInfo.connStruct[NUM_CONNECTIONS].connState   = CONNSTATE_CONNECTED;
+        sPersistInfo.connStruct[NUM_CONNECTIONS].hops2target = MAX_HOPS;
+        sPersistInfo.connStruct[NUM_CONNECTIONS].portRx      = SMPL_PORT_USER_BCAST;
+        sPersistInfo.connStruct[NUM_CONNECTIONS].portTx      = SMPL_PORT_USER_BCAST;
+        sPersistInfo.connStruct[NUM_CONNECTIONS].thisLinkID  = SMPL_LINKID_USER_UUD;
+        /* set peer address to broadcast so it is used when Application sends to the broadcast Link
+         *ID */
+        memcpy(sPersistInfo.connStruct[NUM_CONNECTIONS].peerAddr,
+               nwk_getBCastAddress(), NET_ADDR_SIZE);
+    }
+
+    return SMPL_SUCCESS;
 }
 
 /******************************************************************************
@@ -233,27 +247,28 @@ smplStatus_t nwk_nwkInit(uint8_t (*f)(linkID_t))
  * @return   pointer to the new connInfo_t structure. NULL if there is
  *           no room in connection structure array.
  */
+
 connInfo_t *nwk_getNextConnection()
 {
-  uint8_t  i;
+    uint8_t i;
 
-  for (i=0; i<SYS_NUM_CONNECTIONS; ++i)
-  {
-    if (sPersistInfo.connStruct[i].connState == CONNSTATE_CONNECTED)
+    for (i = 0; i < SYS_NUM_CONNECTIONS; ++i)
     {
-      continue;
+        if (sPersistInfo.connStruct[i].connState == CONNSTATE_CONNECTED)
+        {
+            continue;
+        }
+        break;
     }
-    break;
-  }
 
-  if (SYS_NUM_CONNECTIONS == i)
-  {
-    return (connInfo_t *)0;
-  }
+    if (SYS_NUM_CONNECTIONS == i)
+    {
+        return (connInfo_t *)0;
+    }
 
-  initializeConnection(&sPersistInfo.connStruct[i]);
+    initializeConnection(&sPersistInfo.connStruct[i]);
 
-  return &sPersistInfo.connStruct[i];
+    return &sPersistInfo.connStruct[i];
 }
 
 /************************************************************************************
@@ -271,33 +286,33 @@ connInfo_t *nwk_getNextConnection()
  *
  * @return   void
  */
+
 static void initializeConnection(connInfo_t *pCInfo)
 {
-  linkID_t *locLID = &sPersistInfo.nextLinkID;
-  uint8_t   tmp;
+    linkID_t *locLID = &sPersistInfo.nextLinkID;
+    uint8_t tmp;
 
     /* this element will be populated during the exchange with the peer. */
-  pCInfo->portTx = 0;
+    pCInfo->portTx = 0;
 
-  pCInfo->connState  =  CONNSTATE_CONNECTED;
-  pCInfo->thisLinkID = *locLID;
+    pCInfo->connState  =  CONNSTATE_CONNECTED;
+    pCInfo->thisLinkID = *locLID;
 
-  /* Generate the next Link ID. This isn't foolproof. If the count wraps
-   * we can end up with confusing duplicates. We can protect aginst using
-   * one that is already in use but we can't protect against a stale Link ID
-   * remembered by an application that doesn't know its connection has been
-   * torn down. The test for 0 will hopefully never be true (indicating a wrap).
-   */
-  (*locLID)++;
-
-  while (!*locLID || (*locLID == SMPL_LINKID_USER_UUD) || map_lid2idx(*locLID, &tmp))
-  {
+    /* Generate the next Link ID. This isn't foolproof. If the count wraps
+     * we can end up with confusing duplicates. We can protect aginst using
+     * one that is already in use but we can't protect against a stale Link ID
+     * remembered by an application that doesn't know its connection has been
+     * torn down. The test for 0 will hopefully never be true (indicating a wrap).
+     */
     (*locLID)++;
-  }
 
-  return;
+    while (!*locLID || (*locLID == SMPL_LINKID_USER_UUD) || map_lid2idx(*locLID, &tmp))
+    {
+        (*locLID)++;
+    }
+
+    return;
 }
-
 
 /******************************************************************************
  * @fn          nwk_freeConnection
@@ -315,10 +330,11 @@ static void initializeConnection(connInfo_t *pCInfo)
  *
  * @return   None.
  */
+
 void nwk_freeConnection(connInfo_t *pCInfo)
 {
 #if NUM_CONNECTIONS > 0
-  pCInfo->connState = CONNSTATE_FREE;
+    pCInfo->connState = CONNSTATE_FREE;
 #endif
 }
 
@@ -335,13 +351,16 @@ void nwk_freeConnection(connInfo_t *pCInfo)
  * @return   pointer to connInfo_t structure found. NULL if no mapping
  *           found or entry not valid.
  */
+
 connInfo_t *nwk_getConnInfo(linkID_t linkID)
 {
-  uint8_t idx, rc;
+    uint8_t idx, rc;
 
-  rc = map_lid2idx(linkID, &idx);
+    rc = map_lid2idx(linkID, &idx);
 
-  return (rc && (CONNSTATE_CONNECTED == sPersistInfo.connStruct[idx].connState)) ? &sPersistInfo.connStruct[idx] : (connInfo_t *)0;
+    return (rc &&
+            (CONNSTATE_CONNECTED ==
+    sPersistInfo.connStruct[idx].connState)) ? &sPersistInfo.connStruct[idx] : (connInfo_t *)0;
 }
 
 /******************************************************************************
@@ -360,26 +379,27 @@ connInfo_t *nwk_getConnInfo(linkID_t linkID)
  * @return   Returns pointer to connection entry if the address and remote Port
  *           match an existing entry, otherwise 0.
  */
+
 connInfo_t *nwk_isLinkDuplicate(uint8_t *addr, uint8_t remotePort)
 {
 #if NUM_CONNECTIONS > 0
-  uint8_t       i;
-  connInfo_t   *ptr = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t   *ptr = sPersistInfo.connStruct;
 
-  for (i=0; i<NUM_CONNECTIONS; ++i,++ptr)
-  {
-    if (CONNSTATE_CONNECTED == ptr->connState)
+    for (i = 0; i < NUM_CONNECTIONS; ++i, ++ptr)
     {
-      if (!(memcmp(ptr->peerAddr, addr, NET_ADDR_SIZE)) &&
-          (ptr->portTx == remotePort))
-      {
-        return ptr;
-      }
+        if (CONNSTATE_CONNECTED == ptr->connState)
+        {
+            if (!(memcmp(ptr->peerAddr, addr, NET_ADDR_SIZE)) &&
+                (ptr->portTx == remotePort))
+            {
+                return ptr;
+            }
+        }
     }
-  }
 #endif
 
-  return (connInfo_t *)NULL;
+    return (connInfo_t *)NULL;
 }
 
 /******************************************************************************
@@ -395,29 +415,31 @@ connInfo_t *nwk_isLinkDuplicate(uint8_t *addr, uint8_t remotePort)
  *
  * @return   Returns non-zero if a match is found, otherwise 0.
  */
+
 uint8_t nwk_findAddressMatch(mrfiPacket_t *frame)
 {
 #if NUM_CONNECTIONS > 0
-  uint8_t       i;
-  connInfo_t   *ptr = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t   *ptr = sPersistInfo.connStruct;
 
-  for (i=0; i<NUM_CONNECTIONS; ++i,++ptr)
-  {
-
-    if (CONNSTATE_CONNECTED == ptr->connState)
+    for (i = 0; i < NUM_CONNECTIONS; ++i, ++ptr)
     {
-      if (!(memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
-      {
-        return 1;
-      }
+
+        if (CONNSTATE_CONNECTED == ptr->connState)
+        {
+            if (!(memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
+            {
+                return 1;
+            }
+        }
     }
-  }
 #endif
 
-  return 0;
+    return 0;
 }
 
 #ifdef ACCESS_POINT
+
 /******************************************************************************
  * @fn          nwk_getSFInfoPtr
  *
@@ -430,12 +452,14 @@ uint8_t nwk_findAddressMatch(mrfiPacket_t *frame)
  *
  * @return   Returns pointer to the store-nad-forward object.
  */
+
 sfInfo_t *nwk_getSFInfoPtr(void)
 {
-  return &sPersistInfo.sSandFContext;
+    return &sPersistInfo.sSandFContext;
 }
 
-#if defined(AP_IS_DATA_HUB)
+#    if defined(AP_IS_DATA_HUB)
+
 /***************************************************************************************
  * @fn          nwk_saveJoinedDevice
  *
@@ -454,36 +478,37 @@ sfInfo_t *nwk_getSFInfoPtr(void)
  *           0 if device already there or there is no room in the Connection
  *           Table.
  */
+
 uint8_t nwk_saveJoinedDevice(mrfiPacket_t *frame)
 {
-  uint8_t     i;
-  connInfo_t *avail = 0;
-  connInfo_t *ptr   = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t *avail = 0;
+    connInfo_t *ptr   = sPersistInfo.connStruct;
 
-  for (i=0; i<NUM_CONNECTIONS; ++i, ++ptr)
-  {
-    if ((ptr->connState == CONNSTATE_CONNECTED) || (ptr->connState == CONNSTATE_JOINED))
+    for (i = 0; i < NUM_CONNECTIONS; ++i, ++ptr)
     {
-      if (!memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE))
-      {
+        if ((ptr->connState == CONNSTATE_CONNECTED) || (ptr->connState == CONNSTATE_JOINED))
+        {
+            if (!memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE))
+            {
+                return 0;
+            }
+        }
+        else
+        {
+            avail = ptr;
+        }
+    }
+
+    if (!avail)
+    {
         return 0;
-      }
     }
-    else
-    {
-      avail = ptr;
-    }
-  }
 
-  if (!avail)
-  {
-    return 0;
-  }
+    avail->connState = CONNSTATE_JOINED;
+    memcpy(avail->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE);
 
-  avail->connState = CONNSTATE_JOINED;
-  memcpy(avail->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE);
-
-  return 1;
+    return 1;
 }
 
 /***********************************************************************************
@@ -508,31 +533,33 @@ uint8_t nwk_saveJoinedDevice(mrfiPacket_t *frame)
  *           0. This call will only fail if the Connection Table was full when the
  *           device tried to join initially.
  */
+
 connInfo_t *nwk_findAlreadyJoined(mrfiPacket_t *frame)
 {
-  uint8_t     i;
-  connInfo_t *ptr = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t *ptr = sPersistInfo.connStruct;
 
-  for (i=0; i<NUM_CONNECTIONS; ++i,++ptr)
-  {
-    /* Look for an entry in the JOINED state */
-    if (CONNSTATE_JOINED == ptr->connState)
+    for (i = 0; i < NUM_CONNECTIONS; ++i, ++ptr)
     {
-      /* Is this it? */
-      if (!(memcmp(&ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
-      {
-        /* Yes. Initilize tabel entry and return the pointer. */
-        initializeConnection(ptr);
-        return ptr;
-      }
+        /* Look for an entry in the JOINED state */
+        if (CONNSTATE_JOINED == ptr->connState)
+        {
+            /* Is this it? */
+            if (!(memcmp(&ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
+            {
+                /* Yes. Initilize tabel entry and return the pointer. */
+                initializeConnection(ptr);
+                return ptr;
+            }
+        }
     }
-  }
 
-  /* Nothing found... */
-  return (connInfo_t *)NULL;
+    /* Nothing found... */
+    return (connInfo_t *)NULL;
 }
-#endif  /* AP_IS_DATA_HUB */
-#endif  /* ACCESS_POINT */
+
+#    endif /* AP_IS_DATA_HUB */
+#endif     /* ACCESS_POINT */
 
 /******************************************************************************
  * @fn          nwk_checkConnInfo
@@ -547,24 +574,25 @@ connInfo_t *nwk_findAlreadyJoined(mrfiPacket_t *frame)
  *
  * @return   Status of operation.
  */
+
 smplStatus_t nwk_checkConnInfo(connInfo_t *ptr, uint8_t which)
 {
-  uint8_t  port;
+    uint8_t port;
 
-  /* make sure port isn't null and that the entry is active */
-  port = (CHK_RX == which) ? ptr->portRx : ptr->portTx;
-  if (!port || (CONNSTATE_FREE == ptr->connState))
-  {
-    return SMPL_BAD_PARAM;
-  }
+    /* make sure port isn't null and that the entry is active */
+    port = (CHK_RX == which) ? ptr->portRx : ptr->portTx;
+    if (!port || (CONNSTATE_FREE == ptr->connState))
+    {
+        return SMPL_BAD_PARAM;
+    }
 
-  /* validate port number */
-  if (port < PORT_BASE_NUMBER)
-  {
-    return SMPL_BAD_PARAM;
-  }
+    /* validate port number */
+    if (port < PORT_BASE_NUMBER)
+    {
+        return SMPL_BAD_PARAM;
+    }
 
-  return SMPL_SUCCESS;
+    return SMPL_SUCCESS;
 }
 
 /******************************************************************************
@@ -581,65 +609,69 @@ smplStatus_t nwk_checkConnInfo(connInfo_t *ptr, uint8_t which)
  *
  * @return   0 if connection specified in frame is not valid, otherwise non-zero.
  */
+
 uint8_t nwk_isConnectionValid(mrfiPacket_t *frame, linkID_t *lid)
 {
-  uint8_t       i;
-  connInfo_t   *ptr  = sPersistInfo.connStruct;
-  uint8_t       port = GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_PORT_OS);
+    uint8_t i;
+    connInfo_t   *ptr  = sPersistInfo.connStruct;
+    uint8_t port = GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_PORT_OS);
 
-  for (i=0; i<SYS_NUM_CONNECTIONS; ++i,++ptr)
-  {
-    if (CONNSTATE_CONNECTED == ptr->connState)
+    for (i = 0; i < SYS_NUM_CONNECTIONS; ++i, ++ptr)
     {
-      /* check port first since we're done if the port is the user bcast port. */
-      if (port == ptr->portRx)
-      {
-        /* yep...ports match. */
-        if ((SMPL_PORT_USER_BCAST == port) || !(memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
+        if (CONNSTATE_CONNECTED == ptr->connState)
         {
-          uint8_t rc = 1;
+            /* check port first since we're done if the port is the user bcast port. */
+            if (port == ptr->portRx)
+            {
+                /* yep...ports match. */
+                if ((SMPL_PORT_USER_BCAST == port) ||
+                    !(memcmp(ptr->peerAddr, MRFI_P_SRC_ADDR(frame), NET_ADDR_SIZE)))
+                {
+                    uint8_t rc = 1;
 
-          /* we're done. */
-          *lid = ptr->thisLinkID;
+                    /* we're done. */
+                    *lid = ptr->thisLinkID;
 #ifdef APP_AUTO_ACK
-          /* can't ack the broadcast port... */
-          if (!(SMPL_PORT_USER_BCAST == port))
-          {
-            if (GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_ACK_REQ))
-            {
-              /* Ack requested. Send ack now */
-              nwk_sendAckReply(frame, ptr->portTx);
-            }
-            else if (GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_ACK_RPLY))
-            {
-              /* This is a reply. Signal that it was received by resetting the
-               * saved transaction ID in the connection object if they match. The
-               * main thread is polling this value. The setting here is in the
-               * Rx ISR thread.
-               */
-              if (ptr->ackTID == GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_TRACTID_OS))
-              {
-                ptr->ackTID = 0;
-              }
-              /* This causes the frame to be dropped. All ack frames are
-               * dropped.
-               */
-              rc = 0;
-            }
-          }
-#endif  /* APP_AUTO_ACK */
-          /* Unconditionally kill the reply delay semaphore. This used to be done
-           * unconditionally in the calling routine.
-           */
-          MRFI_PostKillSem();
-          return rc;
-        }
-      }
-    }
-  }
+                    /* can't ack the broadcast port... */
+                    if (!(SMPL_PORT_USER_BCAST == port))
+                    {
+                        if (GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_ACK_REQ))
+                        {
+                            /* Ack requested. Send ack now */
+                            nwk_sendAckReply(frame, ptr->portTx);
+                        }
+                        else if (GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_ACK_RPLY))
+                        {
+                            /* This is a reply. Signal that it was received by resetting the
+                             * saved transaction ID in the connection object if they match. The
+                             * main thread is polling this value. The setting here is in the
+                             * Rx ISR thread.
+                             */
+                            if (ptr->ackTID == GET_FROM_FRAME(MRFI_P_PAYLOAD(frame), F_TRACTID_OS))
+                            {
+                                ptr->ackTID = 0;
+                            }
 
-  /* no matches */
-  return 0;
+                            /* This causes the frame to be dropped. All ack frames are
+                             * dropped.
+                             */
+                            rc = 0;
+                        }
+                    }
+#endif              /* APP_AUTO_ACK */
+
+                    /* Unconditionally kill the reply delay semaphore. This used to be done
+                     * unconditionally in the calling routine.
+                     */
+                    MRFI_PostKillSem();
+                    return rc;
+                }
+            }
+        }
+    }
+
+    /* no matches */
+    return 0;
 }
 
 /******************************************************************************
@@ -672,102 +704,104 @@ uint8_t nwk_isConnectionValid(mrfiPacket_t *frame, linkID_t *lid)
  *
  * @return   Non-zero if port number assigned. 0 if no port available.
  */
+
 uint8_t nwk_allocateLocalRxPort(uint8_t which, connInfo_t *newPtr)
 {
 #if NUM_CONNECTIONS > 0
-  uint8_t     num, i;
-  uint8_t     marker[NUM_CONNECTIONS];
-  connInfo_t *ptr = sPersistInfo.connStruct;
+    uint8_t num, i;
+    uint8_t marker[NUM_CONNECTIONS];
+    connInfo_t *ptr = sPersistInfo.connStruct;
 
-  memset(&marker, 0x0, sizeof(marker));
+    memset(&marker, 0x0, sizeof(marker));
 
-  for (i=0; i<NUM_CONNECTIONS; ++i,++ptr)
-  {
-    /* Mark the port number as used unless it's a statically allocated port */
-    if ((ptr != newPtr) && (CONNSTATE_CONNECTED == ptr->connState) && (ptr->portRx <= SMPL_PORT_USER_MAX))
+    for (i = 0; i < NUM_CONNECTIONS; ++i, ++ptr)
     {
-      if (LINK_SEND == which)
-      {
-        if (ptr->portRx > sPersistInfo.curNextLinkPort)
+        /* Mark the port number as used unless it's a statically allocated port */
+        if ((ptr != newPtr) && (CONNSTATE_CONNECTED == ptr->connState) &&
+            (ptr->portRx <= SMPL_PORT_USER_MAX))
         {
-          marker[SMPL_PORT_USER_MAX - ptr->portRx] = 1;
+            if (LINK_SEND == which)
+            {
+                if (ptr->portRx > sPersistInfo.curNextLinkPort)
+                {
+                    marker[SMPL_PORT_USER_MAX - ptr->portRx] = 1;
+                }
+            }
+            else if (!memcmp(ptr->peerAddr, newPtr->peerAddr, NET_ADDR_SIZE))
+            {
+                marker[ptr->portRx - PORT_BASE_NUMBER] = 1;
+            }
         }
-      }
-      else if (!memcmp(ptr->peerAddr, newPtr->peerAddr, NET_ADDR_SIZE))
-      {
-          marker[ptr->portRx - PORT_BASE_NUMBER] = 1;
-      }
     }
-  }
 
-  num = 0;
-  for (i=0; i<NUM_CONNECTIONS; ++i)
-  {
-    if (!marker[i])
+    num = 0;
+    for (i = 0; i < NUM_CONNECTIONS; ++i)
     {
-      if (LINK_REPLY == which)
-      {
-        num = PORT_BASE_NUMBER + i;
-      }
-      else
-      {
-        num = SMPL_PORT_USER_MAX - i;
-      }
-      break;
+        if (!marker[i])
+        {
+            if (LINK_REPLY == which)
+            {
+                num = PORT_BASE_NUMBER + i;
+            }
+            else
+            {
+                num = SMPL_PORT_USER_MAX - i;
+            }
+            break;
+        }
     }
-  }
 
-  if (LINK_REPLY == which)
-  {
-    /* if the number we have doesn't overlap the assignment of ports used
-     * for sending link frames, use it.
-     */
-    if (num <= sPersistInfo.curNextLinkPort)
+    if (LINK_REPLY == which)
     {
-      if (num > sPersistInfo.curMaxReplyPort)
-      {
-        /* remember maximum port number used */
-        sPersistInfo.curMaxReplyPort = num;
-      }
+        /* if the number we have doesn't overlap the assignment of ports used
+         * for sending link frames, use it.
+         */
+        if (num <= sPersistInfo.curNextLinkPort)
+        {
+            if (num > sPersistInfo.curMaxReplyPort)
+            {
+                /* remember maximum port number used */
+                sPersistInfo.curMaxReplyPort = num;
+            }
+        }
+        else
+        {
+            /* the port number we need has already been used in the other context. It may or
+             * may not have been used for the same address but we don't bother to check...we
+             * just reject the asignment. This is the overly cautious part but is extermely
+             * unlikely to ever occur.
+             */
+            num = 0;
+        }
     }
     else
     {
-      /* the port number we need has already been used in the other context. It may or
-       * may not have been used for the same address but we don't bother to check...we
-       * just reject the asignment. This is the overly cautious part but is extermely
-       * unlikely to ever occur.
-       */
-      num = 0;
+        /* if the number we have doesn't overlap the assignment of ports used
+         * for sending link frame replies, use it.
+         */
+        if (num >= sPersistInfo.curMaxReplyPort)
+        {
+            if (num == sPersistInfo.curNextLinkPort)
+            {
+                sPersistInfo.curNextLinkPort--;
+            }
+        }
+        else
+        {
+            /* the port number we need has already been used in the other context. It may or
+             * may not have been used for the same address but we don't bother to check...we
+             * just reject the asignment. This is the overly cautious part but is extermely
+             * unlikely to ever occur.
+             */
+            num = 0;
+        }
     }
-  }
-  else
-  {
-    /* if the number we have doesn't overlap the assignment of ports used
-     * for sending link frame replies, use it.
-     */
-    if (num >= sPersistInfo.curMaxReplyPort)
-    {
-      if (num == sPersistInfo.curNextLinkPort)
-      {
-        sPersistInfo.curNextLinkPort--;
-      }
-    }
-    else
-    {
-      /* the port number we need has already been used in the other context. It may or
-       * may not have been used for the same address but we don't bother to check...we
-       * just reject the asignment. This is the overly cautious part but is extermely
-       * unlikely to ever occur.
-       */
-      num = 0;
-    }
-  }
 
-  newPtr->portRx = num;
+    newPtr->portRx = num;
 
-  return num;
+    return num;
 #else
-  return 0;
+    return 0;
 #endif  /* NUM_CONNECTIONS > 0 */
 
 }
@@ -791,24 +825,25 @@ uint8_t nwk_allocateLocalRxPort(uint8_t which, connInfo_t *newPtr)
  *               SMPL_MY_REPLY : a reply that matches input parameters
  *               SMPL_A_REPLY  : a reply but does not match input parameters
  */
+
 uint8_t nwk_isValidReply(mrfiPacket_t *frame, uint8_t tid, uint8_t infoOffset, uint8_t tidOffset)
 {
-  uint8_t rc = SMPL_NOT_REPLY;
+    uint8_t rc = SMPL_NOT_REPLY;
 
-  if ((*(MRFI_P_PAYLOAD(frame)+F_APP_PAYLOAD_OS+infoOffset) & NWK_APP_REPLY_BIT))
-  {
-    if ((*(MRFI_P_PAYLOAD(frame)+F_APP_PAYLOAD_OS+tidOffset) == tid) &&
-        !memcmp(MRFI_P_DST_ADDR(frame), nwk_getMyAddress(), NET_ADDR_SIZE))
+    if ((*(MRFI_P_PAYLOAD(frame) + F_APP_PAYLOAD_OS + infoOffset) & NWK_APP_REPLY_BIT))
     {
-      rc = SMPL_MY_REPLY;
+        if ((*(MRFI_P_PAYLOAD(frame) + F_APP_PAYLOAD_OS + tidOffset) == tid) &&
+            !memcmp(MRFI_P_DST_ADDR(frame), nwk_getMyAddress(), NET_ADDR_SIZE))
+        {
+            rc = SMPL_MY_REPLY;
+        }
+        else
+        {
+            rc = SMPL_A_REPLY;
+        }
     }
-    else
-    {
-      rc = SMPL_A_REPLY;
-    }
-  }
 
-  return rc;
+    return rc;
 }
 
 /******************************************************************************
@@ -824,21 +859,22 @@ uint8_t nwk_isValidReply(mrfiPacket_t *frame, uint8_t tid, uint8_t infoOffset, u
  *
  * @return   Non-zero if Link ID found and output is valid else 0.
  */
+
 static uint8_t map_lid2idx(linkID_t lid, uint8_t *idx)
 {
-  uint8_t     i;
-  connInfo_t *ptr = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t *ptr = sPersistInfo.connStruct;
 
-  for (i=0; i<SYS_NUM_CONNECTIONS; ++i, ++ptr)
-  {
-    if ((CONNSTATE_CONNECTED == ptr->connState) && (ptr->thisLinkID == lid))
+    for (i = 0; i < SYS_NUM_CONNECTIONS; ++i, ++ptr)
     {
-      *idx = i;
-      return 1;
+        if ((CONNSTATE_CONNECTED == ptr->connState) && (ptr->thisLinkID == lid))
+        {
+            *idx = i;
+            return 1;
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 
 /******************************************************************************
@@ -854,26 +890,27 @@ static uint8_t map_lid2idx(linkID_t lid, uint8_t *idx)
  *
  * @return   Pointer to matching connection table entry else 0.
  */
+
 connInfo_t *nwk_findPeer(addr_t *peerAddr, uint8_t peerPort)
 {
-  uint8_t     i;
-  connInfo_t *ptr = sPersistInfo.connStruct;
+    uint8_t i;
+    connInfo_t *ptr = sPersistInfo.connStruct;
 
-  for (i=0; i<SYS_NUM_CONNECTIONS; ++i, ++ptr)
-  {
-    if (CONNSTATE_CONNECTED == ptr->connState)
+    for (i = 0; i < SYS_NUM_CONNECTIONS; ++i, ++ptr)
     {
-      if (!memcmp(peerAddr, ptr->peerAddr, NET_ADDR_SIZE))
-      {
-        if (peerPort == ptr->portTx)
+        if (CONNSTATE_CONNECTED == ptr->connState)
         {
-          return ptr;
+            if (!memcmp(peerAddr, ptr->peerAddr, NET_ADDR_SIZE))
+            {
+                if (peerPort == ptr->portTx)
+                {
+                    return ptr;
+                }
+            }
         }
-      }
     }
-  }
 
-  return (connInfo_t *)NULL;
+    return (connInfo_t *)NULL;
 }
 
 /******************************************************************************
@@ -894,39 +931,40 @@ connInfo_t *nwk_findPeer(addr_t *peerAddr, uint8_t peerPort)
  *           application payload TID.
  *
  */
+
 uint8_t nwk_checkAppMsgTID(appPTid_t lastTID, appPTid_t appMsgTID)
 {
-  uint8_t rc = 0;
+    uint8_t rc = 0;
 
-  /* If the values are equal this is a duplicate. We're done. */
-  if (lastTID != appMsgTID)
-  {
-    /* Is the new TID bigger? */
-    if (appMsgTID > lastTID)
+    /* If the values are equal this is a duplicate. We're done. */
+    if (lastTID != appMsgTID)
     {
-      /* In this case the current payload is OK unless we've received a late
-       * (duplicate) message that occurred just before the TID wrapped. This is
-       * considered a duplicate and we should discard it.
-       */
-      if (!(DUP_TID_AFTER_WRAP(lastTID, appMsgTID)))
-      {
-        rc = 1;
-      }
+        /* Is the new TID bigger? */
+        if (appMsgTID > lastTID)
+        {
+            /* In this case the current payload is OK unless we've received a late
+             * (duplicate) message that occurred just before the TID wrapped. This is
+             * considered a duplicate and we should discard it.
+             */
+            if (!(DUP_TID_AFTER_WRAP(lastTID, appMsgTID)))
+            {
+                rc = 1;
+            }
+        }
+        else
+        {
+            /* New TID is smaller. Accept the payload if this is the wrap case or we missed
+             * the specific wrap frame but are still within the range in which we assume
+             * we missed it. Otherwise is a genuine late frame so we should ignore it.
+             */
+            if (CHECK_TID_WRAP(lastTID, appMsgTID))
+            {
+                rc = 1;
+            }
+        }
     }
-    else
-    {
-      /* New TID is smaller. Accept the payload if this is the wrap case or we missed
-       * the specific wrap frame but are still within the range in which we assume
-       * we missed it. Otherwise is a genuine late frame so we should ignore it.
-       */
-      if (CHECK_TID_WRAP(lastTID, appMsgTID))
-      {
-        rc = 1;
-      }
-    }
-  }
 
-  return rc;
+    return rc;
 }
 
 /******************************************************************************
@@ -949,24 +987,25 @@ uint8_t nwk_checkAppMsgTID(appPTid_t lastTID, appPTid_t appMsgTID)
  *                 vacuously size 1).
  *
  */
+
 void nwk_getNumObjectFromMsg(void *src, void *dest, uint8_t objSize)
 {
-  /* Take care of alignment */
-  memmove(dest, src, objSize);
+    /* Take care of alignment */
+    memmove(dest, src, objSize);
 
-  /* Take care of endianess */
-  switch(objSize)
-  {
-    case 2:
-      *((uint16_t *)dest) = ntohs(*((uint16_t *)dest));
-      break;
+    /* Take care of endianess */
+    switch (objSize)
+    {
+        case 2:
+            *((uint16_t *)dest) = ntohs(*((uint16_t *)dest));
+            break;
 
-    case 4:
-      *((uint32_t *)dest) = ntohl(*((uint32_t *)dest));
-      break;
-  }
+        case 4:
+            *((uint32_t *)dest) = ntohl(*((uint32_t *)dest));
+            break;
+    }
 
-  return;
+    return;
 }
 
 /******************************************************************************
@@ -987,40 +1026,42 @@ void nwk_getNumObjectFromMsg(void *src, void *dest, uint8_t objSize)
  *                 object size. A simple copy is then done.
  *
  */
+
 void nwk_putNumObjectIntoMsg(void *src, void *dest, uint8_t objSize)
 {
 
-  uint8_t *ptr;
-  uint16_t u16;
-  uint32_t u32;
+    uint8_t *ptr;
+    uint16_t u16;
+    uint32_t u32;
 
-  /* Take care of endianess */
-  switch(objSize)
-  {
-    case 1:
-      ptr = (uint8_t *)src;
-      break;
+    /* Take care of endianess */
+    switch (objSize)
+    {
+        case 1:
+            ptr = (uint8_t *)src;
+            break;
 
-    case 2:
-      u16 = htons(*((uint16_t *)src));
-      ptr = (uint8_t *)&u16;
-      break;
+        case 2:
+            u16 = htons(*((uint16_t *)src));
+            ptr = (uint8_t *)&u16;
+            break;
 
-    case 4:
-      u32 = htonl(*((uint32_t *)src));
-      ptr = (uint8_t *)&u32;
-      break;
+        case 4:
+            u32 = htonl(*((uint32_t *)src));
+            ptr = (uint8_t *)&u32;
+            break;
 
-    default:
-      ptr = (uint8_t *)src;
-      break;
-  }
+        default:
+            ptr = (uint8_t *)src;
+            break;
+    }
 
-  /* Take care of alignment */
-  memmove(dest, ptr, objSize);
+    /* Take care of alignment */
+    memmove(dest, ptr, objSize);
 
-  return;
+    return;
 }
+
 /******************************************************************************
  * @fn          nwk_NVObj
  *
@@ -1041,29 +1082,31 @@ void nwk_putNumObjectIntoMsg(void *src, void *dest, uint8_t objSize)
  *           SMPL_BAD_PARAM   Object version or size do not conform on a SET call
  *                            or illegal action specified.
  */
+
 smplStatus_t nwk_NVObj(ioctlAction_t action, ioctlNVObj_t *val)
 {
 #ifdef NVOBJECT_SUPPORT
-  smplStatus_t rc = SMPL_SUCCESS;
+    smplStatus_t rc = SMPL_SUCCESS;
 
-  if (IOCTL_ACT_GET == action)
-  {
-    /* Populate helper objects */
-    val->objLen     = SIZEOF_NV_OBJ;
-    val->objVersion = sPersistInfo.structureVersion;
-    /* Set pointer to connection context if address of pointer is not null */
-    if (val->objPtr)
+    if (IOCTL_ACT_GET == action)
     {
-      *(val->objPtr) = (uint8_t *)&sPersistInfo;
+        /* Populate helper objects */
+        val->objLen     = SIZEOF_NV_OBJ;
+        val->objVersion = sPersistInfo.structureVersion;
+        /* Set pointer to connection context if address of pointer is not null */
+        if (val->objPtr)
+        {
+            *(val->objPtr) = (uint8_t *)&sPersistInfo;
+        }
     }
-  }
-  else
-  {
-    rc = SMPL_BAD_PARAM;
-  }
+    else
+    {
+        rc = SMPL_BAD_PARAM;
+    }
 
-  return rc;
+    return rc;
 #else  /* NVOBJECT_SUPPORT */
-  return SMPL_BAD_PARAM;
+    return SMPL_BAD_PARAM;
 #endif
 }
+
