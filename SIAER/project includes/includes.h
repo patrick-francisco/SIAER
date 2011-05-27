@@ -16,12 +16,13 @@
 #define TX_BARCODE_2        0x12
 #define TX_BARCODE_2_ACK    0x12
 
-#define	POLLING		0x03
-#define POLL_ACK        0x04
-#define POLLING2        0x05
-#define POLL2_ACK       0x06
-#define TIPO_ONIBUS      0x01
-#define TIPO_GUICHE      0x02
+#define	POLLING		 0x03
+#define POLLING2     0x05
+
+#define POLL_ACK     0x04
+#define POLL2_ACK    0x06
+#define TIPO_ONIBUS  0x01
+#define TIPO_GUICHE  0x02
 
 //Timer Events
 #define EXP_TIM_10      0xF0
