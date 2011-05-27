@@ -3,7 +3,6 @@
 
 #include "msg.h"
 
-
 #define RF_MSG_SIZE 15
 
 // Definicoes para tipo de mensagem

@@ -198,6 +198,7 @@ void ReportEventUart (char tipo, char id_onibus)
             msg[3]=Onibus.DST[1];
             msg[4]=0x24;
             TXString(msg,5);
+            TXString(msg,5);
             Onibus.EST_CONEXAO = CONECTADO;
  			break;          
  			 
@@ -220,7 +221,7 @@ void ReportEventUart (char tipo, char id_onibus)
               {
                 msg2[i+4]=simpliciti_msg[5+i];             
               }
-			  //msg2[14]=0x24;
+			  msg2[14]=0x24;
               TXString(msg2,15); 
               Onibus.EST_CONEXAO = ACK_BARCODE;
               break;
@@ -320,7 +321,7 @@ void TrataMsgSimpliciti(char tipo)
 void Encode_siaer_data_guiche()
 {
 	char j, k, i;
-	char etwas_tx=FALSE;;
+	char etwas_tx=FALSE;
 	
 	 	switch(ed_data[5]) // funcid
 	 	{
