@@ -299,6 +299,7 @@ void TrataMsgSimpliciti(char tipo)
       default:
             if (simpliciti_msg[5] & TX_BARCODE)
             {
+              Onibus.TIMEOUT=0;
               // mandar via uart
               ReportEventUart(RECEBEU_BARCODE,NULL);
               Onibus.EST_CONEXAO = ACK_BARCODE;
@@ -320,7 +321,7 @@ void TrataMsgSimpliciti(char tipo)
 void Encode_siaer_data_guiche()
 {
 	char j, k, i;
-	char etwas_tx=FALSE;;
+	char etwas_tx=FALSE;
 	
 	 	switch(ed_data[5]) // funcid
 	 	{
@@ -406,7 +407,7 @@ void Encode_siaer_data_guiche()
 	                    if (etwas_tx==FALSE)
 	                    {
 	                      // Nao tem mais nada no buffer
-	                      simpliciti_msg[5] = POLLING2; // FUNCID
+	                      //simpliciti_msg[5] = POLLING2; // FUNCID
 	                    }
 	            	}
 	          	}
