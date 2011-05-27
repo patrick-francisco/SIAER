@@ -105,13 +105,13 @@ void TrataIntUartRx(char rx)
 // *************************************************************************************************
 void TXString(char* string, int length)     // transmitir por uart
 {
-  int pointer; 
+  int pointer;
   for( pointer = 0; pointer < length; pointer++)
   {
+    volatile int i;
     UCA0TXBUF = string[pointer];
     while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?  
   }
-
 }
 
 // *************************************************************************************************

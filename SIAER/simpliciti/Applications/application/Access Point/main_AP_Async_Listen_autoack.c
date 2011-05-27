@@ -135,7 +135,7 @@ static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
 {
   // Decode end device packet
   
-  bspIState_t intState;
+ // bspIState_t intState;
   //BSP_ENTER_CRITICAL_SECTION(intState);
   	   
   switch (ed_data[0])

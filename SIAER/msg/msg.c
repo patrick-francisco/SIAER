@@ -168,6 +168,8 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg[4]=0x24;
 	          TXString(msg,5);
 	          TXString(msg,5);
+	          TXString(msg,5);
+	          TXString(msg,5);
 	          break;
 	        case RECEBEU_BARCODE:
 	          msg2[0]=0x24;
@@ -249,7 +251,7 @@ void AddBarcodeBuffer(char* msg)
 	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i]=msg[FUNCID];
 	                for (j=1;j<TX_BARCODE_BUF_SIZE+1;j++)
 	                {
-	                  buffer_a_transmitir[i].buffer[j][i]=msg[j-1+HDR_SIZE];
+	                  buffer_a_transmitir[i].buffer[i][j] = msg[j-1+HDR_SIZE];
 	                }
 	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i] |= NOT_TXED;
 	                buffer_a_transmitir[i].ENVIAR_BUFFER = TRUE;
