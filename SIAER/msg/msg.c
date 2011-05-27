@@ -9,7 +9,6 @@ void TrataMsg(char* msg);
 void TrataMsgSimpliciti(char tipo);
 void ReportEventUart (char tipo, char id_onibus);
 void Encode_siaer_data_guiche();
-void Encode_siaer_data_onibus();
 
 // *************************************************************************************************
 // Defines section
@@ -42,7 +41,7 @@ char Conexao;
 // **************************************************************************************************
 void InitBusGuiche() //todo mundo nulo 
 {
-    int i=0;
+    int i,j;
 
 	DST[0]=1;
 	DST[0]=0;
@@ -62,6 +61,10 @@ void InitBusGuiche() //todo mundo nulo
 
     for(i=0; i<CONEXOES_POSSIVEIS; i++)
     {
+	    for (j=0; j<BUFFER_SIZE; j++)
+	    {
+	    	buffer_a_transmitir[i].buffer[j][BUF_STATUS_POS] = 0x00;
+	    }
     	buffer_a_transmitir[i].EST_CONEXAO=OFF;
     }
 }
@@ -234,29 +237,32 @@ void ReportEventUart (char tipo, char id_onibus)
 void AddBarcodeBuffer(char* msg)
 {
 	// TRANSMITIR
-    char i,j=10;
+    char i,j,id_buf=10;
     char dest[2];
         
     dest[0]=msg[DST_HI];
     dest[1]=msg[DST_LO];
 
+    buffer_a_transmitir[0].DST[0] = dest[0];
+    buffer_a_transmitir[0].DST[1] = dest[1];
+    
     for (i=0;i<CONEXOES_POSSIVEIS;i++)
     {
         if (dest[0]==buffer_a_transmitir[i].DST[0] && dest[1]==buffer_a_transmitir[i].DST[1])
           {
-	        for (i=0;i<BUFFER_SIZE;i++)
+	        for (id_buf=0;id_buf<BUFFER_SIZE;id_buf++)
 	        {
-	            if (!(buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i]&NOT_TXED))
+	            if (!(buffer_a_transmitir[i].buffer[id_buf][BUF_STATUS_POS]&NOT_TXED))
 	            {
-	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i]=msg[FUNCID];
-	                for (j=1;j<TX_BARCODE_BUF_SIZE+1;j++)
+	                buffer_a_transmitir[i].buffer[id_buf][BUF_STATUS_POS] = msg[FUNCID];
+	                for (j=1; j<TX_BARCODE_BUF_SIZE+1; j++)
 	                {
-	                  buffer_a_transmitir[i].buffer[i][j] = msg[j-1+HDR_SIZE];
+	                  buffer_a_transmitir[i].buffer[id_buf][j] = msg[j-1+HDR_SIZE];
 	                }
-	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][i] |= NOT_TXED;
+	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][id_buf] |= NOT_TXED;
+	               
+	              	// flag avisando q tem mensagem pra transmitir.
 	                buffer_a_transmitir[i].ENVIAR_BUFFER = TRUE;
-	              // flag avisando q tem mensagem pra transmitir.
-	              //  EnableTslProcess(tsl,BARCODE_PROC);
 	                break;
 	            }
 	         }        
@@ -352,15 +358,15 @@ void Encode_siaer_data_guiche()
       						
       						simpliciti_msg[3] = buffer_a_transmitir[i].DST[0]; // source
       						simpliciti_msg[4] = buffer_a_transmitir[i].DST[1]; // source
-      						simpliciti_msg[5] = (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0])&0x7F; // source
+      						simpliciti_msg[5] = (buffer_a_transmitir[i].buffer[0][BUF_STATUS_POS])&0x7F; // FUNCID
 
        						for (j=1; j<TX_BARCODE_BUF_SIZE+1; j++)
        						{
-       							simpliciti_msg[j+5] = buffer_a_transmitir[i].buffer[j][0];
+       							simpliciti_msg[j+5] = buffer_a_transmitir[i].buffer[0][j];
        						}
 							// carregar dados a serem enviados
-							buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]&=0x7F;
-    						buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]|=TXED;
+							buffer_a_transmitir[i].buffer[0][BUF_STATUS_POS]&=0x7F;
+    						buffer_a_transmitir[i].buffer[0][BUF_STATUS_POS]|=TXED;
 						}
 						else
 						{
@@ -376,22 +382,22 @@ void Encode_siaer_data_guiche()
 	          {
 	          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2])) // verifica o destinatario correto 
 	          	{
-					if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][0]&TXED) // caso transmitiu com sucesso
+					if (buffer_a_transmitir[i].buffer[0][BUF_STATUS_POS]&TXED) // caso transmitiu com sucesso
 	                {
 	               		// manda resposta positiva pro programa do guiche
 	                    ReportEventUart(RECEBEU_BARCODE,i); 
 	                    
 	                	for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++) // zera o buffer
 	                	{
-	                 		buffer_a_transmitir[i].buffer[j][0]=0x00;
+	                 		buffer_a_transmitir[i].buffer[0][j]=0x00;
 	                	}
 	                    for (k=1;k<BUFFER_SIZE;k++) // copia o buffer 2 para o 1, o 3 para o 2...
 	                    {
 	                        for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
 	                     	{
-	                            buffer_a_transmitir[i].buffer[j][k-1]=buffer_a_transmitir[i].buffer[j][k];
+	                            buffer_a_transmitir[i].buffer[k-1][j]=buffer_a_transmitir[i].buffer[k][j];
 	                     	}
-	                        if (buffer_a_transmitir[i].buffer[BUF_STATUS_POS][k]&NOT_TXED)
+	                        if (buffer_a_transmitir[i].buffer[k][BUF_STATUS_POS]&NOT_TXED)
 	                        {
 	                        	// Ainda tem algo no buffer
 	                          	etwas_tx=TRUE;
