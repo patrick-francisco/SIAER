@@ -406,7 +406,7 @@ void Encode_siaer_data_guiche()
 	                    if (etwas_tx==FALSE)
 	                    {
 	                      // Nao tem mais nada no buffer
-	                      //DisableTslProcess(timeslot,BARCODE_PROC);   
+	                      simpliciti_msg[5] = POLLING2; // FUNCID
 	                    }
 	            	}
 	          	}

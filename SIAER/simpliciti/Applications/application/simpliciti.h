@@ -4,7 +4,7 @@
 #include "msg.h"
 
 
-#define RF_MSG_SIZE 10
+#define RF_MSG_SIZE 15
 
 // Definicoes para tipo de mensagem
 #define ED_READY_2_RECEIVE 0xAA
