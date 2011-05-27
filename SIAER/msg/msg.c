@@ -1,6 +1,7 @@
 // *************************************************************************************************
 // Include section
 #include "msg.h"
+#include "bsp.h"
 #include "includes.h"
 // *************************************************************************************************
 // Prototypes section
@@ -162,13 +163,10 @@ void ReportEventUart (char tipo, char id_onibus)
 	        case BUS_PARTIU:
 	          msg[0]=0x24;
 	          msg[1]=tipo;
-	          
-	          //buffer_a_transmitir[0].DST[0] = 31;
-			  //buffer_a_transmitir[0].DST[1] = 69;
-	          
 	          msg[2]=buffer_a_transmitir[id_onibus].DST[0];
 	          msg[3]=buffer_a_transmitir[id_onibus].DST[1];
 	          msg[4]=0x24;
+	          TXString(msg,5);
 	          TXString(msg,5);
 	          break;
 	        case RECEBEU_BARCODE:
@@ -330,8 +328,8 @@ void Encode_siaer_data_guiche()
 		 		buffer_a_transmitir[num_onibus_conectados].EST_CONEXAO = ON; 	// Buffer esta em uso. Sera livre qnd ocorrer desconexao.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[0]=Guiche.cidade[0]; // redundancia.
 		 		buffer_a_transmitir[num_onibus_conectados].SRC[1]=Guiche.cidade[1]; // 
-				num_onibus_conectados++;
 				ReportEventUart(BUS_CHEGOU,num_onibus_conectados);
+				num_onibus_conectados++;
 		        break;
 		    
 				// Soh mantem a conexao

@@ -2,6 +2,7 @@
 // Include section
 #include "includes.h"
 #include "uart.h"
+#include "bsp.h"
 // *************************************************************************************************
 // Prototypes section
 
@@ -79,7 +80,7 @@ void TrataIntUartRx(char rx)
         if (rx=='$') // terminou de receber
         {
             ESTADO_RX_UART=RX_LIVRE;
-            TXString(uart_msg,7);
+            //TXString(uart_msg,7);
             TXString(buffer_uart_rx,tamanho_buffer); 	// transmite um ack
             TrataMsg(buffer_uart_rx); 					// Apos receber todos os dados, chama funcao que ira decodificar a mensagem
             free(buffer_uart_rx); 						// libera espaco alocado
@@ -104,13 +105,13 @@ void TrataIntUartRx(char rx)
 // *************************************************************************************************
 void TXString(char* string, int length)     // transmitir por uart
 {
-  int pointer;
+  int pointer; 
   for( pointer = 0; pointer < length; pointer++)
   {
-    volatile int i;
     UCA0TXBUF = string[pointer];
     while (!(UCA0IFG&UCTXIFG));             // USCI_A0 TX buffer ready?  
   }
+
 }
 
 // *************************************************************************************************

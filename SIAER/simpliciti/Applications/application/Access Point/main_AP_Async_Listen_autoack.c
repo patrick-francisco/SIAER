@@ -23,6 +23,8 @@ static uint8_t sCB(linkID_t);
 /* work loop semaphores */
 static volatile uint8_t sPeerFrameSem = 0;
 static volatile uint8_t sJoinSem = 0;
+/* received message handler */
+static void processMessage(linkID_t, uint8_t *, uint8_t);
 
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
@@ -98,40 +100,14 @@ void main_access_point (void)
     	// Continuously try to receive end device packets
         if (SMPL_SUCCESS == SMPL_Receive(sLID[i], ed_data, &len))
         {
-	          // Indicate received packet
-	          toggleLED(1);
-	          toggleLED(2);
-	          // Decode end device packet
-	          switch (ed_data[0])
-	          {
-	              case ED_READY_2_RECEIVE:
-	                    len = RF_MSG_SIZE;
-	                    
-	                    // Pegar os dados do buffer
-	                    // o bus envia a cada segundo seus dados e o R2R.
-	                    // criar metodo para receber os dados atraves do ed_data
-	                    // verificar os bytes referentes ao id do bus
-	                    // usar um for pra achar o id no buffer
-	                    // transmitir o q der.
-	                    
-	                    Encode_siaer_data_guiche();
-	                    
-	                   	// Send reply packet to end device
-	                    SMPL_Send(sLID[i], simpliciti_msg, len);
+	         // Indicate received packet
+	         toggleLED(1);
+	         toggleLED(2);
+		     processMessage(sLID[i], ed_data, len);     
 	                   
-	                     BSP_ENTER_CRITICAL_SECTION(intState);
-				         sPeerFrameSem--;
-				         BSP_EXIT_CRITICAL_SECTION(intState);
-	                   
-	                    /* if (SMPL_SUCCESS == (rc=SMPL_SendOpt(sLID[i], simpliciti_msg, sizeof(simpliciti_msg), SMPL_TXOPTION_ACKREQ)))
-				          {
-				            // Message acked. We're done. Toggle LED 1 to indicate ack received. 
-				            toggleLED(1);
-				            break;
-				          }*/
-				          
-		                break;
-	            }
+             BSP_ENTER_CRITICAL_SECTION(intState);
+	         sPeerFrameSem--;
+	         BSP_EXIT_CRITICAL_SECTION(intState);
 	       }
       	}
    	 }
@@ -153,5 +129,35 @@ static uint8_t sCB(linkID_t lid)
 
   /* leave frame to be read by application. */
   return 0;
+}
+
+static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
+{
+  // Decode end device packet
+  
+  bspIState_t intState;
+  //BSP_ENTER_CRITICAL_SECTION(intState);
+  	   
+  switch (ed_data[0])
+  {
+      case ED_READY_2_RECEIVE:
+        len = RF_MSG_SIZE;
+                
+        // Pegar os dados do buffer
+        // o bus envia a cada segundo seus dados e o R2R.
+        // criar metodo para receber os dados atraves do ed_data
+        // verificar os bytes referentes ao id do bus
+        // usar um for pra achar o id no buffer
+        // transmitir o q der.
+        
+        Encode_siaer_data_guiche();
+        
+        //  BSP_EXIT_CRITICAL_SECTION(intState);
+        
+       	// Send reply packet to end device
+        SMPL_Send(lid, simpliciti_msg, len);
+        break;
+	}
+  return;
 }
 
