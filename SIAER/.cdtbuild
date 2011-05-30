@@ -59,6 +59,7 @@
 <listOptionValue builtIn="false" value="&quot;${workspace_loc:/SIAER/simpliciti/Applications/configuration/Access_Point/smpl_config.dat}&quot;"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release.681330917" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.release" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL._none" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED.653529595" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED.4" valueType="enumerated"/>
 </tool>
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.732817433" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">
 <option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.1268417956" name="Heap size for C/C++ dynamic memory allocation (--heap_size, -heap)" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="80" valueType="string"/>

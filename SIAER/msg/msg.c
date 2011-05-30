@@ -182,7 +182,9 @@ void ReportEventUart (char tipo, char id_onibus)
 	          for (i=0; i<TX_BARCODE_BUF_SIZE+1; i++)
 	            msg2[i+4]=buffer_a_transmitir[id_onibus].buffer[0][i];
 	          msg2[4]&=0x3f;
-	          msg2[15]=0x24;
+	          msg2[14]=0x24;
+	          TXString(msg2,15);
+	          TXString(msg2,15);
 	          TXString(msg2,15);
 	          TXString(msg2,15);
 	          break;
@@ -309,6 +311,7 @@ void Encode_siaer_data_guiche()
 		          {
 		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
 		          	{
+		          		simpliciti_msg[5] = POLLING2; 
 		          		// Se ha algo no buffer, enviar.				    	
 						if( buffer_a_transmitir[i].ENVIAR_BUFFER == TRUE)
 						{
