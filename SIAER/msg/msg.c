@@ -179,9 +179,11 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg2[1]=tipo;
 	          msg2[2]=buffer_a_transmitir[id_onibus].DST[0];
 	          msg2[3]=buffer_a_transmitir[id_onibus].DST[1];
-	          for (i=0;i<TX_BARCODE_BUF_SIZE+5;i++)
-	            msg2[i+4]=buffer_a_transmitir[id_onibus].buffer[i][0];
+	          for (i=0; i<TX_BARCODE_BUF_SIZE+1; i++)
+	            msg2[i+4]=buffer_a_transmitir[id_onibus].buffer[0][i];
 	          msg2[4]&=0x3f;
+	          msg2[15]=0x24;
+	          TXString(msg2,15);
 	          TXString(msg2,15);
 	          break;
 	    }
@@ -270,46 +272,6 @@ void AddBarcodeBuffer(char* msg)
     		}
     }
 }
-// *************************************************************************************************
-// @fn		TrataMsgSimpliciti
-// @brief 	Usado no Onibus. Recebe os dados via RF e trabalha a resposta e triga os eventos UART
-// @param 	tipo de mensagem recebida
-// @return 	none
-// *************************************************************************************************
-void TrataMsgSimpliciti(char tipo)
-{
-	Onibus.TIMEOUT=0;
-    switch(simpliciti_msg[5]) //  funcid
-    {
-      case POLLING:
-          // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
-          // implementar no codigo para primeira conexao
-            Onibus.DST[0]=simpliciti_msg[1];  // src[0]
-            Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
-            ReportEventUart(BUS_CHEGOU,NULL);
-            Onibus.EST_CONEXAO = CONECTADO;
-            // Mandar ACK
-        
-        break;
-      case POLLING2:
-          // Mandar um ACK2 
-          // feito apos a conexao estar feita, para manter contato com o bus
-        
-        break;
-      default:
-            if (simpliciti_msg[5] & TX_BARCODE)
-            {
-              // mandar via uart
-              ReportEventUart(RECEBEU_BARCODE,NULL);
-              Onibus.EST_CONEXAO = ACK_BARCODE;
-              Onibus.TIMEOUT=0;
-              // mandar ack
-              //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
-              // bar_ack.data[0]=msg_ptr->funcid&0x3F;
-              // WITX_frame(bar_ack);
-            }
-        }
-}
 
 // *************************************************************************************************
 // @fn		Encode_siaer_data_guiche
@@ -347,8 +309,6 @@ void Encode_siaer_data_guiche()
 		          {
 		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
 		          	{
-		          		buffer_a_transmitir[i].TIMEOUT=0;
-		          		
 		          		// Se ha algo no buffer, enviar.				    	
 						if( buffer_a_transmitir[i].ENVIAR_BUFFER == TRUE)
 						{
@@ -391,11 +351,11 @@ void Encode_siaer_data_guiche()
 	                	{
 	                 		buffer_a_transmitir[i].buffer[0][j]=0x00;
 	                	}
-	                    for (k=1;k<BUFFER_SIZE;k++) // copia o buffer 2 para o 1, o 3 para o 2...
+	                    for (k=1; k<BUFFER_SIZE; k++) // copia o buffer 2 para o 1, o 3 para o 2...
 	                    {
-	                        for (j=0;j<TX_BARCODE_BUF_SIZE+1;j++)
+	                        for (j=0; j<TX_BARCODE_BUF_SIZE+1; j++)
 	                     	{
-	                            buffer_a_transmitir[i].buffer[k-1][j]=buffer_a_transmitir[i].buffer[k][j];
+	                            buffer_a_transmitir[i].buffer[k-1][j] = buffer_a_transmitir[i].buffer[k][j];
 	                     	}
 	                        if (buffer_a_transmitir[i].buffer[k][BUF_STATUS_POS]&NOT_TXED)
 	                        {
@@ -405,8 +365,8 @@ void Encode_siaer_data_guiche()
 	                    }
 	                    if (etwas_tx==FALSE)
 	                    {
-	                      // Nao tem mais nada no buffer
-	                      //simpliciti_msg[5] = POLLING2; // FUNCID
+	                       buffer_a_transmitir[i].ENVIAR_BUFFER = FALSE;
+	                       simpliciti_msg[5] = POLLING2; // FUNCID
 	                    }
 	            	}
 	          	}
@@ -457,6 +417,48 @@ void Encode_siaer_data_onibus()
 }
 
 // *************************************************************************************************
+// @fn		TrataMsgSimpliciti
+// @brief 	Usado no Onibus. Recebe os dados via RF e trabalha a resposta e triga os eventos UART
+// @param 	tipo de mensagem recebida
+// @return 	none
+// *************************************************************************************************
+void TrataMsgSimpliciti(char tipo)
+{
+	Onibus.TIMEOUT=0;
+    switch(simpliciti_msg[5]) //  funcid
+    {
+      case POLLING:
+          // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
+          // implementar no codigo para primeira conexao
+            Onibus.DST[0]=simpliciti_msg[1];  // src[0]
+            Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
+            ReportEventUart(BUS_CHEGOU,NULL);
+            Onibus.EST_CONEXAO = CONECTADO;
+            // Mandar ACK
+        
+        break;
+      case POLLING2:
+	      Onibus.EST_CONEXAO = CONECTADO;
+          // Mandar um ACK2 
+          // feito apos a conexao estar feita, para manter contato com o bus
+        
+        break;
+      default:
+            if (simpliciti_msg[5] & TX_BARCODE)
+            {
+              // mandar via uart
+              ReportEventUart(RECEBEU_BARCODE,NULL);
+              Onibus.EST_CONEXAO = ACK_BARCODE;
+              Onibus.TIMEOUT=0;
+              // mandar ack
+              //  bar_ack=MontaBusMsg(TX_BARCODE_ACK);
+              // bar_ack.data[0]=msg_ptr->funcid&0x3F;
+              // WITX_frame(bar_ack);
+            }
+        }
+}
+
+// *************************************************************************************************
 // @fn		Incrementa_timeout
 // @brief 	Usado pelo timer. Aumenta o timeout a cada segundo.
 // @param 	none
@@ -471,17 +473,5 @@ void Incrementa_timeout(void)
 		Conexao = OFF;
 	}
   #elif ACCESS_POINT
-  
-	/*for (i=0; i < num_onibus_conectados; i++)
-    {
- 		buffer_a_transmitir[i].TIMEOUT++;
- 		if(buffer_a_transmitir[i].TIMEOUT > MAX_MISSES)
-		{
-			buffer_a_transmitir[i].EST_CONEXAO = OFF;
-			// IMPLEMENTAR METODO PARA REINICIAR O BUFFER
-			// REMOVER CONEXAO DO SIMPLICITI
-		}
-    }
-    */
    #endif
 }
