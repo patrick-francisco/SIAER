@@ -217,12 +217,12 @@ void ReportEventUart (char tipo, char id_onibus)
             case RECEBEU_BARCODE:
               msg2[1]=tipo;
               msg2[2]=Onibus.DST[0];
-              msg2[3]=Onibus.DST[1];
-              msg2[4]&=0x3f;
-              for (i=0;i<TX_BARCODE_BUF_SIZE+4;i++)
+              msg2[3]=Onibus.DST[1];          
+              for (i=0;i<TX_BARCODE_BUF_SIZE+1;i++)
               {
                 msg2[i+4]=simpliciti_msg[5+i];             
               }
+              msg2[4]&=0x3f;
 			  msg2[14]=0x24;
               TXString(msg2,15); 
               Onibus.EST_CONEXAO = ACK_BARCODE;
