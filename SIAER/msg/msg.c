@@ -156,7 +156,7 @@ void ReportEventUart (char tipo, char id_onibus)
 {
     int i;
     char msg[]="$123$";
-    char msg2[]="$SS12345678$";
+    char msg2[]="$SS12345678415$";
 	
 	if (Guiche.ativo==TRUE)
 	{
@@ -278,12 +278,12 @@ void AddBarcodeBuffer(char* msg)
 // *************************************************************************************************
 void TrataMsgSimpliciti(char tipo)
 {
+	Onibus.TIMEOUT=0;
     switch(simpliciti_msg[5]) //  funcid
     {
       case POLLING:
           // aqui o onibus chegou na estacao e recebeu um mensagem poll do guiche
           // implementar no codigo para primeira conexao
-            Onibus.TIMEOUT=0;
             Onibus.DST[0]=simpliciti_msg[1];  // src[0]
             Onibus.DST[1]=simpliciti_msg[2];  // msg_ptr->src[1];
             ReportEventUart(BUS_CHEGOU,NULL);
@@ -292,7 +292,6 @@ void TrataMsgSimpliciti(char tipo)
         
         break;
       case POLLING2:
-	      Onibus.TIMEOUT=0;
           // Mandar um ACK2 
           // feito apos a conexao estar feita, para manter contato com o bus
         
@@ -300,7 +299,6 @@ void TrataMsgSimpliciti(char tipo)
       default:
             if (simpliciti_msg[5] & TX_BARCODE)
             {
-              Onibus.TIMEOUT=0;
               // mandar via uart
               ReportEventUart(RECEBEU_BARCODE,NULL);
               Onibus.EST_CONEXAO = ACK_BARCODE;
