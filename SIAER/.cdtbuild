@@ -81,9 +81,6 @@
 </tool>
 <macros expandEnvironmentMacros="true"/>
 </toolChain>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.877504015./SIAER/com port/virtual_com_cmds.c" name="virtual_com_cmds.c" rcbsApplicability="disable" resourcePath="/SIAER/com port/virtual_com_cmds.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/com port/virtual_com_cmds.c">
-<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/com port/virtual_com_cmds.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509"/>
-</resourceConfiguration>
 <resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.877504015./SIAER/random/vlo_rand.asm" name="vlo_rand.asm" rcbsApplicability="disable" resourcePath="/SIAER/random/vlo_rand.asm" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/random/vlo_rand.asm">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509./SIAER/random/vlo_rand.asm" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509"/>
 </resourceConfiguration>
@@ -199,9 +196,6 @@
 </tool>
 <macros expandEnvironmentMacros="true"/>
 </toolChain>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305./SIAER/com port/virtual_com_cmds.c" name="virtual_com_cmds.c" rcbsApplicability="disable" resourcePath="/SIAER/com port/virtual_com_cmds.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.1303240634">
-<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.1303240634" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406"/>
-</resourceConfiguration>
 <resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.313164305./SIAER/random/vlo_rand.asm" name="vlo_rand.asm" rcbsApplicability="disable" resourcePath="/SIAER/random/vlo_rand.asm" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.211214140">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1103457509.211214140" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1582829406"/>
 </resourceConfiguration>

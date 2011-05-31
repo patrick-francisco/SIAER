@@ -71,7 +71,7 @@ struct BUS
     //struct siaer_frame pollack;
     char DST[2];
    // struct processo list_processos[N_TOTAL_PROC];
-    char buffer[TX_BARCODE_BUF_SIZE+1][BUFFER_SIZE];
+    char buffer[TX_BARCODE_BUF_SIZE][BUFFER_SIZE];
 };
 extern struct BUS Onibus;
 
@@ -110,7 +110,7 @@ struct rf_buffer
        char SRC[2];
        char DST[2];
        char funcid;
-       char buffer[BUFFER_SIZE][TX_BARCODE_BUF_SIZE+1];
+       char buffer[BUFFER_SIZE][TX_BARCODE_BUF_SIZE];
        //BUFFER DA UART!
 };
 

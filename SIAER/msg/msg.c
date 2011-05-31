@@ -185,8 +185,6 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg2[14]=0x24;
 	          TXString(msg2,15);
 	          TXString(msg2,15);
-	          TXString(msg2,15);
-	          TXString(msg2,15);
 	          break;
 	    }
 	}
@@ -248,9 +246,6 @@ void AddBarcodeBuffer(char* msg)
         
     dest[0]=msg[DST_HI];
     dest[1]=msg[DST_LO];
-
-    buffer_a_transmitir[0].DST[0] = dest[0];
-    buffer_a_transmitir[0].DST[1] = dest[1];
     
     for (i=0;i<CONEXOES_POSSIVEIS;i++)
     {
@@ -261,11 +256,11 @@ void AddBarcodeBuffer(char* msg)
 	            if (!(buffer_a_transmitir[i].buffer[id_buf][BUF_STATUS_POS]&NOT_TXED))
 	            {
 	                buffer_a_transmitir[i].buffer[id_buf][BUF_STATUS_POS] = msg[FUNCID];
-	                for (j=1; j<TX_BARCODE_BUF_SIZE+1; j++)
+	                for (j=1; j<TX_BARCODE_BUF_SIZE; j++)
 	                {
 	                  buffer_a_transmitir[i].buffer[id_buf][j] = msg[j-1+HDR_SIZE];
 	                }
-	                buffer_a_transmitir[i].buffer[BUF_STATUS_POS][id_buf] |= NOT_TXED;
+	                buffer_a_transmitir[i].buffer[id_buf][BUF_STATUS_POS] |= NOT_TXED;
 	               
 	              	// flag avisando q tem mensagem pra transmitir.
 	                buffer_a_transmitir[i].ENVIAR_BUFFER = TRUE;
