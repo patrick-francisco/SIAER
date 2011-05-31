@@ -110,7 +110,7 @@ struct rf_buffer
        char SRC[2];
        char DST[2];
        char funcid;
-       char buffer[BUFFER_SIZE][TX_BARCODE_BUF_SIZE+1];
+       char buffer[BUFFER_SIZE][TX_BARCODE_BUF_SIZE];
        //BUFFER DA UART!
 };
 
