@@ -71,7 +71,7 @@ struct BUS
     //struct siaer_frame pollack;
     char DST[2];
    // struct processo list_processos[N_TOTAL_PROC];
-    char buffer[TX_BARCODE_BUF_SIZE+1][BUFFER_SIZE];
+    char buffer[TX_BARCODE_BUF_SIZE][BUFFER_SIZE];
 };
 extern struct BUS Onibus;
 
