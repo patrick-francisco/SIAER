@@ -71,7 +71,7 @@ void Timer1_Stop(void)
     TA1R = 0;
 }
 
-void Timer0_A4_Delay(unsigned short ticks)
+void Timer1_Delay(unsigned short ticks)
 {
     unsigned short value = 0;
 
