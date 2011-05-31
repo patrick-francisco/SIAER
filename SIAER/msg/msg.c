@@ -170,8 +170,7 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg[3]=buffer_a_transmitir[id_onibus].DST[1];
 	          msg[4]=0x24;
 	          TXString(msg,5);
-	          TXString(msg,5);
-	          TXString(msg,5);
+	          Timer0_A4_Delay(20);
 	          TXString(msg,5);
 	          break;
 	        case RECEBEU_BARCODE:
@@ -184,6 +183,7 @@ void ReportEventUart (char tipo, char id_onibus)
 	          msg2[4]&=0x3f;
 	          msg2[14]=0x24;
 	          TXString(msg2,15);
+	          Timer0_A4_Delay(20);
 	          TXString(msg2,15);
 	          break;
 	    }
@@ -200,6 +200,9 @@ void ReportEventUart (char tipo, char id_onibus)
             msg[3]=Onibus.DST[1];
             msg[4]=0x24;
             TXString(msg,5);
+            
+            Timer0_A4_Delay(20);
+            
             TXString(msg,5);
             Onibus.EST_CONEXAO = CONECTADO;
  			break;          
@@ -210,6 +213,8 @@ void ReportEventUart (char tipo, char id_onibus)
               msg[2]=Onibus.DST[0];
               msg[3]=Onibus.DST[1];
               msg[4]=0x24;
+              TXString(msg,5);
+              Timer0_A4_Delay(20);
               TXString(msg,5);
               Onibus.EST_CONEXAO = OFF;
               break;
@@ -224,6 +229,8 @@ void ReportEventUart (char tipo, char id_onibus)
               }
               msg2[4]&=0x3f;
 			  msg2[14]=0x24;
+              TXString(msg2,15); 
+              Timer0_A4_Delay(20);
               TXString(msg2,15); 
               Onibus.EST_CONEXAO = ACK_BARCODE;
               break;

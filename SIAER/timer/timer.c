@@ -9,6 +9,7 @@
 void Timer1_Init(void);
 void Timer1_Start(void);
 void Timer1_Stop(void);
+char delay_over;
 
 extern volatile char ed_send_request;
 extern void Incrementa_timeout(void);
@@ -70,6 +71,45 @@ void Timer1_Stop(void)
     TA1R = 0;
 }
 
+void Timer0_A4_Delay(unsigned short ticks)
+{
+    unsigned short value = 0;
+
+    // Exit immediately if Timer0 not running - otherwise we'll get stuck here
+    if ((TA1CTL & (BIT4 | BIT5)) == 0)
+        return;
+
+    // Disable timer interrupt
+    TA1CCTL1 &= ~CCIE;
+
+    // Clear delay_over flag
+    delay_over = 0;
+
+    // Add delay to current timer value
+    // To make sure this value is correctly read
+    while (value != TA1R)
+        value = TA1R;
+    value += ticks;
+
+    // Update CCR
+    TA1CCR1 = value;
+
+    // Reset IRQ flag
+    TA1CCTL1 &= ~CCIFG;
+
+    // Enable timer interrupt
+    TA1CCTL1 |= CCIE;
+
+    // Wait for timer IRQ
+    while (1)
+    {
+        // Check stop condition
+        // disable interrupt to prevent flag's change caused by interrupt methods
+        if (delay_over)
+            break;
+    }
+}
+
 
 // Timer1 A0 interrupt service routine
 #pragma vector=TIMER1_A0_VECTOR
@@ -94,3 +134,27 @@ __interrupt void TIMER1_A0_ISR(void)
 
 	Incrementa_timeout();
 }
+
+// *************************************************************************************************
+// @fn          Timer0_A1_5_ISR
+// @brief       IRQ handler for timer IRQ.
+//                              Timer0_A0       1/1sec clock tick (serviced by function
+// TIMER0_A0_ISR)
+//                              Timer0_A1       BlueRobin timer
+//                              Timer0_A2       1/100 sec Stopwatch
+//                              Timer0_A3       Configurable periodic IRQ (used by button_repeat and
+// buzzer)
+//                              Timer0_A4       One-time delay
+// @param       none
+// @return      none
+// *************************************************************************************************
+#pragma vector = TIMER1_A1_VECTOR
+__interrupt void TIMER1_A1_5_ISR(void)
+{
+            TA1CCTL1 &= ~CCIE;
+            // Reset IRQ flag
+            TA1CCTL1 &= ~CCIFG;
+            // Set delay over flag
+            delay_over = 1;
+}
+
