@@ -226,7 +226,8 @@ void ReportEventUart (char tipo, char id_onibus)
               }
               msg2[4]&=0x3f;
 			  msg2[14]=0x24;
-              TXString(msg2,15); 
+              TXString(msg2,15);
+              TXString(msg2,15);
               Onibus.EST_CONEXAO = ACK_BARCODE;
               break;
         }
