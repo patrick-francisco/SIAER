@@ -9,7 +9,7 @@
 extern void Timer1_Init(void);
 extern void Timer1_Start(void);
 extern void Timer1_Stop(void);
-extern void Timer0_A4_Delay(unsigned short ticks);
+extern void Timer1_Delay(unsigned short ticks);
 
 extern char delay_over;
 // *************************************************************************************************
