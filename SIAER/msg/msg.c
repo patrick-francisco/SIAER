@@ -211,6 +211,7 @@ void ReportEventUart (char tipo, char id_onibus)
               msg[3]=Onibus.DST[1];
               msg[4]=0x24;
               TXString(msg,5);
+              TXString(msg,5);
               Onibus.EST_CONEXAO = OFF;
               break;
               
