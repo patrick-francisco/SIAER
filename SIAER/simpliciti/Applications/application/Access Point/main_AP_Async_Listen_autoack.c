@@ -13,6 +13,7 @@
 
 
 void toggleLED(uint8_t);
+void Organiza_link_ID(linkID_t retirarLID);
 volatile char ap_desconectar = 0;
 /* reserve space for the maximum possible peer Link IDs */
 static linkID_t sLID[NUM_CONNECTIONS] = {0};
@@ -122,14 +123,42 @@ void main_access_point (void)
    	 	linkID_t temp_sLID;
    	 	temp_sLID = get_buffer_timeout();
    	 	SMPL_Unlink(temp_sLID);
+   	 	
+   	  BSP_ENTER_CRITICAL_SECTION(intState);
+    	Organiza_link_ID(temp_sLID);
+   	 	//Organiza_buffer_lista_de_ED();
+   	 	
    	 	if(check_outros_buffers()==0)
    	 	{
    	 		// nao ha onibus para desconectar
    	 		ap_desconectar=FALSE;
    	 	}
+   	 	sNumCurrentPeers--;
+      BSP_EXIT_CRITICAL_SECTION(intState);
    	 }
+
     }
   }
+
+void Organiza_link_ID(linkID_t retirarLID)
+{
+	char aux,mover;
+	if(sNumCurrentPeers>1)
+	{
+		for(aux=0;aux<sNumCurrentPeers;aux++)
+		{
+			if(retirarLID == sLID[aux])
+			{
+				for(mover=aux;mover<sNumCurrentPeers;mover++)
+				{
+					sLID[mover] = sLID[mover+1];
+				}
+				break;
+			}
+		}
+		
+	}
+}  	 	
 
 /* Runs in ISR context. Reading the frame should be done in the */
 /* application thread not in the ISR thread. */

@@ -525,3 +525,13 @@ char check_outros_buffers(void)
 	return numero_a_desconectar;
 }
 
+void Organiza_buffer_lista_de_ED()
+{
+	char i;
+	for(i = 0; i<num_onibus_conectados; i++)
+		{
+			if(buffer_a_transmitir[i].EST_CONEXAO == DESCONEXAO)
+			{
+			}
+		}
+}
