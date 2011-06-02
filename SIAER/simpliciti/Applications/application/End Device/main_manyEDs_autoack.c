@@ -148,6 +148,8 @@ static void linkTo()
   }
   sInit_done = 0;
   ReportEventUart(BUS_PARTIU,NULL);
+  NWK_DELAY(10);
+  ReportEventUart(BUS_PARTIU,NULL);
   main_end_device();
   // Reiniciar em caso de perda de conexao.
 }

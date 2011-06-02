@@ -31,6 +31,7 @@ extern void InitBusGuiche(void);
 void main (void)
 {
   // char teste[]={0x10,0x00,0x00,0x00,0x00,0x02,0x58,0x67,0x39,0x63,0x32,0x39,0x32,0x36,0x30,0x35};
+   char teste[]={0x10,0x00,0x00,0x00,0x00,0x35};
    // iniciar clock - MCLK E SMCLK 12MHz, atraves de DCO e oscilador interno REFO
    //                 ACLK 32KHz     
    
@@ -43,13 +44,9 @@ void main (void)
    InitBusGuiche();
    Timer1_Init();
    init_uart();
-
-    Timer1_Delay(20);
-    
-    Timer1_Delay(20);
    //char msg[] = { 0x24, 0x0F, 0x01, 0x02, 0x03,0x03, 0x10,0x33, 0x45, 0x65,0x87, 0x45,0x01, 0x00, 0x00, 0x04, 0x24 };  
    //AddBarcodeBuffer(msg);
-  // TrataMsg(teste);
+   TXString(teste,6);
   // Vamos testar ver se ele recebe qualquer coisa depois da primeira mensagem de inicializacao.
 
 	//Guiche.ativo = TRUE;	          

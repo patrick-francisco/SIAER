@@ -106,7 +106,8 @@ void Timer1_Delay(unsigned short ticks)
         // Check stop condition
         // disable interrupt to prevent flag's change caused by interrupt methods
         if (delay_over)
-            break;
+            //break;
+            return;
     }
 }
 
