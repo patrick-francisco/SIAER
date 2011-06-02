@@ -12,6 +12,7 @@ extern void Timer1_Stop(void);
 extern void Timer1_Delay(unsigned short ticks);
 
 extern char delay_over;
+
 // *************************************************************************************************
 // Defines section
 

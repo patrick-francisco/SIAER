@@ -11,8 +11,11 @@ void Timer1_Start(void);
 void Timer1_Stop(void);
 char delay_over;
 
-extern volatile char ed_send_request;
+#ifdef END_DEVICE
+	extern volatile char ed_send_request;
+#endif
 extern void Incrementa_timeout(void);
+
 // *************************************************************************************************
 // Defines section
 
@@ -124,8 +127,11 @@ __interrupt void TIMER1_A0_ISR(void)
     TA1CCR0 += 32768;
     // Enable IE
     TA1CCTL0 |= CCIE;
-	
+#ifdef END_DEVICE
     ed_send_request = 1;
+#endif
+	
+
 
     // incrementar todos os timeouts dos buffers.
     // verificar se desconectou. 

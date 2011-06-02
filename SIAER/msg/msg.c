@@ -3,13 +3,14 @@
 #include "msg.h"
 #include "bsp.h"
 #include "includes.h"
+#include "timer.h"
 // *************************************************************************************************
 // Prototypes section
 void TrataMsg(char* msg);
 void TrataMsgSimpliciti(char tipo);
 void ReportEventUart (char tipo, char id_onibus);
 void Encode_siaer_data_guiche();
-
+extern volatile char ap_desconectar;
 // *************************************************************************************************
 // Defines section
                                             
@@ -64,6 +65,7 @@ void InitBusGuiche() //todo mundo nulo
 	    for (j=0; j<BUFFER_SIZE; j++)
 	    {
 	    	buffer_a_transmitir[i].buffer[j][BUF_STATUS_POS] = 0x00;
+	    	buffer_a_transmitir[i].TIMEOUT=0;
 	    }
     	buffer_a_transmitir[i].EST_CONEXAO=OFF;
     }
@@ -306,6 +308,7 @@ void Encode_siaer_data_guiche()
 		          {
 		          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2]))
 		          	{
+		          		buffer_a_transmitir[i].TIMEOUT=0;
 		          		simpliciti_msg[5] = POLLING2; 
 		          		// Se ha algo no buffer, enviar.				    	
 						if( buffer_a_transmitir[i].ENVIAR_BUFFER == TRUE)
@@ -340,6 +343,7 @@ void Encode_siaer_data_guiche()
 	          {
 	          	if((buffer_a_transmitir[i].DST[0] == ed_data[1]) && (buffer_a_transmitir[i].DST[1] == ed_data[2])) // verifica o destinatario correto 
 	          	{
+	          		buffer_a_transmitir[i].TIMEOUT=0;
 					if (buffer_a_transmitir[i].buffer[0][BUF_STATUS_POS]&TXED) // caso transmitiu com sucesso
 	                {
 	               		// manda resposta positiva pro programa do guiche
@@ -464,6 +468,7 @@ void TrataMsgSimpliciti(char tipo)
 // *************************************************************************************************
 void Incrementa_timeout(void)
 {
+	char i;
   #ifdef END_DEVICE
 	Onibus.TIMEOUT++; 
 	if(Onibus.TIMEOUT > MAX_MISSES)
@@ -471,5 +476,52 @@ void Incrementa_timeout(void)
 		Conexao = OFF;
 	}
   #elif ACCESS_POINT
+  
+  for(i=0; i<num_onibus_conectados; i++)
+  {
+	buffer_a_transmitir[i].TIMEOUT++;
+	if(buffer_a_transmitir[i].TIMEOUT>MAX_MISSES)
+	{
+		ap_desconectar=TRUE;
+		buffer_a_transmitir[i].TIMEOUT=0;
+		buffer_a_transmitir[i].EST_CONEXAO = DESCONEXAO;
+	}
+  }
    #endif
 }
+
+
+void Atribui_onibus_a_buffer (unsigned char sLID)
+{
+	buffer_a_transmitir[num_onibus_conectados].sLID=sLID;
+}
+
+unsigned char get_buffer_timeout(void)
+{
+	char i;
+	unsigned char onibus_que_partiu;
+	for(i = 0; i<num_onibus_conectados; i++)
+	{
+		if(buffer_a_transmitir[i].EST_CONEXAO == DESCONEXAO)
+		{
+   	 		ReportEventUart (BUS_PARTIU, i);
+   	 		buffer_a_transmitir[i].EST_CONEXAO = OFF;
+			onibus_que_partiu = buffer_a_transmitir[i].sLID;
+		}
+	}
+	return onibus_que_partiu;
+}
+
+char check_outros_buffers(void)
+{
+	char i,numero_a_desconectar=0;
+	for(i = 0; i<num_onibus_conectados; i++)
+		{
+			if(buffer_a_transmitir[i].EST_CONEXAO == DESCONEXAO)
+			{
+				numero_a_desconectar++;
+			}
+		}
+	return numero_a_desconectar;
+}
+

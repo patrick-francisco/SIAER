@@ -4,9 +4,9 @@
 #include "nwk_api.h"
 #include "bsp_leds.h"
 #include "bsp_buttons.h"
-#include "simpliciti.h"
 #include "app_remap_led.h"
 #include "includes.h"
+#include "simpliciti.h"
 
 void toggleLED(uint8_t);
 extern uint8_t sInit_done;

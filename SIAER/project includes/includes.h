@@ -2,11 +2,11 @@
 #define INCLUDES_H_
 
 #include <stdlib.h>
-
 #include "cc430x613x.h"
 #include "uart.h"
 #include "msg.h"
 #include "simpliciti.h"
+
 
 // REMOVER TUDO ISSO ANTES DO FIM DO PROJETO
 #define INIT_BUS	    0x01

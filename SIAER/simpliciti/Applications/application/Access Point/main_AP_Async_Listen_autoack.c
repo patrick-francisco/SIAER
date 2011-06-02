@@ -7,13 +7,13 @@
 #include "nwk_api.h"
 #include "nwk_frame.h"
 #include "nwk.h"
-#include "simpliciti.h"
 #include "app_remap_led.h"
+#include "includes.h"
+#include "simpliciti.h"
 
 
 void toggleLED(uint8_t);
-extern void TXString (char* string, int length);
-
+volatile char ap_desconectar = 0;
 /* reserve space for the maximum possible peer Link IDs */
 static linkID_t sLID[NUM_CONNECTIONS] = {0};
 static uint8_t  sNumCurrentPeers = 0;
@@ -29,6 +29,10 @@ static void processMessage(linkID_t, uint8_t *, uint8_t);
 /* blink LEDs when channel changes... */
 static volatile uint8_t sBlinky = 0;
 unsigned char ed_data[RF_MSG_SIZE];
+extern unsigned char get_buffer_timeout(void);
+
+extern void Atribui_onibus_a_buffer(linkID_t sLID);
+
 #define SPIN_ABOUT_A_QUARTER_SECOND   NWK_DELAY(250)
 
 void main_access_point (void)
@@ -82,7 +86,9 @@ void main_access_point (void)
         }
         // Implement fail-to-link policy here. otherwise, listen again.
       }
-
+	
+	  // Definir um dos buffers de transmissao para esse onibus
+	  Atribui_onibus_a_buffer(sLID[sNumCurrentPeers]);
       sNumCurrentPeers++;
 
       BSP_ENTER_CRITICAL_SECTION(intState);
@@ -110,6 +116,17 @@ void main_access_point (void)
 	         BSP_EXIT_CRITICAL_SECTION(intState);
 	       }
       	}
+   	 }
+   	 if(ap_desconectar==TRUE)
+   	 {
+   	 	linkID_t temp_sLID;
+   	 	temp_sLID = get_buffer_timeout();
+   	 	SMPL_Unlink(temp_sLID);
+   	 	if(check_outros_buffers()==0)
+   	 	{
+   	 		// nao ha onibus para desconectar
+   	 		ap_desconectar=FALSE;
+   	 	}
    	 }
     }
   }
@@ -152,12 +169,23 @@ static void processMessage(linkID_t lid, uint8_t *msg, uint8_t len)
         
         Encode_siaer_data_guiche();
         
-        //  BSP_EXIT_CRITICAL_SECTION(intState);
-        
        	// Send reply packet to end device
         SMPL_Send(lid, simpliciti_msg, len);
         break;
 	}
+  return;
+}
+
+void toggleLED(uint8_t which)
+{
+  if (1 == which)
+  {
+    BSP_TOGGLE_LED1();
+  }
+  else if (2 == which)
+  {
+    BSP_TOGGLE_LED2();
+  }
   return;
 }
 
