@@ -43,3 +43,8 @@ C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV4
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb

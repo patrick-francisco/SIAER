@@ -111,3 +111,15 @@ C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV4
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.Properties.Resources.resources
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\SIAERCarroForm\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\SIAERCarroForm\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\bin\Debug\SIAERCarroForm.exe
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\bin\Debug\SIAERCarroForm.pdb
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.Form1.resources
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.MissingPack.resources
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.Properties.Resources.resources
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.exe
+C:\Documents and Settings\Patrick\Meus documentos\SIAER\Programa Onibus\SIAERCarroForm\obj\x86\Debug\SIAERCarroForm.pdb
