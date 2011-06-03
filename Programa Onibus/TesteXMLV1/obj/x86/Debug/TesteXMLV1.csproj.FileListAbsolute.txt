@@ -1,0 +1,10 @@
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\TesteXMLV1\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+c:\documents and settings\administrator\my documents\visual studio 2010\Projects\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache

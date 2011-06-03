@@ -1,0 +1,45 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV1\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV2\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV2\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV2\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV2\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV2\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV3\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV3\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV3\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV3\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV3\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+E:\Documents and Settings\Administrator\Desktop\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+E:\Documents and Settings\Administrator\Desktop\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+E:\Documents and Settings\Administrator\Desktop\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Documents and Settings\Administrator\Desktop\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+E:\Documents and Settings\Administrator\Desktop\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV4\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\Software Carro\TesteXMLV42\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Documents and Settings\Administrator\Desktop\Software Carro\apresent_dia\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+E:\Documents and Settings\Administrator\Desktop\Software Carro\apresent_dia\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+E:\Documents and Settings\Administrator\Desktop\Software Carro\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Documents and Settings\Administrator\Desktop\Software Carro\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+E:\Documents and Settings\Administrator\Desktop\Software Carro\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\bin\Debug\TesteXMLV1.pdb
+C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.exe
+C:\Documents and Settings\Patrick\Meus documentos\Marcus\apresent_dia\TesteXMLV42\TesteXMLV1\obj\x86\Debug\TesteXMLV1.pdb

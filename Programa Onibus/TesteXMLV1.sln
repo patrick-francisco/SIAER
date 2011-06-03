@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIAERProjetoXML", "TesteXMLV1\SIAERProjetoXML.csproj", "{9FFF27D6-B493-412D-B2C8-83BA1AD4386C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIAERCarroForm", "SIAERCarroForm\SIAERCarroForm.csproj", "{2C3E90D4-8F4B-44BC-9C0E-8ECF5D07AD68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FFF27D6-B493-412D-B2C8-83BA1AD4386C}.Debug|x86.ActiveCfg = Debug|x86
+		{9FFF27D6-B493-412D-B2C8-83BA1AD4386C}.Debug|x86.Build.0 = Debug|x86
+		{9FFF27D6-B493-412D-B2C8-83BA1AD4386C}.Release|x86.ActiveCfg = Release|x86
+		{9FFF27D6-B493-412D-B2C8-83BA1AD4386C}.Release|x86.Build.0 = Release|x86
+		{2C3E90D4-8F4B-44BC-9C0E-8ECF5D07AD68}.Debug|x86.ActiveCfg = Debug|x86
+		{2C3E90D4-8F4B-44BC-9C0E-8ECF5D07AD68}.Debug|x86.Build.0 = Debug|x86
+		{2C3E90D4-8F4B-44BC-9C0E-8ECF5D07AD68}.Release|x86.ActiveCfg = Release|x86
+		{2C3E90D4-8F4B-44BC-9C0E-8ECF5D07AD68}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
