@@ -1,0 +1,106 @@
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\bin\Debug\S2BClassLibrary.dll
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Users\Eduardo\Documents\Visual Studio 2008\Projects\S2BPattern\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Marcus Vinícius\Meus documentos\S2B\3ª fase\S2BPattern\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Marcus Vinícius\Meus documentos\S2B\3ª fase\S2BPattern\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\S2B\3ª fase\S2BPattern\S2BConsole\obj\Debug\S2BConsole.exe
+d:\S2B\3ª fase\S2BPattern\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\S2B\3ª fase\S2BPattern\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\S2B\3ª fase\S2BPattern\S2BConsole\bin\Debug\S2BConsole.exe
+d:\S2B\3ª fase\S2BPattern\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\S2B\3ª fase\S2BPattern\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\S2B\3ª fase\S2BPattern\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\obj\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\bin\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV3 - Serial Communication + Database\BarcodeDataBase\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\obj\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\bin\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\S2BConsole.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BConsole\obj\Debug\S2BConsole.pdb

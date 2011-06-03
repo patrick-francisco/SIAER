@@ -1,0 +1,122 @@
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.LoginForm.resources
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.LoginForm.resources
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.LoginForm.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormDeAutenticacao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormDeAutenticacao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormDeAutenticacao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormDeAutenticacao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERApplication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormDeAutenticacao.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.FormSIAER.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SIAERApplication\obj\Debug\SIAERApplication.pdb

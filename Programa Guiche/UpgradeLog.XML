@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SIAER">
+</Property><Property Name="Solution File" Value="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SIAER.sln">
+</Property><Property Name="Date" Value="Monday, January 11, 2010">
+</Property><Property Name="Time" Value="18:34 PM">
+</Property></Properties><Event ErrorLevel="0" Project="S2BClassLibrary" Source="S2BClassLibrary\S2BClassLibrary.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="S2BClassLibrary" Source="S2BClassLibrary\S2BClassLibrary.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="S2BConsole" Source="S2BConsole\S2BConsole.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="S2BConsole" Source="S2BConsole\S2BConsole.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SerialPortCommunication" Source="SerialPortCommunication\SerialPortCommunication\SerialPortCommunication.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SerialPortCommunication" Source="SerialPortCommunication\SerialPortCommunication\SerialPortCommunication.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SIAERApplication" Source="SIAERApplication\SIAERApplication.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="SIAERApplication" Source="SIAERApplication\SIAERApplication.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SIAER.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SIAER.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="S2BClassLibrary" Source="S2BClassLibrary\S2BClassLibrary.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="S2BConsole" Source="S2BConsole\S2BConsole.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="SerialPortCommunication" Source="SerialPortCommunication\SerialPortCommunication\SerialPortCommunication.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="SIAERApplication" Source="SIAERApplication\SIAERApplication.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,446 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb

@@ -1,0 +1,218 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\Copy of SoftwareV9 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV10 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV11 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV12 - DataBase+SerialCommunication+Varchar(50)\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV13\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV14\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV15\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV16\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV17\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV18\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV19\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV20\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV21\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV25\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV26\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV27\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV28\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV29\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV30\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV32\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV33\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV34\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV35\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV36\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV38\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV39\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV40\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV42\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV43\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV45\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV46\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV47\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV48\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb

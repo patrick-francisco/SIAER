@@ -1,0 +1,95 @@
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+E:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Serial Communication C#\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Universidade\8º semestre\Projeto Final - Estudo\Serial Communication\SerialPortCommunication_v2\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV4 -  Database+BarCodeClass+SerialCommunicationProject\DataBase\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV5 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV6 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.dll
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\S2BClassLibrary.pdb
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+d:\Universidade\Projeto Final\Software\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV7 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.FormMain.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2010\Projects\SoftwareV8 - DataBase+SerialCommunication+Varchar(50)\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb

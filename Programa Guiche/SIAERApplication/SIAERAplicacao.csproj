@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50F5F4A2-919E-4C21-B589-9860273C2084}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SIAERAplicacao</RootNamespace>
+    <AssemblyName>SIAERAplicacao</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>.\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SIAERFormSobeDesceOnibus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERFormSobeDesceOnibus.Designer.cs">
+      <DependentUpon>SIAERFormSobeDesceOnibus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERPerguntaGerarEtiqueta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERPerguntaGerarEtiqueta.Designer.cs">
+      <DependentUpon>SIAERPerguntaGerarEtiqueta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERAguardaCodigoDeBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERAguardaCodigoDeBarras.Designer.cs">
+      <DependentUpon>SIAERAguardaCodigoDeBarras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERCadastroEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERCadastroEncomenda.Designer.cs">
+      <DependentUpon>SIAERCadastroEncomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeAutenticacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeAutenticacao.Designer.cs">
+      <DependentUpon>FormDeAutenticacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERCadastroCliente.Designer.cs">
+      <DependentUpon>SIAERCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="siaerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siaerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="siaerDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siaerDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERForm.Designer.cs">
+      <DependentUpon>SIAERForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SIAERGeraCodigodeBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERGeraCodigodeBarras.Designer.cs">
+      <DependentUpon>SIAERGeraCodigodeBarras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERLocalizaencomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERLocalizaencomenda.Designer.cs">
+      <DependentUpon>SIAERLocalizaencomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERPerguntaLocalizaEncomenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SIAERPerguntaLocalizaEncomenda.Designer.cs">
+      <DependentUpon>SIAERPerguntaLocalizaEncomenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SIAERTESTEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SIAERTESTEDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SIAERFormSobeDesceOnibus.resx">
+      <DependentUpon>SIAERFormSobeDesceOnibus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERPerguntaGerarEtiqueta.resx">
+      <DependentUpon>SIAERPerguntaGerarEtiqueta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="SIAERAguardaCodigoDeBarras.resx">
+      <DependentUpon>SIAERAguardaCodigoDeBarras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERCadastroEncomenda.resx">
+      <DependentUpon>SIAERCadastroEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeAutenticacao.resx">
+      <DependentUpon>FormDeAutenticacao.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERCadastroCliente.resx">
+      <DependentUpon>SIAERCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERForm.resx">
+      <DependentUpon>SIAERForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SIAERGeraCodigodeBarras.resx">
+      <DependentUpon>SIAERGeraCodigodeBarras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERLocalizaencomenda.resx">
+      <DependentUpon>SIAERLocalizaencomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SIAERPerguntaLocalizaEncomenda.resx">
+      <DependentUpon>SIAERPerguntaLocalizaEncomenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="siaerDataSet.xsc">
+      <DependentUpon>siaerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="siaerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>siaerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="siaerDataSet.xss">
+      <DependentUpon>siaerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="siaerDataSet1.xsc">
+      <DependentUpon>siaerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="siaerDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>siaerDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="siaerDataSet1.xss">
+      <DependentUpon>siaerDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="SIAERTESTEDataSet.xsc">
+      <DependentUpon>SIAERTESTEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SIAERTESTEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SIAERTESTEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIAERTESTEDataSet.xss">
+      <DependentUpon>SIAERTESTEDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\S2BClassLibrary\SIAERClassLibrary.csproj">
+      <Project>{5E223BD6-A106-4604-B9ED-67B220C817BC}</Project>
+      <Name>SIAERClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SerialPortCommunication\SerialPortCommunication\SIAERComunicacaoSerial.csproj">
+      <Project>{67D06A37-B2AC-4147-8108-8A5A0D9DCA19}</Project>
+      <Name>SIAERComunicacaoSerial</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SIAERlogo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SIAERBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SIAERCodigoDeBarrasFigura.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lupa21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SIAERCadastroEncomenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Onibus.bmp" />
+    <None Include="Resources\SIAERWIRELESSFigura.jpg" />
+    <None Include="Resources\SIAERGuicheFigura1.jpg" />
+    <None Include="Resources\SIAERLinhaFigura1.jpg" />
+    <None Include="Resources\SIAERGuicheFigura.jpg" />
+    <None Include="Resources\SIAERLinhaFigura.jpg" />
+    <None Include="Resources\SIAEROnibusFigura.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
