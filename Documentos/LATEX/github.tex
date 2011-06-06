@@ -10,14 +10,36 @@
 \chapter{Desenvolvimento}\label{chap:desenvolvimento}
 Este projeto foi baseado no resultado do trabalho de BASSAN JUNIOR, Luiz Alberto e FITZ LUCCETTI, Marcus Vinícius, o qual foi apresentado em junho de 2010 frente a uma banca de professores da UTFPR como projeto final do curso de engenharia industrial  elétrica com ênfase em eletrônica e telecomunicações.
 
-O projeto pode ser dividido em três softwares distintos. O primeiro, o qual fica no guichê, é composto por um banco de dados e um software em C\#. O segundo é a API que fica no ônibus e mostra os resultados para o motorista, também programado em C\#. O terceiro é o firmware, programado em C.
+O projeto pode ser dividido em três softwares distintos. O primeiro, o qual fica no guichê, é composto por um banco de dados e um software em C\#. O segundo é a API que fica no ônibus e mostra os resultados para o motorista, também programado em C\#. O terceiro é o firmware, programado em C. Todo os arquivos que dizem respeito a esse projeto e ao seu funcionamento podem ser encontrados no repositório SIAER, do site github. Mais detalhes sobre este repositório podem ser encontrados na próxima seção.
 
 Com as atualizações realizadas, o software do ônibus foi modificado, para melhorar sua interface, e o \textit{firmware} foi praticamente refeito a partir do zero. Todas essas alterações estão documentadas neste relatório. No entanto, no banco de dados e no software do guichê não houveram atualizações, sendo praticamente o mesmo usado na última apresentação. Para mais informações acerca de tais partes do projeto, recomenda-se a leitura do ítem 3.5 do relatório apresentado por BASSAN JUNIOR, Luiz Alberto e FITZ LUCCETTI, Marcus Vinícius para a primeira defesa do projeto.
 
 \section{\textit{GITHUB}}
+GitHub é um Serviço de Web Hosting Compartilhado para projetos que usam o controle de versionamento Git. Ele foi desenvolvido em Ruby on Rails pelos programadores da Logical Awesome (Chris Wanstrath, PJ Hyett e Tom Preston - Wernder). O GitHub possui planos comerciais e gratuitos para projetos de código aberto. 
 
-GitHub é um Serviço de Web Hosting Compartilhado para projetos que usam o controle de versionamento Git. É escrito em Ruby on Rails pelos desenvolvedores da Logical Awesome (Chris Wanstrath, PJ Hyett e Tom Preston - Wernder). O GitHub possui planos comerciais e gratuitos para projetos de código aberto.
+O GitHub foi lançado em fevereiro de 2008 e já no final do primeiro ano tinha acumulado 46.000 repositórios públicos. O crescimento desde então tem sido exponencial, chegando a dois milhões de repositórios em abril de 2011.
 
-Este site possui funcionalidades de uma rede social como feeds, followers, wiki e um gráfico que mostra como os desenvolvedores trabalham as versões de seus repositórios.
+Ele oferece gratuitamente a funcionalidade de controle de versão desde que o projeto seja do tipo opensource. Sua interface é chamada de GitBash e pode ser vista na figura ~\ref{fig:github}.
 
-Todos os arquivos estão no GITHUB.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/IMG/github.png} % <- formatos PNG, JPG e PDF
+	\caption[O gerenciador de versão GitHub]{O gerenciador de versão GitHub}
+	\fonte{Github.com}
+	\label{fig:github}
+\end{figure}
+
+Após uma configuração inicial, a qual requer o nome do usuário, diretório de trabalho e nome do projeto, pode-se começar a usar tal ferramenta. Já no começo do desenvolvimento o GitHub mostra seu valor através da segurança proveniente dos backups do projeto em seus servidores e das facilidades para o programador.
+
+Uma das grandes vantagens deste tipo de serviço é o controle de versão. Com ele, ao se ter um resultado positivo, pode-se realizar um \textit{commit}, o qual transfere as modificações realizadas para o servidor da web. O programador tem total acesso aos \textit{commits} realizados e pode voltar a uma versão passada quando quiser. Além disso, é excelente para projetos que possuam um grande número de colaboradores.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/IMG/commit.png} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Commits} do projeto SIAER]{\textit{Commits} do projeto SIAER}
+	\fonte{Github.com}
+	\label{fig:commit}
+\end{figure}
+
+Todos os arquivos deste projeto, inclusive a documentação, estão sob o controle de versão fornecido peo GitHub. A figura ~\ref{fig:commit} mostra alguns dos \textit{commits} deste projeto, e podem ser encontrados no site do github sob o nome de projeto SIAER.
+\newpage

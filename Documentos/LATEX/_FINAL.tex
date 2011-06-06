@@ -89,58 +89,50 @@ Major part of the brazilian transport net uses the huge road net structure that 
 \input{Introducao}
 %----------Segundo Capítulo------------
 \input{Contextualizacao}
+%----------Terceiro Capítulo-----------
 \input{github.tex}
 \input{hardware.tex}
 \input{firmware.tex}
 \input{simpliciti.tex}
 \input{gui.tex}
-
-%\input{Desenvolvimento.tex}
 %----------Quarto Capítulo------------
-%\input{Gestao.tex}
+\input{Gestao.tex}
 %----------Quinto Capítulo------------
-%\input{plano_de_negocios.tex}
+\input{plano_de_negocios.tex}
 %------------Sexto Capítulo-----------%
-%\chapter{Testes}
-%---------- Sétimo Capitulo ----------
-%\input{Conclusao}
+\input{Conclusao}
 %---------- Referencias ----------
 \bibliography{reflatex} % geracao automatica das referencias a partir do arquivo reflatex.bib
-
+\newpage
 %---------- Apendices (opcionais) ----------
 \apendice
 %------------------------------------------------------------------------------------------------
 %APENDICE A
-\chapter{Diagrama de Casos de Uso Guichê}\label{AnexoDiagCasosDeUsoGuiche}
+\chapter{Esquemático da plataforma de \textit{Hardware}}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./figs/CasodeUsoGuiche.jpg} % <- formatos PNG, JPG e PDF
-	\caption[Diagrama de Casos de Uso Guichê]{Figura do Diagrama de Casos de Uso montado através das especificações desempenhadas pela aplicação presente no guichê.}
-	%\fonte{\cite{abnTeX2009}}
+	\includegraphics[width=1\textwidth]{./figs/IMG/schematic.png} 
+	\caption[Esquemático da placa de interfaceamento]{Esquemático da placa de interfaceamento}
+	\fonte{Próprio}
 	\label{fig:CasodeUsoGuiche}
 \end{figure}
 
-%APENDICE B
-%\chapter{Banco de Dados do Projeto}\label{AnexoDiagBancoSiaer}
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=0.6\textwidth]{./figs/BancoSiaer.jpg} % <- formatos PNG, JPG e PDF
-%	\caption[Diagrama do Banco de Dados]{Diagrama Relacional do Banco de Dados do Projeto.}
-%	%\fonte{\cite{abnTeX2009}}
-%	\label{fig:BancoSiaer}
-%\end{figure}
-% ---------- Anexos (opcionais) ----------
-%Declaração do Anexo
 \anexo
 %ANEXO A
-\chapter{Esquemático da plataforma de \textit{Hardware}}
-
+\chapter{Diagrama de hardware do kit de desenvolvimento EM430F6137RF900}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=.77\textwidth]{./figs/schem_01.png} % <- formatos PNG, JPG e PDF
-	\caption[Diagrama Esquemático da plataforma]{Diagrama Esquemático da plataforma de \textit{hardware}}
+	\includegraphics[width=1\textwidth]{./figs/IMG/kitanexo1.png} 
+	\caption[Diagrama Esquemático da placa de interfaceamento]{Diagrama Esquemático da placa de interfaceamento}
 	\fonte{Texas Instruments}
 	\label{fig:schem}
 \end{figure}
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/kitanexo2.png} 
+	\caption[Diagrama Esquemático da placa de interfaceamento]{Diagrama Esquemático da placa de interfaceamento}
+	\fonte{Texas Instruments}
+	\label{fig:schem}
+\end{figure}
 \end{document}

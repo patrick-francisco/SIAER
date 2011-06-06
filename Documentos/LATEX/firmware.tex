@@ -53,9 +53,9 @@ Inicialmente escolheu-se o timer0 para tal finalidade, porém descobriu-se poster
 \subsection{Interface de Comunicação pela UART}
 A comunicação PC-firmware se dá inteiramente através da porta de serial e das funções de tratamento de interrupção da UART.
 
-O formato das mensagens trocadas entre o PC e o dispositivo do guichê segue basicamente o formato proposto na ~\ref{fig:frame_base}, com a inserção de dois bytes atuando como delimitadores do \textit{frame}: SOF (\textit{Start of Frame}) e EOF (\textit{End of Frame}). No caso específico deste sistema escolheu-se manter o mesmo padrão apresentado em sua última versão, no qual usou-se o caracter \$ (0x24 de acordo com a tabela ASCII) para este propósito.
+O formato das mensagens trocadas entre o PC e o dispositivo do guichê segue basicamente o formato proposto na figura ~\ref{fig:tx_enc_frame}, com a inserção de dois bytes atuando como delimitadores do \textit{frame}: SOF (\textit{Start of Frame}) e EOF (\textit{End of Frame}). No caso específico deste sistema escolheu-se manter o mesmo padrão apresentado em sua última versão, no qual usou-se o caracter \$ (0x24 de acordo com a tabela ASCII) para este propósito.
 
-A figura~\ref{fig:UART_SM} representa a máquina de estados implementada no firmware e no software para o tratamento das mensagens. Assim que se detecta um caracter \$ em estado IDLE, aloca-se um \textit{buffer} de acordo com o tamanho do campo SIZE na figura~\ref{fig:frame_base}, e os bytes subsequentes vão sendo armazenados até que se detecte um outro \$ (\textit{End of Frame}). Posteriormente, este \textit{buffer} é tratado de acordo com o campo FUNC\_ID.
+A figura~\ref{fig:UART_SM} representa a máquina de estados implementada no firmware e no software para o tratamento das mensagens. Assim que se detecta um caracter \$ em estado IDLE, aloca-se um \textit{buffer} de acordo com o tamanho do campo SIZE na figura ~\ref{fig:tx_enc_frame}, e os bytes subsequentes vão sendo armazenados até que se detecte um outro \$ (\textit{End of Frame}). Posteriormente, este \textit{buffer} é tratado de acordo com o campo FUNC\_ID.
 \newpage
 \begin{figure}[!htb]
 	\centering
@@ -90,9 +90,9 @@ Usando-se a máquina de estados descrita na figura~\ref{fig:UART_SM}, caso o firm
 	\label{fig:inicia_guiche}
 \end{figure}
 
-Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsection: Processamento/Transmissão de Mensagens}.
+Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsection:subsectionprocessamento}.
 
-\subsection{Processamento/Transmissão de Mensagens}
+\subsection{Processamento/Transmissão de Mensagens}\label{subsectionprocessamento}
 As informações acerca do \textit{status} de cada encomenda podem ser obtidas através do banco de dados. Uma vez que haja conexão entre um ônibus e um guichê, ocorre regularmente a chamada de funções que visam atualizar o verificar e atualizar o \textit{status} das encomendas. Através deste processo, o software do PC transmite para o firmware as informações a serem transmitidas para um ônibus. Tais informações preenchem um buffer de envio. Caso o sistema esteja estável ( \textit{Polling2}), o ônibus envia mensagem que está pronto para receber, o \texit{firmware} do guichê envia os dados e o ônibus envia um ACK, confirmando recebimento. No diagrama que segue, tem-se o fluxograma dos evendos previamente descritos. A figura ~\ref{fig:TX_ENC} representa o fluxograma do firmware do guichê perante a chegada de uma encomenda no seu buffer da UART. Esta mensagem teve origem no SW. 
 
 \newpage

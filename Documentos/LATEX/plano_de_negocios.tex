@@ -35,10 +35,7 @@ Oferecer aos nossos clientes soluções personalizadas unindo sempre tecnologia e 
 \end{itemize}
 
 \subsection{Objetivos/Metas}
-\begin{itemize}
-	\item Reduzir a quantidade de encomendas extraviadas em 23\% no período de 9 meses da adoção do SIAER.
-	\item Reduzir em 20\% o montante dispendido com indenizações referentes a encomendas extraviadas no período de 9 meses a partir da adoção do SIAER.
-\end{itemize}
+O objetivo que motiva a implantação do projeto SIAER é introduzir o rastreamento de encomendas rodoviárias, proporcionando redução de gastos às empresas atuantes no setor devido à redução na quantidade de encomendas extraviadas.
 
 Ter-se-á por procedimento inicial a atuação junto a companhias do setor de transporte rodoviárrio, propondo melhorias em seus processos e oferecendo soluções que venham a agregar valor à sua cadeia de serviço. Estando bem estabelecida neste setor, vislumbra-se que em 5 anos os serviços da empresa se estenderão a demais setores deficitários da indústria logística, não se restringindo apenas a encomendas rodoviárias.
 	%\item Proporcionar à empresa que adotar o serviço proposta uma redução de 20\% no montante gasto com indenizações referentes pagas aos clientes devido ao extravio de encomendas.
@@ -49,13 +46,13 @@ Ter-se-á por procedimento inicial a atuação junto a companhias do setor de trans
 \section{Produto e Serviços}
 \subsection{Descrição do Serviço/Produto}
 A solução a ser ofertada pelo projeto SIAER consiste, majoritariamente, em uma plataforma utilizando recursos de {\it software}
- e {\it hardware}, cuja introdução promove o gerenciamento e rastreamento das diversas encomendas rodoviárias pertinentes ao contexto de atuação do cliente.
+ e {\it hardware}, cuja introdução promove o gerenciamento e rastreamento das diversas encomendas rodoviárias pertinentes ao contexto de atuação do cliente. .
  
 Esta solução compreende dois cenários de aplicação diferentes, decorrendo disto o desenvolvimento de dois  {\it softwares} distintos: um para o ônibus e outro para o guichê. 
 A fim de estabelecer um elo de comunicação do ônibus com o guichê na rodoviária, oferta-se um dispositivo a ser conectado ao PC/notebook cuja atuação viabiliza o fluxo de informações entre ambas as partes.
 
 \subsection{Análise Comparativa}
-Após pesquisa efetuada através da {\it web} e junto aos potenciais clientes do projeto SIAER, não se verificou a ocorrência de um concorrente que oferte uma solução abrangendo a plenitude dos aspectos cobertos pelo produto alvo deste plano de negócio, voltado especificamente ao setor rodoviário. Dentro deste cenário, buscaram-se serviços similares para outros ramos da indústria logística.
+Após pesquisa efetuada através da {\it web} e junto aos potenciais clientes do projeto SIAER, não se verificou a ocorrência de um concorrente que oferte uma solução abrangendo a plenitude dos aspectos cobertos pelo produto alvo deste plano de negócio, voltada especificamente ao setor rodoviário. Dentro deste cenário, buscaram-se serviços similares para outros ramos da indústria logística.
 %Uma empresa de transporte, a BR Transportadora, faz menção em seu site acerca da disponibilização para o cliente do trajeto percorrido pela encomenda, porém não há referências mais especifícas sobre qual o procedimento adotado para possibilitar este rastreamento.
 
 Como primeira concorrente, pode-se mencionar o {\it LocWise} fornecido pela empresa paulista LocWise. Este serviço é ofertado ao cliente através de um {\it software} rodando em plataforma Web, o qual mediante o acesso a um servidor central possiblita, segundo o site,  ``um ambiente completo de visibilidade do processo logístico''. Diferentemente do projeto SIAER, o {\it LocWise} é voltado para o segmento de transporte de cargas, estando integralmente inserido na esfera de uma solução em {\it software}.
@@ -67,20 +64,20 @@ A concorrente que mais se aproxima dos serviços oferecidos pelo SIAER é a empres
 \subsection{Tecnologia}
 O projeto SIAER é composto, conforme citado acima, de 2 programas distintos: um para o ônibus e outro para o guichê. O {\it software} do ônibus foi desenvolvido para ser utilizado em um notebook com sistema operacional Windows XP, alimentado por bateria. Este notebook deverá possuir uma porta \sigla{USB}{Universal Serial Bus} à qual será conectado o dispostivo transmissor de dados, através do qual ocorre o fluxo de dados entre guichê e ônibus. Buscando viabilizar o controle dos dados relevantes acerca das encomendas, faz-se uso de \sigla {XML}{Extensible Markup Language} como base de dados para a comunicação com o {\it software}.
 
-O {\it software} desenvolvido para uso no guichê efetua a comunicação com o banco de dados central, a partir do qual extrai as informações pertinentes para os ônibus que estão chegando. O programa também comanda o dispositivo transmissor conectado à porta \sigla{USB}{Universal Serial Bus} de acordo com o ônibus que adentrar à rodoviária. Ainda, faz-se presente uma interface com um leitor de código de barras, cujo uso é responsável por certificar o envio e recebimento das encomendas. 
+O {\it software} desenvolvido para uso no guichê efetua a comunicação com o banco de dados central, a partir do qual extrai as informações pertinentes para os ônibus que estão chegando. O programa também comanda o dispositivo transmissor conectado à porta \sigla{USB}{Universal Serial Bus} de acordo com o ônibus que adentrar à rodoviária e possui interface com um leitor de código de barras, cujo uso é responsável por certificar o envio e recebimento das encomendas. 
 
-O dispositivo {\it transceiver} viabiliza a comunicação {\it wireless } entre o ônibus e o guichê. Esta plataforma de {\it hardware} possui um microcontrolador que se comunica com o {\it transceiver} e com a porta USB à qual estiver conectado. O {\it transceiver} é um dispostivo escravo, sendo comandado através de uma interface \sigla{SPI}{Serial Peripheral Interface}, operando a uma freqüência de 2.4 GHz com suporte ao manuseio de pacotes. No que concerne à comunicação com o \sigla{PC}{Personal Computer}, há suporte para o modo USB {\it full speed} e as linhas de +5V e \sigla{GND}{Ground} são usadas para alimentar toda a plataforma de {\it hardware}.
+O dispositivo {\it transceiver} viabiliza a comunicação {\it wireless } entre o ônibus e o guichê. Esta plataforma de {\it hardware} possui um microcontrolador que se comunica com o {\it transceiver} e com a porta USB à qual estiver conectada. O {\it transceiver} é um dispostivo escravo, sendo comandado através de uma interface \sigla{SPI}{Serial Peripheral Interface}, operando a uma freqüência de 2.4 GHz com suporte ao manuseio de pacotes. No que concerne à comunicação com o \sigla{PC}{Personal Computer}, há suporte para o modo USB {\it full speed} e as linhas de +5V e \sigla{GND}{Ground} são usadas para alimentar toda a plataforma de {\it hardware}.
 
 \subsection{Produtos e Serviços Futuros}
-O serviço sobre o qual este Plano de Negócios se baseia é destinado para rastreamento de encomendas rodoviárias. Assim, vislumbra-se a possibilidade de no curto prazo atender este segmento com serviços complementares ao rastreamento implementado, como por exemplo introduzir o SIAER em um ambiente {\it web} de tempo real, no qual o ônibus poderia ser rastreado a qualquer momento a partir de um \sigla{GPS}{Global Positioning System}, possibilitando ao guichê realizar estimativas do horário de chegada dos diversos veículos.
+O serviço sobre o qual este Plano de Negócios se baseia é destinado para rastreamento de encomendas rodoviárias. Assim, vislumbra-se a possibilidade de no curto prazo atender este segmento com serviços complementares ao rastreamento implantado, como por exemplo introduzir o SIAER em um ambiente {\it web} de tempo real, no qual o ônibus poderia ser rastreado a qualquer momento a partir de um \sigla{GPS}{Global Positioning System}, possibilitando ao guichê realizar estimativas do horário de chegada dos diversos veículos.
 
 A partir do cenário acima descrito, somado a possíveis sugestões dos clientes que adotarem o \sigla{SIAER}{Sistema Integrado de Acompanhamento de Encomendas Rodoviárias}, podem surgir adaptações à estrutura de {\it hardware} do projeto. Além de uma possível melhoria no alcance dos {\it transceivers}, pode ser estudada a substituição do {\it notebook} do ônibus por um {\it palmtop} ou um {\it smartphone}, o qual se conectaria a um dispositivo de {\it hardware} compatível com esta nova arquitetura. 
 
-Estando-se primeiramente bem consolidado no segmento de encomendas rodoviárias, o SIAER poderá ser extendido a demais segmentos da indústria logística, como por exemplo o transporte de cargas. Ainda, com a diminuição do preço das {\it tags} de \sigla{RFID}{Radio Frequency Identification} que decorrerá da popularização desta tecnologia no futuro, podem-se substituir os atuais códigos de barra por este modelo.
+Estando-se primeiramente bem consolidados no segmento de encomendas rodoviárias, o SIAER poderá ser extendido a demais segmentos da indústria logística, como por exemplo o transporte de cargas. Ainda, com a diminuição do preço das {\it tags} de \sigla{RFID}{Radio Frequency Identification} que decorrerá da popularização desta tecnologia no futuro, pode-se substituir os atuais códigos de barra por este modelo.
 
 \section{Análise de Mercado Resumida}
 \label{sec:marketanalysis}
-O Brasil é um país singular no que se refere à sua rede logística. Segundo dados do \sigla{IBGE}{Instituto Brasileiro de Geografia e Estatística} o território brasileiro possui extensão de 8.547.403 km2. Com característica de país-continente, o estabelecimento de uma rede de transporte e a compreensão de suas especificidades são de vital importância para o devido estabelecimento de um elo logístico. 
+O Brasil é um país singular no que se refere à sua rede logística. Segundo dados do IBGE \sigla{IBGE}{Instituto Brasileiro de Geografia e Estatística} o território brasileiro possui extensão de 8.547.403 km2. Com característica de país-continente, o estabelecimento de uma rede de transporte e a compreensão de suas especificidades são de vital importância para o devido estabelecimento de um elo logístico. 
 
 Segundo dados da \sigla{CNT}{Confederação Nacional do Transporte}(Confederação Nacional do Transporte) publicados em 2006 no Atlas Nacional do transporte, a matriz de transporte brasileira é majoritariamente rodoviária, sendo responsável por 96,2\% do transporte de passageiros. No que tange a cargas, 61,8\% do volume total desta modalidade se faz uso deste mesmo meio. Desta forma, nota-se uma congruência das mais diversas modalidades de transportes em fazer uso do meio rodoviário, dada sua imensa capilaridade pelo território brasileiro ~\cite{Atlas2006}.
 
@@ -102,7 +99,7 @@ Tipicamente, estas empresas são subsidiadas por alguma companhia aérea, como por
 Estas empresas possuem forte compromisso com a pontualidade e a rapidez de entrega das encomendas para os clientes. Desta proposta de valor, decorre seu preço mais alto em relação às demais e sua tecnologia já existente para o acompanhamento da encomenda. Neste cenário descrito, encontram-se a FedEX, a DHL e o serviço Sedex dos correios brasileiros.
 
 \subsubsection {Transportadoras de Carga}
-Algumas companhias de transporte de cargas vêm se adaptando para oferecer ao cliente final o serviço de entrega de encomendas. Suas características típicas são a existência de uma frota própria de caminhões e veículos menores, que realizam a entrega até o cliente final.
+Algumas companhias de transporte de cargas vêm se adaptando para oferecer ao cliente final o serviço de entrega de encomendas. Suas característica típicas são a existência de uma frota própria de caminhões e veículos menores, que realizam a entrega até o cliente final.
 
 \subsubsection {Empresas de Ônibus}
 De alguns anos para cá, empresas de transportes de passageiros vêm integrando ao seu rol de serviços o transporte de encomendas. As encomendas são despachadas pelo cliente através de guichês nas rodoviárias, sendo embarcadas na linha de ônibus pertinente ao trajeto definido pelo cliente. 
@@ -122,29 +119,29 @@ Diante do cenário acima, majoritariamente manual e não-automatizado, o SIAER vis
 \subsubsection{Tendências do Mercado}
 Diante de um número crescente de problemas ocorridos nesta modalidade de transporte, em Abril de 2006 a \sigla{ANTT}{Agência Nacional de Transporte Terrestres}(Agência Nacional de Transporte Terrestres)instituiu a resolução Nº 1432/2006, estabelecendo normas rígidas envolvendo transporte de passageiros e encomendas. 
 
-No caso de extravio, esta resolução estabelece um valor de indenização a ser pago pela empresa, variando na faixa de 3000 a 10000 coeficientes tarifários. Este coeficiente tarifário é instituído pela própria ANTT, estando condicionado ao modelo de ônibus, à sua capacidade e à condição da estrada pela qual circula.
+No caso de extravio, esta resolução estabelece um valor de indenização a ser pago pela empresa, variando na faixa de 3000 a 10000 coeficientes tarifários. Este coeficiente tarifário é instituído pela própria ANTT, estando condicionado ao modelo de ônibus, sua capacidade e a condição da estrada pela qual circula.
 
-Conforme atestaram conversas com empresas do setor, tais companhias têm plena ciência de sua não-conformidade em relação a esta resolução. Ao ocorrer um extravio, como os clientes não possuem conhecimento de seus direitos, propõe-se um valor infímo como indenização que acaba sendo aceito. Porém, com o crescimento das reclamações e dos transtornos decorrentes desta situação, as empresas tendem a perder cada vez mais dinheiro no pagamento de indenizações e com eventuais ações na justiça.
+Conforme atestaram conversas com empresas do setor, tais companhias têm plena ciência de sua não-conformidade em relação a esta resolução. Ao ocorrer um extravio, como os clientes não possuem conhecimento de seus direitos, as empresas propõem um valor infímo como indenização que acaba sendo aceito. Porém, com o crescimento das reclamações e dos transtornos decorrentes desta situação, as empresas tendem a perder cada vez mais dinheiro no pagamento de indenizações e com eventuais ações na justiça.
 
 \subsubsection{Crescimento do Mercado}
-Ao se levantar os segmentos de mercado, tornou-se evidente que cada um deles focaliza um nicho específico de clientes. As empresas aéreas atendem àqueles que se dispõem a pagar mais por um prazo de entrega mais rápido. No outro extremo, as empresas de ônibus oferecem os maiores prazos de entrega com o menor preço. Dentro deste contexto, atualmente a grande maioria das encomendas que circulam por esta segunda modalidade são pertences pessoais, como roupas, livros {\it et cetera}.
+Ao se levantar os segmentos de mercado, tornou-se evidente que cada um deles atende um nicho específico de clientes. As empresas aéreas atendem aqueles que se dispõem a pagar mais por um prazo de entrega mais rápido. No outro extremo, as empresas de ônibus oferecem os maiores prazos de entrega com o menor preço. Dentro deste contexto, atualmente a grande maioria das encomendas que circulam por esta segunda modalidade são pertences pessoais, como roupas, livros {\it et cetera}.
 
-A instituição da resolução Nº 1432/2006 se deu justamente pelo crescimento deste tipo de transporte específico. Através de pesquisas junto a empresas de ônibus, faz-se relevante mencionar que as empresas maiores (Itapemirim, Garcia e Penha) já integraram o transporte de encomendas aos seus serviços.  
+A instituição da resolução Nº 1432/2006 se deu justamente pelo crescimento deste tipo de transporte específico. Através de pesquisas junto a empresas de ônibus, faz-se relevante mencionar que as empresas maiores (Itapemirim, Garcia e Penha) já integraram o transporte de encomendas ao seus serviços.  
 
 Pelos elementos acima listados, a introdução de confiabilidade ao transporte de encomendas rodoviárias possui excelente potencial de crescimento, na medida em que possibilita redução de custos decorrentes de extravios e percebe-se uma preocupação das empresas em introduzir ações corretivas neste sentido.
 
 \subsection{Análise da Indústria}
-\subsection{\textit{Players}}
+\subsection{Players}
 Os competidores que se fazem presentes no segmento alvo escolhido pelo projeto SIAER são em sua maioria empresas especializadas em soluções de {\it software}, que se integram a um modelo de processo logístico bem especificado. Abaixo segue uma análise resumida das empresas que agem dentro deste contexto.
 \begin{itemize}
-	\item BR Express: segundo consta em seu {\it site} institucional, a empresa age com foco em aplicações logísticas e de gestão da cadeia de suprimentos. Possui um portfólio de produtos bem definido, cobrindo diversos nichos específicos da indústria logística. No final de 2008, recebeu prêmio na Primeira Olímpiada USP de inovação.
-	\item W2 Software: empresa paulista de software que oferta soluções em sistemas Web. Ao se observar a gama de produtos apresentados, percebe-se que a empresa não possui muito {\it know-how} no setor logístico: oferta desde programas para Cobrança de Crédito até {\it Software} para gestão de comércio de motos e motocicletas. Aparenta ser uma empresa que não possui foco em um setor específico, disto decorrendo esta característica difusa acima exposta.
+	\item BR Express: segundo consta em seu {\it site} institucional, a empresa age com foco aplicações logísticas e de gestão da cadeia de suprimentos. Possui um portfólio de produtos bem especificados, cobrindo diversos nichos específicos da indústria logística. No final de 2008, recebeu prêmio na Primeira Olímpiada USP de inovação.
+	\item W2 Software: empresa paulista de software que oferta soluções em sistemas Web. Ao se observar a gama de produtos apresentados, percebe-se que a empresa não possui muito {\it know-how} no setor logístico: oferta desde programas para Cobrança de Crédito até {\it Software} para gestão de comércio de motos e motocicletas. Aparenta ser uma empresa que não possui foco em um setor específico, disto decorrente esta característica difusa acima exposta.
 	\item Marx Tecnologia e Design: empresa goiana de Tecnologia da Informação com apoio financeiro da FINEP. O site da empresa define-a como uma companhia especializada em tecnologia de Identificação por Rádio Freqüência, possuindo fábrica de {\it software} própria, a qual visa estabelecer sistemas integrados de gestão empresarial. O {\it site} institucional faz referência a uma solução em Logística e Rastreamento de Produtos por RFID, composta por um {\it software} de controle e dispositivos de leitura das {\it tags} RFID. Em termos de arquitetura, este modelo é muito semelhante à arquitetura do SIAER, requerendo poucas adaptações para sua introdução no contexto do transporte rodoviário de encomendas.
 	
 \end{itemize}
 
 \subsection{Modelo de Distribuição}
-Conforme já se fez mencionado em outros momentos, não foi encontrado concorrente que provesse os serviços propostos neste Plano de Negócios. Das concorrentes averiguadas, principalmente aquelas relacionadas ao segmento de \textit{software}, as duas principais formas de atingir o cliente final são:
+Conforme já se fez mencionado em outros momentos, não foi encontrado concorrente que provesse os serviços propostos neste Plano de Negócios. Das concorrentes averiguadas, principalmente aquelas relacionadas ao segmento de textit{software}, as duas principais formas de atingir o cliente final são:
 \begin{itemize}
 	\item Revendedores: as empresas deixam seus produtos/serviços sob responsabilidade de uma representante comercial, a qual faz o intermédio do cliente final com a prestadora de serviço. 
 	\item \textit{Internet}: o cliente entra em contato com a companhia tipicamente através do \textit{site} corporativo, estabelecendo-se aí um primeiro contato. Em seguida, a empresa de forma direta entra em contato com o cliente propondo quais as configurações mais adequadas do serviço a ser ofertado para aquele modelo de negócio.
@@ -152,7 +149,7 @@ Conforme já se fez mencionado em outros momentos, não foi encontrado concorrente
 
 
 \section{Definição da oferta e da proposta de valor (Mercado, Cliente e Aplicação)}
-O projeto SIAER é voltado especificamente para empresas de ônibus que vêm agregando ao seu tradicional transporte de passageiros o transporte expresso de encomendas. Tais empresas introduzem este serviço adicional sem muito custo operacional, na medida em que a estrutura logística que permite o fluxo de pessoas também é aproveitada para as encomendas.
+O projeto SIAER é voltado especificamente para empresas de ônibus que vêm agregando ao seu tradicional transporte de passageiros o transporte expresso de encomendas. Tais empresas implantam este serviço adicional sem muito custo operacional, na medida em que a estrutura logística que permite o fluxo de pessoas também é aproveitada para as encomendas.
 
 Estes potenciais clientes possuem tamanho e capilaridade diferenciados. Desta forma, englobam-se grandes empresas como a Itapemirim e seu serviço ITex, com cerca de 300 agências de atendimento espalhadas em 20 estados brasileiros, até empresas que atuam apenas localmente no estado do Paraná. Tais clientes apresentam requisitos diferenciados, aos quais a solução ofertada ao cliente é moldada.
 
@@ -165,6 +162,7 @@ Na elaboração da proposta de valor, visitas a empresas do ramo reveleram muitas 
 	\centering
 	\includegraphics[width=0.6\textwidth]{./figs/prop_valor.png} % <- formatos PNG, JPG e PDF
 	\caption[Proposta de Valor ofertada ]{Proposta de Valor ofertada pelo SIAER}
+	\fonte{Autoria Própria}
 	\label{fig:PropostaValor}
 \end{figure}
 
@@ -179,12 +177,12 @@ Na comercialização do SIAER, as equipes de vendas entrarão em contato com os pot
 \subsection {Diferenciais Competitivos e Proposta de Valor}
 Conforme vem sendo enfatizado por diversos momentos neste Plano de Negócios, o SIAER propõe para o setor de encomendas rodoviárias uma solução até então inexistente e otimizado a este setor, cobrindo falhas que o modelo empregado atualmente pelas empresas de ônibus possui e reconhece. Desta forma, os principais diferenciais competitivos residem em:
 \begin{itemize}
-	\item Oferecer soluções eficazes do ponto de vista funcional, buscando facilitar o trabalho do usuário/cliente que utilizará o SIAER, por meio do uso de recursos providos de interatividade e  mobilidade.
-	\item Apresentar soluções personalizadas para o setor de logística, criando elos de comunicação até então inexistentes entre os diversos integrantes desta cadeia. 
+	\item Oferecer soluções eficazes do ponto de vista funcional, buscando facilitar o trabalho do usuário/cliente que utilizará o SIAER, por meio da utilizando de recursos com ótima interatividade, mobilidade, custo e desempenho.
+	\item Apresentar soluções personalizadas voltadas para o setor de logística, criando elos de comunicação até então inexistentes entre os diversos integrantes desta cadeia. 
 \end{itemize}
 
 \subsection {Estratégia de Marketing }
-A Estratégia de Marketing consiste em um plano cujas diretrizes orientarão as escolhas de introdução ao mercado do SIAER, objetivando gerar valor agregado da forma mais eficiente junto ao cliente. Dentro desse contexto, faz-se relevante mencionar o conceito de vantagem competitiva, o qual consiste na excelência de uma empresa em obter lucros constantes e superiores aos concorrentes~\cite{Porter1990}. Ainda, PORTER(1990) afirma que esta vantagem pode ser obtida por três modelos de estratégia:
+A Estratégia de Marketing consiste em um plano cujas diretrizes orientarão as escolhas de introdução ao mercado do SIAER, objetivando gerar valor agregado da forma mais eficiente junto ao cliente. A vantagem competitiva consiste na excelência de uma empresa em obter lucros constantes e superiores aos concorrentes~\cite{Porter1990}. Ainda, o autor afirma que esta vantagem pode ser obtida por três modelos de estratégia:
 \begin{itemize}
 	\item Liderança pelo custo;
 	\item Liderança pela diferenciação;
@@ -206,24 +204,23 @@ O SIAER trabalhará inicialmente com um enfoque na exposição dos benefícios do se
 Posteriormente, a estratégia de Identificação com o consumidor será aplicada. Através de contatos com os clientes, novas funcionalidades surgirão a partir de necessidades dos clientes, criando um ciclo de realimentação cuja principal meta é proceder a um aperfeiçoamento contínuo da solução ofertada ao consumidor. 
 
 \subsubsection {Estratégia de Distribuição}
-As estratégias de Distribuição possuem por objetivo tornar eficiente o fluxo de produtos e serviços do produtor até o consumidor final. No caso do SIAER, tem-se um serviço composto por \textit{software} e \textit{hardware}. Conforme tendências da indústria de tecnologia atual, o valor agregado tende a se posicionar cada vez mais no \textit{software}, dado o barateamento dos custos de produção de \textit{hardware}. Tendo-se em vista esta diferença, o SIAER oferta ao cliente simultaneamente \textit{hardware} e \textit{software}, porém internamente os processos são distintos.
+As estratégias de Distribuição possuem por objetivo tornar eficiente o fluxo de produtos e serviços do produtor até o consumidor final. No caso do SIAER, tem-se um serviço composto por \textit{software} e \textit{hardware}. Conforme tendências da indústria de tecnologia atual, o valor agregado tende a se posicionar cada vez mais no \textit{software}, dada o barateamento dos custos de produção de \textit{hardware}. Tendo-se em vista esta diferença, o SIAER oferta ao cliente simultaneamente \textit{hardware} e \textit{software}, porém internamente os processos são distintos.
 
-Para o \textit{software}, ao adquirir a licença o cliente possuirá acesso a um \textit{site} no qual poderá fazer o \textit{download} do produto associado a esta licença e, de forma complementar, acessar o manual de uso do programa. Desta forma, cortam-se custos decorrentes da gravação de CDs e impressão de folhetos, aumentando-se a margem líquida.
+Para o \textit{software}, ao adquirir a licença o cliente possuirá acesso a um \textit{site} no qual poderá fazer o \textit{download} do produto associado a esta licença e, de forma complementar, acessar o manual de uso do programa. Desta forma, cortam-se custos decorrentes da gravação de CDs e impressão de folhetos, aumento a margem líquida.
 
 Para a entrega do transmissor \textit{wireless}, a empresa trabalhará internamente com um estoque muito baixo. Assim, ao receber um pedido do cliente, entra-se em contato com a fornecedora para atender apenas ao pedido do cliente, visando manter o mínimo de estoque possível. Ao receber a plataforma de \textit{hardware}, o \textit{firmware} é gravado e posteriormente entregue ao consumidor final. 
 
 
 \subsection {Estratégia de Vendas }
-\subsubsection {\textit{Forecast} - Plano de Vendas}
+\subsubsection {Forecast - Plano de Vendas}
 Para a especificação do Plano de Vendas, foi necessário um estudo criterioso abordando os diversos aspectos relevantes para a introdução do serviço no mercado. Desta forma, as conversas que ocorreram com possíveis clientes ajudaram a moldar os números que se fazem apresentados na tabela ~\ref{tablePlanodeVendas}.
 
-Projetou-se o início das operações para o primeiro trimestre de 2011, devido aos ajustes burocráticos necessários para a abertura da empresa. Nota-se que os números de vendas para esse primeiro semestre são modestos, reconhecendo a inércia necessária para entrar no mercado. Assim, as poucas vendas de licenças para o guichê fazem referência a algum cliente que deseje empregar o Sistema em um processo de ensaio. Nota-se também que as vendas para licenças de ônibus são sempre superiores às de guichê, pois as empresas possuem maior mais ônibus que postos de atendimento.
+Projetou-se o início das operações para o primeiro trimestre de 2011, devido aos ajustes burocráticos necessários para a abertura da empresa. Nota-se que os números de vendas para esse primeiro semestre são modestos, reconhecendo a inércia necessária para entrar no mercado. Assim, as 2 vendas de licenças para o guichê fazem referência a algum cliente que deseje empregar o Sistema em um processo de ensaio. Nota-se também que as vendas para licenças de ônibus são sempre superiores às de guichê, pois as empresas possuem maior mais ônibus que postos de atendimento.
 
 Posteriormente a este período de integração ao mercado, evidencia-se um período de crescimento gradual das vendas no decorrer de 2011 e 2012. Em 2011, vislumbra-se atender apenas as companhias paranaenses e em 2012, passar-se-á a atender também interior de São Paulo e os estados restantes da região Sul.
 
 Os últimos três anos referenciados pela tabela ~\ref{tablePlanodeVendas} serão marcados por um período de vendas constantes, na medida em que o Sistema já se encontrará consolidado no mercado e com pequena flutuação no volume de vendas observado.
 
-\newpage
 \input {tabelavendas.tex}
 
 \subsubsection {Alianças Estratégicas}
@@ -246,17 +243,15 @@ Considerando-se o SIAER implementado a partir de 2011, faz-se necessário uma est
 
 Conforme pode ser visualizado na figura ~\ref{fig:EstrutOrgan}, todas as estruturas estão subordinadas aos dois sócios aos quais compete a autoria do projeto.
 
+\newpage
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figs/organ.jpg} % <- formatos PNG, JPG e PDF
 	\caption[Estrutura Organizacional da Empresa]{Estrutura Organizacional da Empresa}
+	\fonte{Autoria Própria}
 	\label{fig:EstrutOrgan}
 \end{figure}
 
-
-%adasd%%
-%5
-%
 
 \subsection{Equipe}
 \label{subsec:Equipe}
@@ -267,9 +262,9 @@ O setor de vendas, retratado na figura ~\ref{fig:EstrutOrgan}, contará com 2 pro
 
 O time de suporte será composto por 2 funcionários com formação técnica em informática os quais guiarão os usuários para melhor usufruir do SIAER.
 
-O plantel de desenvolvimento contará com 2 engenheiros os quais responderão pela intro-dução de modificações na solução a ser ofertada ao cliente, cabendo a eles implementar tecnicamente os requisitos obtidos pela equipe de vendas.
+O plantel de desenvolvimento contará com 2 engenheiros os quais responderão pela introdução de modificações na solução a ser ofertada ao cliente, cabendo a eles implementar tecnicamente os requisitos obtidos pela equipe de vendas.
 
-O setor administrativo contará com um profissional que fornecerá resultados contábeis aos sócios, administrará o pagamento de fornecedores e salários, além de agregar as funções de recursos humanos. Este colaborador deverá possuir formação acadêmica em Administração ou Ciências Contábeis.
+O setor administrativo contará com um profissional que fornecerá resultados contábeis aos sócios, administrará o pagamento de fornecedores e salários, além de agregar as funções de recursos humanos. Este funcionará deverá possuir formação acadêmica em Administração ou Ciências Contábeis.
 
 Faz-se relevante mencionar que os sócios deverão fiscalizar a atividade de cada um destes setores, assegurando o funcionamento adequado em relação às suas respectivas funções.
 
@@ -289,7 +284,7 @@ Para a operacionalização do SIAER como negócio, alguns investimentos iniciais sã
 \subsection{Custos}
 Nesta seção, fazem-se discriminados os diversos custos que circundam a viabilização deste plano de negócios. Na tabela abaixo, estes custos são classificados em três grandes grupos: custos variáveis, custos fixos e despesas.
 
-Nos custos variáveis, encontram-se os valores relacionados aos gastos com a efetiva consti- tuição do serviço, como o preço da plataforma de \textit{hardware} somado a custos operacionais. Ainda, nesta parte estão referenciados o salário de 2 engenheiros para a atividade de desenvolvimento.
+Nos custos variáveis, encontram-se os valores relacionados aos gastos com a efetiva constituição do serviço, como o preço da plataforma de \textit{hardware} somado a custos operacionais. Ainda, nesta parte estão referenciados o salário de 2 engenheiros para a atividade de desenvolvimento.
 
 Em custos fixos, devido a característica do negócio, encontram-se poucos gastos. Em linhas gerais, os valores referentes a seguro dos imóveis e dos equipamentos envolvidos não se configuram em um montante vultoso no negócio.
 
@@ -319,7 +314,10 @@ Devido às características distintas, explicita-se na planilha volumes diferentes
 
 Observando-se o ano de 2011 e comparando-se com o Plano de Vendas para este mesmo meríodo, nota-se que seria necessário um incremento no volume de vendas para que se atinja o lucro zero. Desta forma, justifica-se o lucro líquido negativo observado na planilha de Projeção de Resultados.
 
-\newpage
+
+
+
+
 \input{tabela_pe.tex}
 
 \subsection{Considerações}
@@ -329,4 +327,7 @@ Ainda, originalmente ao término do primeiro ano havia um saldo negativo no fluxo
 
 Observando-se a Projeção de Resultados, infere-se que o custo dos produtos vendidos vai caindo com o passar do tempo, não se encontrando alinhada à receita. Isto ocorre devido à diluição dos custos de produção devido ao acréscimo na eficiência e devido a possíveis negociações com fornecedores, decorrentes do crescimento do nome da empresa no mercado. Ainda, nesta mesma projeção, nota-se um aumento desproporcional das despesas em relação à receita líquida. Aparentando ser uma condição anômala, tal situação se mostra justificável na medida em que ocorre um aumento na comissão dos vendedores objetivando alavancar as vendas para esses 5 anos.
 
-Tendo sido delimitadas as condições expostas no plano de negócios exposto, tem-se que o negócio é viável, possibilitando uma lucratividade média de 10\% ao ano. Ainda, o investimento inicial requerido à constituição da empresa (R\$ 31.500) é neutralizado entre o segundo e o terceiro ano. Por fim, consegue-se obter um montante de R\$ 138.057 em 5 anos, descontados desse valor o empréstimo de R\$ 35.000 bem como o investimento inicial.
+%\nocite{DAELN2006}
+%\nocite{Resol2006}
+%\nocite{UTFPR2008}
+%\nocite{SEBRAE2007}
