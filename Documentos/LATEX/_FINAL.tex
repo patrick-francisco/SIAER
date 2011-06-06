@@ -1,0 +1,146 @@
+%% Exemplo de utilizacao do estilo de formatacao abnt-UTFPR.cls para LaTeX (v1.3)
+%% Autores: Hugo Vieira Neto (hvieir@utfpr.edu.br)
+%%          Diogo Rosa Kuiaski (diogo.kuiaski@gmail.com)
+
+\documentclass{abnt-UTFPR} % estilo de documento abnTeX
+\usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm]{abntcite} % estilo de bibliografia abnTeX
+\usepackage[brazil]{babel} % pacote portugues brasileiro
+\usepackage[latin1]{inputenc} % pacote para acentuacao direta
+\usepackage{amsmath,amsfonts,amssymb} % pacote matematico
+\usepackage{graphicx} % pacote grafico
+\usepackage{times} % fonte times
+\usepackage{longtable} 
+
+% ---------- Preambulo ----------
+\instituicao{Universidade Tecnológica Federal do Paraná} % nome da instituicao
+\departamento{Departamento Acadêmico de Eletrônica} % nome do departamento
+\programa{curso de Engenharia Industrial Elétrica - ênfase Eletrônica/Telecomunicações} % nome do curso
+
+\documento{Trabalho de Conclus\~ao de Curso} % [Trabalho de Conclus\~ao de Curso] ou [Relat\'orio de Est\'agio]
+\titulacao{Engenheiro} % [T\'ecnico], [Tecn\'ologo] ou [Engenheiro]
+
+\titulo{Sistema Integrado de Rastreamento de Encomendas Rodoviárias} % titulo do trabalho em português
+\title{Integrated Package Tracking System } % título do trabalho em ingles
+
+\autor{Patrick de Cesar Francisco} % primeiro autor do trabalho
+%\autortres{Nome do Terceiro Autor} % terceiro autor do trabalho, caso exista
+\cita{FRANCISCO, Patrick de Cesar} % sobrenome (maiusculas) e nome do(s) autor(es) do trabalho, separados por ponto-e-virgula (ate quatro autores para TCC)
+
+\palavraschave{Encomendas, Ônibus, Rastreamento, Sistema Integrado} % palavras-chave do trabalho
+\keywords{Packages, Bus, Tracking, Integrated System} % palavras-chave do trabalho em ingles
+
+\comentario{\UTFPRdocumentodata\ apresentado ao \UTFPRdepartamentodata\ como requisito parcial para obtenção do grau de \UTFPRtitulacaodata\ no \UTFPRprogramadata\ da \ABNTinstituicaodata.}
+
+\orientador{Prof. Dr. Hugo Vieira Neto} % nome do orientador do trabalho
+%\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
+%\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
+%\coorientador[Co-orientadora:]{Nome da Co-orientadora} % <- no caso de co-orientadora, usar esta sintaxe
+
+\local{Curitiba} % cidade
+\data{2011} % ano
+
+
+%---------- Inicio do Documento ----------
+\begin{document}
+
+\capa % geracao automatica da capa
+\folhaderosto % geracao automatica da folha de rosto
+%\termodeaprovacao % <- ainda a ser implementado corretamente
+
+% dedicatória (opcional)
+%\begin{dedicatoria}
+%Texto da dedicat\'oria.
+%\end{dedicatoria}
+
+% agradecimentos (opcional)
+%\begin{agradecimentos}
+%Texto dos agradecimentos.
+%\end{agradecimentos}
+
+% epigrafe (opcional)
+\begin{epigrafe}
+%\textit{A glória é tanto mais tardia quanto mais duradoura há de ser,porque todo fruto delicioso amadurece lentamente}
+\textit{Muitas coisas não ousamos empreender por parecerem difíceis; entretanto, são difíceis porque não ousamos empreendê-las}
+\begin{flushright}
+%Arthur Schopenhauer
+Sêneca
+\end{flushright}
+
+\end{epigrafe}
+
+%resumo
+\begin{resumo}
+Grande parte da cadeia de transporte brasileira se utiliza da enorme infra-estrutura rodoviária que abrange o país. Dados divulgados pela Confederação Nacional do Transporte revelam que 96,2\% da matriz de transporte de passageiros e 61,8\% dos transportes de cargas utilizam-se deste meio físico para suas atividades. Dentro deste cenário, diversas empresas de ônibus vem somando ao tradicional transporte de passageiros o serviço de entrega de encomendas, utilizando-se de sua já estabelecida rede logística. Este projeto tem como principal objetivo desenvolver um sistema integrado de rastreamento de encomendas enviadas por ônibus. A metodologia adotada na implementação inicialmente estudou como funciona o processo logístico de envio e recebimento de encomendas por ônibus, identificou falhas em tal modelo, propôs melhorias e finalmente estabeleceu uma solução de controle e rastreamento viável às empresas que fornecem esse serviço. O sistema especificado viabilizará a comunicação entre o ônibus e o guichê, conectar-se-á ao banco de dados central, efetuará a leitura de um código de barras no guichê e possibilitará ao motorista visualizar a relação das encomendas que devem ser descarregadas, devidamente identificadas de acordo com a cidade na qual o ônibus se encontra. Com a concretização dos objetivos acima declarados, tem-se por expectativa a apresentação de um sistema cujo uso reduza o número de indenizações pagas pelas empresas aos clientes devido a extravios.
+\end{resumo}
+
+%abstract
+\begin{abstract}
+Major part of the brazilian transport net uses the huge road net structure that covers the country. Data released by National Confederation of Transport indicates that 96.2\% of the passenger transport matrix and 61.8\% of the cargo transport do use this physical environment for these purpose. Inside this scenario, several bus companies have been adding to the traditional passenger transport the package delivering service, employing the already established logistics net. This project has the main goal to develop am Integrated Package Tracking System for the above shown situation. For this purpose, a wireless comunication link between the buses and the platforms at the stations, allowing data relevant data related to packages to be exchanged. Besides that, a whole software solution was developed, interfacing the system with a central database. By having all the previous goals achieved, the costs related to reparation due to misprocessing of the backages will be reduced.
+\end{abstract}
+% listas (opcionais, mas recomenda-se a partir de 5 elementos)
+\listadefiguras % geracao automatica da lista de figuras
+\listadetabelas % geracao automatica da lista de tabelas
+\listadesiglas % geracao automatica da lista de siglas
+%\listadesimbolos % geracao automatica da lista de simbolos
+
+% sumario
+\sumario % geracao automatica do sumario
+%----------Primeiro Capítulo------------
+\input{Introducao}
+%----------Segundo Capítulo------------
+\input{Contextualizacao}
+\input{github.tex}
+\input{hardware.tex}
+\input{firmware.tex}
+\input{simpliciti.tex}
+\input{gui.tex}
+
+%\input{Desenvolvimento.tex}
+%----------Quarto Capítulo------------
+%\input{Gestao.tex}
+%----------Quinto Capítulo------------
+%\input{plano_de_negocios.tex}
+%------------Sexto Capítulo-----------%
+%\chapter{Testes}
+%---------- Sétimo Capitulo ----------
+%\input{Conclusao}
+%---------- Referencias ----------
+\bibliography{reflatex} % geracao automatica das referencias a partir do arquivo reflatex.bib
+
+%---------- Apendices (opcionais) ----------
+\apendice
+%------------------------------------------------------------------------------------------------
+%APENDICE A
+\chapter{Diagrama de Casos de Uso Guichê}\label{AnexoDiagCasosDeUsoGuiche}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/CasodeUsoGuiche.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Diagrama de Casos de Uso Guichê]{Figura do Diagrama de Casos de Uso montado através das especificações desempenhadas pela aplicação presente no guichê.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:CasodeUsoGuiche}
+\end{figure}
+
+%APENDICE B
+%\chapter{Banco de Dados do Projeto}\label{AnexoDiagBancoSiaer}
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{./figs/BancoSiaer.jpg} % <- formatos PNG, JPG e PDF
+%	\caption[Diagrama do Banco de Dados]{Diagrama Relacional do Banco de Dados do Projeto.}
+%	%\fonte{\cite{abnTeX2009}}
+%	\label{fig:BancoSiaer}
+%\end{figure}
+% ---------- Anexos (opcionais) ----------
+%Declaração do Anexo
+\anexo
+%ANEXO A
+\chapter{Esquemático da plataforma de \textit{Hardware}}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.77\textwidth]{./figs/schem_01.png} % <- formatos PNG, JPG e PDF
+	\caption[Diagrama Esquemático da plataforma]{Diagrama Esquemático da plataforma de \textit{hardware}}
+	\fonte{Texas Instruments}
+	\label{fig:schem}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,305 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}  
+
+%------------Quarto Capítulo-----------%
+\chapter{Gestão}
+
+Neste capítulo de Gestão, formalizam-se todas as considerações tangíveis traçadas em relação à parte gerencial do projeto, fazendo-se cabíveis abordar os recursos dispendidos para o seu desenvolvimento. O procedimento adotada para a escrita deste capítulo consiste em um quadro comparativo, tendo-se por meta confrontar as estimativas traçadas na disciplina de Projeto Final 1 com as ações que foram executadas de fato.
+
+\section{Escopo}
+Neste momento, traça-se um panorama a respeito do grau de modificação introduzido no projeto quando comparado ao exposto proposta. Assim, a partir do final de todas as realizações concluídas para a execução deste projeto, apresentar-se-á neste trecho a exposição de um quadro comparativo com as questões mais determinantes contidas nos primeiros documentos entregues na matéria de Projeto Final 1. 
+
+Analisando-se a proposta entregue, o escopo divide-se basicamente em 4 grandes grupos:
+
+\begin{itemize}
+	\item \textit{Software} de Guichê.
+	\item \textit{Software} de Ônibus.
+	\item Interface de comunicação \textit{wireless}.
+	\item	Banco de Dados.
+\end{itemize}
+
+Tomando-se um quadro comparativo entre a fase de planejamento do projeto, a qual abalizou as diretrizes da proposta entregue, e as ações realmente praticadas, percebeu-se que o escopo do projeto permaneceu praticamente inalterado, sendo que todos os módulos de desenvolvimento previsto desde o princípio mantiveram-se presentes, sendo executados e consolidados sem alterações significativas.  A única ressalva a ser feita diz respeito à integração com o leitor de código de barras, o qual como previsto originalmente utiliza comunicação serial para fornecer dados ao computador. Porém na fase de testes, devido à ausência de um computador \textit{desktop}, utilizou-se um conversor SERIAL-USB para fazer a conexão do leitor ao notebook.
+
+As demais definições de \textit{software} mantêm-se inalteradas, como por exemplo executar as aplicações utilizando sistema operacional Windows XP, e a utilização da linguagem C\# para a elaboração dos \textit{softwares} de guichê e de ônibus. Porém, com o avanço na fase de desenvolvimento, fez-se necessário adicionar um item ao escopo. O \textit{software} aplicação do ônibus requereu a utilização de arquivos XML, atuando no sentido de reter todas as informações referente às encomendas presentes no veículo. Desta forma, realizou-se o gerenciamento das transações de encomendas que sobem e descem do veículo. A justificativa cabível à escolha dos arquivos XML e à estruturação deste arquivos neste projeto podem ser vistas nas seções~\ref{section:transparm} e ~\ref{section:caractxml}, respecitivamente.
+
+No que tange à interface de comunicação \textit{wireless}, o escopo manteve-se praticamente inalterado. No Banco de Dados, a intenção de utilizá-lo como meio de retenção dos diversos dados referentes à encomenda foi mantida desde a proposta inicial até a execução final.
+
+Até a entrega do relatório relatório final de Projeto Final 1, não havia sido escolhido qual seria o sistema SGBD, cujo uso primordial ocorreria para a confecção do banco de dados. Porém tomou-se por decisçao usar o SQL Server 2008, da empresa Microsoft. Da mesma forma foi também discutida qual seria a plataforma de desenvolvimento para o ambiente C\#, escolhendo-se a ferramenta Microsoft Visual Studio 2010, também da Microsoft, a área de trabalho escolhida para o desenvolvimento das aplicações de \textit{software}.
+
+\section{Cronograma}
+
+Inicialmente um cronograma foi montado e apresentado na proposta proposta inicial do projeto. No entanto, algumas alterações foram realizadas neste primeiro cronograma de trabalho, cabendo ao relatório de Projeto Final 1 abordar algumas dessas alterações. Como principal informação, obtém-se no cronograma informações relevantes quanto ao tempo de execução das diferentes tarefas que seriam executadas durante a vida do projeto, estabelecendo-se uma estimativa dos recursos a serem dispendidos em tais atividades.
+
+A tabela~\ref{tableCronogramaAntigo} mostra o cronograma previsto para a execução das tarefas, e entregue no primeiro relatório da matéria de Projeto Final 1.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.5cm}|p{1.5cm}|p{1.5cm}|p{1.25cm}|p{1.25cm}|p{1.25cm}|p{1.0cm}}
+\caption[Cronograma Previsto]{Cronograma Inicial do Projeto}\label{tableCronogramaAntigo} \\
+
+\hline 
+\multicolumn{1}{c}{\textbf{Atividade}} & 
+\multicolumn{1}{c}{\textbf{Início}} & 
+\multicolumn{1}{c}{\textbf{Fim}}& 
+\multicolumn{1}{c}{\textbf{Bassan}} & 
+\multicolumn{1}{c}{\textbf{Marcus}} & 
+\multicolumn{1}{c}{\textbf{Patrick}} &
+\multicolumn{1}{c}{\textbf{Total}} \\ \hline 
+\endfirsthead
+
+\multicolumn{7}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCronogramaAntigo}}} \\
+\hline 
+\multicolumn{1}{c}{\textbf{Atividade}} & 
+\multicolumn{1}{c}{\textbf{Início}} & 
+\multicolumn{1}{c}{\textbf{Fim}}& 
+\multicolumn{1}{c}{\textbf{Bassan}} & 
+\multicolumn{1}{c}{\textbf{Marcus}} & 
+\multicolumn{1}{c}{\textbf{Patrick}} &
+\multicolumn{1}{c}{\textbf{Total}} \\ \hline  
+\endhead
+
+\multicolumn{7}{r}{{\textit{Continuação da tabela~\ref{tableCronogramaAntigo} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize Pesquisar na Web&\footnotesize 01/09/09&\footnotesize07/09/09&\footnotesize 10&\footnotesize10&\footnotesize10&\footnotesize30\\\hline
+	\footnotesize Conversar com empresas&\footnotesize 11/09/09&\footnotesize 18/09/09&\footnotesize 0&\footnotesize 5&\footnotesize 5&\footnotesize 10\\\hline
+\footnotesize Analisar Resultados &\footnotesize 21/09/09&\footnotesize 24/09/09&\footnotesize 8&\footnotesize 8&\footnotesize 8&\footnotesize 24\\\hline
+\footnotesize Levantar problemas no processo atual&\footnotesize 21/09/09&\footnotesize 02/10/09&\footnotesize 6&\footnotesize 6&\footnotesize 6&\footnotesize 18\\\hline
+\footnotesize Coletar Dados&\footnotesize 02/10/09&\footnotesize 07/10/09&\footnotesize 0&\footnotesize 4&\footnotesize 4&\footnotesize 8\\\hline
+\footnotesize Obter informações de Legislação&\footnotesize 05/10/09&\footnotesize 09/10/09&\footnotesize 4&\footnotesize 0&\footnotesize 0&\footnotesize 4\\\hline
+\footnotesize Conversar com Professores&\footnotesize 28/09/09&\footnotesize 02/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\\hline
+\footnotesize Elaborar Primeira Versão&\footnotesize 12/10/09&\footnotesize 16/10/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\\hline
+\footnotesize Efetuar alterações após sugestões&\footnotesize 15/10/09&\footnotesize 21/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\\hline
+\footnotesize Consultar professor orientador&\footnotesize 22/10/09&\footnotesize 30/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\\hline
+\footnotesize Levantar requisitos funcionais&\footnotesize 02/11/09&\footnotesize 06/11/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\\hline
+\footnotesize Consultar \textit{transceivers} existentes&\footnotesize 09/11/09&\footnotesize 17/11/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\\hline
+\footnotesize Definir módulo&\footnotesize 16/11/09&\footnotesize 23/11/09&\footnotesize 5&\footnotesize 5&\footnotesize 5&\footnotesize 15\\\hline
+\footnotesize Levantar requisitos funcionais (Software)&\footnotesize 28/10/09&\footnotesize 24/11/09&\footnotesize 0&\footnotesize 10&\footnotesize 10&\footnotesize 20\\\hline
+\footnotesize Realizar estudo sobre código de barras&\footnotesize 12/11/09&\footnotesize 26/11/09&\footnotesize 20&\footnotesize 20&\footnotesize 20&\footnotesize 60\\\hline
+\footnotesize Pesquisar características de diversos modelos&\footnotesize 24/11/09&\footnotesize 2/12/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\\hline
+\footnotesize Definir modelo e fabricante&\footnotesize 03/12/09&\footnotesize 8/12/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\\hline
+\footnotesize Realizar pesquisas sobre patentes&\footnotesize 23/11/09&\footnotesize 02/12/09&\footnotesize 0&\footnotesize 0&\footnotesize 8&\footnotesize 8\\\hline
+\footnotesize Elaborar relatório escrito&\footnotesize 25/11/09&\footnotesize 14/12/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\\hline
+\footnotesize Desenvolver algoritmos e interfaces&\footnotesize 15/12/09&\footnotesize 12/03/10&\footnotesize 50&\footnotesize 100&\footnotesize 0&\footnotesize 150\\\hline
+\footnotesize Testar SW desenvolvido&\footnotesize 22/02/10&\footnotesize 12/03/10&\footnotesize 100&\footnotesize 100&\footnotesize 0&\footnotesize 200\\\hline
+\footnotesize Formalizar projeto escrito do Banco de Dados&\footnotesize 07/12/09&\footnotesize 16/12/09&\footnotesize 0&\footnotesize 0&\footnotesize 15&\footnotesize 15\\\hline
+\footnotesize Executar projeto (Banco de Dados)&\footnotesize 28/12/09&\footnotesize 12/02/10&\footnotesize 0&\footnotesize 0&\footnotesize 75&\footnotesize 75\\\hline
+\footnotesize Formalizar protocolo a ser adotado&\footnotesize 30/11/09&\footnotesize 11/12/09&\footnotesize 30&\footnotesize 30&\footnotesize 30&\footnotesize 90\\\hline
+\footnotesize Desenvolver FW&\footnotesize 14/12/09&\footnotesize 19/03/10&\footnotesize 100&\footnotesize 50&\footnotesize 0&\footnotesize 150\\\hline
+\footnotesize Integração entre banco de dados, SW e \textit{wireless}&\footnotesize 22/03/10&\footnotesize 23/04/10&\footnotesize 40&\footnotesize 40&\footnotesize 0&\footnotesize 80\\\hline
+\footnotesize Realizar Plano de Negócio&\footnotesize 03/05/10&\footnotesize 21/05/10&\footnotesize 15&\footnotesize 15&\footnotesize 0&\footnotesize 30\\\hline
+\textbf{Total de Horas}&\footnotesize -&\footnotesize -&\footnotesize 475&\footnotesize 495&\footnotesize 288&\footnotesize  1258\\\hline
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+Felizmente a maioria das atividades ropostas na tabela~\ref{tableCronogramaAntigo} foram cumpridas, havendo algumas poucas alterações e contratempos, durante a sua execução. A tabela~\ref{tableCronogramaNovo} mostra as atividades, com os valores reais de datas e horários executados, para cada integrante do grupo, objetivando a comparação entre ambas as tabelas.
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.5cm}|p{1.5cm}|p{1.5cm}|p{1.25cm}|p{1.25cm}|p{1.25cm}|p{1.0cm}}
+\caption[Cronograma Final do Projeto]{Cronograma Final do Projeto}\label{tableCronogramaNovo} \\
+
+\hline 
+\multicolumn{1}{c}{\textbf{Atividade}} & 
+\multicolumn{1}{c}{\textbf{Início}} & 
+\multicolumn{1}{c}{\textbf{Fim}}& 
+\multicolumn{1}{c}{\textbf{Bassan}} & 
+\multicolumn{1}{c}{\textbf{Marcus}} & 
+\multicolumn{1}{c}{\textbf{Patrick}} &
+\multicolumn{1}{c}{\textbf{Total}} \\ \hline 
+\endfirsthead
+
+\multicolumn{7}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCronogramaNovo}}} \\
+\hline 
+\multicolumn{1}{c}{\textbf{Atividade}} & 
+\multicolumn{1}{c}{\textbf{Início}} & 
+\multicolumn{1}{c}{\textbf{Fim}}& 
+\multicolumn{1}{c}{\textbf{Bassan}} & 
+\multicolumn{1}{c}{\textbf{Marcus}} & 
+\multicolumn{1}{c}{\textbf{Patrick}} &
+\multicolumn{1}{c}{\textbf{Total}} \\ \hline  
+\endhead
+
+\multicolumn{7}{r}{{\textit{Continuação da tabela~\ref{tableCronogramaNovo} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+\footnotesize Pesquisar na Web&\footnotesize 01/09/09&\footnotesize 07/09/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\ \hline
+\footnotesize Agendar visita a empresas&\footnotesize 08/09/09&\footnotesize 11/09/09&\footnotesize &\footnotesize 5&\footnotesize 5&\footnotesize 10\\ \hline
+\footnotesize Conversar com empresas&\footnotesize 11/09/09&\footnotesize 18/09/09&\footnotesize 0&\footnotesize 5&\footnotesize 5&\footnotesize 10\\ \hline
+\footnotesize Analisar Resultados&\footnotesize 21/09/09&\footnotesize 24/09/09&\footnotesize 8&\footnotesize 8&\footnotesize 8&\footnotesize 24\\ \hline
+\footnotesize Levantar problemas no processo atual&\footnotesize 21/09/09&\footnotesize 02/10/09&\footnotesize 6&\footnotesize 6&\footnotesize 6&\footnotesize 18\\ \hline
+\footnotesize Coletar Dados&\footnotesize 02/10/09&\footnotesize 07/10/09&\footnotesize 0&\footnotesize 4&\footnotesize 4&\footnotesize 8\\ \hline
+\footnotesize Obter informações de Legislação&\footnotesize 05/10/09&\footnotesize 09/10/09&\footnotesize 4&\footnotesize 0&\footnotesize 0&\footnotesize 4\\ \hline
+\footnotesize Conversar com Professores&\footnotesize 28/09/09&\footnotesize 02/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\ \hline
+\footnotesize Elaborar Primeira Versão&\footnotesize 12/10/09&\footnotesize 16/10/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\ \hline
+\footnotesize Efetuar alterações após sugestões&\footnotesize 15/10/09&\footnotesize 21/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\ \hline
+\footnotesize Consultar professor orientador&\footnotesize 22/10/09&\footnotesize 30/10/09&\footnotesize 4&\footnotesize 4&\footnotesize 4&\footnotesize 12\\ \hline
+\footnotesize Levantar requisitos funcionais&\footnotesize 02/11/09&\footnotesize 06/11/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\ \hline
+\footnotesize Consultar \textit{transceivers} existentes&\footnotesize 09/11/09&\footnotesize 17/11/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\ \hline
+\footnotesize Definir módulo&\footnotesize 16/11/09&\footnotesize 23/11/09&\footnotesize 5&\footnotesize 5&\footnotesize 5&\footnotesize 15\\ \hline
+\footnotesize Levantar requisitos funcionais (Software)&\footnotesize 28/10/09&\footnotesize 24/11/09&\footnotesize 0&\footnotesize 10&\footnotesize 10&\footnotesize 20\\ \hline
+\footnotesize Realizar estudo sobre código de barras&\footnotesize 12/11/09&\footnotesize 26/11/09&\footnotesize 20&\footnotesize 20&\footnotesize 20&\footnotesize 60\\ \hline
+\footnotesize Pesquisar características de diversos modelos&\footnotesize 24/11/09&\footnotesize 2/12/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\ \hline
+\footnotesize Definir modelo e fabricante&\footnotesize 03/12/09&\footnotesize 8/12/09&\footnotesize 10&\footnotesize 10&\footnotesize 10&\footnotesize 30\\ \hline
+\footnotesize Realizar pesquesas sobre patentes&\footnotesize 23/11/09&\footnotesize 02/12/09&\footnotesize 0&\footnotesize 0&\footnotesize 8&\footnotesize 8\\ \hline
+\footnotesize Elaborar relatório escrito 1&\footnotesize 25/11/09&\footnotesize 14/12/09&\footnotesize 15&\footnotesize 15&\footnotesize 15&\footnotesize 45\\ \hline
+\footnotesize Desenvolver algoritmos e interfaces&\footnotesize 15/12/09&\footnotesize 12/03/10&\footnotesize 35&\footnotesize 113&\footnotesize 0&\footnotesize 148\\ \hline
+\footnotesize Testar SW desenvolvido&\footnotesize 22/02/10&\footnotesize 20/03/10&\footnotesize 111&\footnotesize 116&\footnotesize 0&\footnotesize 227\\ \hline
+\footnotesize Formalizar projeto escrito do Banco de Dados&\footnotesize 07/12/09&\footnotesize 20/03/2010&\footnotesize 0&\footnotesize 0&\footnotesize 9&\footnotesize 9\\ \hline
+\footnotesize Executar projeto (Banco de Dados)&\footnotesize 28/12/09&\footnotesize 12/02/10&\footnotesize 0&\footnotesize 0&\footnotesize 75&\footnotesize 75\\ \hline
+\footnotesize Formalizar protocolo a ser adotado&\footnotesize 30/11/09&\footnotesize 11/12/09&\footnotesize 47&\footnotesize 30&\footnotesize 30&\footnotesize 107\\ \hline
+\footnotesize Desenvolver FW&\footnotesize 14/12/09&\footnotesize 06/04/10&\footnotesize 112&\footnotesize 44&\footnotesize 0&\footnotesize 156\\ \hline
+\footnotesize Realizar testes de integração com banco de dados, SW e wireless&\footnotesize 06/04/2010&\footnotesize 14/05/10&\footnotesize 44&\footnotesize 44&\footnotesize 0&\footnotesize 88\\ \hline
+\footnotesize Consultar professor orientador sobre relatório&\footnotesize 09/04/2010&\footnotesize 09/04/10&\footnotesize 1&\footnotesize 1&\footnotesize 0&\footnotesize 2\\ \hline
+\footnotesize Realizar Relatório Final 2&\footnotesize 01/05/2010&\footnotesize 13/062/10&\footnotesize 150&\footnotesize 150&\footnotesize 0&\footnotesize 300\\ \hline
+\footnotesize Realizar Plano de Negócio&\footnotesize 15/05/2010&\footnotesize 30/05/10&\footnotesize 15&\footnotesize 15&\footnotesize 0&\footnotesize 30\\ \hline
+\textbf{Total de Horas}&\footnotesize -&\footnotesize -&\footnotesize 655&\footnotesize 673&\footnotesize 282&\footnotesize 1616\\ \hline
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+Comparando as tabelas~\ref{tableCronogramaAntigo} e~\ref{tableCronogramaNovo}, verifica-se que algumas alterações de datas foram realizadas, além de que duas linhas de atividades foram adicionadas. Relacionando-se às alterações de datas, tem-se inicialmente a data de término de teste de \textit{software}, a formalização do banco de dados e o desenvolvimento do \textit{firmware}. Estas três atividades estão fortemente ligadas à parte de desenvolvimento do projeto, e por se fazerem em etapas críticas para o devido funcionamento do projeto, tais etapas requereram redimensionamento para que o trabalho pudesse ser concluído com êxito. Ainda, tais atividades culminaram em uma  fase de integração, a qual pode ser realizada sem grandes intempéries dadas as ações corretivas citadas anteriormente. Dado este contexto, os prazos referentes à fase de integração entre o banco de dados, \textit{software} de guichê e ônibus e a parte de comunicação RF ficaram comprometidas, disso decorrendo um redimensionamento do prazo de cerca de três semanas, na medida em que tal etapa responde pelos testes de consistência do sistema.
+
+Foram acrescentadas duas outras atividades a este cronograma, essenciais para o término do desenvolvimento e início da confecção deste relatório. Dentro desse contexto, houve uma fase de conversa com o professor orientador para a discussão de qual seriam os itens básicos presentes no relatório, e a definição do período de escrita do relatório final propriamente dito.
+
+Paralelamente a estas etapas iniciaram-se as atividades para a criação do plano de negócio deste projeto, presente no capítulo~\ref{chapter:planodenegocio}. Esta tarefa requereu cercca duas semanas do mês de maio de 2010, fazendo-se válida para apresentações em sala de aula para a disciplina de Projeto Final 2, visando estabelecer discussões acerca da viabilidades tecnológica, econômica e mercadológica do projeto.
+
+Ao todo foram gastos aproximadamente 1600 horas para a finalização do projeto, sendo que as horas dispendidas por cada integrante do grupo fazem-se expostas nas tabelas~\ref{tableCronogramaAntigo} e~\ref{tableCronogramaNovo}. Faz-se importante ressaltar neste momento que o integrante Patrick deixou de fazer parte do grupo na segunda fase do projeto, em meados do mês de fevereiro de 2010, para realizar um intercâmbio na Alemanha. No entanto, este integrante dará prosseguimento a este projeto, realizando algumas melhorias pertinentes para conclusão de sua disciplina de Projeto Final 2. 
+
+
+\section{Custos}
+
+Os custos materiais requerido por este projeto não se configuraram em quantias vultosas, na medida em que se relacionam basicamente à aquisição dos kits de desenvolvimento ao leitor de código de barras da BEMATECH. Uma análise do projeto para um contexto emprasarial, traria inexoravelmente custos que não pertinentes a este projeto, como a compra de licença dos \textit{softwares} de desenvolvimento em C\#, do SGBD e do protocolo EAN-13. Porém, para o caso das ferramentas para desenvolvimento em C\# e gerenciamento do banco de dados, usaram-se mecanismos disponibilizados pela própria fabricante, Microsoft, a fim de viabilizar a aquisição gratuita destes utencílios. Tal panorama se configurou pois Microsoft oferece um programa destinado ao público acadêmico, no qual fazem-se disponibilizadas suas aplicações de desenvolvimento gratuitamente para situações de aprendizado. Já no caso das licenças EAN-13, o procedimento de aquisição de licenças não se faz aplicável, na medida em que nenhhuma empresa foi criada e registrada formalmente. Sendo assim, optou-se por proceder à geração das etiquetas, as quais em princípio não são utilizadas para fins comerciais, disso decorrendo o caráter não obrigatório do pagamento de registro nas entidades regulamentadoras de código de barras. Os investimentos aplicáveis à realização deste projeto fazem-se expostos na tabela~\ref{tableCustosProjeto}.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{5.0cm}|p{2cm}|p{2cm}}
+\caption[Tabela de Custos]{Custos em R\$ obtidos ao longo do projeto.}\label{tableCustosProjeto} \\
+
+\hline \multicolumn{1}{c}{\textbf{Item}} & 
+\multicolumn{1}{c}{\textbf{Quantidade}} & 
+\multicolumn{1}{c}{\textbf{Valor}}\\ 
+\hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCustosProjeto}}} \\
+\hline \multicolumn{1}{c}{\textbf{Item}} & \multicolumn{1}{c}{\textbf{Quantidade}} & \multicolumn{1}{c}{\textbf{Valor}}\\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableCustos} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	Kits de Desenvolvimento &3& R\$150,00 \\
+	\hline
+	Leitor Óptico BR-310 &1& R\$110,00 \\
+	\hline
+	\textbf{Total}&&R\$560,00\\	
+	\end{longtable}
+\end{center}
+
+\section{Análise de Riscos}
+
+Diversas são as teorias que sugerem uma maneira padronizada para se efetuar uma análise de riscos confiável para o desenvolvimento de projetos. Esses trabalhos unidos formam um número muito grande de pesquisadores e interessados neste processo e ainda hoje é motivo de discussão para se propor modelos para o processo de análise de riscos.
+
+O procedimento que mais se aproxima da análise de risco aplicada a este trabalho de Projeto Final é difundido principalmente entre os economistas. A economia possui um sistema de análise de riscos em que alguns métodos são empregados a fim de avaliar quais os fatores presentes no desenvolvimento do projeto que podem influenciar em seu resultado final. Entre estes métodos encontram-se três tópicos fundamentais para a utilização desta abordagem, são elas: A Análise preliminar de riscos - APR, Análise de Falha Humana e a Análise de Falhas e Defeitos. A APR tem sua aplicação fundamentada no início da elaboração de um projeto. Dentro deste método realiza-se um estudo qualitativo do processo geral envolvido no desenvolvimento do sistema, não se preocupando com áreas técnicas específicas, mas atendo o processo de uma maneira abrangente de um modo geral. O item de Análise de Falha Humana pode ser considerado um dos mais complexos dentro da análise de riscos de um projeto. Existem atualmente estudos direcionados exclusivamente a análise dos fatores que influenciam o comportamento humano para execução de tarefas, e qual a contribuição de cada fator para o resultado final da execução de uma determinada tarefa. Entres esses fatores presentes nas pesquisas encontram-se a idade, o estado psicológico, a saúde, o comportamento, a propensão de executar erros do indivíduo, dificuldades físicas, estilo de vida e projetos futuros, entre diversos outros fatores que tornam esta análise tão complexa. Por último esta análise de riscos proposta na economia propõe a análise do processo visando atender as necessidades técnicas, uma vez que esta é de fundamental importância para a elaboração, execução e funcionamento do projeto.
+	
+Além de fornecer procedimentos para a verificação de riscos no projeto, a importância do que foi exposto até agora se deve ao fato de que, dentro de cada método apresentado acima é elaborado um quadro de medidas e ações para controle dos riscos que envolvem o sistema, sendo este o principal objetivo da Análise de Riscos neste projeto. Nestes quadros, cada risco encontrado, e aceito como importante, dever ser ranqueado e classificado segundo sua prioridade ou grau de risco em seu efeito final, assim como as ações preventivas para o controle dos riscos.
+	
+O quadro de Análise de Riscos desenvolvido para este projeto não utilizou à risca as metodologias citadas acima, no entanto o mesmo sentimento de busca de falhas comuns ao processo de análise de risco e de procura das ações preventivas a serem tomadas foram utilizadas. 
+	
+A fim de abranger os principais aspectos que influenciam no desenvolvimento de um Sistema Integrado de Acompanhamento de Encomendas Rodoviárias, a equipe procurou atender quatro preceitos básicos para a preparação da tabela de Análise de Riscos, estando tais preceitos relacionados às características das variáveis envolvidas no desenvolvimento do projeto, tais como aspectos Tecnológicos, Humanos, os Processos envolvidos e o ambiente Físico utilizado. O quadro abaixo mostra os riscos julgados como importantes, assim como seu grau de risco, e a ação a ser adotada em caso de um dos riscos estar na iminência de ocorrer.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{1.0cm}|p{2.7cm}|p{2.0cm}|p{1.0cm}|p{1.0cm}|p{1.0cm}|p{2.5cm}}
+\caption[Tabela de Riscos]{Riscos encontrados na análise de riscos realizada sobre o desenvolvimento do projeto.}\label{tableriscos} \\
+
+\hline 
+\multicolumn{1}{c}{\textbf{Grau}} & 
+\multicolumn{1}{c}{\textbf{Descrição}} & 
+\multicolumn{1}{c}{\textbf{Efeito}}& 
+\multicolumn{1}{c}{\textbf{Prob}} & 
+\multicolumn{1}{c}{\textbf{Impacto}} & 
+\multicolumn{1}{c}{\textbf{Prob x Imp}} &
+\multicolumn{1}{c}{\textbf{Ação}} \\ \hline 
+\endfirsthead
+
+\multicolumn{7}{c}%
+{{\bfseries Continuação da tabela~\ref{tableriscos}}} \\
+\hline 
+\multicolumn{1}{c}{\textbf{Grau}} & 
+\multicolumn{1}{c}{\textbf{Descrição}} & 
+\multicolumn{1}{c}{\textbf{Efeito}}& 
+\multicolumn{1}{c}{\textbf{Prob}} & 
+\multicolumn{1}{c}{\textbf{Impacto}} & 
+\multicolumn{1}{c}{\textbf{Prob x Imp}} &
+\multicolumn{1}{c}{\textbf{Ação}} \\ \hline 
+\endhead
+
+\multicolumn{7}{r}{{\textit{Continuação da tabela~\ref{tableriscos} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+\footnotesize Alto&\footnotesize Necessidade de estudo de novas tecnologias&\footnotesize O tempo de desenvolvimento exigirá mais tempo&\footnotesize Alto&\footnotesize Médio&\footnotesize Médio&\footnotesize Conviver\\ \hline
+\footnotesize Alto&\footnotesize Saída de um integrante da equipe por motivos de viagem ao exterior&\footnotesize Nova divisão de tarefas agendadas no cronograma&\footnotesize Alto&\footnotesize Alto &\footnotesize Alto&\footnotesize Conviver\\ \hline
+\footnotesize Médio&\footnotesize Atraso na compra de componentes&\footnotesize Atraso no cronograma&\footnotesize Médio&\footnotesize  Médio&\footnotesize Médio &\footnotesize Mitigar: Contactar outros fornecedores\\ \hline
+\footnotesize Médio&\footnotesize Falta de equipamentos para os procedimentos de testes&\footnotesize O tempo de desenvolvimento exigirá mais tempo&\footnotesize Baixo&\footnotesize Médio&\footnotesize Baixo&\footnotesize Mitigar: Conversar com o responsável do almoxarifado.\\
+&&&&&&\footnotesize Alugar equipamentos em empresas especializadas.\\ \hline
+\footnotesize Baixo&\footnotesize Inviabilidade de desenvolvimento do projeto&\footnotesize Atraso na formatura dos integrantes da equipe&\footnotesize Baixo&\footnotesize Alto&\footnotesize Médio&\footnotesize Eliminar: Eliminar Projeto\\ \hline
+\footnotesize Baixo&\footnotesize Saída de um integrante da equipe por desentendimento&\footnotesize Nova divisão de tarefas agendadas no cronograma&\footnotesize Baixo&\footnotesize Alto&\footnotesize Médio&\footnotesize Mitigar: Tentar conversar e esclarecer a situação com o integrante desmotivado\\ \hline
+\footnotesize Baixo&\footnotesize Falta de Recursos financeiros&\footnotesize Dificuldade na compra de componentes e materiais necessários para o projeto&\footnotesize Baixo&\footnotesize Médio&\footnotesize Baixo&\footnotesize Mitigar: Estudar a possibilidade de um financiamento\\
+\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+É válido ressaltar que todos os riscos expostos nesta tabela foram considerados relevantes por influenciarem em diversos fatores no desenvolvimento do projeto, assim como no resultado final a ser obtido.
+
+O quadro da Análise de Riscos apresenta os riscos julgados tangíveis pelas equipes, encontrando-se agrupados com suas respectivas ações preventivas na última coluna Ação. A descrição do risco, e o efeito que este causará na realização do projeto também aparecem neste quadro para possibilitar uma apresentação clara do problema envolvido. As colunas de Probabilidade e Impacto foram estipuladas de acordo com a experiência dos desenvolvedores do projeto. A coluna de Probabilidade atende ao quesito da "facilidade" que o risco possui de ocorrer, enquanto que a coluna de Impacto revela a influência que este risco exerce nos fatores macros do projeto. Estas duas colunas além de representarem seus valores únicos ainda podem ser combinadas e formarem a coluna Probabilidade x Impacto, sendo que todas as possibilidades de agrupamento destas colunas e seus respectivos resultados estão presentes no quando abaixo de conversão da combinação dos resultados das colunas Probabilidade e Impacto. 
+
+Dos riscos expostos acima, apenas um deles acabou se fazendo presente no desenvolvimento do projeto. O item ``Saída de
+um integrante da equipe por motivos de viagem ao exterior'' acabou ocorrendo, na medida em que o integrante original Patrick acabou realizando intercâmbio estudantil no começo desse ano. Porém, dadas as ações previstas para este risco, relacionadas principalmente à realocação das atividades entre os dois membros restantes, não se observou impacto considerável na realização do projeto.
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{3.0cm}|p{2cm}|p{2cm}}
+\caption[Tabela de Custos]{- Conversão da combinação dos resultados das colunas ``Probabilidade`` e ``Impacto`` do quadro de Análise de Riscos.}\label{tableConversaoProb} \\
+\hline \multicolumn{1}{c}{\textbf{Probabilidade}} & 
+\multicolumn{1}{c}{\textbf{Impacto}} & 
+\multicolumn{1}{c}{\textbf{Resultado}}\\ 
+\hline 
+\endfirsthead
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableConversaoProb}}} \\
+\hline \multicolumn{1}{c}{\textbf{Probabilidade}} & 
+\multicolumn{1}{c}{\textbf{Impacto}} & 
+\multicolumn{1}{c}{\textbf{Resultado}}\\ 
+\hline  
+\endhead
+\endlastfoot
+	\footnotesize Alto&\footnotesize Alto&\footnotesize Alto\\ \hline
+	\footnotesize Alto&\footnotesize Médio&\footnotesize Médio\\ \hline
+	\footnotesize Médio&\footnotesize Alto&\footnotesize Alto\\ \hline
+	\footnotesize Alto&\footnotesize Baixo&\footnotesize Baixo\\ \hline
+	\footnotesize Baixo&\footnotesize Alto&\footnotesize Alto\\ \hline
+	\footnotesize Médio&\footnotesize Baixo&\footnotesize Baixo\\ \hline
+	\footnotesize Baixo&\footnotesize Médio&\footnotesize Médio	\\ \hline	
+\end{longtable}\end{center}

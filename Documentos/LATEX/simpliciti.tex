@@ -1,0 +1,265 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}
+%---------- Primeiro Capitulo ----------
+\section{Comunicação sem fio}
+
+Nesta seção iremos discorrer sobre a parcela do projeto referente à comunicação sem fio. Com já foi dito anteriormente, esta parte é crucial para o projeto e representa o principal diferencial deste projeto perante os concorrentes.
+
+Primeiramente, de forma breve e concisa, discorreremos sobre como era o protocolo de comunicação SIAER antes das modificações. Nesta etapa também mostrar-se-ão as limitações daquele protocolo, e suas implicações no produto final. 
+
+Na segunda etapa apresentaremos o protocolo SimpliciTI, cuja utilização sanou os problemas apontados e apresentou várias vantagens, por ser um protocolo de comunicação mais robusto.
+
+\subsection {Protocolo de comunicação SIAER}
+
+A rede foi montada utilizando o nó do guichê como mestre e os ônibus como escravos, pois o guichê têm todas as informações necessárias da rede e tem também o controle sobre as ações que ocorrem no processo, como a leitura dé um código de barras, ou o cadastro de uma nova encomenda, enquanto os ônibus trabalham somente sobre os dados provenientes do guichê.
+
+O protocolo foi montado baaseado no modelo OSI, o qual serve como base para o desenvolvimento de sistemas de comunicação. Este modelo apresenta sete camadas, porém devido a complexidade do projeto, nem todas as camadas foram contempladas.
+
+A frequência de trabalho estava dentro da chamada ISM (industrial, scientific and medical), sobre a qual a legislação corrente não cobra direitos de licensa, ou seja, desde que respeitadas as frequências e potêcias máximas, qualquer um pode utilizar-se desta faixa de frequências para desenvolver suas próprias aplicações. A frequência de portadora era de 2433 kHz, com largura de banda de 200kHz e modulação  \sigla{FSK}{Frequency Shift Keying} com dois símbolos. Esta frequência se situa dentro da faixa da WI-FI, ou seja, um espectro de frequência altamente poluído. Além disso, o alcance de uma transmissão nesta frequência, levando-se em consideração a potência do transceiver do kit de desenvolvimento, é bem limitada, beirando poucas dezenas de metros.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/rede_siaer.png} % <- formatos PNG, JPG e PDF
+	\caption[Modelo em estrela de conexão entre dispositivos]{Modelo em estrela de conexão entre dispositivos}
+	\label{fig:RedeEstrela}
+\end{figure}
+
+O controle de acesso ao meio foi feito através da multiplexação por divisão no tempo. Assim, de forma análoga ao que ocorre na telefonia fixa, cada ônibus possui para si um \textit{timeslot}, o qual é um intervalo de tempo bem definido no qual toda a troca de dados entre guichê e ônibus deve ocorrer. A fim de oferecer suporte à comunicação de até quatro ônibus, utilizou-se um modelo com quatro \textit{timeslots}, cada um reservado para um único ônibus e com duração bem definida de de 700 ms. 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/timeslots.png} % <- formatos PNG, JPG e PDF
+	\caption[Multiplexa-ção por divisão no tempo usando \textit{timeslots}]{Multiplexação por divisão no tempo usando \textit{timeslots}}
+	\label{fig:Timeslots}
+\end{figure}
+Cada vez que um ônibus é encontrado na rede, um dos quatro timeslots é a ele alocado. Caso haja mais de quatro ônibus simultâneamente em uma rodoviária, haveria um problema nesta topologia de rede, sendo que um dos ônibus ficaria de fora do sistema. Esta é uma das grandes limitações do projeto no âmbito de produto, uma vez que devemos fazer o design do sistema prevendo o pior cenário possível.
+
+Os dados a serem transmitidos mostraram-se pertinentes para este projeto, e com isso pouco foi alterado. Mais detalhes sobre os pacotes, encontra-se na seção de enlace de dados. Todavia, em todos os processos em que a transmissão sem fio se realizava, os pacotes transmitidos, sejam de conexão ou de dados, era feita de maneira direta, ou seja, os dados saiam do microcontrolador e eram jogados para o ambiente sem qualquer controle perante a segurança.
+
+Observando tais comportamentos do sistema vigente, optamos pela troca deste protocolo de comunicação por outro mais robusto e com mais recursos, cuja utilização por si só já adicionasse um maior valor agregado ao produto. Vale lembrar que o protocolo de comunicação SIAER foi inteiramente desenvolvido por BASSAN JUNIOR, Luiz Alberto e FITZ LUCCETTI, Marcus Vinícius. Tal desenvolvimento foi louvável para alunos de graduação, e seu funcionamento mostrou estabilidade, sendo suficiente para o primeiro protótipo do projeto SIAER.
+
+\subsection {Protocolo de comunicação SimpliciTI}
+
+As especificações para a escolha de um novo protocolo de comunicação são quantidade de conexões simultâneas possíveis, custo, possibilidade de criptografia e frequência de operação.
+
+Dentre os diversos protocolos de comunicação no mercado que poderiam suprir tais especificações podemos listar rapidamente três: zigbee, bluetooth e simpliciTI. Vale dizer que qualquer um destes protocolos seria uma opção viável para nosso projeto, no entando, por questão de custo e pela boa relação com a Texas Instruments utilizamos o simpliciTI. Em relação a custo, precisamos basicamente de uma placa com algum processador da família CC430, uma antena e alguns capacitores e resistores para ajustar a impedância. Além disso, existe uma vasta documentação disponível no site da Texas Instruments.
+
+\subsubsection {Premissas do SimpliciTI}
+SimpliciTI é um protocolo peer-to-peer baseado em conexão. Suas premissas são baixo custo, baixo consumo, tipos de dispositivos de rede bem definidos e fácil utilização. Ele visa dispositivos de baixo consumo, tipicamente energizados através de uma bateria. O controle de recursos de energia do microcontrolador e do rádio porem ser feitas através de algumas poucas funções pré-definidas. Para uma rede simpliciTI, todo nó é um peer, e cada peer pode ter adicionado em si outras funcionalidades, como mostra a figura ~\ref{fig:simpliciti_basico}. 
+
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/simpliciti_basic.png} % <- formatos PNG, JPG e PDF
+	\caption[Módulo básico do SimpliciTI]{Módulo básico do SimpliciTI}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_basico}
+\end{figure}
+
+O baixo custo do simpliciTI é traduzido em nível real através da facilidade de sua implementação. Ele pode ser configurado de duas formas: através de um microcontrolador acoplado a um chip de rádio (CC1101, por exemplo) ou então através dos chamados SoC (system-on-chip), os quais apresentam tanto o microcontrolador quanto o rádio em um único chip. Sua simplicidade transparece ao observar-se sua baixa carga para o processador, a qual pode ser de apenas 8KB de flash e 512B de RAM ou 4KB de flash e 256B de RAM, dependendo do dispositivo.
+
+Uma rede baseada no simpliciTI é realmente de fácil implementação. O ambiente simplificado de desenvolvimento ajuda os desenvolvedores a estabelecer comunicação RF sem configurações complexas. A camada de rádio e as configurações de rede ficam encapsuladas e escondidas do resto da camada de aplicação, sendo que as configurações de rádio referentes à frequência e tipo de conexão podem ser feitas com a ajuda do software livre SmartRF Studio, também de autoria da Texas Instruments.
+
+Os chips de rádio compatíveis com o simpliciTI são:
+\begin{itemize}
+	\item CC1100/CC2500 (chip de rádio com frequência menor que 1 GHz/2.4 GHz juntamente com algum microcontrolador MSP430)
+	\item CC1110/CC2510 (chip de rádio com frequência menor que 1 GHz/2.4 GHz com core de 8051 em um único chip)
+	\item CC2430/CC2420 (chip de radio com ou sem code de 8051 em um único chio)
+\end{itemize}
+
+Os tipos de dispositivos de rede são basicamente três: End Device, Access Point e Range extender.
+
+\subsubsection {Os tipos de dispositivo de rede}
+Os Access Point são dispositivos mestres e, de um modo geral, gastam mais energia. Em uma dada rede, somente um Access Point é permitido. Ele pode ter funcionalidades de um \textit{End Device} ou de um \textit{Range Extender}. Em nosso projeto, o guichê foi escolhido para ter funcionalidade de \sigla{AP}{Access Point}, por ter todas as informações pertinentes para o sistema. As funções que diferenciam o Access Point são:
+\begin{itemize}
+	\item gerenciamento dos endereços dos dispositivos da rede
+	\item Receber e encaminhar mensagens de dispositivos que precisam ficar em modo \textit {sleep}	
+\end{itemize}
+
+Os dispositivos do tipo \textit {Range extender}, como o próprio nome já diz, retransmitem as mensagens da rede até que cheguem ao destino servindo como extensores do alcance da rede. Presume-se que eles estejam sempre ligados, e por tal razão, uma linha direta com energia é recomendável. No nosso caso não foi utilizado nenhum deste dispositivo, mas em casos extremos, como rodoviárias muito grandes, os chamados \textit{Range Extender} teriam grande aplicabilidade.  
+
+Os\textit{End Device} compreendem a camada de aplicação de um projeto. Dependendo do escassez de energia, os \sigla{ED}{End Devices} podem:
+\begin{itemize}
+	\item Estar sempre ligados ou não. 
+	\item Ser configurados somente para transmitir, como para transmitir e receber dados.
+	\item Usar um ou mais canais de frequências para a transmissão de dados.
+	\item Utilizar uma chave de criptografia para encriptar e decriptar dados.
+\end{itemize}
+
+\subsubsection {As topologias presentes no SimpliciTI}
+Há duas topologias de rede básicas presentes no protocolo simpliciTI: a estrela e a peer-to-peer.
+
+Dá-se o nome de topologia estrela em dois casos. Quando um AP proporciona o suporte ao recebimento e encaminhameto de mensagens provenientes de um \textit{End Device} que entra regularmente em modo de baixo consumo, o \textit{Access Point} age como um nó central e a esta topologia dá-se o nome de estrela. Se todos os dispositivos estão sempre ligados em modo de recebimento e o Access Point age como um \textit{Range Extender} e proporciona controle e gerenciamento da rede, esta topologia também é chamada de estrela. A figura a seguir representa graficamente a atuação do \textit{Access Point} em uma rede estrela.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/star.png} % <- formatos PNG, JPG e PDF
+	\caption[Típica aplicação do tipo estrela]{Típica aplicação do tipo estrela}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_estrela}
+\end{figure}
+
+Em redes com dispositivos que receberão mensagens diretamente de um outro dispositivo, ou através de um \textit{Range Extender} dá-se o nome de redes peer-to-peer. Em redes deste tipo é possível que não haja sequer um \textit{Access Point}, nesses casos a relação é chamada de puramente peer-to-peer. A figura a seguir representa uma rede típica peer-to-peer.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/peertopeer.png} % <- formatos PNG, JPG e PDF
+	\caption[Típica aplicação do tipo peer-to-peer]{Típica aplicação do tipo peer-to-peer}
+	\fonte{Texas Instruments}
+	\label{fig:peertopeer}
+\end{figure}
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/rangeextender.png} % <- formatos PNG, JPG e PDF
+	\caption[Conexão com função de \textit{Range Extender}]{Conexão com função de \textit{Range Extender}}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_range}
+\end{figure}
+ 
+\newpage
+
+\subsubsection {SimpliciTI e o modelo OSI} 
+O SimpliciTI conceitualmente suporta três camadas, como é mostrado na figura ~\ref{fig:simpliciti_arquitetura}, sendo que a camada de aplicação é a única parte que o usuário deve desenvolver. Vale lembrar que esta arquitetura não segue estritamente o modelo OSI, pois:
+
+\begin{itemize}
+	\item Não há camada física ou de enlace de dados definida(MAC/LLC). Os dados são provenientes diretamente do rádio, logo, ele já realiza tais funções. 
+	\item Como o papel da segurança é realizado como um peer da camada de rede, não há camada de apresentação, onde tal função seria normalmente implementada.
+	\item Não há camada de transporte. Esta parte é de responsabilidade da aplicação
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/simplicitiarquitetura.png} % <- formatos PNG, JPG e PDF
+	\caption[Arquitetura do SimpliciTI]{Arquitetura do SimpliciTI}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_arquitetura}
+\end{figure}
+
+\subsubsection {Criptrografia} 
+
+A infraestrutura que suporta a criptografia está contida totalmente na camada de rede, assim, não há qualquer impacto na camada de aplicação em relação a modificações neste quesito.
+Cada vez que a aplicação envia um \textit{frame}, os dados contidos no \textit{payload} são criptografados antes que tal \textit{frame} seja enviado. Os dados recebidos são decriptados antes que sejam repassados para a aplicação. 
+
+Há três componentes no esquema de criptografia que são utilizados para mantes a segurança: uma chave de 128 bits, um vetor de inicialização de 32 bits e um contador de 32 bits. A chave e o vetor são obtidos durante a compilação. O valor inicial do contador é trocado durante o processo de ligação (\textit{link}) entre dois dispositivos. Valores independentes de contador são usados durante o envio e recebimento. 
+
+O processo encripta blocos de 64 bis usando o algorítmo de domínio público (XTEA: EXtended Tiny Encryption Algorithm). Blocos de 64 bits são concatenações usando 32 bits do vetor de inicialização e 32 bits do contador. Como entradas do algorítmo temos a chave de 128 bits, e os 64 bits resultantes dessa concatenação. Um ou exclusivo é realizado entre o bloco de 64 bits criptografado e o próximo bloco de 64 bits a ser enviado. Se o resultado é menor que 64 bits, o bloco criptografado é descartado. Em caso contrário, o bloco é mantido e o contador é incrementado. A figura ~\ref{fig:simpliciti_cripto} representa o esquema de criptografia.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/simpliciticripto.png} % <- formatos PNG, JPG e PDF
+	\caption[Criptografia]{Criptografia}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_cripto}
+\end{figure}
+
+Um processo similar ocorre para recuperar os dados criptografados. O mais importante aqui é manter os contadores sincronizados. Para isso, os valores são trocados entre s dispositivos na hora em que ocorre o \textit{link}. Como a comunicação é bidirecional e como a comunicação é assíncrona, há um contador separado para o envio e para o recebimento de pacotes. Como o simpliciTI não garante recebimento de pacotes, foi criado um mecanismo de sincronização dos timers. Tal sincrinização é realizada através de um byte chamado de \textit {hint} byte (do inglês: byte de dica). Ele é transmitido juntamente com o frame e representa o byte menos significativo do contador, ou seja, aquele que possui maior variação. Este byte deve ter o mesmo valor que o byte menos significativo do contador do receptor. No caso de um erro de sincronia, o sistema tenta ajustar ambos contadores. O sistema em si suporta uma pequena diferença entre os contadores. Caso a diferença entre eles for maior do que o esperado, o frame é rejeitado, sendo reconhecido como um frame invasor.
+
+No código a criptrografia pode ser adicionada através de uma macro chamada de SMPL_SECURE, e sua real aplicação se dá na hora da compilação.
+
+\subsubsection {Frame padrão} 
+O frame do simpliciTI pode ser separado em três partes: 
+\begin{itemize}
+	\item aquela processada pelas camadas física/MAC
+	\item aquela processada pelo gerenciamento de conexão, implementada pela camada de rede
+	\item aquela representante da camada de aplicação
+\end{itemize}
+
+A camada física é gerada através do hardware. Consiste em bits de preambulo e de sincronia.
+
+A camada de rede é processada pelo \textit{firmware}. É utilizada para controle de conexão e nela são especificados dados como tipo, status de criptografia, contador de saltos (caso esteja utilizando salto em frequência), etc.
+Na parte referente a camada de aplicação estão encapsulados o payload. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/frame.png} % <- formatos PNG, JPG e PDF
+	\caption[Frame padrão com criptografia]{Frame padrão com criptografia}
+	\fonte{Texas Instruments}
+	\label{fig:simpliciti_frame}
+\end{figure}
+
+Neste protocolo, o endereço é de 4 bytes e deve ser único em uma dada rede. O controle do endereço é realizado pela camada de rede. A figura ~\ref{fig:simpliciti_frame} representa o frame utilizado neste protocolo, já com a criptografia. No nosso caso, o payload tem o valor de 15 bytes. A próxima seção discorrerá sobre os detalhes do projeto SIAER no que tange a comunicação sem fio. 
+
+\subsection {Detalhes da aplicação do simpliciTI no projeto SIAER}\label{subsection:SIMPLICITI}
+A configuração so simpliciTI utilizada no projeto é de 8 conexões simultâneas do guichê com o ônibus. Este número pode ser facilmente modificado através de uma variável de controle, caso haja necessidade.
+
+As conexões utilizam o sistema de segurança descrito no item Criptografia. Essas duas modificações permitem um grande adicional no valor agregado do projeto, ao transmitir maior confiabilidade ao processo e aproximar a nossa solução ao ambiente real de sua utilização.
+
+Os ítens a seguir descrevem os processos que tornam a comunicação sem fio viável e eficaz. 
+% Chegada de onibus
+% Partida
+% TX encomenda
+
+\subsubsection {Processo de Detecção de Chegada de Ônibus}
+\begin{enumerate}
+	\item {Processo de \textit{Listen} do Access Point} 
+	
+Para se haver uma conexão no simpliciTI, um dispositivo deve estar realizando o processo de \textit{Listen} enquanto outro \textit{Link}. Em nosso caso, quem faz o processo de \textit{Listen} é o \textit{Access Point}, enquanto o \textit{End Device} realiza o  \textit{Link}. 
+
+O programa foi feito de tal modo que o \textit{AP} fica constantemente ``ouvindo'' o ambiente em busca de algum dispositivo que tente se conectar a ele. Caso ele encontre um parceiro para a conexão, há uma troca inicial de mensagens, sendo que as mensagens partem inicialmente do ônibus, com dados referentes ao seu número de identificação conforme descrito na figura ~\ref{fig:msg_onibus}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/frameonibusinicial.png}
+	\caption[Quatro da mensagem inicial do ônibus]{Quatro da mensagem inicial do ônibus}
+	\label{fig:msg_onibus}
+\end{figure}
+
+O guiche, ao receber tal mensagem, prontamente envia para o SW a mensagem que um ônibus chegou. Logo em seguida envia para o ônibus o primeiro pacote, que contém entre outros dados, a cidade em que o ônibus se encontra, conforme a figura ~\ref{fig:msg_resposta_guiche}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/guicheinicial.png}
+	\caption[Quatro da mensagem de resposta inicial do guiche]{Quatro da mensagem de resposta inicial do guiche}
+	\label{fig:msg_resposta_guiche}
+\end{figure}
+
+Nos campos SRC\_HI e SRC\_LO descritos da figura ~\ref{fig:msg_resposta_guiche} indicam a cidade na qual o guichê se encontra. Isto serve como um ACK para a conexão e o ônibus passa a um segundo estágio, no qual ele já está conectado e fica constantemente mandando uma mensagem de \textit{POLLING2} para o guiche.
+
+	\item {\textit{Polling} Direcionado}
+	
+Ao final do processo anterior, o ônibus sabe em qual cidade se encontra e o guichê tem conhecimento de qual ônibus está parado na plataforma. Isto condiz com um estado intermediário de conexão, onde o chão está seguro para as transações de informações que caracterizam o projeto.
+
+Neste estado, mensagens são trocadas a cada segundo visando manter a conexão ativa. Este processo zera a variável dos timeouts do guiche e ônibus a cada iteração. Neste processo, as mensagens referentes ao ônibus e ao guichê são iguais aexemplificadas nas figuras ~\ref{fig:msg_onibus} e  ~\ref{fig:msg_resposta_guiche}, respectivamente, mudando somente o termo do FUNC\_ID.
+
+\subsubsection {Processo de Detecção de Partida de Ônibus} 
+Os sistemas do ônibus e do guichê funcionam na base de um timeout, ou seja, há uma variável previamente escolhida com um intervalo de tempo máximo (atualmente de cinco segundos) no qual a conexão continua estabelecida caso estas unidades não recebam qualquer mensagem. 
+
+Caso esta variável passe o valor pré-definido, ocorre o processo de desconexão. O firmware envia para a API do guichê a mensagem que o ônibus partiu e libera as variáveis referentes àquele. Enquanto o ônibus, envia para a API do sistema embarcado que já está viajando.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/IMG/lost_con.png} % <- formatos PNG, JPG e PDF
+	\caption[Perda de Conexão entre Guichê e Ônibus]{Perda de Conexão entre Guichê e Ônibus}
+	\label{fig:lost_con}
+\end{figure}
+\newpage
+Caso alguma encomenda tenha sido esquecida, uma mensagem irá aparecer ao usuário. 
+
+\subsubsection {Transmissão de Encomenda} 
+
+Partindo do pressuposto que estamos no estado seguro de conexão, ou seja, no \textit{Polling} Direcionado. O ônibus envia uma mensagem do tipo \textit{Polling2}, o que quer dizer que ele está pronto para receber dados. Caso haja alguma encomenda no buffer de transmissão, cuja origem é o \textit{software} de aplicação do computador, o firmware do guichê enviar como resposta os dados referentes a uma encomenda. Ao receber a mensagem, o ônibus envia uma mensagem de ACK e volta ao estado de \textit{Polling2}. O guichê ao receber o ACK atualiza o buffer e tenta enviar a próxima encomenda. Este processo se repete indefinidamente até que todas as encomendas tenham sido enviadas. O processo está resumido na figura ~\ref{fig:processo_tx}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/tx_enc_proc.png} 
+	\caption[Diagrama de Tranmissão de Encomendas]{Diagrama de Tranmissão de Encomendas}
+	\label{fig:processo_tx}
+\end{figure}
+
+Os campos indicados pelo título de BARCODE[0..4] da figura ~\ref{fig:tx_enc_frame} identificam o número do código de barras da encomenda. Tipicamente, o código de barras EAN-13 possui 13 bytes de identificação, porém no caso do SIAER apenas cinco bytes tornam-se suficientes para identificar a encomenda. Os campos relacionados à cidade no fim do quadro indicam a cidade origem e a cidade destino da encomenda.
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/frameencomenda.png}
+	\caption[Quadro de Tranmissão de Encomendas]{Quadro de Tranmissão de Encomendas}
+	\label{fig:tx_enc_frame}
+\end{figure}
+
+Os identificadores FUNCID da figura ~\ref{fig:tx_enc_frame} são fundamentais para o programa. Eles identificam a ação a ser tomada pelo firmware perante os dados recebidos. Os identificadores são (FUNC\_ID=0x10, 0x11, 0x03 ou 0x05). Estes quatro identificadores informam se a encomenda deve subir ou descer do ônibus especificado, e ainda o bit 0 deste byte revela se a encomenda se encontra no guichê ou não.
+

@@ -1,0 +1,110 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}  
+
+%---------- Primeiro Capitulo ----------
+\section{\textit{Firmware}}
+
+Nesta seção serão abordados os detalhes sobre a implementação do protocolo do comunicação proposto no capítulo Comunicação sem fio e sobre a comunicação com o PC. O objetivo é explicar os métodos que levam o sistema ao seu funcionamento desejado. Busca-se fazer isso de forma clara e objetiva, separando o sistema em blocos.
+
+\subsection{Considerações Iniciais}
+O código fonte  do \textit{firmware} foi desenvolvido utilizando-se o compilador Code Composer Studio v 4.20. Este compilador foi criado pela própria Texas Instruments e é um ambiente de desenvolvimento criado sobre a plataforma java-eclipse. Apresenta uma série de vantagens em relação ao seu principal concorrente, o compilador IAR. Dentre as vantagens pode-se citar a bela interface e facilidade de organizar projetos. Sua principal desvantagem é a sua velocidade, significativamente menor que a do IAR, devido a sua alta carga computacional. Dentre as distribuições disponíveis na internet, utilizou-se a versão evaluation por 30 dias. Nesta versão pode-se utilizar o software por 30 dias sem qualquer tipo de restrição. Vale lembrar que também há a versão free, a qual possui o limite de 16KB para o código.
+
+O debug do projeto foi realizado através do sistema de hardware previamente explicado. 
+
+A linguagem de programação utilizada foi C. Sua escolha se deu por sua pertinente capacidade de produzir códigos de baixo nível que mantenham a flexibilidade e possibilitem fácil entendimento e debug por parte do programador.
+
+Utilizou-se todas as otimizações possíveis no Code Composer Studio, e o \textit{firmware} final ficou com o tamanho de 13KB, o que nos deixa ainda 19KB livre para futuras aplicações.
+
+\subsection{Inicialização}
+Há basicamente dois firmwares distintos: o do guichê e o do ônibus. De uma forma geral, os dois firmwares comportam-se de forma similar, compartilhando vários métodos, como por exemplo, a inicialização do firmware.
+
+A inicialização se dá através de uma série de funções que trata de configurar os periféricos necessários para o funcionamento do programa. A figura ~\ref{fig:InitFW} resume as ações que são tomadas neste sentido e as subseções seguintes buscarão explanar cada um dos processos do diagrama. Vale lembrar que esta etapa é exatamente igual tanto para o ônibus quanto para o guichê.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figs/IMG/diagramaFW.png} % <- formatos PNG, JPG e PDF
+	\caption[Fluxograma de Inicialização do \textit{firmware}]{Fluxograma de Inicialização do \textit{firmware}}
+	\label{fig:InitFW}
+\end{figure}
+
+\subsubsection{Desabilitação do \textit{Watchdog}}
+Os microprocessadores da família CC430, assim como os MSP430, possuem um sistema de proteção contra laços infinitos. Esta proteção é conhecida como watchdog. Ele é basicamente um contador que deve ser resetado durante o programa constantemente, em diferentes lugares. Caso seu valor estoure ele dispara a reinicialização do microcontrolador.
+
+No nosso caso escolheu-se por desabilitar o, pois o programa é baseado em um laço infinito, do qual sai após receber uma interrupção de uart ou de rádio.
+
+\subsubsection{Inicialização da UART}
+O CC430F6137 oferece dois módulos denominados \sigla{USCI}{\textit{Universal Serial Communication Interface} (Interface Universal de Comunicação Serial)} (\textit{Universal Serial Communication Interface}) os quais podem ser configurados de acordo com as necessidades de uso. No nosso projeto, utilizamos somente um destes módulos, o qual é responsável por trocar informações com o computador do guichê ou do ônibus. O nome deste módulo é \sigla{UART}{Universal Asynchronous Receiver/Transmitter (Receptor/Transmissor Universal As-síncrono)}.
+	
+O UART usa um modelo de transmissão assíncrona que se utiliza de dois sinais distintos:  RX e TX. Desta forma o uso de um clock não se faz necessário. Como principais configurações adotadas, devem-se ressaltar: um baudrate de 9600 , sem bit de paridade, 8 bits de dados, um de stop e nenhum controle de fluxo. Os pinos de TX e RX são, respectivamente os pinos P1.6 P1.5. A comunicação se dá através de uma porta de com virtual criada pelo driver da texas instruments juntamente com a placa de debug.
+
+\subsubsection{Inicialização do \textit{Timer}}
+Para o tratamento de desconexão foi necessário a configuração de um timer que incrementa as variáveis de timeout tanto do guichê quanto do ônibus.
+
+Essa base de tempo foi escolhida como sendo de um segundo. Assim, configurou-se o \textit{timer} A0 para que gerasse uma interrupção a cada segundo, cuja aplicação seria unicamente de acrescer as variáveis de timeout e gerenciar a desconexão.
+
+Inicialmente escolheu-se o timer0 para tal finalidade, porém descobriu-se posteriormente que tal timer já era usado pelos processos internos do protocolo simpliciTI. Trocou-se então tal timer pelo timer1, resolvendo o problema.
+
+\subsection{Interface de Comunicação pela UART}
+A comunicação PC-firmware se dá inteiramente através da porta de serial e das funções de tratamento de interrupção da UART.
+
+O formato das mensagens trocadas entre o PC e o dispositivo do guichê segue basicamente o formato proposto na ~\ref{fig:frame_base}, com a inserção de dois bytes atuando como delimitadores do \textit{frame}: SOF (\textit{Start of Frame}) e EOF (\textit{End of Frame}). No caso específico deste sistema escolheu-se manter o mesmo padrão apresentado em sua última versão, no qual usou-se o caracter \$ (0x24 de acordo com a tabela ASCII) para este propósito.
+
+A figura~\ref{fig:UART_SM} representa a máquina de estados implementada no firmware e no software para o tratamento das mensagens. Assim que se detecta um caracter \$ em estado IDLE, aloca-se um \textit{buffer} de acordo com o tamanho do campo SIZE na figura~\ref{fig:frame_base}, e os bytes subsequentes vão sendo armazenados até que se detecte um outro \$ (\textit{End of Frame}). Posteriormente, este \textit{buffer} é tratado de acordo com o campo FUNC\_ID.
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/IMG/UART_SM.png} % <- formatos PNG, JPG e PDF
+	\caption[Máquina de Estados para TX/RX de mensagens da UART]{Máquina de Estados para TX/RX de mensagens da UART}
+	\label{fig:UART_SM}
+\end{figure}
+
+\subsubsection{Inicialização Ônibus}
+O \textit{firmware} do ônibus e do guichê possuem muitas similaridades em sua estruturam, porém no âmbito de tratamento de mensagens eles diferem muito. Por isso fez-se dois firmwares, um para cada tipo de dispositivo. Ao término da inicialização, o sistema entra no estadod \textit{idle} e espera por uma interrupção.
+
+Para o diagrama da fig.~\ref{fig:inicia_onibus} e ~\ref{fig:inicia_guiche}, considerou-se que no estado de IDLE o dispositivo já se encontra adequadamente inicializado. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/ONIBUSINIT.png} 
+	\caption[Inicialização do ônibus]{Inicialização do ônibus}
+	\label{fig:inicia_onibus}
+\end{figure}
+
+No caso do ônibus, usando-se a máquina de estados descrita na figura~\ref{fig:UART_SM}, caso o firmware receba no campo FUNC\_ID do \textit{frame} o valor 0x01, sabe-se que se deseja usar o dispositivo como um ônibus. Neste pacote inicial de dados, o \textit{firmware} extrai a identificação do ônibus como uma \textit{word} de 16 bits, a qual será usada para a filtragem das mensagens posteriormente. Após isso, há o início do processo de \textit{Link}, no qual o ônibus tenta se conectar a uma estação guichê. Caso ele consiga e perca a conexão, através do TIMEOUT, ele volta ao estado inicial de \textit{Link}.
+
+O ônibus não possui as informações do sistema, e por si só, poderia ser considerado um dispositivo escravo dentre os nós da rede. No entanto, os requerimentos da transmissão RF partem dele através de uma mensagem de \textit{READY\_TO\_RECEIVE}. Isso foi feito pois é crucial que seu software estaja em um momento apto a receber mensagens. Porém seu controle pára aqui. O guichê é responsável por enviar todos os dados de comando e de mudança de status para o ônibus.
+
+\subsubsection{Inicialização Guichê}
+Usando-se a máquina de estados descrita na figura~\ref{fig:UART_SM}, caso o firmware receba no campo FUNC\_ID do \textit{frame} o valor 0x02, ocorre a inicialização do dispositivo atuando como guichê, o que torna a operação do \textit{firmware} mais complexa. Há a alocação de uma série de variáveis e ocorre logo em seguida o início do processo de \textit{Listen}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\textwidth]{./figs/IMG/guicheinit.png}
+	\caption[Inicialização do Guichê]{Inicialização do Guichê}
+	\label{fig:inicia_guiche}
+\end{figure}
+
+Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsection: Processamento/Transmissão de Mensagens}.
+
+\subsection{Processamento/Transmissão de Mensagens}
+As informações acerca do \textit{status} de cada encomenda podem ser obtidas através do banco de dados. Uma vez que haja conexão entre um ônibus e um guichê, ocorre regularmente a chamada de funções que visam atualizar o verificar e atualizar o \textit{status} das encomendas. Através deste processo, o software do PC transmite para o firmware as informações a serem transmitidas para um ônibus. Tais informações preenchem um buffer de envio. Caso o sistema esteja estável ( \textit{Polling2}), o ônibus envia mensagem que está pronto para receber, o \texit{firmware} do guichê envia os dados e o ônibus envia um ACK, confirmando recebimento. No diagrama que segue, tem-se o fluxograma dos evendos previamente descritos. A figura ~\ref{fig:TX_ENC} representa o fluxograma do firmware do guichê perante a chegada de uma encomenda no seu buffer da UART. Esta mensagem teve origem no SW. 
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/IMG/fluxograma.png} 
+	\caption[Fluxograma de Envio de Encomendas]{Fluxograma de Envio de Encomendas}
+	\label{fig:TX_ENC}
+\end{figure}
+
+O fluxo de informações parte inicialmente do ônibus, o qual envia uma mensagem de \textit{READY\_TO\_RECEIVE}. O guichê ao receber tal informação prepara seu buffer de envio com as encomendas referentes àquele ônibus e as envia via RF. Assim que o ônibus recebe uma encomenda ele retorna com uma mensagem de ACK.
+
+Ao final, faz-se a verificação da existência de encomendas não enviadas na fila. Em caso positivo, procede-se ao envio das encomendas até que se zere este \textit{buffer} e retorna-se ao estado IDLE.
+
+Informações mais detalhadas sobre a troca de mensagens via RF encontram-se no ítem \textit{Detalhes da aplicação do simpliciTI no projeto SIAER}.

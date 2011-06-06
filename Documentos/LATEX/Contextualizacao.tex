@@ -1,0 +1,119 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}  
+
+%---------- Segundo Capitulo ----------
+\chapter{Contextualização do Projeto}\label{chap:desenv}
+
+\section{Definição do Escopo}
+
+\subsection{Concorrentes}
+
+Apos pesquisa efetuada atraves da web e junto aos potenciais clientes do projeto SIAER, não se verificou a ocorrência de um concorrente que ofereça uma solução abrangendo a plenitude dos aspectos cobertos pelo produto alvo deste plano de negocio, voltada especificamente ao setor rodoviario. Dentro deste cenario, buscaram-se servicos similares para outros ramos da industria logística.
+
+Como primeira concorrente, pode-se mencionar o LocWise fornecido pela empresa paulista LocWise. Este servico e ofertado ao cliente atraves de um software rodando em plataforma Web, o qual mediante o acesso a um servidor central possiblita, segundo o site, "um ambiente completo de visibilidade do processo logístico". Diferentemente do projeto SIAER, o LocWise e voltado para o segmento de transporte de cargas, estando integralmente inserido na esfera de uma solucao em software.
+
+Em um segundo momento, surge o "Software Logística e Rastreamento de Cargas" oferecido pela paulista W2 Software. Assim como o concorrente anterior, trata-se de uma solucao de plataforma web utilizado para gerenciar demandas de carga, fornecedores e gerar acompanhamento da carga a partir do status de entregas efetuadas.
+
+Outra empresa que possui um sistema similar e a transportadora Braspress, a qual possui um sistema de rastreamento que possibilita localizacao do pacote a cada instante atraves de uma combinacao GPS + Radio. No entando, seu sistema e especifico para a frota daquela companhia.
+
+A concorrente que mais se aproxima dos servicos oferecidos pelo SIAER e a empresa goiana Marx - tecnologia e design. A solucao ofertada e composta por um software de controle, um ou mais leitores RFID, e de Tags RFID específicas para cada tipo de item a ser rastreado.
+
+Todas sa empresas citadas buscam de alguma forma ajudar no processo logístico. No entento, em nenhuma delas ocorre integração ônibus-guichê e a comunicação em tempo real, fatores que diferenciam este projeto dos demais encontrados. Isto mostra que há poucos, quiçá nenhum, concorrente direto, o qual forneça a solução com base nas mesmas premissas e com mesmo foco de clientes.
+
+\subsection{Mercado}
+
+O nicho de mercado visado por este projeto é bem específico. São empresas de transporte rodoviário de ônibus que visando aumentar seus lucros e utilizando de sua expertise logística, passaram a transportar em seus bagageiros também encomendas. Tal ramo ainda é recento no Brasil. Como estas empresas são novas neste mercado, elas não possuem um sistema automatizado de rastreamento das encomendas. Isto torna seus processos altamente sujeitos a falhas humanas, as quais geram custos extras e diminuem seus lucros. Segundo dados do IBGE, a receita operacional da movimentação de encomandas feitas por empresas de ônibus, movimentou 173 milhões de reais 2006, subindo para 199 milhões de reais em 2007. Isto mostra o tamanho e o potencial de crescimento deste mercado. 
+
+Visando a proximidade com o cliente e o real entendimento do processo, realizaram-se visitas a sede de Curitiba a uma das maiores empresas do ramo, assim como visitas à estação rodoferroviária de Curitiba para conversar com os verdadeiros envolvidos neste processo. Em todas as visitas a recepção foi muito boa, sendo que os potenciais clientes se mostraram favoráveis a um sistema que auxílie seus processos.
+
+\subsection{Patentes}
+
+Abordam-se aqui quais as patentes que se inserem no mesmo contexto de aplicação que o projeto a ser desenvolvido. Devido à sua especificidade de aplicação no cenário de transporte de encomendas rodoviárias, não foi encontrada uma patente que englobe plenamente o cenário de aplicação proposto. 
+Desta forma, procurou-se abordar as patentes que possuem foco no sentido de introduzir acompanhamento de pacotes numa rede logística estabelecida. No texto haverá uma breve descrição sobre a patente em si e posteriormente explicam-se semelhanças e diferenças com o projeto.
+
+
+\begin{itemize}
+	\item \textbf{\textit{Luggage Tracking System}}
+	
+Número de publicação: GB2389836
+	
+Local de Depósito: Base Européia
+	
+Data de publicação: 24/12/2003
+	
+Inventores: DALBY ADAM JAMES ROBERT [GB]; TIMSON ANTHONY RICHARD [GB]; RUSH STEPHEN DAVID [GB]
+
+Empresa: Ilustra Systems LTD
+
+Classificação: A45C13/42 (Dispositivos para identificação de bagagem)
+
+Esta patente foi publicada na Grã-Bretanha no ano de 2003 e integra-se no contexto do rastreamento de bagagens. Prevê-se a criação de uma etiqueta a qual possuirá um símbolo de identificação cujo conteúdo se relacionaria a dados relevantes do portador da bagagem, como nome, endereço \textit{et cetera}. Este símbolo de identificação consistirá basicamente de um elemento visual, o qual conteria os dados de forma escrita e clara, aliado a um código de barras ou a um microchip.
+
+Na descrição da patente, ressalta-se o seu uso em diversos cenários de transportes, tais como os meios aéreo e terrestre. Descreve-se ainda a necessidade da existência de um posto central de rastreamento nos pontos relevantes, de tal forma que se possua um dispositivo que torne viável a obtenção dos dados relacionados ao portador da bagagem.
+
+Como semelhança com o projeto SIAER, pode-se ressaltar a utilização de um mecanismo baseado em etiquetas de código de barras como meio de se obter informações relevantes sobre o ente logístico em trânsito. Desta forma, a patente supracitada focaliza sobre a construção e a disposição visual dos elementos na etiqueta, diferentemente do projeto proposto, no qual a etiqueta constitui-se em etapa inicial apenas.
+
+\item \textbf{\textit{Method and apparatus for preventing luggage mishandling in public transportation systems}}
+
+Número de publicação: WO2007120266
+
+Local de Depósito: Base Americana
+
+Data de publicação: 25/10/2007
+
+Inventores: JOHNSON JEFFERY DOUGLAS [AU]; CORLE GENE ALLEN [US]
+
+Empresa: LUGGAGE GUARDIAN INTERNATIONAL [US]; DOUGLAS MACHINE INC [US]; JOHNSON JEFFERY DOUGLAS [AU]; CORLE GENE ALLEN [US]
+
+Classificação: B64F1/36C (instalações para o manejo de bagagens) e G06Q10/00D (Ad-ministração de processo logístico, por exemplo armazenagem e distribuição)
+
+Esta patente apresenta de forma muito específica um método e um conjunto de dispositivos cujas ações têm por objetivo reduzir o extravio de bagagens. Prevê-se a existência de um posto de \textit{check-in}, no qual a bagagem recebe uma etiqueta indicadora com seus dados mais relevantes, tais como seu proprietário e a rota percorrida. Em um aeroporto, por exemplo, após a afixação desta etiqueta, a mala percorreria um circuito de esteiras rolantes o qual possui um dispositivo que verifica a rota da bagagem: caso esta precise ser descarregada, ela será automaticamente redirecionada a uma esteira específica que fará o desembarque na localidade.
+
+Como aspecto congruente, pode-se dizer que tanto esta patente como o projeto em questão introduzem a normalização do método de embarque e desembarque dos pacotes a fim de possibilitar o seu rastreamento. Outro aspecto a ser ressaltado é que esta patente também possui foco em evitar o extravio da encomenda.
+
+Como diferenças, inicialmente há de ser afirmado que a patente supracitada destina-se a bagagens em ambientes públicos de transporte, ao passo que o projeto SIAER aborda encomendas transportadas sobre o meio rodoviário. Ainda, a patente introduz uma esteira capaz de direcionar os pacotes adequadamente a partir de uma etiqueta RFID, enquanto que o projeto se adapta ao cenário do sistema rodoviário, mantendo a figura do operador em conjunto com um código de barras.
+
+	\item \textbf{\textit{SYSTEM AND METHOD FOR TRACKING LUGGAGE DURING TRAVEL }}
+	
+Número de publicação: WO20090115572
+
+Local de Depósito: Base Americana
+
+Data de publicação: 07/05/2009
+
+Inventores: Valbh; Anil I.;; Chhaganlal; Kiran C. 
+
+Classificação: H04Q001/30, G08B005/22, H04Q007/00
+
+Em linhas gerais, esta patente tem por base a introdução de confiabilidade no acompanhamento de bagagens dentro do contexto turístico. O sistema ao qual a patente se refere prevê a afixação de um \textit{tag} nas bagagens contendo RFID e um código de barras. A bagagem, ao adentrar a uma estação de controle central, seria identificada e caso este fosse seu destino final, o sistema se conecta a um gerenciador central o qual avisará ao turista o desembarque de sua mala na localidade.
+
+Tanto o projeto como esta patente introduzem um elemento de rastreamento na forma de uma etiqueta afixada à entidade a ser rastreada. Ainda, ambos prevêem a comunicação com uma espécie de banco de dados central no sentido de obter e atualizar informações sobre o elemento quando este adentra a uma estação de controle. Porém, de forma divergente, a patente mencionada aqui prevê o uso de RFID e é destinada a aplicações de rastreamento de bagagens de turistas. Ainda, a patente se comunica diretamente com o detentor da bagagem assim que esta chega ao destino. De forma contrária, o projeto SIAER é desenhado no sentido de integrar o rastreamento para a empresa, não possuindo o objetivo de informar ao cliente a chegada da encomenda.
+
+\end{itemize}
+
+\subsection{Resultados}
+
+Como resultados esperados deste projeto têm-se:
+
+\begin{itemize}
+\item 1 \textit{Sistema} de Rastreamento Integrado de Encomendas.
+\item 1 \textit{Expansão} do número possível de ônibus conectados a um guiche.
+\item 1 \textit{Protocolo} de comunicação sem fio que apresente criptografia.
+\item 1 \textit{Firmware} para transmissão e recepção de dados entre ônibus e guichê.
+\item 1 \textit{Expansão} do alcance da comunicação sem fio.
+\item 1 \textit{Interface} com o usuário amigável.
+\item 1 \textit{Software} para controle de encomendas no bagageiro do ônibus.
+\item 1 Banco de dados com os relacionamentos necessários para o armazenamento das informações vinculadas ao código de barra.
+\item Relatório das Disciplinas de Projeto Final 2. 
+\item Redução de cerca de  70\% dos gastos gerados por indenizações pagas aos clientes devido ao extravio de encomendas.
+\item Redução de cerca de 50\% no tempo de rastreamento de uma encomenda que possa ter sido extraviada.
+\item Redução dos transtornos gerados entre empresas de ônibus e clientes, causados pelos extravios de encomendas.
+\end{itemize}
+
+O projeto em si será um sistema integrado de rastreamento, o qual através da integração do \textit{software} presente no \textit{netbook}, comunicação sem fio, banco de dados e leitor de código de barras, permite a redução dos problemas causados por extravios de encomendas. A redução de 8\% dos gastos por parte das empresas e de 15\% em relação ao tempo de rastreamento são meramente os requisitos estimados. Os parâmetros reais podem variar muito em relação àqueles, uma vez que não há como saber, exatamente, como o sistema irá impactar sobre tais fatores.

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<livraria>
+  <livro categoria="Infantil">
+    <titulo>Harry Potter</titulo>
+    <autor>J K. Rowling</autor>
+    <ano>2005</ano>
+    <preco>29.99</preco>
+  </livro>
+  <livro categoria="WEB">
+    <titulo>Learning XML</titulo>
+    <autor>Erik T. Ray</autor>
+    <ano>2003</ano>
+    <preco>39.95</preco>
+  </livro>
+</livraria>

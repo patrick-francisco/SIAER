@@ -14,7 +14,7 @@
 #define TX_BARCODE          0x10
 #define TX_BARCODE_ACK      0x11
 #define TX_BARCODE_2        0x12
-#define TX_BARCODE_2_ACK    0x12
+#define TX_BARCODE_2_ACK    0x13
 
 #define	POLLING		 0x03
 #define POLLING2     0x05

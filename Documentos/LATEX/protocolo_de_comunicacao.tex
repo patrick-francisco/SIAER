@@ -1,0 +1,259 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}  
+
+%---------- Primeiro Capitulo ----------
+\section{Sistema de Comunicação SIAER}
+No decorrer desta seção, serão explicitadas as diversas escolhas de projeto referentes à implamentação do link de comunicação entre os ônibus e o guichê. Conforme pode ser observado em itens anteriores, o estabelecimento deste elo de comunicação se configura em parte crítica do projeto, na medida em que se faz necessário para a concretização dos objetivos propostos no capítulo 1.
+
+Inicialmente, partir-se-á de uma introdução teórica acerca do modelo ISO/OSI de camadas para um sistema de comunicação a fim de que posteriormente se explique como o protocolo SIAER realiza cada um dos serviços necessários.
+
+\subsection {Requisitos do Sistema}
+
+Na estrutura da rede de conexões, tem-se duas entidades bem distintas: o ônibus e o guichê. Na medida em que o guichê se constitui no elemento que possui comunicação com o banco de dados central, este atua como o único dispositivo mestre. Os ônibus são escravos, na medida em que se comunicam diretamente com o guichê e não trocam dados entre si. Assim, os ônibus não tomam ação nenhuma, apenas respondem às mensagens enviadas pelo mestre.
+
+Conforme observado em conversas com as empresas, dificilmente mais de quatro ônibus de uma mesma empresa estarão juntos na rodoviária simultaneamente. Assim, o protocolo aqui desenvolvido possui suporte à comunicação de um guichê com quatro ônibus, conforme atesta a estrutura em estrela retratada na figura ~\ref{fig:RedeEstrela}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/rede_siaer.png} % <- formatos PNG, JPG e PDF
+	\caption[Modelo em estrela de conexão entre dispositivos]{Modelo em estrela de conexão entre dispositivos}
+	\label{fig:RedeEstrela}
+\end{figure}
+
+\subsection{Modelo de Referência OSI}
+Tendo-se em vista que a grande maioria dos sistemas de comunicação possui funcionalidades semelhantes e requerem serviços similares, criou-se um modelo de referência baseado em uma proposta da \sigla{ISO}{International Standards Organization} (International Standards Organization), a qual tinha por objetivo introduzir uma normatização internacional dos diversos protocolos empregados nas diversas camadas. Este modelo recebe o nome de Modelo\sigla{OSI}{Open Systems Interconnection} (Open Systems Interconnection), na medida em que permite à comunicação com outros sistemas ~\cite{Tanenbaum2003}.
+
+O modelo OSI é composto de sete camadas, as quais possuem funções e oferecem serviços distintos. Este conceito de camada é aplicado ao sistema de comunicação de tal forma que a existência de uma camada encontra-se sujeita às seguintes condições:
+\begin{itemize}
+	\item Uma camada deve ser criada sempre haja necessidade de um grau de abstração adicional.
+	\item Cada camada deve ser capaz de executar uma função bem delimitada.
+	\item Esta função a que cada camada se presta deve ser escolhida a partir da definição de protocolos padronizados internacionalmente.
+	\item Os limites entre as camadas devem ser escolhidos a fim de otimizar o fluxo de informações pelas interfaces.
+	\item A quantidade de camadas deve ser tal que não se agrupem funções distintas na mesma camada tampouco se crie uma arquitetura cujo controle se torne inviável.
+\end{itemize}
+
+A partir destes pressupostos, tem-se na figura abaixo uma representação do modelo OSI e suas diversas camadas. A fim de atingir as condições dos tópicos acima, estabeleceram-se as sete camadas retratadas (Física, Enlace de Dados, Rede, Transporte, Sessão, Apresentação, Aplicação) viabilizando praticamente qualquer sistema de comunicação.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figs/modelo_osi.png} % <- formatos PNG, JPG e PDF
+	\caption[Modelo de Referência OSI]{Modelo de Referência OSI}
+	\fonte{~\cite{Tanenbaum2003}}
+	\label{fig:ModeloOSI}
+\end{figure}
+
+Deve-se ressaltar que o modelo OSI é um referencial teórico para sistemas de comunicação, sendo sua fiel aplicação a um sistema real praticamente impraticável e inexistente. Por exemplo, o famoso modelo\sigla{TCP}{Transmission Control Protocol}/\sigla{IP}{Internet Protocol} utiliza o conceito de camadas, porém não usa exatamente as sete camadas propostas no modelo. 
+
+No caso do Sistema de Comunicação SIAER, devido à sua característica mais simplória, não se fez necessário percorrer todas as sete camadas do modelo para se obter um \textit{link} de comunicação confiável. Assim, as seções subsequentes abordarão o contexto da Camada Física, da Camada de Enlace de Dados e da Subcamada de Controle de Acesso ao Meio, além de abordar os principais serviços que o Sistema provém à interface de controle do \textit{software}.
+
+\subsection{Camada Física}
+A camada física de um sistema de comunicação deve ser capaz de garantir a transmissão confiável de um fluxo de \textit{bits} através de um canal de comunicação. Assim, deve-se garantir que transmissor e receptor reconheçam o mesmo símbolo para o bit 1 e o bit 0, garantindo que não ocorram interpretações equivocadas. Tipicamente, são questões de projeto na camada física assuntos como interfaces elétricas e de sincronização, bem como o canal de comunicação propriamente dito~\cite{Tanenbaum2003}.
+
+\subsubsection{Meio Físico}
+A fim de se estabelecer o elo de comunicação entre ônibus e guichê de forma plausível, tornou-se inviável aplicar qualquer sistema de comunicação tradicional que se utilizasse de fios. Assim, como escolha inicial de projeto optou-se por adotar um sistema \textit{wireless}. Para este fim, decidiu-se usar transmissão através de ondas eletromagnéticas situadas na região de  \sigla{RF}{Radio Frequência}.
+
+Para a escolha da frequência de operação, devido a questões de regulação relacionadas à \sigla{ANATEL}{Agência Nacional de Telecomunicações}, podia-se escolher um grupo restrito de valores. Dentro deste contexto, usa-se a faixa \sigla{ISM}{Industrial, Scientific and Medical} compreendida na faixa de 2400,0 a 2483,5 MHz, pelo fato de esta região do espectro se encontrar ser livre ao uso público, desde que respeitadas certas condições de potência de sinal. Estas regiões livres de regulamentação mais incisiva se encontram representadas na figura ~\ref{fig:BandasISM}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/bandas_ism.png} % <- formatos PNG, JPG e PDF
+	\caption[Bandas ISM]{Bandas ISM no espectro}
+	\fonte{~\cite{Tanenbaum2003}}
+	\label{fig:BandasISM}
+\end{figure}
+
+Dentro da faixa ISM escolhida, a frequência de portadora é de especificamente de 2433 kHz, requerendo uma largura de banda de 200kHz para transmitir os dados adequadamente. Como o fluxo de dados não é intenso no sistema SIAER, não se faz necessário suporte a uma taxa de transmissão de dados elevada. No que tange à modulação digital empregada, emprega-se modulação por frequência usando-se 2 símbolos 2-\sigla{FSK}{Frequency Shift Keying}.
+
+Um assunto relevante para sistemas sem fio diz respeito à sincronização entre receptor e transmissor. No caso do Sistema de Comunicação SIAER, a sincronização é feita a partir da detecção de um conjunto de bits de sincronização, os quais são inseridos em todo quadro de bytes que é transmitido.
+
+
+\subsection {Sub-camada de Controle de Acesso ao Meio (MAC)}
+\label{sec:MAC}
+
+\subsubsection{Multiplexação por Divisão no Tempo}
+Um dos requisitos a que o Sistema de Comunicação SIAER se destina é comunicação simultânea com até quatro ônibus a partir de um único guichê. Para tal fim, duas soluções se faziam aplicáveis teoricamente: tornar o sistema determinístico ou não-determinístico. No modelo não-determinístico, os integrantes do sistema transmitem seus dados a qualquer momento, sendo eventuais disputas por uso do meio físico resolvidas a partir de prioridades pré-estabelecidas. Já o modelo determinístico requer que cada elemento transmita seus dados durante um intervalo de tempo bem definido, tornando previsível o instante no qual ocorrerá a troca de dados~\cite{Tanenbaum2003}.
+
+Devido a questões relacionadas à capacidade de processamento da plataforma de HW adotada, somada à dificuldade de embarcar um sistema operacional para conferir robustez a um modelo não-determinístico, optou-se pela solução determinística a fim de se evitar problemas relacionados à colisão de pacotes e disputas de utilização do meio.
+
+Assim, para se concretizar a transmissão de cada entidade de forma determinística , decidiu-se por implantar a multiplexação por divisão no tempo (TDM). Assim, de forma análoga ao que ocorre na telefonia fixa, cada ônibus possui alocado para si um \textit{timeslot}, o qual é um intervalo de tempo bem definido no qual toda a troca de dados entre guichê e ônibus deve ocorrer. 
+
+A fim de oferecer suporte à comunicação de até quatro ônibus de forma simultânea, utilizou-se no Sistema de Comunicação SIAER um modelo de multiplexação temporal comportando quatro \textit{timeslots}, cada um reservado para um único ônibus e com duração bem definida de de 700 ms. Devido ao baixo fluxo de dados, este tempo se mostrou empiricamente viável para a transmissão das informações que se configuram relevantes para o projeto, viabilizando a transmissão dos \textit{frames} neste período.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/timeslots.png} % <- formatos PNG, JPG e PDF
+	\caption[Multiplexa-ção por divisão no tempo usando \textit{timeslots}]{Multiplexação por divisão no tempo usando \textit{timeslots}}
+	\label{fig:Timeslots}
+\end{figure}
+
+Ao se visualizar a figura ~\ref{fig:Timeslots}, nota-se que para se percorrer a comunicação com todos os ônibus numa situação de carga máxima leva-se cerca de 2.8s. Assim, este 2.8s é o tempo de latência máximo ao qual a aplicação deverá aguardar para que efetivamente ocorra a transmissão do dado desejado para o ônibus especificado.
+
+\subsection {Camada de Enlace de Dados}
+TANENBAUM (2003) apresenta como principal função da camada de enlace de dados transformar um canal de transmissão bruto em uma linha livre de erros. Para concretizar tal tarefa, é função desta camada dividir o \textit{stream} de bytes advindos do transmissor em quadros (\textit{frames}). Caso a transmissão do quadro tenha ocorrido com sucesso, o receptor confirmará a recepção enviando um quadro de confirmação.
+
+Outra questão cuja abordagem se faz pertinente diz respeito ao controle de acesso ao canal compartilhado. Este assunto merece um tratamento especial, sendo abordado à parte no item ~\ref{sec:MAC}.
+
+\subsubsection {Formato do Quadro}
+Conforme já foi repetido em itens anteriores, o Sistema de Comunicação SIAER não possui como regra de negócio um alto tráfego de dados. Desta forma, o \textit{frame} que a camada física efetivamente transporta contém algumas dezenas de bytes, diferindo de protocolos tradicionais cujos \textit{frames} tipicamente comportam centenas e até milhares de bytes.
+
+A figura~\ref{fig:frame_base} contém a descrição dos campos que são efetivamente transmitidos pelo meio físico ao receptor. A seguir, uma descrição sucinta destes campos é feita:
+\begin{itemize}
+	\item \textit{Preamble bits}: um conjunto de bits que ao ser transmitido atua como um delimitador de começo de \textit{frame} (SOF).
+	\item \textit{Sync word}: 2 bytes que agem no sentido de sincronização, assim o receptor aguarda este padrão de bits para começar a guardar os bytes que estão na porção ``\textit{data}''.
+	\item CRC-16: refere-se a um código de detecção de erros a fim de detectar transmissões equivocadas ou mal-interpretadas no \textit{frame} de dados. No Sistema de Comunicação SIAER, esta inserção de CRC-16 e sua validação é feita por \textit{hardware} a partir do próprio \textit{transceiver}.
+	\item \textit{Data}: contém a informação realmente relevante de dados para a tranmissão. Uma ex-plicação mais detalhada do formato deste campo é feita logo em seguida.
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/frame_base.png} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Frame} efetivamente transmitido pela camada física]{\textit{Frame} efetivamente transmitido pela camada física}
+	\fonte{Texas Instruments}
+	\label{fig:frame_base}
+\end{figure}
+
+A figura ~\ref{fig:frame_siaer} apresenta uma descrição do campo \textit{data} da figura ~\ref{fig:frame_base}. Esta parte do \textit{frame} é a que é realmente transparente para as aplicações de mais alto nível, assim, para o \textit{software} os campos de sincronização, CRC e preâmbulo não se fazem visíveis.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/frame_siaer.png} % <- formatos PNG, JPG e PDF
+	\caption[Formato Típico de um \textit{Frame} de Dados]{Formato Típico de um \textit{Frame} de Dados}
+	\label{fig:frame_siaer}
+\end{figure}
+
+\begin{itemize}
+	\item SIZE: Quantidade de bytes que o \textit{frame} de dados contém (incluindo cabeçalho e valor em hexadecimal) .
+	\item SRC\_HI e SRC\_LO: Identificação de quem é o remetente da mensagem (2 bytes).
+	\item DST\_HI e DST\_LO: Identificação do destinatário da mensagem (2 bytes).
+	\item FUNCTION\_ID: Este byte codifica a função da mensagem, identificando se a mensagem é um ACK ou uma requisição de encomenda, por exemplo.
+	\item Data: Campo de tamanho variável, contém a informação relevante relacionada ao serviço especificado pelo FUNCTION\_ID.
+\end{itemize}
+
+A título prático, julgou-se que as 65536 possibilidades oferecidas pelos 2 bytes de SRC e DST sejam suficientes para cadastrar as cidades e o os ônibus envolvidos em um processo típico.
+
+\subsubsection {Protocolo de Transmissão}
+Tendo sido abordada a questão do formato do \textit{frame}, já se pode abordar ao funcionamento do protocolo do Sistema de Comunicação SIAER de forma mais detalhada. Uma das questões mais relevantes no projeto de protocolos diz respeito à maneira de como evitar que o transmissor inunde o receptor de mensagens, comprometendo assim a credibilidade da troca de dados ~\cite{Tanenbaum2003}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\textwidth]{./figs/tx_ack.png} % <- formatos PNG, JPG e PDF
+	\caption[Diagrama de Transmissão Básico do Sistema SIAER]{Diagrama de Transmissão Básico do Sistema SIAER}
+	\label{fig:tx_ack}
+\end{figure}
+
+Uma forma de se resolver este problema é adotar um protocolo do tipo \textit{stop-and-wait}. Na definição teórica, o transmissor possui um buffer armazenando várias mensagens. Assim, o transmissor transmite por tempo indeterminado uma mensagem até que o receptor lhe envie um certificado de recepção (ACK), para só então incrementar seu contador interno e transmitir a mensagem seguinte. Desta forma, garante-se que a mensagem chegou ao receptor de forma confiável ~\cite{Tanenbaum2003}.
+
+Na figura~\ref{fig:tx_ack}, nota-se que enquanto o transmissor não recebe ACK da mensagem 1, ele não procede a enviar a mensagem 2. O intervalo de tranmissão entre as mensagens é de 2,8s, devido à implementação dos quatro \textit{timeslots} de 0,7s cada um. Ainda, devido à multiplexação no tempo, o ACK deve ser enviado dentro do \textit{timeslot} que lhe diz respeito a fim de que seja validado.
+
+\subsection {Principais serviços}
+\subsubsection {Processo de Detecção de Chegada de Ônibus}
+
+\begin{enumerate}
+	\item {\textit{Polling} Inicial por \textit{Broadcast}} 
+	
+O processo de detecção de chegada de ônibus é feito através de um processo de \textit{polling} contínuo por parte do guichê. Tipicamente, a não ser em situação de comunicação simultânea com quatro ônibus, pelo menos um dos \textit{timeslots} efetua este processo de \textit{polling}.
+
+Esta mensagem de \textit{polling} é realizada por \textit{broadcast}, ou seja, ela não é direcionada a algum destinatário específico. A única informação que esta mensagem possui é a cidade do guichê, a fim de que o ônibus retenha este dado e possa informar ao seu SW a cidade em que se encontra. Desta forma, qualquer ônibus que não se encontre em processo de comunicação pode responder esta mensagem assegurando o estabelecimento de conexão.
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/polling1.png} % <- formatos PNG, JPG e PDF
+	\caption[Frame de \textit{Polling} por \textit{Broadcast}]{Quatro de \textit{Polling} por \textit{Broadcast}}
+	\label{fig:polling1}
+\end{figure}
+
+Nos campos SRC\_HI e SRC\_LO descritos na figura ~\ref{fig:polling1} indicam a cidade na qual o guichê se encontra, e o receptor deve conferir se tais campos são iguais aos bytes de CITY\_HI e CITY\_LO. O receptor, ao detectar a chegada deste \textit{frame} de POLLING1 e não se encontrando inicializado, deve responder com um ACK indicando o seu código, conforme é representado no \textit{frame} da figura~\ref{fig:polling1_ack}. Ainda, deve transmitir para a API do SW uma mensagem de chegada em cidade.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/polling1_ack.png} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Frame} de ACK de Polling por Broadcast]{\textit{Frame} de ACK de Polling por Broadcast}
+	\label{fig:polling1_ack}
+\end{figure}
+
+Caso o guichê detecte um ACK deste \textit{polling} inicial, ele reterá o identificador do ônibus e passará a mandar mensagens de \textit{polling} direcionadas a esse ônibus, objetivando a partir deste momento estabelecer a comunicação propriamente dita. No próximo item, este processo é abordado.
+
+	\item {\textit{Polling} Direcionado}
+	
+O processo descrito no item anterior permite ao ônibus saber da cidade em que se encontra, porém se mostra ineficiente para a operação em regime do sistema. Assim, decidiu-se utilizar um sistema de \textit{polling} direcionado a cada ônibus que se julgue conectado, podendo-se assim detectar desconexões forçadas e assegurar-se da presença do ônibus.
+
+Posteriormente à recepção do ACK do \textit{polling} por \textit{broadcast}, o transmissor passa a enviar uma mensagem especificamente para aquele ônibus. O formato da mensagem é semelhante ao retratado na figura~\ref{fig:polling1}, com a particularidade que o campo FUNCTION\_ID possui valor 0x02 (POLLING2) e os campos DST\_HI e DST\_LO contêm o identificador do ônibus, como retratado na figura~\ref{fig:polling2}.
+
+O receptor, ao detectar este POLLING2, confere o cabeçalho do \textit{frame}, certificando que o destinatário coincida com seu identificador. Em caso positivo, o receptor manda um ACK do POLLING2 ao transmissor, com formato semelhante ao da mensagem da figura~\ref{fig:polling1_ack}. O transmissor, ao detectar este ACK pela primeira vez, transmite para API de alto nível uma mensagem de chegada de ônibus. 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/polling2.png} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Frame} de \textit{Polling} Direcionado]{\textit{Frame} de \textit{Polling} Direcionado}
+	\label{fig:polling2}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/init_com.png} % <- formatos PNG, JPG e PDF
+	\caption[Processo de Detecção de Chegada de Ônibus]{Processo de Detecção de Chegada de Ônibus}
+	\label{fig:init_com}
+\end{figure}
+
+Posteriormente à recepção deste ACK da mensagem POLLING2, considera-se que aquele \textit{timeslot} se encontra ocupado para um ônibus. Assim, desde que haja recurso disponível, o Sistema de Comunicação deve ativar o \textit{timeslot} seguinte para que este continue procedendo ao \textit{polling} por \textit{broadcast} a fim de detectar a chegada de novos ônibus ao terminal rodoviário, como ilustra a figura~\ref{fig:tran_tsl}.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/tsl_busy.png} % <- formatos PNG, JPG e PDF
+	\caption[Transição de estados do timeslot]{Transição de estados do timeslot}
+	\label{fig:tran_tsl}
+\end{figure}
+\end{enumerate}
+
+\subsubsection {Processo de Detecção de Partida de Ônibus} 
+Conforme ilustrado na figura~\ref{fig:init_com}, o guichê manda indefinidamente mensagens do tipo POLLING2 no sentido de assegurar a presença do ônibus e desta forma, garantir o estabelecimento do \textit{link} de comunicação. Devido ao fato de se tratar de transmissão \textit{wireless}, diversas intempéries podem interferir no processo de transmissão/detecção dos símbolos. Assim, o receptor pode enviar ACK de uma mensagem, mas o transmissor pode não receber tal informação.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figs/lost_con.png} % <- formatos PNG, JPG e PDF
+	\caption[Perda de Conexão entre Guichê e Ônibus]{Perda de Conexão entre Guichê e Ônibus}
+	\label{fig:lost_con}
+\end{figure}
+
+Para solucionar este problema, o protocolo prevê a perda de ACKs. Assim, caso não se recebe um ACK do POLLING2, conforme ilustra o diagrama da figura~\ref{fig:lost_con} não se considera o ônibus como desconectado, mas sim em um estado intermediário. Neste estado, o protocolo possui um contador interno que é atualizado a cada \textit{timeslot} com o número de ACKs perdidos. Caso se contabilizem cinco perdas de ACKs, o protocolo informa para a aplicação da desconexão do ônibus.
+
+Este processo também é válido para o ônibus, na medida em que caso não se receba a mensagem de POLLING2 com o destinatário adequado, o ônibus poderia ser considerado fora do terminal rodoviário. Na implementação do protocolo, devido ao caráter de dispositivo escravo do ônibus, assim que se detecta uma mensagem de POLLING2 um \textit{timer} com valor de 10 segundos é ligado. Caso este \textit{timer} estoure e não se tenha recebido um POLLING2, a mensagem de desconexão é transmitida para o SW.
+
+\subsubsection {Transmissão de Encomenda} 
+
+Considerando-se estabelecido o \textit{link} de comunicação entre ônibus e guichê, o \textit{software} de aplicação pode requerer transmitir informação acerca de alguma encomenda em especial. O formato deste tipo de mensagem é apresentado na figura ~\ref{fig:tx_enc_frame}.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.85\textwidth]{./figs/tx_enc_frame.png} % <- formatos PNG, JPG e PDF
+	\caption[Quadro de Tranmissão de Encomendas]{Quadro de Tranmissão de Encomendas}
+	\label{fig:tx_enc_frame}
+\end{figure}
+
+Os campos indicados pelo título de BARCODE[0..4] identificam o número da encomenda. Tipicamente, o código de barras EAN-13 possui 13 bytes de identificação, porém no caso do SIAER apenas cinco bytes tornam-se suficientes para identificar a encomenda. Os campos relacionados à cidade no fim do quadro indicam a cidade origem e a cidade destino da encomenda.
+
+Em todo \textit{timeslot}, na situação de conexão ativa, a mensagem de POLLING2 é enviada. Tipicamente, esta mensagem é enviada assim que o \textit{frame} é iniciado. Posteriormente a este envio, ocorre o envio da mensagem relacionado à encomenda. Caso detecte-se um ACK desta mensagem até o fim do \textit{timeslot}, atualiza-se o \textit{buffer} interno do transmissor para que no próximo \textit{timeslot} se envie outra encomenda. Caso a encomenda não receba ACK, ela continua sendo enviada indeterminadamente.
+
+Observando-se a figura ~\ref{fig:tx_enc_frame}, nota-se que este quadro pode possuir até 4 identificadores diferentes (FUNC\_ID=0x10, 0x11, 0x30 ou 0x31). Estes quatro identificadores possuem como função indicar se a encomenda deve subir ou descer do ônibus especificado pelo cabeçalho, e ainda o bit 0 deste byte revela se a encomenda se encontra no guichê ou não.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.85\textwidth]{./figs/tx_enc_proc.png} % <- formatos PNG, JPG e PDF
+	\caption[Processo de Transmissão de Encomendas]{Processo de Tranmissão de Encomendas}
+	\label{fig:tx_enc_proc}
+\end{figure}
+
+Na figura ~\ref{fig:tx_enc_proc}, nota-se que ônibus informa à interface com o SW a chegada de uma encomenda. Posteriormente, envia-se um ACK desta encomenda para o guichê. Este, ao detectar este quadro, informa ao SW que a tranmissão ocorreu com sucesso. Só neste momento que o tranmissor incrementa a posição de seu \textit{buffer} interno e passa a transmitir a próxima encomenda.

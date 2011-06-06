@@ -1,0 +1,1025 @@
+%---------- Inicio do Texto ----------
+% recomenda-se a escrita de cada capitulo em um arquivo texto separado (exemplo: intro.tex, fund.tex, exper.tex, concl.tex, etc.) e a posterior inclusao dos mesmos no mestre do documento utilizando o comando \input{}, da seguinte forma:
+%\input{intro.tex}
+%\input{fund.tex}
+%\input{exper.tex}
+%\input{concl.tex}
+
+\def\inputGnumericTable{}  
+
+\chapter{Desenvolvimento}\label{chap:desenvolvimento}
+
+\input{hardware.tex}
+
+\input{simpliciti.tex}
+
+%\input{protocolo_de_comunicacao.tex}
+\input{firmware.tex}
+
+\section{Código de Barras}\label{desenvolvimento:codigodebarras}
+
+Relacionado ao sistema de identificação, as duas primeiras etapas apresentadas da figura~\ref{fig:FluxoGramaBarcode} estão vinculados ao protocolo de codificação e ao leitor interpretador deste protocolo, respectivamente. Na seção~\ref{subsectionEscolhaLeitorBarras}, já foi mostrado que a tecnologia da codificação por barras é utilizada neste projeto, portanto faz-se necessário que as seções seguintes discutam as principais características deste sistema. Estas características estão relacionadas ao modo de configuração da leitora BR-310, e ao funcionamento do protocolo de codificação utilizado, o EAN-13.
+
+
+\subsection{Configuração do leitor de código de barras}
+O leitor de código de barras utilizada neste projeto foi o BR-310, fabricado pela empresa BEMATECH. O motivo da escolha e a foto da leitora podem ser visualizadas na seção~\ref{subsectionEscolhaLeitorBarras}.
+
+Para se trabalhar com este leitor óptico, alguns padrões de configuração foram convencionados, tanto para o protocolo de pacotes enviados pelo dispositivo, quanto para o protocolo de comunicação leitora-computador utilizado, o padrão RS-232. 
+
+
+\subsubsection{Configuração do Protocolo de Pacotes}\label{subsubsectionProtPacote}
+
+O manual da BR-310 fornece uma série de opções de configuração preparação dos dados enviados, desta maneira convencionou-se que a leitora deverá, além de enviar o valor identificador do código de barras, também deverá transmitir:
+
+\begin{enumerate}
+	\item Um caractere em formato ASCII, que compreende ao tipo de protocolo do identificador lido.
+	\item Dois caracteres identificando final do pacote enviado. 
+\end{enumerate}
+Quanto ao caractere em formato ASCII especificado, este é decorrente de uma padronização proposta pela fabricante da leitora BR-310, de acordo com a tabela~\ref{tableBarCodeType} a seguir:
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{3.0cm}p{2cm}}
+\caption[Caracteres identificadores BR-310]{Caracteres identificadores de protocolo de código de barras da leitora BR-310}\label{tableBarCodeType} \\
+
+\hline \multicolumn{1}{c}{\textbf{Tipo de Código de Barras}} & \multicolumn{1}{c}{\textbf{Caractere ASCII (Hexadecimal)}}\\ \hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries Continuação da tabela~\ref{tableBarCodeType}}} \\
+\hline \multicolumn{1}{c}{\textbf{Tipo de Código de Barras}} & \multicolumn{1}{c}{\textbf{Caractere ASCII (Hexadecimal)}}\\ \hline 
+\endhead
+
+\multicolumn{2}{c}{{\textit{Continuação da tabela~\ref{tableBarCodeType} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	UPC-A & A (0x41)\\
+	UPC-E & B (0x42)\\ 
+	EAN-8 & C (0x43)\\ 
+	EAN-13 & D (0x44)\\ 
+	Código 39 & E (0x45)\\ 
+	Código 128 & F (0x46)\\ 
+	Interleave 25 & G (0x47)\\ 
+	Industrial 25 & H (0x48)\\ 
+	Matrix 25 & I (0x49)\\ 
+	CODABAR/NW7 & J (0x4A)\\ 
+	Código 93 & K (0x4B)\\ 
+	Código 11 & L (0x4C)\\ 
+	China Postage & M (0x4D)\\ 
+	MSI/PLESSEY & N (0x4E)\\
+	Código 32 & O (0x4F)\\
+	BC412 & P (0x50)\\ 
+	\hline
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+Sendo assim, todo código identificador lido pelo leitor BR-310, será interpretado por ele e enviado para a aplicação do guichê com o caractere identificador D, cujo valor em hexadecimal da tabela ASCII é 0x44, no início dos dados, uma vez que o código de barras utilizado como padrão para este trabalho foi o EAN-13 (seção~\ref{subsectionEscolhaSistIdentif}).
+
+Ainda foram configurados dois caracteres indicativos de fim de dados enviados pelo leitor. Estes caracteres vem configurados como padrão de fábrica, pela BEMATECH, mas podem ser alterados ou removidos. Os caracteres, identificadores, indicadores utilizados, e definidos por padrão, são CR e LF, parecidos com aqueles utilizados nos arquivos de texto (seção~\ref{subsectionArquivosDeTexto}). Os valores ASCII hexadecimais desses caracteres são 0x0A e 0x13.
+
+Ao final desta explicação pode-se concluir que o pacote total de dados enviado pelo leitor possui basicamente três tipos de dados importantes, o caractere indicador de início, letra D, o código identificador código de barras com seu \textit{checksum} (seção~\ref{codigodebarras:protocolo}) e os caracteres finais indicando final de pacote CR e LF. A figura~\ref{fig:BitsLeitora} ilustra o \textit{frame} de bits final enviados pela leitora à aplicação de guichês.
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/BitsLeitora.jpg} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Frame}  Leitora]{Imagem do mapa de bits enviados pela leitora após sua configuração inicial.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:BitsLeitora}
+\end{figure}
+
+
+\subsubsection{Configuração da Comunicação RS-232}\label{section:confcomserial}
+
+O padrão de comunicação entre dispositivos RS-232 é largamente utilizado para equipamentos posicionados a curtas distâncias. Este padrão de comunicação oferece diferentes modos de operação em sua especificação. A utilização correta deste protocolo permite que os dispositivos, ao se comunicarem, estejam configurados estabelecendo uma comunicação onde os dados enviados de um lado sejam interpretados corretamente do outro. Desta maneira ambos os dispositivos devem possuir os mesmos parâmetros de configuração.
+
+Sendo assim, foram convencionados parâmetros de comunicação para o manuseio do leitor BR-310 neste projeto, de modo a conectar este leitor óptico com o  \textit{hardware} serial do computador de guichê, onde se encontra instalado o \textit{software} de acesso ao banco de dados. Os parâmetros em comum, entre os dois dispositivos foram convencionados como mostrados na tabela~\ref{tableRS232}:
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{3.0cm}|p{2cm}}
+\caption[Padronização RS-232 BR-310]{Configuração RS-232 padronizada de comunicação com a leitora BR-310}\label{tableRS232} \\
+\hline
+\hline \multicolumn{1}{c}{\textbf{Parâmetro}} & \multicolumn{1}{c}{\textbf{Valor}}\\ \hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries Continuação da tabela~\ref{tableRS232}}} \\\hline 
+\hline \multicolumn{1}{c}{\textbf{Parâmetro}} & \multicolumn{1}{c}{\textbf{Valor}}\\ \hline
+\endhead
+
+\multicolumn{2}{r}{{\textit{Continuação da tabela~\ref{tableRS232} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\textit{Baud Rate} & 1200 bps\\
+	\hline
+	Bits de Dados & 8 bits\\ 
+	Bit de Parada & 1 bit\\ 
+	Bit de Paridade & sem bit\\ 
+	RTS/CTS & Desabilitado\\ 
+	ACK/NAK & Desabilitado\\ 
+	XON/OFF & Desabilitado\\ 
+	\end{longtable}
+\end{center}
+
+O protocolo de comunicação RS-232, do leitor BR-310, oferece diferentes velocidades para serem configuradas, conforme conveniência em seu parâmetro de Baud Rate. Estas velocidades vão desde 600\sigla{bps}{bits por segundo} até 19200bps. A taxa de bits escolhida foi de 1200 bps, por ser um valor intermediário de velocidade que atende às necessidades de processamento do projeto, o qual não exige altas velocidades.
+ 
+
+\subsection{Protocolo de Codificação}\label{codigodebarras:protocolo}
+
+Como mencionado na seção~\ref{subsectionEscolhaSistIdentif} o protocolo de codificação de código de barras utilizado neste projeto foi o EAN-13. Assim como todos os códigos de barras existentes, o EAN-13 possui suas especificações próprias, e a finalidade desta seção é revelar tanto a constituição deste protocolo de código de barras, como as etapas de cálculo de seu dígito verificador de autenticidade, o \textit{checksum}. Os passos de cálculo do \textit{checksum} EAN-13 serão apresentados, pois seu cálculo é realizado tanto pela aplicação do guichê, quanto pela aplicação do ônibus, para verificação da autenticidade do código interpretado (ver item~\ref{casodeuso:comunicarleitorcodigodebarrasgui} da seção~\ref{diag:casosdeusogui}) e reconstrução de código como é o caso do \textit{software} do ônibus (ver último parágrafo da seção~\ref{diagmestados:msponibus}).
+
+A estrutura básica de um código de barras gerado segundo o protocolo de especificação EAN-13 é mostrado na figura~\ref{fig:ExemploEAN13Detailed}.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/ExemploEAN13Detailed.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Código EAN-13 Detalhado]{Imagem das partes constituintes de um código de barras EAN-13.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:ExemploEAN13Detailed}
+\end{figure}
+
+
+Comparando-se a figura~\ref{fig:ExemploEAN13Detailed} com a figura~\ref{fig:BitsLeitora}, da seção~\ref{subsubsectionProtPacote}, todos os treze números representados na figura~\ref{fig:ExemploEAN13Detailed} correspondem aos 104 bits do campo código de barras + checksum EAN-13 da figura~\ref{fig:BitsLeitora}.
+
+De acordo com a figura~\ref{fig:ExemploEAN13Detailed} o código de barras EAN-13 pode ser subdividido em 4 partes. São elas: 
+
+\begin{enumerate}
+	\item Código do País.
+	\item Código da Empresa.
+	\item Código do Produto.
+	\item Caractere de \textit{Checksum}. 
+\end{enumerate}
+
+
+\subsubsection{Código do País}\label{subsection:CodigoDoPais}
+
+O código do país é o número específico de um país, ou região econômica, registrado na EAN. No caso do Brasil, como mostrado na seção~\ref{subsectionCodigoDeBarras}, o país recebeu o código de afiliado número 789, sendo o 26º país registrado nesta instituição.
+
+Este trabalho foi elaborado seguindo as regulamentações e necessidades que envolvem o contexto de empresas de ônibus brasileiras. Desta maneira, o Código do País utilizado nas etiquetas de código de barras geradas no projeto, recebeu o valor 789 que identifica, internacionalmente, o Brasil.
+
+
+\subsubsection{Código da Empresa}\label{subsection:CodigoDaEmpresa}
+
+A empresa é reconhecida através dos cinco dígitos ou menos que representam o campo Código da Empresa. No caso do Brasil, como já mencionado na seção~\ref{subsectionCodigoDeBarras}, o GS1 Brasil é o órgão no país responsável pelo registros destes códigos. Com isso cada empresa nacional cadastrada nesta instituição, receberá a permissão de utilizar um determinado número de Código da Empresa em seus código de barras EAN-13. No caso deste trabalho, não foi registrada uma licença na entidade GS1, pois este registro requer comprovação de existência da empresa (CNPJ), e comprovação de rendimento anual, o que foge do escopo inicial deste trabalho. Por isso foi estipulado um número identificador da empresa aleatório, escolhendo-se o valor 1234 para o campo Código da empresa.
+
+\subsubsection{Código do Produto}\label{subsection:CodigoDoProduto}
+
+Os dígitos de Código do Produto presentes nas etiquetas de código de barras estão sob critério da empresa de gerenciá-los e controlá-los. Uma empresa que fabrica diversos produtos, possuirá um número diferente de Código de Produto para cada linha de produto, sendo assim, é possível realizar a leitura dos códigos de barras destes produtos e identificá-los, mesmo que sejam manufaturados por uma mesma empresa, e que a empresa possua cadastro na GS1 Brasil.
+
+Este projeto apresenta uma utilização peculiar destes caracteres de Código da Empresa pois, ao invés de possuir um único Código do Produto para a linha de encomendas, cada nova encomenda cadastrada na base de dados da empresa receberá um valor diferente e único neste campo. A metodologia adotada para diferenciação das encomendas foi sempre somar 1 ao último Código do Produto cadastrado, para atribuir este valor à identificação da encomenda que está sendo cadastrada. Ao final final desta etapa o \textit{checksum} é calculado para os 12 caracteres da etiqueta e concatenado ao final do valor de código de barras.
+
+
+\subsubsection{\textit{Checksum}}\label{subsection:Checksum}
+
+\textit{Checksum} é um valor de tamanho fixo, calculado a partir de um bloco de dados, utilizado em sistemas de comunicação para verificação da autenticidade dos dados transmitidos. Esta análise de veracidade da informação é necessária uma vez que podem ocorrer erros sobre os dados transmitidos durante a conexão entre dispositivos. Estes erros podem ser causados devido a ruído do canal de transmissão, instabilidade do sistema, intempéries externas sobre o meio, entre outros fatores. Sendo assim, ao final da transmissão o receptor deve calcular o \textit{checksum} para os dados recebidos, e comparar com o valor de \textit{checksum} enviado pelo transmissor. Se estes valores forem iguais, significa que o dado foi recebido com êxito, caso contrário, existirá um erro dentro do pacote de dados enviados. Caso um erro seja detectado, o receptor pode tomar algumas ações, como informar ao transmissor sobre o erro e solicitar uma nova transmissão, ou realizar algoritmos sobre o dado recebido para recuperação da informação original.
+
+Cada protocolo de comunicação possui seu cálculo de \textit{checksum} específico sobre os dados transmitidos, não possuindo um padrão único de cálculo. A especificação do EAN-13 possui seu próprio cálculo de \textit{checksum}, que é realizado sobre os 12 primeiros dígitos da etiqueta de código de barras, que incluem o Código do País, o Código da Empresa e o Código do Produto. Este dígito de verificação aparece explicitamente na etiqueta de código de barras, e é sempre o 13º dígito da etiqueta (último caractere), como pode ser visto na figura~\ref{fig:ExemploEAN13Detailed}.
+
+O cálculo do \textit{checksum} é basicamente realizado através de multiplicações de alguns dígitos do código de barras por um peso de valor 3, e a procura de números múltiplos de 10.
+Os seguintes passos a seguir descrevem o algoritmo da sequência de etapas necessárias para a realização do cálculo do \textit{checksum} do código de barra EAN-13:
+
+\begin{enumerate}
+	\item Atribuir que o primeiro dígito do código de barras corresponde a uma posição par e alternadamente, atribuir que as posições subsequentes são ímpar e par respectivamente, até se chegar a posição 12.
+	\item  Somar todos os valores das posições ímpares, e multiplicar o resultado por 3.
+	\item Somar todos os valores das posições pares.
+	\item Somar os resultados dos items 2 e 3 acima.
+	\item O \textit{checksum} será o número que somado ao resultado do item 4 apresentar um valor múltiplo de 10.
+	\item Caso a soma do item 4 já seja um valor múltiplo de 10, o \textit{checksum} será 0.
+\end{enumerate}
+
+
+Para exemplificar os passos de cálculo do \textit{checksum} descritos acima, a figura~\ref{fig:CalculoChecksum} apresenta um exemplo de cálculo de \textit{checksum} para o código de barras com os 12 primeiros dígitos iguais a 789123409678.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/CalculoChecksum.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Cálculo do \textit{checksum} EAN-13]{Exemplo do cálculo do dígito de \textit{checksum} dos número 789123409678.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:CalculoChecksum}
+\end{figure}
+
+
+\section{\textit{Software}}\label{sec:softwares}
+
+O envio de encomendas exige um grande volume de dados a serem armazenados e transferidos, para os diversos locais de trabalho, onde empresas de linhas rodoviárias atuam. O Sistema Integrado de Acompanhamento de Encomendas Rodoviárias, proposto neste trabalho, foi desenvolvido visando atender aos requisitos esperados por estas empresas, aproveitando-se da sua infraestrutura tecnológica já existente, e adicionando novos componentes que garantirão a maior confiabilidade do processo de envio das encomendas. Tendo como base este cenário, existem alguns módulos de \textit{software} que foram elaborados para que este projeto cumpra seu objetivo final, a segurança no envio de encomendas. Em linhas gerais, o projeto como um todo possui basicamente os seguintes resultados tecnológicos no quesito de desenvolvimento de \textit{software}:
+
+\begin{itemize}
+	\item Um \textit{software} mais complexo, que estará presente nos guichês.
+	\item Um \textit{software} instalado no dispositivo do ônibus, para comunicação ônibus-guichê.
+	\item Uma base de dados, completa, que atende aos procedimentos exigidos para o funcionamento neste projeto (seção~\ref{sectionBancoDeDados}).
+\end{itemize}
+
+A linguagem de programação programação utilizada para o desenvolvimento das aplicações de guichê, e de ônibus foi a linguagem C\#.NET, como especificado na seção~\ref{sectionLingProg}.
+
+O ambiente de desenvolvimento utilizado neste projeto foi o Microsoft Visual Studio 2010, o qual oferece todas as ferramentas necessárias para o trabalho com a linguagem de programação C\#, além de suportar os pacotes .NET \textit{Framework} apresentados na seção~\ref{sectionLingProg}. A versão do \textit{Microsoft Visual Studio} utilizado neste projeto foi adquirida gratuitamente da empresa Microsoft, criadora da linguagem C\#, através do \textit{site} http://www.dreamspark.com. Este \textit{site} foi criado como uma iniciativa da empresa de oferecer a estudantes interessados, licenças completas e gratuitas, de seus principais aplicativos de desenvolvimento.
+
+
+\subsection{\textit{Software} Guichê}\label{section:swguiche}
+
+Atualmente o sistema de envio de encomendas presentes nas empresas de ônibus possuem um \textit{software} que realiza tanto o cadastro de clientes, quando o cadastro das encomendas a serem enviadas através das linhas de ônibus. No entanto, a rastreabilidade das encomendas é realizada de forma ainda precária. A localização dos pacotes enviados pelos ônibus se dá através de trocas de e-mails, entre os trabalhadores da empresa, e através da confiança da palavra do último funcionário que pode ter tido contato com a encomenda desejada. Desta forma, foi desenvolvido um \textit{software} que, junto ao banco de dados criado (seção~\ref{sectionBancoDeDados}), tem o objetivo de sanar os problemas previstos quanto à rastreabilidade das encomendas, e concentrar a maior parte da inteligência logística do sistema. 
+
+Os postos de trabalho das empresas, chamados de guichês, são os locais onde os clientes podem adquirir suas passagens para viajar, ou realizar seu cadastro envio de encomendas. Sendo assim cada guichê, fisicamente existente nas rodoviárias de cada cidade em que a empresa de ônibus possui contato através de seu itinerário, possuirá um \textit{software} de guichê, chamado SIAER.
+
+\subsubsection{Digrama de Casos de Uso - \textit{Software} Guichê}\label{diag:casosdeusogui} 
+
+De acordo com \cite{Stadzisz2002}, Diagramas de Caso de Uso são instrumentos eficientes para determinação e documentação dos serviços a serem desempenhados por uma plataforma de \textit{software}. Além de ser um bom meio de comunicação com os clientes no processo de definição dos requisitos do sistema. Sendo assim, procurou-se estabelecer o diagrama de casos de uso para o \textit{software} de guichê, pois isso proveria de forma clara todas as atividades desempenhadas por esta plataforma, bem com auxiliaria durante a fase de desenvolvimento do projeto. Sendo assim, a primeira atitude a se adotar, antes de qualquer atividade relacionada ao contexto do desenvolvimento do aplicativo de guichê, foi a especificação dos casos de uso deste sistema, e seus principais relacionamentos.
+
+A figura apresentada no apêndice~\ref{AnexoDiagCasosDeUsoGuiche} mostra o diagrama de casos de uso elaborado através das especificações das principais atividades desempenhadas pelo \textit{software} de guichê.
+
+%--------------------------------
+%	IMAGEM DO ANEXO DO DIAGRAMA DE CASOS DE USO DO GUICHÊ
+%--------------------------------
+
+Como pode ser visto no apêndice~\ref{AnexoDiagCasosDeUsoGuiche}, foram diferenciados basicamente sete casos de uso, os quais desempenham uma porção de serviço completa, e cinco subcasos de uso que são inseridos em um ou mais casos de uso, por não fazer sentido sua existência isoladamente.  Cada caso de uso será apresentado a seguir, juntamente com seus subcasos de uso, para melhor explicação das tarefas realizadas pelo \textit{software} de guichê.
+
+\begin{enumerate}
+	\item Subcaso de Uso Efetuar \textit{Login}:
+	
+	O subcaso de uso Efetuar \textit{Login}, que pode ser visto no apêndice~\ref{AnexoDiagCasosDeUsoGuiche}, embora desempenhe o serviço completo para o qual foi designado, realizar validação de usuário, não possui sentido caso não esteja associado a outros casos de usos que se utilizarão do seu resultado. Desta maneira, optou-se por transformar a tarefa de efetuar \textit{login} em um subcaso de uso, por ser conceitualmente uma ação que evidencia as relações que outros casos de uso maiores possuem com a mesma tarefa de efetuar \textit{login}. Quando o usuário da empresa de ônibus tenta acessar o programa SIAER na sua estação de trabalho, a primeira janela que ele visualizará será uma tela de autenticação de usuário, para que este tenha acesso aos serviços disponíveis pela aplicação. A tela de \textit{login} requer basicamente um nome de usuário e uma senha, para que o acesso seja liberado, no entanto esta janela de autenticação possui um vínculo (comunicação) com o banco de dados como pode ser visto no apêndice~\ref{AnexoDiagCasosDeUsoGuiche}, mais especificamente com a tabela~\ref{tableLogin} de \textit{Login} (seção~\ref{table:login}), que fornecerá a importante informação da cidade na qual o funcionário trabalha, para que o sistema tenha sua configuração inicial de trabalho. A figura~\ref{fig:FormAutenticacaoSIAER} mostra a tela de autenticação de usuário prevista no programa.
+	
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/FormAutenticacaoSIAER.jpg} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Form} de Autenticação de Usuário]{Primeira tela apresentada ao usuário para autenticação e liberação de acesso ao sistema.}
+	\label{fig:FormAutenticacaoSIAER}
+\end{figure}
+
+	\item Caso de Uso Cadastrar Cliente
+	
+	Informações inerentes aos dados pessoais dos cliente são importantes para empresas que prestam serviços de logística. Esses dados oferecem confiabilidade para a empresa, tanto em relação à pessoa remetente da encomenda, como a destinatária. Esta confiabilidade existe pois a empresa responsável pelo carregamento da encomenda saberá exatamente para quem entregar a encomenda, quando esta atingir sua localidade de destino, e ainda caso algum imprevisto aconteça no decorrer do trajeto, existirá referências para os quais as empresas poderão entrar em contato e esclarecer o que está acontecendo.
+	
+	As informações cadastradas dos clientes segundo este caso de uso Cadastrar Cliente serão utilizadas mais pra frente, no momento em que o atendente for cadastrar as pessoas destinatárias e remetentes da encomenda enviada. Estas informações são basicamente Nome, CPF, RG, endereço e telefone, estão vinculadas às tabelas Cliente, ClienteEndereco e ClienteTelefonesParaContato apresentadas na seção~\ref{section:apresentacaotabelas}.
+	
+	Através do apêndice~\ref{AnexoDiagCasosDeUsoGuiche} percebe-se que este serviço de cadastro de cliente é inciado pelo atendente, que possuirá acesso ao programa após ser autenticado pelo caso de uso Efetuar Login, e que este caso de uso possui a comunicação com o SGBD, que encaminha os dados a serem cadastrados para a base dados.
+	
+	
+	\item Caso de uso Cadastrar Encomenda\label{casodeuso:cadastrarencomendagui}
+	
+	O cadastro de encomendas é uma ação crítica para que uma encomenda seja entregue corretamente em seu local de destino, e para a pessoa cadastrada como cliente destinatário. Este caso de uso possui basicamente as mesmas interações com atores que o caso de uso Cadastrar Cliente, ou seja, o atendente inicia o cadastro de encomendas, a partir do momento que realizou sua autenticação no sistema, e o caso de uso de Cadastrar Encomenda ainda possui uma interação com o banco de dados.
+	
+	No momento de cadastro de encomendas o atendente pode esquecer de preencher alguns campo com informações importantes para que a encomenda seja enviada corretamente, no entanto o \textit{software} de guichê avisará ao usuário quais as informações que estão faltando através de uma mensagem. Estas informações importantes são, CPF de clientes destinatário e remetente, que podem estar erradas, e trajeto desempenhado pela encomenda inválido, ou incompatível com o dia de cadastro, pois um ônibus pode já ter viajado ou o serviço ter sido cancelado. Serviços são representações das rotas percorridas pelos ônibus das empresas. Cada serviço  possui um alinhamento com um conjunto de cidades, e um conjunto de horários através do itinerário atendido pela empresa.
+	
+	Embora seja utilizado CPF de clientes pré-cadastrados no sistema para o envio de encomendas, o caso de uso Cadastrar Encomendas, não possui relação direta com o caso de uso Cadastrar Clientes, uma vez que as informações utilizadas pelo primeiro caso de uso são adquiridas através da comunicação com o SGBD.
+	
+	A figura~\ref{fig:FormCadENcomendaSIAER} mostra o exemplo de uma encomenda sendo cadastrada no \textit{software} SIAER do guichê. Nesta imagem é possível perceber que o cliente remetente será o de CPF 046.692.139-03, e o cliente destinatário será o de CPF 469.105.579-72. Ambos CPFs devem estar cadastrados na base de dados, e ainda serão validados através de um algoritmos de validação de CPF.
+	
+	\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figs/FormCadENcomendaSIAER.jpg} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Form} de Cadastro de Encomenda]{Tela de Cadastro de uma encomenda.}
+	\label{fig:FormCadENcomendaSIAER}
+\end{figure}
+
+	As informações de serviço, cidade final e data, são apresentadas através de um componente do .NET \textit{Framework} chamado \textit{DataGridView}. Este componente apresentado na tela de cadastro de encomenda, contém as informações dos serviços que serão utilizados pela encomenda, esta é uma etapa crítica deste processo. Traduzindo os dados cadastrados neste componente, o trajeto da encomenda será partir da cidade atual, cidade na qual o cliente está enviando a encomenda, utilizando o ônibus do serviço 10 para ir até Guarapuava. Chegando em Guarapuava a encomenda subirá no ônibus que atende ao serviço 13, para ir até sua cidade de destino, que no caso é Fênix. Todos estes serviços serão realizados no dia 31/05/2010.
+	
+	Dentro do apêndice~\ref{AnexoDiagCasosDeUsoGuiche} percebe-ser que existe um subcaso de uso chamado Gerar Código de Barras incluído ao caso de uso Cadastrar Encomenda. Esta tarefa de gerar código de barras é executada logo que o atendente clica no botão salvar da tela apresentada na figura~\ref{fig:FormCadENcomendaSIAER}. O que acontece é que ao clicar neste botão, o subcaso de uso se comunicará com o banco de dados e pesquisará pelo valor identificador da última encomenda cadastrada neste banco, desta forma o programa procede da maneira descrita na seção~\ref{subsection:CodigoDoProduto}, para a criação de um novo código de barras para a encomenda que está sendo cadastrada agora.
+	
+	\item Caso de Uso Gerar Etiqueta Encomenda\label{casodeuso:geraretiqueta}
+	
+	O caso de uso Gerar Etiqueta Encomenda, diz respeito à opção que o \textit{software} do guichê tem de gerar uma etiqueta automaticamente para uma encomenda. Esta etiqueta funciona como se fosse o rótulo da encomenda, sendo impressa em um papel de 15cm x 14 cm, e vai colada em um ou mais lados do pacote, dependendo da situação. Esta etiqueta possui um código de barras do tipo EAN-13, especificado no item~\ref{codigodebarras:protocolo}, assim como o nome e endereço dos clientes remetentes e destinatários da encomenda. a figura~\ref{fig:EtiquetaSIAER} mostra como é esta etiqueta.
+
+\newpage
+		\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figs/EtiquetaSIAER.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Etiqueta da Encomenda]{Imagem de uma etiqueta gerada pelo aplicativo SIAER.}
+	\label{fig:EtiquetaSIAER}
+\end{figure}
+	
+	Quanto ao diagrama do apêndice~\ref{AnexoDiagCasosDeUsoGuiche} observa-se que este caso de uso possui uma comu-nicação com um ator impressora, e com isso, esta etiqueta pode se apresentar em formato de papel, e viajar com a encomenda, colada na parte exterior do pacote.
+	
+	A forma como esta etiqueta é gerada trabalha com a metodologia de relatórios disponíveis no Microsoft Visual Studio 2010, unificado ao C\#. Esta metodologia permite que seja criado um \textit{template} de relatório que possua campos genéricos, onde cada campo pode esteja associado a uma \textit{query} SQL que realiza uma consulta fixa em um banco de dados especificado.
+	
+	Além do atendente possuir a opção de gerar a etiqueta de uma encomenda qualquer, uma etiqueta é gerada automaticamente, toda a vez que uma nova encomenda for cadastrada. Isso torna o trabalho do usuário mais ágil, pois pode imprimir quantas etiquetas quiser no momento do cadastro.
+	
+	
+	\item Caso de Uso Mostrar Encomendas Guichê
+	
+	Assim que o usuário do guichê é autenticado na tela de \textit{login} mostrada na figura~\ref{fig:FormAutenticacaoSIAER}, ele está apto a observar informações sobre encomendas que estão associadas à cidade em que ele trabalha. Estas informações são consultadas automaticamente no banco de dados da empresa a cada 15 segundos, e atualizam a tela do aplicativo com informações como:
+	
+	
+\begin{itemize}
+	\item Encomendas que estão no guichê em que o atendente trabalha, e quais já estão em sua cidade de destino e devem ser entregues ao cliente final destinatário.
+	\item Encomendas que irão chegar a qualquer momento através de algum ônibus no guichê em que o atendente trabalha.
+\end{itemize}
+
+	Existe ainda uma outra maneira que o \textit{software} utiliza para mostrar \textit{status} de encomendas para o atendente. Esta outra forma de apresentação acontece assim que um ônibus estaciona na plataforma da rodoviária e estabelece uma comunicação com o \textit{software} do guichê. A partir do momento em que um ônibus estabelece conexão, o aplicativo SIAER automaticamente informa ao atendente, através de uma figura de um ônibus no canto direito da tela, a chegada deste ônibus, assim como suas cidades de origem e destino. Ao clicar neste ônibus, o atendente consegue visualizar informações atualizadas sobre as encomendas que devem subir, e encomendas que devem descer deste ônibus que acabou de chegar. Ao reconhecer a chegada de um ônibus na plataforma outras tarefas são disparadas pelo aplicativo SIAER, mas isso é discutido na seção~\ref{subsection:InterfaceMSP}.
+	
+	\item Caso de Uso Localizar Encomenda
+	
+	Um grande diferencial deste projeto está relacionado ao caso de uso Localizar Encomenda. Este caso de uso é uma das vantagens que o sistema de rastreamento de encomendas proposto oferece no quesito de rastreamento da localização de encomendas.
+	
+	A partir do momento que uma encomenda está cadastrada no banco de dados da empresa, esta já possuirá uma rota de cidades nas quais esta encomenda deverá descer ou subir de algum ônibus, e continuar viagem até chegar à sua cidade de destino, até ser entregue ao cliente.
+	
+	A forma como esta informação de rotas é apresentada atualmente pelo \textit{software} de guichê, foi desenvolvida para que seja o mais intuitivo possível. Sendo assim, como se pode observar na figura~\ref{fig:FormLocalizarEncomenda} a localização de uma encomenda, no momento em que a pesquisa é realizada, está indicada através de um retângulo vermelho. É nesta janela de localização também que pode se saber qual atendente, e de qual cidade, teve contato pela última vez com a encomenda pesquisada.
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/FormLocalizarEncomenda.jpg} % <- formatos PNG, JPG e PDF
+\caption[\textit{Form} Localizador de Encomendas]{Exemplo de busca da localização da encomenda 7891234001986.}
+\label{fig:FormLocalizarEncomenda}
+\end{figure}
+
+	A figura~\ref{fig:FormLocalizarEncomenda} está mostrando a localização atual da encomenda de identificador \newline 7891234001986. A tela de localização mostra todo o trajeto que será realizado pela encomenda, desde a cidade de origem até o momento em que foi entregue ao cliente final. Como a figura da cidade de Curitiba está assinalada com um retângulo vermelho ao seu redor, deduz-se que esta encomenda ainda está na sua cidade de origem, Curitiba. Ainda nesta figura, visualiza-se que o atendente de \textit{nickname} marcusfitz foi quem cadastrou a encomenda 7891234001986 em Curitiba.
+
+\item Caso de Uso Atualizar Informação Ônibus
+
+Este caso de uso é outro item implementado que torna este sistema de rastreamento de encomendas único. Conforme comentado no tópico em que se discute o caso de uso Mostrar Encomendas Guichê, toda vez que um novo ônibus estaciona na plataforma da rodoviária, este estabelece uma comunicação \textit{wireless} com o \textit{software} do guichê. Este estabelecimento de conexão é notificado ao atendente através de um ícone com o desenho de um ônibus, que permite visualização da situação das encomendas relacionadas a ele.
+
+No entanto não é só isso que acontece no momento em que esta conexão é estabelecida, pois ao reconhecer o ônibus parado na plataforma o \textit{software} SIAER automaticamente inicia um processo de atualização da base de dados contida no ônibus, o XML. Através desta comunicação é que o motorista do ônibus pode saber quais encomendas devem descer, e quais e deve esperar que o atendente do guichê coloque no bagageiro do ônibus. Toda a tramitação de funcionamento deste caso de uso está detalhada na seção~\ref{subsection:InterfaceMSP}
+
+\item Caso de Uso Comunicar Leitor Código de Barras\label{casodeuso:comunicarleitorcodigodebarrasgui}
+
+Como justificado na seção~\ref{section:sistident} e detalhado na seção~\ref{desenvolvimento:codigodebarras}, o sistema de identificação utilizado no projeto foi o Código de Barras.
+
+Para aplicativos desenvolvidos em C\#, a tarefa de se comunicar com periféricos seriais acaba se tornando uma tarefa muito mais fácil do que aquela de programar um microcontrolador para esta mesma comunicação. Com isso como se pode observar na figura~\ref{fig:CasodeUsoGuiche} do apêndice~\ref{AnexoDiagCasosDeUsoGuiche}, o atendente pode solicitar a utilização da comunicação com o leitor BR-310 a qualquer momento. Os parâmetros de configuração guichê-leitor estão apresentados na seção~\ref{section:confcomserial} através da tabela~\ref{tableRS232}.
+
+Toda vez que o \textit{software} de guichê interpreta a chegada de um novo pacote de dados, como aquele especificado na seção~\ref{subsubsectionProtPacote} e apresentado na figura~\ref{fig:BitsLeitora}, enviado pelo leitor BR-310, este aplicativo realiza a verificação de autenticidade do código identificador recebido. A autenticação do código de barras passa pelas seguintes etapas.
+
+\begin{itemize}
+	\item Remoção do dígito D identificador do protocolo EAN-13.
+	\item Remoção dos dígitos CR e LF identificadores de final de pacote de dados.
+	\item Remoção e armazenamento do dígito de \textit{checksum} do número identificador, enviado pelo leitor.\label{item:validacaochecksum}
+	\item Cálculo do valor de validação - \textit{checksum} - dos dígitos restantes.
+	\item Comparação do valor de \textit{checksum} calculado e aquele armazenado no terceiro passo acima.
+\end{itemize}
+
+O caso de uso Comunicar Leitor Código de Barras traz ainda uma série de serviços especiais caracterizados através dos subcasos de uso Transferir Encomendas para Ônibus, Transferir Encomendas para Cliente e Receber Encomendas de Ônibus. Através das ações pregadas por estes três subcasos de uso, basicamente a tabela do banco de dados que está sendo afetada/alterada é a tabela Trajeto encomenda (tabela~\ref{tableTrajetoEncomenda}) mostrada na seção~\ref{section:tabletrajetoencomenda}. Isto acontece pois é esta tabela que armazena todos os dados relevantes ao trajeto das encomendas e é nela que os algoritmos, que implementam as tarefas destes três subcasos de uso, procuram se apoiar para realizar suas funções.
+
+No diagrama de casos de uso do apêndice~\ref{AnexoDiagCasosDeUsoGuiche} está bem claro as condições que tornam válidas as extensões para os subcasos de uso apresentados acima. Sendo assim, para o subcaso de uso Transferir Encomendas para ônibus, toda a lógica para se reconhecer que uma encomenda foi cadastrada em um ônibus só será executada caso esta encomenda esteja em um guichê, e não seja sua cidade de destino. Para o subcaso de uso Transferir Encomendas para Cliente, a ação deste subcaso de uso só será adotada caso a encomenda estiver em um guichê, e este guichê for necessariamente o guichê da cidade de destino da encomenda. E por fim, o subcaso de uso Receber Encomendas de Ônibus abrange as etapas adotadas sobre a tabela Trajeto Encomenda para que uma encomenda, que está em um ônibus parado na plataforma da rodoviária, possa ser coletada e guardada no guichê para continuar seguindo seu trajeto. Lembrando que todas estas ações são tomadas através do reconhecimento de um código de barras válido lido a partir de uma etiqueta pelo leitor óptico BR-310.
+
+\end{enumerate}
+
+\subsection{Software Ônibus}\label{section:swonibus}
+
+Junto ao ônibus, a ideia deste projeto é integrar um computador de bordo onde as infor-mações referentes as encomendas serão armazenadas em arquivos XML (seção~\ref{subsectionXML}). Atualmente o processo de reconhecimento de encomendas existente nos ônibus se dá através do mapa de viagem. O mapa de viagem nada mais é do que um envelope amarelo contendo alguns documentos com informações relevantes à viagem do ônibus, sendo que um desses documentos existentes neste envelope é um papel A4 que apresenta uma planilha, com dados manuscritos, contendo a lista de encomendas presentes no bagageiro do veículo, e quais são os seus destinos. Este documento em papel A4 deve ser atualizado pelo motorista em todas as paradas onde houver subida ou descida de encomendas, ficando a cargo da memória do motorista o preenchimento ou não deste formulário.
+
+Aqui no \textit{software} do ônibus encontra-se uma vantagem da utilização da linguagem C\#.NET para o desenvolvimento da aplicação. A plataforma .NET suporta recursos que compatibilizam programas desenvolvidos em ambientes \textit{desktop} e alguns ambientes embarcados tais como o Windows CE, que roda em dispositivos com menor capacidade de processamento.
+
+\subsubsection{Digrama de Casos de Uso - \textit{Software} Ônibus}\label{diag:casosdeusoon}
+
+O \textit{software} instalado no ônibus tem a missão de automatizar todo este processo envolvendo o mapa de viagem do motorista, descrito acima. Desta maneira o \textit{software} do ônibus deverá reconhecer quais encomendas estão presentes no bagageiro do respectivo ônibus, e onde estas encomendas deverão descer. Outros serviços oferecidos por este \textit{software} serão alertar o motorista das cidades onde as encomendas deverão ficar, descontar as encomendas que já desceram do bagageiro do ônibus e contar as encomendas que estão subindo, realizando desta maneira todo o gerenciamento da movimentação de encomendas presentes no ônibus.
+
+Dentro do que foi especificado para o software do ônibus, a figura~\ref{fig:CasoDeUsoOnibus} apresenta o diagrama de casos de uso com as principais ações que devem ser gerenciadas por este software.
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/CasoDeUsoOnibus.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Casos de Uso Ônibus]{Figura do Diagrama de Casos de Uso montado através das especificações desempenhadas pela aplicação presente no Ônibus.}
+\label{fig:CasoDeUsoOnibus}
+\end{figure}
+
+Como pode-se perceber, o diagrama de caso de uso do \textit{software} do  ônibus, figura~\ref{fig:CasoDeUsoOnibus} mais simples, do ponto de vista do número de ações realizadas, quando comparado com o aplicativo SIAER do guichê na figura~\ref{fig:CasodeUsoGuiche} do apêndice~\ref{AnexoDiagCasosDeUsoGuiche}. Este diagrama de casos de uso possui 3 casos de uso, onde os serviços realizados são considerados completos, e mais 5 subcasos incluídos aos casos de usos maiores. Além destes casos de uso visualiza-se três atores principais, sendo eles o motorista do veículo que está transportando as encomendas, o dispositivo que provê uma interface de comunicação \textit{wireless}, o MSP430F22X4, e por último o arquivo XML criado para armazenar os dados das encomendas que viajam no bagageiro.
+
+O \textit{software} do ônibus possui uma dinâmica bem diferente daquela vista no aplicativo da seção~\ref{section:swguiche}, pois ao invés de as tarefas exercidas pelo \textit{software} iniciarem a partir  do momento em que um atendente loga-se no sistema, aqui neste aplicativo as atividades ocorrem, automaticamente, somente nos momentos em que o ônibus encontra-se parado em uma plataforma rodoviária, e estabelece conexão com o guichê. Uma exceção a esta regra é quanto ao caso de uso Mostrar Situação das Encomendas, que apresenta as encomendas presentes no ônibus, mesmo se o ônibus estiver viajando.
+
+Abaixo estão explicados e enumerados os principais casos de uso desta plataforma, assim como seus subcasos de uso, quando existentes.
+
+\begin{enumerate}
+		\item Caso de Uso Conectar-se ao Guichê
+		
+		Ao iniciar sua viagem o aplicativo do ônibus estará automaticamente conectado ao dispositivo que viabiliza a comunicação \textit{wireless} o, MSP430F22X4, através de uma comu-nicação serial RS-232, detalhada na seção~\ref{subsection:InterfaceMSP}.
+		
+		O fato de reconhecimento de conexão com o guichê viabiliza as demais ações do \textit{software} do ônibus, como apresentar a cidade atual, listar encomendas que devem subir ou descer no ônibus, entre outras tarefas.
+		
+		Esta comunicação se apresenta como um grande diferencial deste projeto, por automatizar 100\% do trabalho que antes deveria ser realizado pelo motorista do ônibus, utilizando o mapa de viagem.
+		
+		Incluído neste serviço se encontra o subcaso de uso Mostrar Cidade Atual. Este subcaso de uso está relacionado a ação Conectar-se ao Guichê a partir da primeira troca de mensagens realizadas entre os dispositivos \textit{wireless} do guichê e do ônibus. Neste momento o \textit{software} do ônibus é avisado sobre o nome da cidade em que se encontra.
+		
+		\item Caso de Uso Mostrar Situação das Encomendas
+		
+		O caso de uso Mostrar Situação das Encomendas agrega basicamente três ações, mostrar as encomendas que estão fisicamente dentro do bagageiro do ônibus, mostrar as encomendas que deverão ser transferidas do guichê da cidade atual para o ônibus, e quais encomendas deverão descer do ônibus para o guichê. Estas duas últimas tarefas foram incluídas ao caso de uso Mostrar Situação das Encomendas por acontecerem apenas no momento em que o ônibus está parado na plataforma e conectado ao guichê, não fazendo sentido sua existência sem o mérito de mostrar a transação das encomendas. No entanto a tarefa de mostrar ao motorista quais encomendas estão presentes no bageiro do ônibus, ou mais especificamente, as encomendas que cadastradas no arquivo XML do dispositivo embarcado, ocorre durante a viagem do ônibus.
+		
+		\item Caso de Uso Cadastrar Encomendas
+		
+	O serviço de cadastros de novas encomendas encomendas no arquivo XML do ônibus, está totalmente ligado ao serviço de conexão estabelecido entre o aplicativo do ônibus e do guichê. Pois a ações de inclusão e deleção de encomendas presentes neste arquivos só são executadas no momento em que o guichê indica tal situação, não dependendo estas tarefas de qualquer intervenção humana.
+	
+	O subcaso de uso Incluir Encomenda tem o início de sua vida a partir do momento em que o atendente do guichê realiza a leitura da etiqueta de uma encomenda, indicando que esta encomenda irá subir no ônibus. Do mesmo jeito acontece com as encomendas que irão descer do ônibus, pois assim que o atendente do guichê indica que uma encomenda deverá descer, através da leitura do código de barras desta encomenda, o \textit{software} do ônibus automaticamente a desconta do arquivo XML.
+\end{enumerate}
+
+\subsubsection{Caracterização dos Arquivos XML do Ônibus}\label{section:caractxml}
+
+A seção~\ref{section:transparm} abordou os principais meios de armazenamento de dados, para viabilizar a estocagem de informação referente às encomendas que transitam por cada ônibus. A seção~\ref{section:transparm} mostra ainda a justificativa da escolha da utilização de arquivos XML para o gerenciamento das encomendas  realizada pelo aplicativo destes veículos.
+
+Cada ônibus que utiliza o sistema SIAER deste projeto, além de possuir o seu \textit{software} instalado no seu dispositivo de bordo, também possui dois arquivos XML. Estes arquivos XML irão estabelecer papéis distintos e importantes, contendo informações que devem permanecer ao longo de todo o trajeto que abrange o serviço realizado pelo ônibus.
+
+Um destes arquivos XML é chamado Cidades.xml. Este arquivo XML possui uma estrutura que suporta o armazenamento de diferentes nomes de cidades, com um respectivo Codigo associado. Uma vez que o dispositivo do ônibus possui a informação do nomes das cidades atendidas pelo itinerário da empresa, no momento de envio de pacotes de encomendas através da comunicação \textit{wireless} (seção~\ref{subsection:InterfaceMSP}), não se faz necessário o envio do nome completo da cidade em que os ônibus estão parados, ou o nome completo da cidade origem e destino de cada encomenda encontrada no bagageiro do veículo. Com isso, basta o envio do código identificador da cidade, e o \textit{software} de ônibus poderá resgatar as informações de nome de cidades, quando necessárias, neste arquivo XML Cidades.xml. A figura~\ref{fig:CidadesXML} mostra a figura da estrutura hierárquica montada para o XML explicado, para o armazenamento das informações de nome de cidades.
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\textwidth]{./figs/CidadesXML.jpg} % <- formatos PNG, JPG e PDF
+\caption[Arquivo XML Cidades.xml]{Imagem da estrutura do arquivo XML Cidades.xml, presente no dispositivo embarcado do ônibus, que armazena os nomes das cidades atendidas pelo itinerário da empresa de ônibus.}
+\label{fig:CidadesXML}
+\end{figure}
+
+
+O outro arquivo XML, que também está contido no dispositivo do ônibus é o CarroDataBase.xml. Este é um XML crítico da viajem, e é ele que contém todos os dados importantes das encomendas que estão no bagageiro do ônibus. Estes dados são o número do código de barras identificador da encomenda, cidade de origem, e cidade de destino da encomenda. Através destas informações salvas neste arquivo, pode-se saber onde a encomenda irá descer, e alertar ao motorista de ônibus sobre esta situação. A figura~\ref{fig:EncomendasXML}, mostra como é composta a arquitetura de armazenamento de dados neste arquivo XML.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.6\textwidth]{./figs/EncomendasXML.jpg} % <- formatos PNG, JPG e PDF
+\caption[Arquivo XML CarroDataBase.xml]{Imagem da estrutura do arquivo XML CarroDataBase.xml, presente no dispositivo embarcado do ônibus, que contém as informações sobre as diferentes encomendas que estão viajando junto ao ônibus.}
+\label{fig:EncomendasXML}
+\end{figure}
+
+
+
+\subsection{Interface com o Microcontrolador MSP430F22X4}\label{subsection:InterfaceMSP}
+
+A principal tecnologia utilizada neste projeto que oferece a diferenciação entre outros sistemas de transporte de encomendas, está indiscutivelmente embutida na comunicação e protocolo \textit{wireless} desempenhados pelo sistema proposto.
+
+Grande parte dos casos de uso existentes tanto no \textit{software} de guichê, como no de ônibus, utilizam desta comunicação sem fio para troca de informações e caracterização da finalidade de gerenciamento das encomendas que estarão sendo enviadas.
+
+O MSP430F22X4 é o microcontrolador, fabricado pela empresa \textit{Texas Instruments}, utilizado neste projeto que viabiliza a comunicação \textit{wireless} através do \textit{transceiver} CC2500, desenvolvido pela mesma empresa. O detalhamento sobre o \textit{hardware} de comunicação \sigla{RF}{\textit{Radio Frequency}} pode ser encontrado na seção (referenciar seção sobre o hardware RF).
+
+O protocolo de comunicação que permite o interfaceamento entre os aplicativos de \textit{software} e o microntrolador MSP430F22X4 é o RS-232, o mesmo protocolo utilizado para a comunicação com o leitor óptico de código de barras BR-310 (seção~\ref{section:confcomserial}). As configurações realizadas em ambos os dispositivos são as mesmas apresentadas na tabela~\ref{tableRS232}, utilizadas para interface com o leitor. Desta maneira, tanto as aplicações desenvolvidas em linguagem C\#.NET, quanto o \textit{firmware} que roda no microcontrolador MSP430F22X4, trabalham utilizando os parâ- metros da tabela~\ref{tableRS232} para envio e recebimento de dados pela serial.
+
+As principais informações que trafegam nesta fronteira entre \textit{hardware} e \textit{software} são \textit{bytes} identificadores de encomendas, informações sobre cidades origem e destino das encomendas, e \textit{bytes} de controle específicos do protocolo de comunicação desenvolvido neste projeto para a aplicação de envio de encomendas.
+
+Para que fosse possível esta comunicação entre aplicações alto nível e baixo nível, um protocolo teve de ser seguido, para que a aplicação de \textit{software}, tanto do guichê, quanto do ônibus, compreendessem as transações de encomendas. As seções~\ref{diagmestados:mspguiche} e~\ref{diagmestados:msponibus} mostram os diagramas de estados que essas duas aplicações compreendem, abrangendo os principais estados encontrados.
+
+\subsubsection{Diagrama de Estados \textit{Software} Guichê - Dispositivo \textit{Wireless}}\label{diagmestados:mspguiche}
+
+As figuras~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP} ,~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP},~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP},~\ref{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP} e~\ref{fig:DiagramaDeEstadosDesconexaoGuicheMSP} a seguir servirão de base para melhor visualização do fluxo de estados encontrado  pelo \textit{software} do guichê quanto ao envio de dados para o \textit{software} do ônibus, através do dispositivo de comunicação \textit{wireless}. Todas as informações, representadas nos diagramas de estados destas figuras, foram criadas seguindo a movimentação da lógica embutida na aplicação de guichê, em se tratando da conexão \textit{wireless} possível com ônibus nas plataformas das rodoviárias.
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados do controle de fluxo de encomendas entre \textit{Software} Guichê e Ônibus]{Diagrama de Estados representando o controle dos serviços atendidos pelo \textit{software} do guichê, acerca da transição de dados relevantes a subida e descida de encomendas de ônibus.}
+\label{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}
+\end{figure}
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosConexaoGuicheMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados da Conexão entre \textit{Software} Guiche e Ônibus]{Diagrama de Estados representando os estados atendidos pelo \textit{software} do guichê para a realização de conexão com ônibus.}
+\label{fig:DiagramaDeEstadosConexaoGuicheMSP}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosSobeEncomendaGuicheMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados do \textit{Software} Guichê para adição de informação à base de dados do \textit{software} do Ônibus]{Diagrama de Estados que apresenta as ações adotadas pelo \textit{software} do guichê, para informar ao \textit{software} do ônibus adição de novas encomendas à sua base de dados.}
+\label{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP}
+\end{figure}
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosDescerEncomendaGuicheMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados do \textit{Software} Guichê para remo-ção de informação da base de dados do \textit{software} do Ônibus]{Diagrama de Estados que apresenta as ações adotadas pelo \textit{software} do guichê, para informar ao \textit{software} do ônibus sobre a remoção de encomendas existentes em sua base de dados.}
+\label{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosDesconexaoGuicheMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados da Desconexão entre \textit{Software} Guiche e dispositivo \textit{wireless}]{Diagrama de Estados representando os estados em que o \textit{software} do guichê se encontra para desconectar-se do ônibus.}
+\label{fig:DiagramaDeEstadosDesconexaoGuicheMSP}
+\end{figure}
+
+Observando atentamente os diagramas de estados das figuras anteriores é possível perceber que os diagramas das figuras~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP},~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP},~\ref{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP} e~\ref{fig:DiagramaDeEstadosDesconexaoGuicheMSP} possuem um bloco de comunicação serial em comum, mais precisamente no estado Aguardando Comunicação Serial. No início, este estado possui um vetor chamado msg(n) de tamanho n, que conterá o \textit{frame} de \textit{bytes} total enviado pelo dispositivo de comunicaçao \textit{wireless}. O \textit{software} de guichê fica aguardando neste estado até que o \textit{loop} de código que monitora a porta serial reconheça a chegada de dois \textit{bytes} 0x24 consecutivos. Estes dois \textit{bytes} fazem parte do protocolo de comunicação estipulado neste projeto para o reconhecimento de início e final de \textit{frames} trocados entre aplicação e dispositivos microcontrolado. Saindo deste estado, estes dois \textit{bytes} indicadores de início e fim são ignorados, e os \textit{bytes} de dados que estavam entre eles são armazenados no vetor msg(). O valor msg(1), indicará a ação a ser adotada pelo \textit{software} SIAER, e indicará qual estado a se transitar.
+
+Inicialmente, quando um atendente se autentica no sistema SIAER, a situação encontrada é a da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}, onde o \textit{software} possui um \textit{status} de ônibus conectado igual a falso (Conectado = false). Este estado Aguardando Conexão com Ônibus remete o sistema constantemente ao diagrama da figura~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP}, onde aguarda-se o envio de um \textit{byte} 0x0C na variável msg(1), indicando a chegada de um ônibus na plataforma da rodoviária. Ao receber este \textit{byte} identificador, o programa identificará a chegada de um ônibus na plataforma e automaticamente alterará seu estado, transitando por todos os outros estados da figura~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP}. Após percorrer todo o diagrama da figura~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP}, o estado do programa volta para o diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}.
+
+O próximo estado encontrado na figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP} é o Enviando Encomendas Que Subirão no Ônibus. Este estado endereça a aplicação para o diagrama da figura~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP}. Ao iniciar as operações deste diagrama o \textit{software} inicia a pesquisa de encomendas que estão no guichê e deverão subir no ônibus, e de encomendas que já estão no ônibus e devem permanecer no mesmo. Esta pesquisa se dá quando o programa se encontra no estado Preparando Encomendas Que Subirão No Ônibus deste diagrama. Ao final desta pesquisa o programa avalia a variável N1, que indica se existe alguma encomenda que se encaixa na situação de pesquisa. Caso N1 seja maior do que zero, o próximo estado será o Enviando Encomenda N1-x1 que subirá no ônibus, onde x1 é o contador de encomendas enviadas. Caso N1 Seja zero, o fluxo volta para o diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}. 
+
+A diferenciação das encomendas que estão no ônibus daquelas que subirão no bagageiro deste veículo se dá através do \textit{byte} encontrado na posição msg(4), enviado pelo \textit{software} do guichê, ao ônibus, no \textit{frame} de comunicação. Caso o \textit{byte} que indique o tipo de \textit{frame} seja 0x10, significa que a encomenda ainda está no guichê, e deve subir no ônibus, e caso este tipo seja 0x11, significa que a encomenda já está no ônibus, cadastrada devidamente no arquivo XML deste.
+
+Ainda no diagrama da figura~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP}, observa-se que existe um estado Aguardando 500ms. Este estado é importante para garantir uma temporização entre o envio de encomendas, e aguardo de ACK, para que não haja colisão de dados sendo processados pelo dispositivo \textit{wireless}. Ao final destes estados o fluxo do programa volta para o diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}.
+
+No diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP} o próximo estado encontrado é o Enviando Encomendas Que Descerão do Ônibus. Este estado remete o programa ao diagrama da figura~\ref{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP}. Este diagrama possui estados parecidos com os do diagrama da figura~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP}, que enviam as encomendas que devem subir, e que estão no ônibus. Sendo assim, o diagrama de estados que representa a sequência de ações adotadas pelo \textit{software} para alertar o ônibus sobre encomendas que devem descer é visualizado neste diagrama da figura~\ref{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP}.
+
+Em ambos diagramas das figuras~\ref{fig:DiagramaDeEstadosSobeEncomendaGuicheMSP} e~\ref{fig:DiagramaDeEstadosDescerEncomendaGuicheMSP}, verifica-se ainda que existe um estado que aguarda na serial um \textit{byte} 0x0A. Este \textit{byte} indica um \textit{acknoledgement} enviado pelo ônibus, referente a uma encomenda que foi enviada pelo guichê.
+
+O próximo estado encontrado no diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP}, é Aguardando 15 segundos. Este estado prevê o tempo de atualização das informações contidas no ônibus. Toda vez que o \textit{timer} que marca o final deste evento estoura o ciclo de envio de encomendas que deverão subir, que estão no ônibus, e que devem descer são enviados, caso exista alguma nova informação que ainda não foi enviada ao ônibus.
+
+Pelo diagrama da figura~\ref{fig:DiagramaDeEstadosControladorSobeDesceEncomendaGuicheMSP} percebe-se que a cada transição de estado o \textit{software} de guichê realiza a verificação do envio de pacotes de conexão válidos, enviados pelo ônibus. Caso, em algum momento, o dispositivos do ônibus pare de emitir pedidos de conexão com o dispositivo do guichê, este compreende que o ônibus saiu da plataforma da rodoviária, e seguiu viagem pelo seu serviço atendido. Desta forma o próximo estado é o estado Encerrando Conexão com o Ônibus que remete o fluxo do programa para o último diagrama da figura~\ref{fig:DiagramaDeEstadosDesconexaoGuicheMSP}, onde todos os estados de encerramento de conexão, e limpeza dos dados e memória armazenados para aquele ônibus são liberados. Esta última abordagem e utilizada para se controlar ao mesmo tempo comunicações seriais entre dispositivo \textit{wireless} e leitor de código de barras.
+
+Durante a explicação sobre os diferentes estados assumidos pela aplicação de guichê, foi comentado sobre duas temporizações distintas, uma de 500ms e outra de 15 segundos. Estas temporizações, possuem conceito semelhantes àquele utilizado em microcontroladores. No entanto sua utilização, por ser em uma aplicação alto nível, é muito mais simples quando se fala de programação de \textit{timer}. Estes \textit{timers} disponíveis em programação alto nível podem ser declarados e vinculados ao que se chama de \textit{Threads}. \textit{Threads} são canais de processamento que o \textit{software} disponibiliza para processar códigos diferentes de maneira paralela. Dessa forma, pode-se ter diferentes \textit{threads} de \textit{timers} programadas, que gerarão eventos, ao final do tempo estipulado. Este conceito de \textit{threads} também é utilizado quando se realiza comunicação com portas seriais. Isto pode ser feito ao associar os métodos que realizam a lógica de recebimento de dados na porta serial a \textit{threads} diferentes, dessa maneira pode-se comunicar com diferentes dispositivos seriais com o mesmo aplicativo, ``ao mesmo tempo``.
+
+Todas as pesquisas referentes a situação das encomendas, realizadas pela aplicação do guichê são executadas através das \textit{Stored Procedures} criadas na biblioteca do banco de dados e apresentadas na seção~\ref{subsectionStoredProcedures}. Estas consultas à base de dados são as tarefas que mais exigem tempo de processamento do aplicativo, por serem em grande número de grande complexidade de execução. Sendo assim, qualquer informação apresentada na tela do aplicativo do guichê, ou informações enviadas para o ônibus, para posterior armazenamento em arquivos XML, vêm do banco de dados criado para este projeto (seção~\ref{sectionBancoDeDados}).
+
+
+
+\subsubsection{Diagrama de Estados \textit{Software} Ônibus - Dispositivo \textit{Wireless}}\label{diagmestados:msponibus}
+
+Todo ônibus das empresas que adquirirem os serviços desenvolvidos neste trabalho, deverão suportar um dispositivo embarcado, podendo ser um \textit{netbook}, que possuíra um \textit{software} instalado para recepção e gerenciamento dos dados enviados pela camada \textit{wireless} do guichê. A apresentação deste aplicativo é encontrada seção~\ref{section:swonibus}, juntamente com o seu diagrama de casos de uso.
+
+O computador de bordo encontrado nos ônibus também deve possuir um dispositivo de \textit{hardware}, que viabiliza a comunicação serial RS-232, mas que é ligado a um \textit{port} USB. Este \textit{hardware} encontrado neste dispositivo é o mesmo daquele encontrado na plataforma de guichê, no entanto, o \textit{firmware} carregado para o controle deste ambiente, trabalha de maneira escrava quando reconhece a conexão e chegada a uma rodoviária.
+
+As figuras~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} e~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP} apresentam os Diagramas de Estado principais, que caracterizam a comunicação \textit{wireless} estabelecida entre o \textit{software} instalado no ônibus e o \textit{software} de guichê.
+
+
+\newpage
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.8\textwidth]{./figs/DiagramaDeEstadosConexaoONIBUSMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados do controle de fluxo de encomendas entre \textit{Software} Guichê e Ônibus]{Diagrama de Estados representando os estados atendidos pelo \textit{software} do ônibus para a realização de conexão com guichê.}
+\label{fig:DiagramaDeEstadosConexaoONIBUSMSP}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.9\textwidth]{./figs/DiagramaDeEstadosEncomendasONIBUSMSP.jpg} % <- formatos PNG, JPG e PDF
+\caption[Diagrama de Estados do controle de fluxo de encomendas entre \textit{Software} Guichê e Ônibus]{Diagrama de Estados representando o controle dos serviços atendidos pelo \textit{software} do guichê, acerca da transição de dados relevantes a subida e descida de encomendas de ônibus.}
+\label{fig:DiagramaDeEstadosEncomendasONIBUSMSP}
+\end{figure}
+
+A função básica deste aplicativo, presente no ônibus, é alertar ao motorista do veículo sobre as encomendas que devem subir, descer e permanecer no bagageiro do carro, ao estacionar na plataforma de uma rodoviária. Esta função é executada em qualquer cidade atendida pelo itinerário da empresa de ônibus prestadora do serviço de envio de encomendas. No entanto existe a situação em que o ônibus não está conectado a um guichê, ou seja, está na estrada viajando. Nesta situação, o ônibus, obviamente, não está estabelecendo conexão com nenhum dispositivo \textit{wireless}, e dessa maneira se encontra em um estado de espera. Este \textit{status} de espera é apresentado ao motorista através de uma mensagem Viajando... escrita na tela do computador de bordo. A única informação de encomendas, que o \textit{software} do ônibus mostra para o motorista nestas situações, são as encomendas que estão no bagageiro do carro. A tela deste estado apresentada pelo motorista pode ser visualizada abaixo na figura~\ref{fig:SoftwareONIBUSDesconectado}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=1.0\textwidth]{./figs/SoftwareONIBUSDesconectado.jpg} % <- formatos PNG, JPG e PDF
+\caption[Imagem do \textit{Software} do Ônibus desconectado]{Imagem apresentada ao motorista pelo \textit{software} do ônibus, quando este encontra-se viajando entre as cidades do itinerário.}
+\label{fig:SoftwareONIBUSDesconectado}
+\end{figure}
+
+Ao chegar em uma estação rodoviária a aparência da figura~\ref{fig:SoftwareONIBUSDesconectado} muda, e ao invés de apresentar a mensagem Viajando..., o motorista visualizará o nome da cidade em que acabou de chegar. Além disso as duas setas em cinza da figura~\ref{fig:SoftwareONIBUSDesconectado} são habilitadas, e as encomendas que devem subir e descer são listadas em uma \textit{ListBox} dentro da imagem de seta para cima e seta para baixo, respectivamente.
+
+Ao entrar nesta situação é que encontra-se a utilidade dos diagramas de estados apresentados nas figuras~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} e~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP}.
+
+A figura~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} mostra os estados envolvidos na conexão do \textit{software} do ônibus com o \textit{software} do guichê. À primeira vista este diagrama é parecido com aquele de conexão apresentado na figura~\ref{fig:DiagramaDeEstadosConexaoGuicheMSP} da seção~\ref{diagmestados:mspguiche}, no entanto verifica-se que os estados seguintes ao bloco de comunicação serial são diferentes. Os estados Aguardando Dados na Porta Serial presentes nas figuras~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} e~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP}, possuem o mesmo processo de deslocamento daquele contextualizado na seção~\ref{diagmestados:mspguiche}. Sendo assim, ao reconhecer um \textit{byte} 0x0C na variável msg(1), o ônibus compreende que o guichê permitiu o estabelecimento de conexão. Neste momento o ônibus habilita seus componentes na tela visualizada pelo motorista, como comentado acima, e fica no aguardo de novas encomendas, como mostra o diagrama da  figura~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP}.
+
+A figura~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP} mostra que o \textit{software} do ônibus permanece no estado Aguardando Dados na Porta Serial até a chegada de um \textit{byte} em msg(1) igual a 0x0A. Este \textit{byte} indica a lógica de recebimento de encomendas, ou seja, que a aplicação de guichês acabou de enviar uma nova encomenda, e que uma ação deverá ser tomada. A ação a ser adotada após o recebimento do 0x0A, depende do \textit{byte} recebido na variável msg(4). Conforme mostrado na figura~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP}, caso este \textit{byte} seja de valor 0x30, significa que a encomenda de identificador enviado no \textit{frame} de dados, deve ser removida do arquivo XML presente no guichê. Se o valor do \textit{byte} registrado em msg(4), for verificado como sendo 0x10, significa que a encomenda de idenfiticador enviado no \textit{frame} de dados deverá subir no ônibus e, para isto, o atendente deve realizar a leitura de seu código de barras, no guichê. E por fim, se a variável msg(4) contiver o valor 0x11, significa que está encomenda está no bagageiro do ônibus e, caso ainda não esteja cadastrada no arquivo XML do veículo, esta deverá ser cadastrada.
+
+Neste momento é válido realizar a explicação de uma peculiaridade praticada no envio do identificador da encomenda que é enviada no \textit{frame} de dados trocado entre o aplicativo de ônibus e guichê. É sabido que o identificador de código de barras completo, reconhecido pelo leitor do código de barras do projeto, é como aquele apresentado na figura~\ref{fig:CalculoChecksum} da seção~\ref{subsection:CodigoDoProduto}. No entanto percebe-se que os campos de Código do País (seção~\ref{subsection:CodigoDoPais}), Código da Empresa (seção~\ref{subsection:CodigoDaEmpresa}) e Checksum (seção~\ref{subsection:Checksum}) podem ser ignorados, sendo que a única identificação da encomenda que é enviada no \textit{frame} de transmissão é o Código do Produto, que identifica a encomenda como única para empresa, como explicado na seção~\ref{codigodebarras:protocolo}. Isto acontece pois, os valores dos dois primeiro campos (Código do País e Código da Empresa) são constantes e iguais a 789 e 1234, respectivamente. Já o valor do \textit{checksum} pode ser calculado, como explicado na seção~\ref{subsection:Checksum}. Com isso, enviando o número de Código do Produto através do \textit{frame} de comunicação, o código de barras pode ser totalmente reconstruído na aplicação do ônibus para posterior apresentação deste valor para o motorista. Esta prática traz a vantagem de redução do número de \textit{bytes} enviados através do canal de transmissão, e maior eficiência da comunicação estabelecida.
+
+
+
+
+
+\section{Banco de Dados}\label{sectionBancoDeDados}
+
+O Banco de Dados desenvolvido neste projeto utilizou a metodologia do modelo de banco de dados Objeto-Relacional (ver seção~\ref{subsectionModeloObjetoRelacional}). Como justificado na seção~\ref{sectionTecBancoDeDados}, atualmente esta prática se mostra como a mais difundida na área de Tecnologia da Informação, e sua utilização oferece grande praticidade.
+
+O SGBD utilizado neste projeto foi o Microsoft SQL Server 2008, como mencionado na seção~\ref{subsectionEscolhaBD}, o qual oferece a ferramenta de análise de banco relacional \textit{Microsoft Server Management Studio} 2008. Assim como a plataforma de desenvolvimento da linguagem C\#.NET, a versão do \textit{Microsoft SQL Server} utilizado neste projeto foi adquirida gratuitamente da Microsoft, através do \textit{site} http://www.dreamspark.com. Além da facilidade de utilizar \textit{software} original da Microsoft, outro fator que estimulou seu usou foi novamente o grande número de empresas que as utilizam no mercado como gerenciador de base de dados, e o grande suporte técnico encontrado para esta ferramenta.
+
+Para a elaboração do banco de dados a ser estruturado para o projeto, primeiramente foi necessária uma avaliação dos casos de uso do \textit{software} que compõe o projeto, e que irá trabalhar com os registros armazenados nas tabelas. Estes diagramas de casos de uso podem ser encontrados nas sub-seções~\ref{diag:casosdeusogui} e~\ref{diag:casosdeusoon}. Partindo desta avaliação, foi possível a elaboração do banco de dados do projeto, e a criação das tabelas com seus devidos atributos, assim como a realização dos \textit{links} de relacionamentos existentes entre essas tabelas.
+Técnicas de normalização de tabelas foram utilizadas no escopo de desenvolvimento do banco de dados, para que os atributos das tabelas fossem organizados de maneira tal que atendessem as normas de boa utilização entre os relacionamentos dentro de uma base de dados.
+
+O resultado final de todas as tabelas criadas e de relacionamentos estabelecidos, gerou um banco de dados bastante complexo e bem estruturado, do ponto de vista que suas regras de negócio foram cuidadosamente propostas. A figura~\ref{fig:BancoSiaer} apresenta o diagrama relacional completo criado para este projeto, contendo os relacionamentos entre as tabelas com seus respectivos atributos e chaves.
+
+\newpage
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figs/BancoSiaer.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Diagrama do Banco de Dados]{Diagrama Relacional do Banco de Dados do Projeto.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:BancoSiaer}
+\end{figure}
+
+
+O grande impasse encontrado na estruturação das tabelas e seus relacionamentos se deram quanto ao vínculo existente entre as encomendas, os clientes remetentes e destinatários, e os trajetos (serviços) realizados pelos ônibus. Para a solução do vínculo relacionado aos clientes, foi especificado que cada cliente possui um único cadastro dentro na empresa, sendo seu CPF a chave primária da tabela Cliente. É válido lembrar que o conceito de chave primária é um valor único, identificador do registro a ser armazenado em uma tabela do banco de dados (ver seção~\ref{subsectionModeloRelacional}). Desta forma, referenciando-se o CPF do cliente remetente e destinatário, na tabela Encomenda, através de colunas chave estrangeira, colunas CPFDoRemetente e CPFDoDestinatario respectivamente, uma encomenda cadastrada se relacionará com clientes registrados na base de dados.
+
+A outra dificuldade ficou por conta do relacionamento existente entre a tabela Itinerario, que contém todos os serviços prestados pela empresa de ônibus, e as encomendas cadastradas na tabela Encomenda. Para que este relacionamento fosse possível foi necessário criar uma tabela intermediária chamada TrajetoEncomenda, que alinharia cada encomenda registrada com os diferentes serviços que poderá utilizar para realizar seu trajeto. Este relacionamento foi possível através do Campo CodigoDoServico da tabela Trajeto Encomenda, que não passa de uma chave estrangeira contendo uma referência para a chave primária CodigoDoServico da tabela Itinerario.
+
+Observando o diagrama da figura~\ref{fig:BancoSiaer}, e tomando conhecimento do funcionamento  básico que este banco de dados apresenta, não é difícil perceber que a tabela TrajetoEncomenda é o elo de ligação entre várias tabelas, e pode ser considerada a tabela mais crítica dentro do banco, uma vez que possui todas os dados necessários para a viagem de uma encomenda. Esta tabela possui relacionamento com quase todas as tabelas do banco, ou seja, possui campos de chaves estrangeiras para a maioria das outras tabelas dentro do banco de dados.
+
+
+\subsection{Apresentação das tabelas}\label{section:apresentacaotabelas}
+
+Como pode-se observar na figura~\ref{fig:BancoSiaer}, a base de dados gerada para este projeto é composta de nove tabelas, sendo sete delas contendo uma única chave primária exclusiva e duas contendo chaves primárias compostas. Ao todo foram estabelecidos treze relacionamentos entre as entidades do banco, sendo que destes treze, apenas dois são relacionamentos 1-1, e 11 são de 1-N. Os termos 1-1 e 1-N estabelecem qual o tipo de relacionamento utilizado entre campos de duas tabelas. Isto significa que nas relações 1-N temos que a entidade de uma ponta (representada pelo desenho de uma chave na figura~\ref{fig:BancoSiaer}) pode conter várias declarações da entidade da outra ponta (representada pela símbolo de infinito $\infty$), e no caso de 1-1 as duas pontas estão representadas por chaves, existindo assim uma única relação de declaração.
+
+\subsubsection{Tabela Login}\label{table:login}
+
+\textbf{Descrição:}
+
+	A tabela Login possui os atributos necessários para a permissão de acesso a um funcionário ao \textit{software} do guichê. Esta é a primeira tabela a ser acessada durante o carregamento do aplicativo presente no guichê. Esta tabela provê ainda uma informação importante para o resto da execução do aplicativo, que é a cidade a qual o atendente que está se logando está vinculada. Esta cidade aparece no campo City\_code desta tabela. Este campo é importante pois dependendo da cidade que estiver cadastrada o \textit{software} do guichê irá compreender que deverá trabalhar como se estivesse nesta cidade.
+	
+	Exemplo:
+	
+	O funcionário Joaquim Soares de Souza possui o \textit{nickname} vsoares, e o código cadastrado para este funcionário referencia a cidade de Itú. 
+	
+	Sendo assim, ao se logar no sistema do guichê, este compreenderá que deverá trabalhar como se estivesse fisicamente na cidade de Itú. Isto garante a universalidade do aplicativo, evitando grandes configurações para instalação em cidades diferentes.
+
+\begin{center}
+\begin{longtable}{p{2.5cm}|p{7.5cm}|p{4.5cm}}
+\caption[Descrição da tabela Login]{Descrição da tabela Login}\label{tableLogin} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableLogin}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableLogin} na próxima página}}} \\
+\endfoot
+\hline \hline
+\endlastfoot
+	\footnotesize UserName &\footnotesize  Campo que armazena o \textit{nickname} de acesso do atendente ao \textit{software} do ghichê. &\footnotesize  Chave Primária\\ % inserting body of the table
+	\hline
+	\footnotesize UserPassword &\footnotesize  Campo que armazena a senha de acesso do atendente ao \textit{software} do ghichê. &\footnotesize  \\
+	\hline
+	\footnotesize City\_code &\footnotesize  Campo que contém o código da cidade em que o atendente trabalha. &\footnotesize  Chave Estrangeira para o campo city\_code da tabela City\\
+	\end{longtable}
+\end{center}
+
+\subsubsection{Tabela City}
+
+\textbf{Descrição:}
+
+	Tabelas importantes do banco de dados possuem relacionamentos com a tabela City. A tabela City armazena toda e qualquer cidade que faz parte dos serviços oferecidos pelo itinerário da empresa de ônibus.
+	
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{2.5cm}|p{8.5cm}|p{3.5cm}}
+\caption[Descrição da Tabela City]{Descrição da Tabela City}\label{tableCity} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCity}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableLogin} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize city\_code & \footnotesize Campo que armazena o código único identificador da cidade cadastrada. &\footnotesize  Chave Primária\\ % inserting body of the table
+	\hline
+	\footnotesize city\_name & \footnotesize Campo que armazena o nome por extenso da cidade cadastrada. & \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Tabela Carro}
+
+\textbf{Descrição:}
+
+	A tabela Carro salva todos os registros pertinentes ao cadastro dos diferentes veículos que uma empresa possa ter. Estes veículos podem ser carros, ônibus, caminhões, e outros.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.25cm}|p{7.5cm}|p{2.75cm}}
+\caption[Descrição da Tabela Carro]{Descrição da Tabela Carro}\label{tableCarro} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCarro}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableLogin} na próxima página}}} \\
+\endfoot
+\hline \hline
+\endlastfoot
+	\footnotesize CodigoDoCarro &\footnotesize  Campo que armazena o código único identificador do veículo cadastrado. &\footnotesize  Chave Primária\\ % inserting body of the table
+	\hline
+	\footnotesize Chassis &\footnotesize  Campo que armazena o número do chassis do veículo cadastrado. &\footnotesize  \\ 
+	\hline
+	\footnotesize Placa &\footnotesize  Campo que armazena o número da placa do veículo cadastrado. &\footnotesize  \\ 
+	\hline
+	\footnotesize TipoDeCarro &\footnotesize  Campo que armazena especificações sobre o modelo do veículo. &\footnotesize  \\ 
+	\hline
+	\footnotesize InformacoesSobreCarro &\footnotesize  Campo que armazena informações relevantes quanto ao estado ou situação do veículo. &\footnotesize  \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+\subsubsection{Tabela Cliente}
+
+\textbf{Descrição:}
+
+	A tabela Cliente armazena todas as informações legais do cliente, como nome, RG e CPF. Estas informações são importantes para a diferenciação e localização de um cliente caso necessário. A coluna CPF é o campo principal desta tabela, e é tido como o registro identificador único que garante que um cliente é diferente do outro.
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.0cm}|p{7.5cm}|p{3.0cm}}
+\caption[Descrição da Tabela Cliente]{Descrição da Tabela Cliente}\label{tableCliente} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableCliente}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableCliente} na próxima página}}} \\
+\endfoot
+\hline \hline
+\endlastfoot
+	\footnotesize CPF &\footnotesize  Campo que armazena o número de CPF do cliente. &\footnotesize  Chave Primária\\ % inserting body of the table
+	\hline
+	\footnotesize NomeDoCliente &\footnotesize  Campo que armazena o nome completo do cliente responsável pelo CPF cadastrado. &\footnotesize  \\ 
+	\hline
+	\footnotesize RG &\footnotesize  Campo que armazena o número do Registro Geral do cliente responsável pelo CPF cadastrado. &\footnotesize  \\ 
+	\hline
+	\footnotesize DataDeNascimento &\footnotesize  Campo que armazena a data de nascimento do cliente cadastrado. &\footnotesize  \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+	
+	
+\subsubsection{Tabela ClienteEndereco}
+
+\textbf{Descrição:}
+
+	A tabela ClienteEndereco foi criada através de normalizações de uma antiga tabela Cliente. Esta tabela registra os dados referentes à residência do cliente cadastrado. Sua chave primária é o campo CPF, que possui uma referência para o campo CPF da tabela Cliente, ou seja, sua chave primária também funciona como uma chave estrangeira, gerando uma relação de 1-1 entre essas tabelas. Desta forma garante-se que um cliente possa estar vinculado a um endereço cadastrado na base de dados.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{2.5cm}|p{7.0cm}|p{5.0cm}}
+\caption[Descrição da Tabela ClienteEndereco]{Descrição da Tabela ClienteEndereco}\label{tableClienteEndereco} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableClienteEndereco}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableClienteEndereco} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize CPF &\footnotesize  Campo que armazena o número de CPF do cliente. &\footnotesize  Chave Primária - Chave Estrangeira para o campo CPF da tabela Cliente\\
+	\hline
+	\footnotesize Endereco &\footnotesize  Campo que armazena o endereço, e complemento, do cliente cadastrado. &\footnotesize  \\
+	\hline
+	\footnotesize CEP &\footnotesize  Campo que armazena o CEP do endereço do cliente. &\footnotesize  \\
+	\hline
+	\footnotesize Bairro &\footnotesize  Campo que armazena o nome do bairro do endereço do cliente. &\footnotesize  \\
+	\hline
+	\footnotesize Cidade &\footnotesize  Campo que armazena o nome da cidade do endereço do cliente. &\footnotesize  \\
+	\hline
+	\footnotesize Estado &\footnotesize  Campo que armazena o a sigla do estado do endereço do cliente. &\footnotesize  \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+\subsubsection{Tabela ClienteTelefonesParaContato}
+
+\textbf{Descrição:}
+
+		A tabela ClienteTelefonesParaContato foi criada através de normalizações de uma antiga tabela cliente, assim como a tabela ClienteEndereco. Esta tabela armazena os números de telefones para contato do cliente. Sua chave primária é o campo CPF, que possui uma referência para o campo CPF da tabela Cliente, ou seja, sua chave primária também funciona como uma chave estrangeira, gerando uma relação de 1-1 entre essas tabelas. Desta forma garante-se que um cliente possa estar vinculado a um número de telefone residencial e/ou um número de telefone celular cadastrado na base de dados.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{2.0cm}|p{7.0cm}|p{5.5cm}}
+\caption[Descrição da Tabela ClienteTelefonesParaContato]{Descrição da Tabela ClienteTelefonesParaContato}\label{tableClienteTelefonesParaContato} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableClienteTelefonesParaContato}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableClienteTelefonesParaContato} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize CPF &\footnotesize  Campo que armazena o número de CPF do cliente. &\footnotesize  Chave Primária - Chave Estrangeira para o campo CPF da tabela Cliente\\
+	\hline
+	\footnotesize Telefone &\footnotesize  Campo que armazena o número do telefone residencial do cliente cadastrado. & \\ 
+	\hline
+	\footnotesize Celular &\footnotesize  Campo que armazena o número do telefone celular do cliente cadastrado. & \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+
+\subsubsection{Tabela Itinerario}
+
+\textbf{Descrição:}
+
+		A tabela Itinerario contém toda a informação estratégica de viagens realizadas pelos ônibus. Cada código de serviço cadastrado nesta tabela está associado a um conjunto de cidades e horários que determinado ônibus deverá realizar, e em qual dia esta viagem está prevista para acontecer. No momento de cadastro de uma encomenda o \textit{software} busca nesta tabela todas as informações de caminhos, possíveis para as encomendas (ver item~\ref{casodeuso:cadastrarencomendagui} da seção~\ref{diag:casosdeusogui}). A chave primária desta tabela é composta por três colunas, coluna Serviço, coluna Data e coluna HorarioDeSaida. Esta composição fez-se necessária pois um serviço acontece uma vez por dia, no entanto o que diferencia um mesmo serviço de um próximo evento são as datas e os horários que ele irá acontecer.
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{3.0cm}|p{6.5cm}|p{5.0cm}}
+\caption[Descrição da Tabela Itinerario]{Descrição da Tabela Itinerario}\label{tableItinerario} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableItinerario}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableItinerario} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize Identificador &\footnotesize  Campo que contém um número identificador, auto-incrementável, para cada registro armazenado nesta tabela. &\footnotesize  \\
+	\hline
+	\footnotesize CodigoDoServico &\footnotesize  Campo que possui o número de um determinado serviço/trajeto que a empresa atende. &\footnotesize  Chave Primária\\ 
+	\hline
+	\footnotesize Data &\footnotesize  Campo que contém a data em que o serviço será realizado. &\footnotesize  Chave Primária\\ 
+	\hline
+	\footnotesize HorarioDeSaida &\footnotesize  Campo que contém o horário de saída dos veículos dos terminais rodoviários atendidos pelo serviço cadastrado. &\footnotesize  Chave Primária\\	
+	\hline
+	\footnotesize CodigoCidadeDeSaida &\footnotesize  Campo contendo o código das cidades que o serviço atende. &\footnotesize  Chave Estrangeira para o campo city\_code da tabela City\\
+	\hline
+	\footnotesize CodigoDoCarro &\footnotesize  Campo contendo o código do veículo que estará executando o serviço. &\footnotesize  Chave Estrangeira para o campo CodigoDoCarro da tabela Carro\\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+	
+	\subsubsection{Tabela Encomenda}
+
+\textbf{Descrição:}
+
+		Todos os registros relacionados às encomendas a serem enviadas são salvos nesta tabela. Através desta tabela pode-se resgatar alguns dados necessários, como quem está enviando a encomenda e quem a receberá, qual o peso do pacote a ser transportado, qual o valor pago pelo envio, qual o código automático gerado para esta encomenda, para onde a encomenda vai, horário de cadastrado e outros.
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.25cm}|p{5.5cm}|p{4.75cm}}
+\caption[Descrição da Tabela Encomenda]{Descrição da Tabela Encomenda}\label{tableEncomenda} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableEncomenda}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableEncomenda} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize CodigoDaEncomenda &\footnotesize  Campo que contém um número identificador, calculado pelo \textit{software} do guichê (ver item~\ref{casodeuso:geraretiqueta} da seção~\ref{diag:casosdeusogui}), que identificará a encomenda na leitra de código de barras. &\footnotesize  Chave Primária\\
+	\hline
+	\footnotesize CPFDoRemente &\footnotesize  Campo que armazena o CPF da pessoa rementente da encomenda. &\footnotesize  Chave Estrangeira para o campo CPF da tabela Cliente\\ 
+	\hline
+	\footnotesize CPFDoDestinatario &\footnotesize  Campo que armazena o CPF da pessoa destinatária da encomenda. &\footnotesize  Chave Estrangeira para o campo CPF da tabela Cliente\\ 
+	\hline
+	\footnotesize CodigoDaCidadeDeOri gem &\footnotesize  Campo contendo o código da cidade em que a encomenda foi cadastrada. &\footnotesize  Chave Estrangeira para o campo city\_code da tabela City\\	
+	\hline
+	\footnotesize CodigoDaCidadeDeDesti no &\footnotesize  Campo contendo o código da cidade de destino da encomenda cadastrada. &\footnotesize  Chave Estrangeira para o campo city\_code da tabela City\\
+	\hline
+	\footnotesize DataDeCadastroDaEncomenda &\footnotesize  Cadastro da data em que a encomenda foi cadastrada. &\footnotesize  \\
+	\hline
+	\footnotesize HoraDeCadastroDaEncomenda &\footnotesize  Cadastro do horário em que a encomenda foi cadastrada. &\footnotesize  \\
+	\hline
+	\footnotesize Peso &\footnotesize  Campo que contém o peso do pacote. &\footnotesize  \\
+	\hline
+	\footnotesize Preco &\footnotesize  Campo que contém o preço pago pelo envio da encomenda. &\footnotesize  \\
+	\hline
+	\footnotesize DescricaoDaEncomenda &\footnotesize  Neste campo é possível escrever informações adicionais relevantes quanto ao manuseio da encomenda, ou informações adicionais. &\footnotesize  \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+	\subsubsection{Tabela TrajetoEncomenda}\label{section:tabletrajetoencomenda}
+
+\textbf{Descrição:}
+
+		A tabela TrajetoEncomenda é a principal entidade do banco de dados elaborado que estabelece relações com a maioria das outras tabelas criadas. Esta tabela possui dados a respeito do caminho que  uma encomenda irá percorrer. Assim que um encomenda e sua rota são cadastradas, automaticamente esta tabela é preenchida pelo \textit{software} do guichê, populando-a com tantas linhas de registros quanto forem o número de cidades em que a encomenda deverá desembarcar para trocar de ônibus, ou desembarcar para ser entregue. 
+		
+		Exemplo: 
+		
+		Uma encomenda é enviada pelo cliente remetente em São Paulo. Esta encomenda tem como destino Curitiba, mas a empresa não possui um ônibus que cumpra o serviço São Paulo - Curitiba. Dessa maneira a encomenda terá de ir até Londrina e em Londrina pegar um outro ônibus com destino à Curitiba. Ao chegar em Curitiba, a encomenda é enfim entregue ao cliente destinatário.
+		
+		Nesta situação, a encomenda estará necessariamente vinculada a três cidades, São Paulo, Londrina e Curitiba. Isto implica que, como explicado no primeiro parágrafo, a encomenda possuirá três linhas de registros na tabela TrajetoEncomenda, contendo em cada linha informações sobre os ônibus que irão trafegar com a mesma, os horários em que a encomenda passará por cada cidade, o atendente que irá manuseá-la em cada cidade, entre outras.
+
+
+%-------------------------------------------------------------------------------------------------------------------------	
+\begin{center}
+\begin{longtable}{p{4.25cm}|p{6.5cm}|p{3.75cm}}
+\caption[Descrição da Tabela TrajetoEncomenda]{Descrição da Tabela TrajetoEncomenda}\label{tableTrajetoEncomenda} \\
+
+\hline \multicolumn{1}{c}{\textbf{Campo}} & \multicolumn{1}{c}{\textbf{Descrição}} & \multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endfirsthead
+
+\multicolumn{3}{c}%
+{{\bfseries Continuação da tabela~\ref{tableTrajetoEncomenda}}} \\
+\hline \multicolumn{1}{c}{\textbf{Campo}} &
+\multicolumn{1}{c}{\textbf{Descrição}} &
+\multicolumn{1}{c}{\textbf{Chaves}} \\ \hline 
+\endhead
+
+\multicolumn{3}{r}{{\textit{Continuação da tabela~\ref{tableTrajetoEncomenda} na próxima página}}} \\
+\endfoot
+
+\hline \hline
+\endlastfoot
+	\footnotesize Identificador &\footnotesize  Campo que contém um número identificador, auto-incrementável, para cada registro armazenado nesta tabela. &\footnotesize  \\
+	\hline
+	\footnotesize CodigoDaEncomenda &\footnotesize  Campo que contém um número identificador, calculado pelo \textit{software} do guichê (ver item~\ref{casodeuso:geraretiqueta} da seção~\ref{diag:casosdeusogui}), que identificará a encomenda na leitra de código de barras. &\footnotesize  Chave Primária\\
+	\hline
+	\footnotesize CodigoDaCidade &\footnotesize  Campo contendo o código da cidade em que a encomenda foi cadastrada. &\footnotesize  Chave Estrangeira para o campo city\_code da tabela City\\	
+	\hline
+	\footnotesize CodigoDoCarro &\footnotesize  Campo contendo o código do carro que levará a encomenda até a cidade cadastrada no CodigoDaCidade. &\footnotesize  Chave Estrangeira para o campo CodigoDoCarro da tabela Carro\\
+	\hline
+	\footnotesize QuemPassouOCodigo DeBarrasNoGuiche &\footnotesize  Campo com o \textit{nickname} do atendente que cadastrou, ou recebeu uma encomenda de um veículo. &\footnotesize  Chave Estrangeira para o campo username da tabela Login\\
+	\hline
+	\footnotesize QuemPassouOCodigo DeBarrasNoCarro &\footnotesize  Campo com o \textit{nickname} do atendente que registrou o envio de uma encomenda para um veículo. &\footnotesize  Chave Estrangeira para o campo username da tabela Login\\
+	\hline
+	\footnotesize HoraEmQueOCodigoDe BarrasFoiPassadoNoGuiche &\footnotesize  Data e hora em que a encomenda foi cadastrada ou recebida de um veículo. &\footnotesize  \\
+	\hline
+	\footnotesize HoraEmQueOCodigoDe BarrasFoiPassadoNoCarro &\footnotesize  Data e hora em que a encomenda foi registrada para subir em um veículo. &\footnotesize  \\
+	\hline
+	\footnotesize AEncomendaEstaNoGui chê &\footnotesize  Campo booleano que recebe valor verdadeiro se a encomenda estiver em um guichê na cidade de código cadastrado no campo CodigoDaCidade, e falso caso contrário. &\footnotesize  \\ 
+	\hline
+	\footnotesize AEncomendaEstaNo Carro &\footnotesize  Campo booleano que recebe valor verdadeiro se a encomenda estiver em um ônibus cadastrado no campo CodigoDoCarro, e falso caso contrário. &\footnotesize  \\ 
+	\hline
+	\footnotesize AEncomendaFoiEntregue AoCliente &\footnotesize  Campo booleano que recebe valor verdadeiro se a encomenda já estiver sido entregue ao cliente destinatário,  e falso caso contrário. &\footnotesize  \\
+	\hline
+	\footnotesize CodigoDoServico &\footnotesize  Campo que possui o número de um determinado serviço/trajeto que a empresa atende. &\footnotesize  Chave Estrangeira para o campo CodigoDoServico da tabela\\
+	\hline
+	\footnotesize DataDoServico &\footnotesize  Data em que o serviço cadastrado no campo CodigoDoServico desta tabela será atendido. & \\
+	\hline
+	\footnotesize HorarioDeSaida &\footnotesize Horario em que o ônibus irá sair da plataforma da rodoviária da cidade cadastrada no campo CodigoDaCidade. & \\
+	\end{longtable}
+\end{center}
+%-------------------------------------------------------------------------------------------------------------------------
+
+\subsection{\textit{Stored Procedures}}\label{subsectionStoredProcedures}
+
+\textit{Stored Procedures} são subrotinas ou \textit{scripts} presentes em um banco de dados relacional, que possibilitam a execução de um conjunto de instruções SQL dentro deste ambiente. A utilização de \textit{Stored Procedures} é recomendada quando há a necessidade da manipulações de dados, em que as instruções SQL se tornam complexas, ou seja, envolvem lógicas que ficariam inviáveis de serem implementadas a nível de \textit{software}. Sua utilização é recomendada ainda nas situações de execução de tarefas repetitivas.
+
+As \textit{Stored Procedures} são caracterizadas como arquivos textos de extensão .sql, contendo linhas de código SQL que provêm um determinado resultado ao final de sua execução. Este resultado pode ser, uma consulta refinada de informações, alterações de dados, remoções de registros em desuso ou atualização de dados em tabelas.
+
+Conhecendo-se a facilidade oferecida pelas \textit{Stored Procedures} para o alinhamento das camadas de Aplicação e de Banco de Dados neste projeto, praticamente 90\% das consultas realizadas ao banco de dados, feitas diretamente pela aplicação do guichê, são realizadas por intermédio de \textit{Stored Procedures}, pré-definidas na biblioteca da base de dados e criadas para serviços específicos, como cadastrar cliente, consultar encomendas presentes em um ônibus, localizar o paradeiro de uma encomenda, entre outras tarefas.
+
+Neste projeto ao todo foram criadas 26 \textit{Stored Procedures}, cada uma realizando um papel independente ou dependente do resultado das demais. Estas \textit{Stored Procedures} compreendem desde \textit{scripts} mais simples, com cerca de 10 ou 30 linhas, até mais complexos abrangendo de 100 a 300 linhas de código SQL, para executar uma tarefa no banco.
+
+A figura~\ref{fig:StoredProcedures} mostra a relação de todas as \textit{Stored Procedures} criadas, e essenciais, neste projeto. A imagem foi adquirida através de uma cópia da biblioteca de dados SQL Server 2008.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figs/StoredProcedures.jpg} % <- formatos PNG, JPG e PDF
+	\caption[\textit{Stored Procedures} do Projeto]{Imagem com a lista de todas as \textit{Stored Procedures} criadas para o projeto, e resgatada da biblioteca do banco de dados final.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:StoredProcedures}
+\end{figure}
+
+
+
+A estruturação básica de uma \textit{Stored Procedure} pode ser vista na figura~\ref{fig:StoredProcedureRetornaTodasEncomendasEmGuiche}. Esta é uma das \textit{Stored Procedures} mais básicas presentes no banco, e é utilizada para a aquisição dos números identificadores das encomendas que estão fisicamente presentes no guichê para o qual foi passado como parâmetro.
+
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./figs/StoredProcedureRetornaTodasEncomendasEmGuiche.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Exemplo de uma \textit{Stored Procedure}]{Imagem contendo a \textit{Stored Procedure} RetornaTodasEncomendasEmGuiche.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:StoredProcedureRetornaTodasEncomendasEmGuiche}
+\end{figure}
+
+
+
+Nesta imagem é possível ver que a \textit{Stored Procedure} é declarada através das palvras CREATE PROCEDURE, e recebe como parâmetro o nome de uma cidade na variável @nomedacidade do tipo varchar(20). O retorno deste \textit{script} como já mencionado, será a lista de todas as encomendas presentes no guichê, da cidade de nome armazenado na variável @nomedacidade.
+
+\section{Testes e Considerações}
+
+Tendo sido expostos no decorrer deste capítulo aspectos inerentes às soluções adotadas para a viabilização técnica do projeto, faz-se necessário expor a metodologia adotada para a validação do modelo desenvolvido.
+
+Cada item exposto no decorrer no capítulo (\textit{Firmware}, \textit{Software}, Banco de Dados e Sistema de Comunicação) teve sua implementação concretizada inicialmente de forma isolada, sendo usadas para testes ferramentas fornecidas pelos ambientes de desenvolvimento. Assim, para se atestar o funcionamento do banco de Dados, usaram-se comandos em SQL para inserção e remoção de encomendas no ambiente SQL \textit{Server}, observando-se o comportamento do banco de dados após tais ações. No que concerne ao \textit{Firmware} e ao Sistema de Comunicação, simulou-se uma interface com o SW de aplicação e observava-se, através da introdução de breakpoints no ambiente de desenvolvimento IAR, o tratamento adequado das mensagens e suas subseqüentes transmissões e recepções.
+
+Considerando-se finalizados o desenvolvimento dos blocos-chave expostos no parágrafo anterior, fazia-se pertinente proceder à integração deles no sentido de assegurar o funcionamento da solução viabilizada. Para se realizar tal procedimento, foi necessário estabelecer um cenário de testes o qual suportaria a ação do sistema. Assim, usaram-se inicialmente dois \textit{notebooks} (um guichê e outro ônibus) munidos com sistema operacional \textit{Windows} XP e suporte à plataforma .NET. 
+
+Ambos os computadores possuíam porta USB, à qual foi conectado o dispositivo \textit{transceiver}. Para a devida comunicação com este dispositivo, fez-se necessário instalar um driver fornecido pela fabricante \textit{Texas Instruments}, o qual torna viável o aparecimento de uma porta de comunicação virtual no gerenciador de dispositivos. Ainda, ao equipamento de guichê conectou-se um adaptador USB-serial a fim de comportar a comunicação com o leitor de códigos de barra, na medida em que este dispositivo usa protocolo serial RS-232.
+
+No decorrer dos testes, o aspecto de prova de conceito relacionado à concretização da solução foi assegurado. Assim, logrou-se êxito no sentido de se atingir as objetivos presentes na proposta entregue na disciplina de Projeto Final 1. Conseguiu-se concretizar o estabelecimento do \textit{link} de comunicação entre ônibus e guichê, viabilizando a troca de informações acerca de encomendas entre ambas as entidades.
+
+Conforme mencionado acima, garantiu-se o funcionamento do conceito empregado na solu- ção adotada. Porém, tem-se plena consciência das limitações que o projeto implementado possui, requerendo alguns poucos ajustes para seu estabelecimento em uma aplicação real. Por exemplo, verificou-se nos testes que os \textit{transceivers} usados para o projeto atingiram um alcance máximo de cerca de 10m. Desta forma, como um dos membros originais da equipe retomará o projeto assim que regressar da Alemanha, pode-se sugerir uma melhoria na estrutura de hardware a partir do aumento na potência do \textit{transceiver}, projetando-se para tal fim um amplificador de RF. Ainda, tal melhoria dispensaria mudanças drásticas no projeto, na medida em que o protocolo de comunicação e sua conexão com os demais blocos do projeto já tiveram seu funcionamento assegurado na fase de testes.

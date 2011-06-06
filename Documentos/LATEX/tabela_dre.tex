@@ -1,0 +1,360 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  This is the header of a LaTeX2e file exported from Gnumeric.    %%
+%%                                                                  %%
+%%  This file can be compiled as it stands or included in another   %%
+%%  LaTeX document. The table is based on the longtable package so  %%
+%%  the longtable options (headers, footers...) can be set in the   %%
+%%  preamble section below (see PRAMBLE).                           %%
+%%                                                                  %%
+%%  To include the file in another, the following two lines must be %%
+%%  in the including file:                                          %%
+%%        \def\inputGnumericTable{}                                 %%
+%%  at the beginning of the file and:                               %%
+%%        \input{name-of-this-file.tex}                             %%
+%%  where the table is to be placed. Note also that the including   %%
+%%  file must use the following packages for the table to be        %%
+%%  rendered correctly:                                             %%
+%%    \usepackage[latin1]{inputenc}                                 %%
+%%    \usepackage{color}                                            %%
+%%    \usepackage{array}                                            %%
+%%    \usepackage{longtable}                                        %%
+%%    \usepackage{calc}                                             %%
+%%    \usepackage{multirow}                                         %%
+%%    \usepackage{hhline}                                           %%
+%%    \usepackage{ifthen}                                           %%
+%%  optionally (for landscape tables embedded in another document): %%
+%%    \usepackage{lscape}                                           %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%  This section checks if we are begin input into another file or  %%
+%%  the file will be compiled alone. First use a macro taken from   %%
+%%  the TeXbook ex 7.7 (suggestion of Han-Wen Nienhuys).            %%
+\def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
+
+
+%%  Check for the \def token for inputed files. If it is not        %%
+%%  defined, the file will be processed as a standalone and the     %%
+%%  preamble will be used.                                          %%
+\ifundefined{inputGnumericTable}
+
+%%  We must be able to close or not the document at the end.        %%
+	\def\gnumericTableEnd{\end{document}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  This is the PREAMBLE. Change these values to get the right      %%
+%%  paper size and other niceties. Uncomment the landscape option   %%
+%%  to the documentclass defintion for standalone documents.        %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\documentclass[12pt%
+			  %,landscape%
+                    ]{report}
+       \usepackage[latin1]{inputenc}
+	\usepackage{fullpage}
+	\usepackage{color}
+       \usepackage{array}
+	\usepackage{longtable}
+       \usepackage{calc}
+       \usepackage{multirow}
+       \usepackage{hhline}
+       \usepackage{ifthen}
+
+	\begin{document}
+
+
+%%  End of the preamble for the standalone. The next section is for %%
+%%  documents which are included into other LaTeX2e files.          %%
+\else
+
+%%  We are not a stand alone document. For a regular table, we will %%
+%%  have no preamble and only define the closing to mean nothing.   %%
+    \def\gnumericTableEnd{}
+
+%%  If we want landscape mode in an embedded document, comment out  %%
+%%  the line above and uncomment the two below. The table will      %%
+%%  begin on a new page and run in landscape mode.                  %%
+%       \def\gnumericTableEnd{\end{landscape}}
+%       \begin{landscape}
+
+
+%%  End of the else clause for this file being \input.              %%
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%%  The rest is the gnumeric table, except for the closing          %%
+%%  statement. Changes below will alter the table's appearance.     %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\gnumericmathit}[1]{#1} 
+%%  Uncomment the next line if you would like your numbers to be in %%
+%%  italics if they are italizised in the gnumeric table.           %%
+%\renewcommand{\gnumericmathit}[1]{\mathit{#1}}
+\providecommand{\gnumericPB}[1]%
+{\let\gnumericTemp=\\#1\let\\=\gnumericTemp\hspace{0pt}}
+ \ifundefined{gnumericTableWidthDefined}
+        \newlength{\gnumericTableWidth}
+        \newlength{\gnumericTableWidthComplete}
+        \newlength{\gnumericMultiRowLength}
+        \global\def\gnumericTableWidthDefined{}
+ \fi
+%% The following setting protects this code from babel shorthands.  %%
+ \ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{english}}
+%%  The default table format retains the relative column widths of  %%
+%%  gnumeric. They can easily be changed to c, r or l. In that case %%
+%%  you may want to comment out the next line and uncomment the one %%
+%%  thereafter                                                      %%
+\providecommand\gnumbox{\makebox[0pt]}
+%%\providecommand\gnumbox[1][]{\makebox}
+
+%% to adjust positions in multirow situations                       %%
+\setlength{\bigstrutjot}{\jot}
+\setlength{\extrarowheight}{\doublerulesep}
+
+%%  The \setlongtables command keeps column widths the same across  %%
+%%  pages. Simply comment out next line for varying column widths.  %%
+\setlongtables
+
+\setlength\gnumericTableWidth{%
+	161pt+%
+	54pt+%
+	30pt+%
+	54pt+%
+	30pt+%
+	54pt+%
+	30pt+%
+	54pt+%
+	30pt+%
+	54pt+%
+	30pt+%
+0pt}
+\def\gumericNumCols{11}
+\setlength\gnumericTableWidthComplete{\gnumericTableWidth+%
+         \tabcolsep*\gumericNumCols*2+\arrayrulewidth*\gumericNumCols}
+\ifthenelse{\lengthtest{\gnumericTableWidthComplete > \linewidth}}%
+         {\def\gnumericScale{\ratio{\linewidth-%
+                        \tabcolsep*\gumericNumCols*2-%
+                        \arrayrulewidth*\gumericNumCols}%
+{\gnumericTableWidth}}}%
+{\def\gnumericScale{0 }}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                  %%
+%% The following are the widths of the various columns. We are      %%
+%% defining them here because then they are easier to change.       %%
+%% Depending on the cell formats we may use them more than once.    %%
+%%                                                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\isundefined{\gnumericColB}}{\newlength{\gnumericColB}}{}\settowidth{\gnumericColB}{\begin{tabular}{@{}p{161pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColC}}{\newlength{\gnumericColC}}{}\settowidth{\gnumericColC}{\begin{tabular}{@{}p{62pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColD}}{\newlength{\gnumericColD}}{}\settowidth{\gnumericColD}{\begin{tabular}{@{}p{20pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColE}}{\newlength{\gnumericColE}}{}\settowidth{\gnumericColE}{\begin{tabular}{@{}p{62pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColF}}{\newlength{\gnumericColF}}{}\settowidth{\gnumericColF}{\begin{tabular}{@{}p{20pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColG}}{\newlength{\gnumericColG}}{}\settowidth{\gnumericColG}{\begin{tabular}{@{}p{62pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColH}}{\newlength{\gnumericColH}}{}\settowidth{\gnumericColH}{\begin{tabular}{@{}p{20pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColI}}{\newlength{\gnumericColI}}{}\settowidth{\gnumericColI}{\begin{tabular}{@{}p{62pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColJ}}{\newlength{\gnumericColJ}}{}\settowidth{\gnumericColJ}{\begin{tabular}{@{}p{20pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColK}}{\newlength{\gnumericColK}}{}\settowidth{\gnumericColK}{\begin{tabular}{@{}p{62pt*\gnumericScale}@{}}x\end{tabular}}
+\ifthenelse{\isundefined{\gnumericColL}}{\newlength{\gnumericColL}}{}\settowidth{\gnumericColL}{\begin{tabular}{@{}p{20pt*\gnumericScale}@{}}x\end{tabular}}
+
+\begin{longtable}[c]{%
+	b{\gnumericColB}%
+	b{\gnumericColC}%
+	b{\gnumericColD}%
+	b{\gnumericColE}%
+	b{\gnumericColF}%
+	b{\gnumericColG}%
+	b{\gnumericColH}%
+	b{\gnumericColI}%
+	b{\gnumericColJ}%
+	b{\gnumericColK}%
+	b{\gnumericColL}%
+	}
+	
+\caption[Previsão de Resultados]{Previsão dos resultados para o período de 5 anos - valores em mil}\label{tab:tableResultados} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  The longtable options. (Caption, headers... see Goosens, p.124) %%
+%	\caption{The Table Caption.}             \\	%
+% \hline	% Across the top of the table.
+%%  The rest of these options are table rows which are placed on    %%
+%%  the first, last or every page. Use \multicolumn if you want.    %%
+
+%%  Header for the first page.                                      %%
+%	\multicolumn{11}{c}{The First Header} \\ \hline 
+%	\multicolumn{1}{c}{colTag}	%Column 1
+%	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
+%	&\multicolumn{1}{c}{colTag}	%Column 4
+%	&\multicolumn{1}{c}{colTag}	%Column 5
+%	&\multicolumn{1}{c}{colTag}	%Column 6
+%	&\multicolumn{1}{c}{colTag}	%Column 7
+%	&\multicolumn{1}{c}{colTag}	%Column 8
+%	&\multicolumn{1}{c}{colTag}	%Column 9
+%	&\multicolumn{1}{c}{colTag}	%Column 10
+%	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
+%	\endfirsthead
+
+%%  The running header definition.                                  %%
+%	\hline
+%	\multicolumn{11}{l}{\ldots\small\slshape continued} \\ \hline
+%	\multicolumn{1}{c}{colTag}	%Column 1
+%	&\multicolumn{1}{c}{colTag}	%Column 2
+%	&\multicolumn{1}{c}{colTag}	%Column 3
+%	&\multicolumn{1}{c}{colTag}	%Column 4
+%	&\multicolumn{1}{c}{colTag}	%Column 5
+%	&\multicolumn{1}{c}{colTag}	%Column 6
+%	&\multicolumn{1}{c}{colTag}	%Column 7
+%	&\multicolumn{1}{c}{colTag}	%Column 8
+%	&\multicolumn{1}{c}{colTag}	%Column 9
+%	&\multicolumn{1}{c}{colTag}	%Column 10
+%	&\multicolumn{1}{c}{colTag}	\\ \hline %Last column
+%	\endhead
+
+%%  The running footer definition.                                  %%
+%	\hline
+%	\multicolumn{11}{r}{\small\slshape continued\ldots} \\
+%	\endfoot
+
+%%  The ending footer definition.                                   %%
+%	\multicolumn{11}{c}{That's all folks} \\ \hline 
+%	\endlastfoot
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hhline{-----------}
+	 \gnumericPB{\raggedright}\textbf{\footnotesize Descrição}
+	&\gnumericPB{\centering}\textbf{\footnotesize 2011 }
+	&\gnumericPB{\centering}\footnotesize \%
+	&\gnumericPB{\centering}\textbf{\footnotesize 2012}
+	&\gnumericPB{\centering}\footnotesize \%
+	&\gnumericPB{\centering}\textbf{\footnotesize 2013 }
+	&\gnumericPB{\centering}\footnotesize \%
+	&\gnumericPB{\centering}\textbf{\footnotesize 2014 }
+	&\gnumericPB{\centering}\%
+	&\gnumericPB{\centering}\textbf{\footnotesize 2015 }
+	&\gnumericPB{\centering}\footnotesize\%
+\\
+\hhline{-----------}
+	 \gnumericPB{\raggedright}\gnumbox[l]{\footnotesize Receita bruta com vendas}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $   266 $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $125\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $   507 $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $125\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $   499 $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $123\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $   570 $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $141\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $   605 $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $149\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\footnotesize\footnotesize(-) Impostos sobre vendas}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$    (53)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$-25\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$    (101)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$-25\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$    (99)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$-25\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$    (114)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$-28\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$    (68)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$-30\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\textbf{\footnotesize(=) Receita líquida}}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize$   213 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$100\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize$   405 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$100\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize$   399 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$100\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize$   546 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$100\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize$   484 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize$100\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\footnotesize(-) Custo dos prod. vend.}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (142)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-67\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $  (189)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-47\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $  (192)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-47\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $  (207)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-51\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $  (216)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-53\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\textbf{\footnotesize (=) Lucro bruto}}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     71 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $33\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $   217 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $53\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     207 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $51\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $   249 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $61\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $   267 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $8\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\footnotesize (-) Despesas}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (75)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-35\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (141)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-35\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (150)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-37\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (173)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-43\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (192)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-47\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\textbf{\footnotesize (=) Lucro operacional}}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     (4) $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-2\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     76 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $19\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     57 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $14\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     76 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $19\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     75 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $18\%$}
+\\
+	 \gnumericPB{\raggedright}\gnumbox[l]{\footnotesize (-) Imposto de renda}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    - $}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-0\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (26)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-6\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (19)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-5\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (26)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-6\%$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $    (25)$}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-6\%$}
+\\
+	 \hhline{-----------}
+	 \gnumericPB{\raggedright}\gnumbox[l]{\textbf{\footnotesize (=) Lucro líq. do per.}}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     (4) $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $-2\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     50 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $12\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     37 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $9\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     50 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $12\%$}
+	&\gnumericPB{\centering}\gnumbox{\textbf{\footnotesize $     49 $}}
+	&\gnumericPB{\centering}\gnumbox{\footnotesize $12\%$}
+\\
+	 \hhline{-----------}
+\end{longtable}
+
+\ifthenelse{\isundefined{\languageshorthands}}{}{\languageshorthands{\languagename}}
+\gnumericTableEnd
