@@ -9,12 +9,12 @@
 
 \chapter{Desenvolvimento}\label{chap:desenvolvimento}
 
+\input{github.tex}
 \input{hardware.tex}
-
-\input{simpliciti.tex}
-
-%\input{protocolo_de_comunicacao.tex}
 \input{firmware.tex}
+\input{simpliciti.tex}
+\input{gui.tex}
+
 
 \section{Código de Barras}\label{desenvolvimento:codigodebarras}
 
@@ -377,7 +377,7 @@ Dentro do que foi especificado para o software do ônibus, a figura~\ref{fig:Caso
 \label{fig:CasoDeUsoOnibus}
 \end{figure}
 
-Como pode-se perceber, o diagrama de caso de uso do \textit{software} do  ônibus, figura~\ref{fig:CasoDeUsoOnibus} mais simples, do ponto de vista do número de ações realizadas, quando comparado com o aplicativo SIAER do guichê na figura~\ref{fig:CasodeUsoGuiche} do apêndice~\ref{AnexoDiagCasosDeUsoGuiche}. Este diagrama de casos de uso possui 3 casos de uso, onde os serviços realizados são considerados completos, e mais 5 subcasos incluídos aos casos de usos maiores. Além destes casos de uso visualiza-se três atores principais, sendo eles o motorista do veículo que está transportando as encomendas, o dispositivo que provê uma interface de comunicação \textit{wireless}, o MSP430F22X4, e por último o arquivo XML criado para armazenar os dados das encomendas que viajam no bagageiro.
+Como pode-se perceber, o diagrama de caso de uso do \textit{software} do  ônibus, figura~\ref{fig:CasoDeUsoOnibus} mais simples, do ponto de vista do número de ações realizadas, quando comparado com o aplicativo SIAER do guichê na figura~\ref{fig:CasodeUsoGuiche} do apêndice~\ref{AnexoDiagCasosDeUsoGuiche}. Este diagrama de casos de uso possui 3 casos de uso, onde os serviços realizados são considerados completos, e mais 5 subcasos incluídos aos casos de usos maiores. Além destes casos de uso visualiza-se três atores principais, sendo eles o motorista do veículo que está transportando as encomendas, o dispositivo que provê uma interface de comunicação \textit{wireless}, o CC430F6137, e por último o arquivo XML criado para armazenar os dados das encomendas que viajam no bagageiro.
 
 O \textit{software} do ônibus possui uma dinâmica bem diferente daquela vista no aplicativo da seção~\ref{section:swguiche}, pois ao invés de as tarefas exercidas pelo \textit{software} iniciarem a partir  do momento em que um atendente loga-se no sistema, aqui neste aplicativo as atividades ocorrem, automaticamente, somente nos momentos em que o ônibus encontra-se parado em uma plataforma rodoviária, e estabelece conexão com o guichê. Uma exceção a esta regra é quanto ao caso de uso Mostrar Situação das Encomendas, que apresenta as encomendas presentes no ônibus, mesmo se o ônibus estiver viajando.
 
@@ -386,7 +386,7 @@ Abaixo estão explicados e enumerados os principais casos de uso desta plataforma
 \begin{enumerate}
 		\item Caso de Uso Conectar-se ao Guichê
 		
-		Ao iniciar sua viagem o aplicativo do ônibus estará automaticamente conectado ao dispositivo que viabiliza a comunicação \textit{wireless} o, MSP430F22X4, através de uma comu-nicação serial RS-232, detalhada na seção~\ref{subsection:InterfaceMSP}.
+		Ao iniciar sua viagem o aplicativo do ônibus estará automaticamente conectado ao dispositivo que viabiliza a comunicação \textit{wireless} o, CC430F6137, através de uma comu-nicação serial RS-232, detalhada na seção~\ref{subsection:InterfaceMSP}.
 		
 		O fato de reconhecimento de conexão com o guichê viabiliza as demais ações do \textit{software} do ônibus, como apresentar a cidade atual, listar encomendas que devem subir ou descer no ônibus, entre outras tarefas.
 		
@@ -431,17 +431,15 @@ O outro arquivo XML, que também está contido no dispositivo do ônibus é o CarroD
 \label{fig:EncomendasXML}
 \end{figure}
 
-
-
-\subsection{Interface com o Microcontrolador MSP430F22X4}\label{subsection:InterfaceMSP}
+\subsection{Interface com o Microcontrolador CC430F6137}\label{subsection:InterfaceMSP}
 
 A principal tecnologia utilizada neste projeto que oferece a diferenciação entre outros sistemas de transporte de encomendas, está indiscutivelmente embutida na comunicação e protocolo \textit{wireless} desempenhados pelo sistema proposto.
 
-Grande parte dos casos de uso existentes tanto no \textit{software} de guichê, como no de ônibus, utilizam desta comunicação sem fio para troca de informações e caracterização da finalidade de gerenciamento das encomendas que estarão sendo enviadas.
+Grande parte dos casos de uso existentes tanto no \textit{software} de guichê, como no de ônibus, utilizam desta comunicação sem fio para troca de informações e caracterização da finalidade de gerenciamento das encomendas que estarão sendo enviadas. 
 
-O MSP430F22X4 é o microcontrolador, fabricado pela empresa \textit{Texas Instruments}, utilizado neste projeto que viabiliza a comunicação \textit{wireless} através do \textit{transceiver} CC2500, desenvolvido pela mesma empresa. O detalhamento sobre o \textit{hardware} de comunicação \sigla{RF}{\textit{Radio Frequency}} pode ser encontrado na seção (referenciar seção sobre o hardware RF).
+O CC430F6137 é o microcontrolador, fabricado pela empresa \textit{Texas Instruments}, utilizado neste projeto que viabiliza a comunicação \textit{wireless}. O detalhamento sobre o \textit{hardware} de comunicação \sigla{RF}{\textit{Radio Frequency}} pode ser encontrado na seção ~\ref{hardware}.
 
-O protocolo de comunicação que permite o interfaceamento entre os aplicativos de \textit{software} e o microntrolador MSP430F22X4 é o RS-232, o mesmo protocolo utilizado para a comunicação com o leitor óptico de código de barras BR-310 (seção~\ref{section:confcomserial}). As configurações realizadas em ambos os dispositivos são as mesmas apresentadas na tabela~\ref{tableRS232}, utilizadas para interface com o leitor. Desta maneira, tanto as aplicações desenvolvidas em linguagem C\#.NET, quanto o \textit{firmware} que roda no microcontrolador MSP430F22X4, trabalham utilizando os parâ- metros da tabela~\ref{tableRS232} para envio e recebimento de dados pela serial.
+O protocolo de comunicação que permite o interfaceamento entre os aplicativos de \textit{software} e o microntrolador CC430F6137 é o RS-232, o mesmo protocolo utilizado para a comunicação com o leitor óptico de código de barras BR-310 (seção~\ref{section:confcomserial}). As configurações realizadas em ambos os dispositivos são as mesmas apresentadas na tabela~\ref{tableRS232}, utilizadas para interface com o leitor. Desta maneira, tanto as aplicações desenvolvidas em linguagem C\#.NET, quanto o \textit{firmware} que roda no microcontrolador CC430F6137, trabalham utilizando os parâ- metros da tabela~\ref{tableRS232} para envio e recebimento de dados pela serial.
 
 As principais informações que trafegam nesta fronteira entre \textit{hardware} e \textit{software} são \textit{bytes} identificadores de encomendas, informações sobre cidades origem e destino das encomendas, e \textit{bytes} de controle específicos do protocolo de comunicação desenvolvido neste projeto para a aplicação de envio de encomendas.
 
@@ -540,7 +538,7 @@ As figuras~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} e~\ref{fig:DiagramaDeEsta
 \label{fig:DiagramaDeEstadosEncomendasONIBUSMSP}
 \end{figure}
 
-A função básica deste aplicativo, presente no ônibus, é alertar ao motorista do veículo sobre as encomendas que devem subir, descer e permanecer no bagageiro do carro, ao estacionar na plataforma de uma rodoviária. Esta função é executada em qualquer cidade atendida pelo itinerário da empresa de ônibus prestadora do serviço de envio de encomendas. No entanto existe a situação em que o ônibus não está conectado a um guichê, ou seja, está na estrada viajando. Nesta situação, o ônibus, obviamente, não está estabelecendo conexão com nenhum dispositivo \textit{wireless}, e dessa maneira se encontra em um estado de espera. Este \textit{status} de espera é apresentado ao motorista através de uma mensagem Viajando... escrita na tela do computador de bordo. A única informação de encomendas, que o \textit{software} do ônibus mostra para o motorista nestas situações, são as encomendas que estão no bagageiro do carro. A tela deste estado apresentada pelo motorista pode ser visualizada abaixo na figura~\ref{fig:SoftwareONIBUSDesconectado}.
+A função básica deste aplicativo, presente no ônibus, é alertar ao motorista do veículo sobre as encomendas que devem subir, descer e permanecer no bagageiro do carro, ao estacionar na plataforma de uma rodoviária. Esta função é executada em qualquer cidade atendida pelo itinerário da empresa de ônibus prestadora do serviço de envio de encomendas. No entanto existe a situação em que o ônibus não está conectado a um guichê, ou seja, está na estrada viajando. Nesta situação, o ônibus, obviamente, não está estabelecendo conexão com nenhum dispositivo \textit{wireless}, e dessa maneira se encontra em um estado de espera. Este \textit{status} de espera é apresentado ao motorista através de uma mensagem Viajando... escrita na tela do computador de bordo. A única informação de encomendas, que o \textit{software} do ônibus mostra para o motorista nestas situações, são as encomendas que estão no bagageiro do carro. A tela deste estado apresentada pelo motorista pode ser visualizada abaixo na figura ~\ref{fig:SoftwareONIBUSDesconectado}.
 
 \begin{figure}[!htb]
 \centering
@@ -549,7 +547,7 @@ A função básica deste aplicativo, presente no ônibus, é alertar ao motorista do 
 \label{fig:SoftwareONIBUSDesconectado}
 \end{figure}
 
-Ao chegar em uma estação rodoviária a aparência da figura~\ref{fig:SoftwareONIBUSDesconectado} muda, e ao invés de apresentar a mensagem Viajando..., o motorista visualizará o nome da cidade em que acabou de chegar. Além disso as duas setas em cinza da figura~\ref{fig:SoftwareONIBUSDesconectado} são habilitadas, e as encomendas que devem subir e descer são listadas em uma \textit{ListBox} dentro da imagem de seta para cima e seta para baixo, respectivamente.
+Ao chegar em uma estação rodoviária a aparência da figura ~\ref{fig:SoftwareONIBUSDesconectado} muda, e ao invés de apresentar a mensagem Viajando..., o motorista visualizará o nome da cidade em que acabou de chegar. Além disso as duas setas em cinza da figura ~\ref{fig:SoftwareONIBUSDesconectado} são habilitadas, e as encomendas que devem subir e descer são listadas em uma \textit{ListBox} dentro da imagem de seta para cima e seta para baixo, respectivamente.
 
 Ao entrar nesta situação é que encontra-se a utilidade dos diagramas de estados apresentados nas figuras~\ref{fig:DiagramaDeEstadosConexaoONIBUSMSP} e~\ref{fig:DiagramaDeEstadosEncomendasONIBUSMSP}.
 

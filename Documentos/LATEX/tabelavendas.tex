@@ -1,35 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                  %%
-%%  This is the header of a LaTeX2e file exported from Gnumeric.    %%
-%%                                                                  %%
-%%  This file can be compiled as it stands or included in another   %%
-%%  LaTeX document. The table is based on the longtable package so  %%
-%%  the longtable options (headers, footers...) can be set in the   %%
-%%  preamble section below (see PRAMBLE).                           %%
-%%                                                                  %%
-%%  To include the file in another, the following two lines must be %%
-%%  in the including file:                                          %%
-%%        \def\inputGnumericTable{}                                 %%
-%%  at the beginning of the file and:                               %%
-%%        \input{name-of-this-file.tex}                             %%
-%%  where the table is to be placed. Note also that the including   %%
-%%  file must use the following packages for the table to be        %%
-%%  rendered correctly:                                             %%
-%%    \usepackage[latin1]{inputenc}                                 %%
-%%    \usepackage{color}                                            %%
-%%    \usepackage{array}                                            %%
-%%    \usepackage{longtable}                                        %%
-%%    \usepackage{calc}                                             %%
-%%    \usepackage{multirow}                                         %%
-%%    \usepackage{hhline}                                           %%
-%%    \usepackage{ifthen}                                           %%
-%%  optionally (for landscape tables embedded in another document): %%
-%%    \usepackage{lscape}                                           %%
-%%                                                                  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 %%  This section checks if we are begin input into another file or  %%
 %%  the file will be compiled alone. First use a macro taken from   %%
 %%  the TeXbook ex 7.7 (suggestion of Han-Wen Nienhuys).            %%
@@ -207,173 +175,108 @@
 	&\gnumericPB{\raggedleft}\textbf{Receita ( R\$)}
 \\
 \hhline{-----}
-	 \gnumericPB{\centering}\gnumbox{2011/1}
+	 \gnumericPB{\centering}\gnumbox{2011}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{4}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.700 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$                10.800 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{12}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              150 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1800 $}
 \\
-	 \gnumericPB{\centering}\gnumbox{2011/2}
+	 \gnumericPB{\centering}\gnumbox{2011}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{30}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              50 $}
+		&\gnumericPB{\raggedleft}\gnumbox[r]{$              1500 $}
+\\
+ \gnumericPB{\centering}\gnumbox{\textbf{2011}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Sub total - 2011}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{3300}}
+\\	
+	 \gnumericPB{\centering}\gnumbox{2012}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{9}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.700 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               24.300 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{120}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              160 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              19200 $}
 \\
-	 \gnumericPB{\centering}\gnumbox{2011/3}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{9}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.700 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               35.100 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2011/4}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{23}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.700 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               62.100 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{\textbf{2011 - total}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Licença software para guichê}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{49}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$              2.700 $}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$               132.300 $}}
-\\
-\hhline{-----}
-	 \gnumericPB{\centering}\gnumbox{2011/1}
+	 \gnumericPB{\centering}\gnumbox{2012}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{28}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.100 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               30.800 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{360}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              50 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              18000 $}
 \\
-	 \gnumericPB{\centering}\gnumbox{2011/2}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{34}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.100 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               37.400 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2011/3}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{35}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.100 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               38.500 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2011/4}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{37}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.100 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               40.700 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{\textbf{2011 - total}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Licença software para ônibus}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{134}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$              1.100 $}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$              134.000 $}}
-\\
-\hhline{-----}
-	 \gnumericPB{\centering}\gnumbox{2012/1}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{19}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.900 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               55.100 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/2}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{26}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.900 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               75400 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/3}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{31}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.900 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               89.900 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/4}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{33}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              2.900 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               95.700 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{\textbf{2012 - total}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Licença software para guichê}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{109}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$              2.900 $}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$             316.100
-	 $}}
-\\
-\hhline{-----}
-	 \gnumericPB{\centering}\gnumbox{2012/1}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{35}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.200 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               42.000 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/2}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{36}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.200 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               43.200 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/3}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{45}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.200 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               54.000 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{2012/4}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{43}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.200 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$               51.600 $}
-\\
-	 \gnumericPB{\centering}\gnumbox{\textbf{2012 - total}}
-	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Licença software para ônibus}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{159}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$              1.060 $}}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$             190.800 $}}
-\\
-\hhline{-----}
+ \gnumericPB{\centering}\gnumbox{\textbf{2012}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Sub total - 2012}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{37200}}
+\\	
 	 \gnumericPB{\centering}\gnumbox{2013}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{97}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              3.100 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             300.700 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{240}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              170 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              40800 $}
 \\
 	 \gnumericPB{\centering}\gnumbox{2013}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{150}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.320 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             198.000 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{1200}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              55 $}
+		&\gnumericPB{\raggedleft}\gnumbox[r]{$              66000 $}
+\\
+ \gnumericPB{\centering}\gnumbox{\textbf{2013}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Sub total - 2013}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{106800}}
 \\
 	 \gnumericPB{\centering}\gnumbox{2014}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{98}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              3.350 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             328.300 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{600}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              200 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              120000 $}
 \\
 	 \gnumericPB{\centering}\gnumbox{2014}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{161}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.500 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             241.500 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{3600}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              60 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              216000 $}
+\\
+ \gnumericPB{\centering}\gnumbox{\textbf{2014}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Sub total - 2014}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{336000}}
 \\
 	 \gnumericPB{\centering}\gnumbox{2015}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{94}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              3.500 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             329.000 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{600}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              210 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{126000}
 \\
 	 \gnumericPB{\centering}\gnumbox{2015}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para ônibus}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{167}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$              1.650 $}
-	&\gnumericPB{\raggedleft}\gnumbox[r]{$             275.550 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{4800}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              66 $}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{316800}
+\\
+ \gnumericPB{\centering}\gnumbox{\textbf{2015}}
+	&\gnumericPB{\raggedright}\gnumbox[l]{\textbf{Sub total - 2015}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{442800}}
+\\
+	 \gnumericPB{\centering}\gnumbox{2016}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Licença software para guichê}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{600}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{$              220 $}
+		&\gnumericPB{\raggedleft}\gnumbox[r]{132000}
 \\
 \hhline{-----}
 	 \gnumericPB{\centering}\gnumbox{\textbf{Total}}
 	&
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$           1.218 $}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$           5.400 $}}
 	&
-	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$          2.446.250 $}}
+	&\gnumericPB{\raggedleft}\gnumbox[r]{\textbf{$          926.100 $}}
 \\
 \hhline{-----}
 \end{longtable}

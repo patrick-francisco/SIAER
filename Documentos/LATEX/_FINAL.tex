@@ -60,10 +60,10 @@
 % epigrafe (opcional)
 \begin{epigrafe}
 %\textit{A glória é tanto mais tardia quanto mais duradoura há de ser,porque todo fruto delicioso amadurece lentamente}
-\textit{Muitas coisas não ousamos empreender por parecerem difíceis; entretanto, são difíceis porque não ousamos empreendê-las}
+\textit{Strive for perfection in everything you do. Take the best that exists and make it better. When it does not exist, design it.}
 \begin{flushright}
 %Arthur Schopenhauer
-Sêneca
+Sir Henry Royce
 \end{flushright}
 
 \end{epigrafe}
@@ -90,11 +90,7 @@ Major part of the brazilian transport net uses the huge road net structure that 
 %----------Segundo Capítulo------------
 \input{Contextualizacao}
 %----------Terceiro Capítulo-----------
-\input{github.tex}
-\input{hardware.tex}
-\input{firmware.tex}
-\input{simpliciti.tex}
-\input{gui.tex}
+\input{Desenvolvimento.tex}
 %----------Quarto Capítulo------------
 \input{Gestao.tex}
 %----------Quinto Capítulo------------
@@ -108,15 +104,28 @@ Major part of the brazilian transport net uses the huge road net structure that 
 \apendice
 %------------------------------------------------------------------------------------------------
 %APENDICE A
+
+\apendice
+%------------------------------------------------------------------------------------------------
+%APENDICE A
+\chapter{Diagrama de Casos de Uso Guichê}\label{AnexoDiagCasosDeUsoGuiche}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figs/CasodeUsoGuiche.jpg} % <- formatos PNG, JPG e PDF
+	\caption[Diagrama de Casos de Uso Guichê]{Figura do Diagrama de Casos de Uso montado através das especificações desempenhadas pela aplicação presente no guichê.}
+	%\fonte{\cite{abnTeX2009}}
+	\label{fig:CasodeUsoGuiche}
+\end{figure}
+
 \chapter{Esquemático da plataforma de \textit{Hardware}}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1\textwidth]{./figs/IMG/schematic.png} 
+	\includegraphics[width=0.7\textwidth]{./figs/IMG/schematic.png} 
 	\caption[Esquemático da placa de interfaceamento]{Esquemático da placa de interfaceamento}
 	\fonte{Próprio}
 	\label{fig:CasodeUsoGuiche}
 \end{figure}
-
+%------------------------------------------------------------------------------------------------
 \anexo
 %ANEXO A
 \chapter{Diagrama de hardware do kit de desenvolvimento EM430F6137RF900}

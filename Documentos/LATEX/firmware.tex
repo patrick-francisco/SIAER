@@ -90,7 +90,7 @@ Usando-se a máquina de estados descrita na figura~\ref{fig:UART_SM}, caso o firm
 	\label{fig:inicia_guiche}
 \end{figure}
 
-Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsection:subsectionprocessamento}.
+Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsectionprocessamento}.
 
 \subsection{Processamento/Transmissão de Mensagens}\label{subsectionprocessamento}
 As informações acerca do \textit{status} de cada encomenda podem ser obtidas através do banco de dados. Uma vez que haja conexão entre um ônibus e um guichê, ocorre regularmente a chamada de funções que visam atualizar o verificar e atualizar o \textit{status} das encomendas. Através deste processo, o software do PC transmite para o firmware as informações a serem transmitidas para um ônibus. Tais informações preenchem um buffer de envio. Caso o sistema esteja estável ( \textit{Polling2}), o ônibus envia mensagem que está pronto para receber, o \texit{firmware} do guichê envia os dados e o ônibus envia um ACK, confirmando recebimento. No diagrama que segue, tem-se o fluxograma dos evendos previamente descritos. A figura ~\ref{fig:TX_ENC} representa o fluxograma do firmware do guichê perante a chegada de uma encomenda no seu buffer da UART. Esta mensagem teve origem no SW. 
@@ -107,4 +107,4 @@ O fluxo de informações parte inicialmente do ônibus, o qual envia uma mensagem d
 
 Ao final, faz-se a verificação da existência de encomendas não enviadas na fila. Em caso positivo, procede-se ao envio das encomendas até que se zere este \textit{buffer} e retorna-se ao estado IDLE.
 
-Informações mais detalhadas sobre a troca de mensagens via RF encontram-se no ítem \textit{Detalhes da aplicação do simpliciTI no projeto SIAER}.
+Informações mais detalhadas sobre a troca de mensagens via RF encontram-se no ítem 3.4.3.3.

@@ -1,58 +1,14 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                                                                  %%
-%%  This is the header of a LaTeX2e file exported from Gnumeric.    %%
-%%                                                                  %%
-%%  This file can be compiled as it stands or included in another   %%
-%%  LaTeX document. The table is based on the longtable package so  %%
-%%  the longtable options (headers, footers...) can be set in the   %%
-%%  preamble section below (see PRAMBLE).                           %%
-%%                                                                  %%
-%%  To include the file in another, the following two lines must be %%
-%%  in the including file:                                          %%
-%%        \def\inputGnumericTable{}                                 %%
-%%  at the beginning of the file and:                               %%
-%%        \input{name-of-this-file.tex}                             %%
-%%  where the table is to be placed. Note also that the including   %%
-%%  file must use the following packages for the table to be        %%
-%%  rendered correctly:                                             %%
-%%    \usepackage[latin1]{inputenc}                                 %%
-%%    \usepackage{color}                                            %%
-%%    \usepackage{array}                                            %%
-%%    \usepackage{longtable}                                        %%
-%%    \usepackage{calc}                                             %%
-%%    \usepackage{multirow}                                         %%
-%%    \usepackage{hhline}                                           %%
-%%    \usepackage{ifthen}                                           %%
-%%  optionally (for landscape tables embedded in another document): %%
-%%    \usepackage{lscape}                                           %%
-%%                                                                  %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%  This section checks if we are begin input into another file or  %%
-%%  the file will be compiled alone. First use a macro taken from   %%
-%%  the TeXbook ex 7.7 (suggestion of Han-Wen Nienhuys).            %%
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
-
-
-%%  Check for the \def token for inputed files. If it is not        %%
-%%  defined, the file will be processed as a standalone and the     %%
-%%  preamble will be used.                                          %%
 \ifundefined{inputGnumericTable}
+\def\gnumericTableEnd{\end{document}}
 
-%%  We must be able to close or not the document at the end.        %%
-	\def\gnumericTableEnd{\end{document}}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                  %%
 %%  This is the PREAMBLE. Change these values to get the right      %%
 %%  paper size and other niceties. Uncomment the landscape option   %%
 %%  to the documentclass defintion for standalone documents.        %%
 %%                                                                  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 	\documentclass[12pt%
 			  %,landscape%
                     ]{report}
@@ -204,39 +160,38 @@
 \hhline{----}
 	 \gnumericPB{\centering}\gnumbox{2011}
 	&\gnumericPB{\centering}\gnumbox{Imobilizado}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Máquinas e equipamentos}
-	&\gnumericPB{\centering}\gnumbox{$                    8.000 $}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Móveis e utensílios}
+	&\gnumericPB{\centering}\gnumbox{$                   1.000 $}
 \\
 	 \gnumericPB{\centering}\gnumbox{2011}
-	&\gnumericPB{\centering}\gnumbox{Imobilizado}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Móveis e utensílios}
-	&\gnumericPB{\centering}\gnumbox{$                    5.000 $}
+	&\gnumericPB{\centering}\gnumbox{Entrada de capital}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Capital de giro}
+	&\gnumericPB{\centering}\gnumbox{$                   20.000 $}
 \\
 	 \gnumericPB{\centering}\gnumbox{2011}
 	&\gnumericPB{\centering}\gnumbox{Estoques}
 	&\gnumericPB{\raggedright}\gnumbox[l]{Hardware}
-	&\gnumericPB{\centering}\gnumbox{$                    4.500 $}
+	&\gnumericPB{\centering}\gnumbox{$                   4.500 $}
 \\
 	 \gnumericPB{\centering}\gnumbox{2011}
 	&\gnumericPB{\centering}\gnumbox{Imobilizado}
-	&\gnumericPB{\raggedright}\gnumbox[l]{Obras civis e/ou reformas}
-	&\gnumericPB{\centering}\gnumbox{$                   10.150 $}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Website}
+	&\gnumericPB{\centering}\gnumbox{$                   1.000 $}
 \\
-	 \gnumericPB{\centering}\gnumbox{2011}
-	&\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColC}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}Despesas gerais}}
-	&\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColD}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\raggedright}Despesas de constituição da empresa e liberação de alvará}}
-	&\setlength{\gnumericMultiRowLength}{0pt}%
-	 \addtolength{\gnumericMultiRowLength}{\gnumericColE}%
-	 \multirow{2}[1]{\gnumericMultiRowLength}{\parbox{\gnumericMultiRowLength}{%
-	 \gnumericPB{\centering}\gnumbox{$                    3.500 $}}}
+	 \gnumericPB{\centering}\gnumbox{2012}
+	&\gnumericPB{\centering}\gnumbox{Estoque}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Hardware}
+	&\gnumericPB{\centering}\gnumbox{$                   5.000 $}
 \\
-	 
+\gnumericPB{\centering}\gnumbox{2013}
+	&\gnumericPB{\centering}\gnumbox{Estoque}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Hardware}
+	&\gnumericPB{\centering}\gnumbox{$                   10.000 $}
+\\
+\gnumericPB{\centering}\gnumbox{2013}
+	&\gnumericPB{\centering}\gnumbox{Entrada de capital}
+	&\gnumericPB{\raggedright}\gnumbox[l]{Capital de giro}
+	&\gnumericPB{\centering}\gnumbox{$                   100.000 $}
 	&
 	&
 	&
@@ -245,7 +200,7 @@
 	 \gnumericPB{\centering}\gnumbox{\textbf{Total}}
 	&
 	&
-	&\gnumericPB{\centering}\gnumbox{\textbf{$                   31.150 $}}
+	&\gnumericPB{\centering}\gnumbox{\textbf{$                   142.500 $}}
 \\
 \hhline{----}
 \end{longtable}

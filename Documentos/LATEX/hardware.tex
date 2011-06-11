@@ -7,8 +7,8 @@
 
 \def\inputGnumericTable{}
 
-\section{\textit{Hardware}}
-O Sistema Integrado de Acompanhamento de Encomendas Rodoviárias utilizou inicialmente, devido a disponibilidade, baixo custo e possibilidade tanto de trabalhar com RF quanto de se comunicar viar uart, o kit de desenvolvimento EZ430-RF2500, da Texas Instruments. O problema deste kit se dá na frequência de operação de sua comunicação sem fio (2.4GHz) e no tamanho de sua antena. Esses fatores levam este kit a ser um excelente escolha caso a distância em um transmissor e um receptor for pequena (até 10 metros). No caso do projeto SIAER, a distância entre guichê e ônibus é bem significativa, e um sistema de comunicação mais robusto se faz necessário.
+\section{\textit{Hardware}}\label{hardware}
+O Sistema Integrado de Acompanhamento de Encomendas Rodoviárias utilizou inicialmente, devido a disponibilidade, baixo custo e possibilidade tanto de trabalhar com RF quanto de se comunicar via uart, o kit de desenvolvimento EZ430-RF2500, da Texas Instruments. O problema deste kit se dá na freqüência de operação de sua comunicação sem fio (2.4GHz) e no tamanho de sua antena. Esses fatores levam este kit a ser um excelente escolha caso a distância em um transmissor e um receptor for pequena (até 10 metros). No caso do projeto SIAER, a distância entre guichê e ônibus é bem significativa, e um sistema de comunicação mais robusto se faz necessário.
 
 Através de contatos com a filial da Texas Instruments em Freising, Alemanha, uma parceria foi criada. Recebi gratuitamente os kits de desenvolvimento necessários e o compilador Code Composer para que pudesse tornar viável as melhorias sugeridas no início deste relatório. Em contrapartida, eu deveria usar preferencialmente as ferramentas daquela empresa e no fim do projeto reportar os resultados, adicionando minha experiência como usuário e sugerindo possíveis melhorias. O kit de desenvolvimento escolhido foi o EM430F6137RF900, no qual está incluso:
 
@@ -71,7 +71,7 @@ Um conector USB convencional oferece 4 linhas: GND, D+, D- e +5V. As linhas D+ e
 
 Na placa de debug, há a necessidade da utilização de algum controlador para transformar o sinal do barramento de 5V para, no nosso caso, 3,3V. Por isso, utilizou-se o TPS7730, o qual é um regulador linear de tensão, podendo fornecer até 250mA a uma carga. Sua tensão de saída pode ser regulada até 5,5V de acordo com os resistores conectados ao componente. No \textit{datasheet} do componente, a  nota explicativa da figura ~\ref{fig:TPS7730} especifica um esquema de conexão recomendável. Conforme é notado observando-se a figura ~\ref{fig:TPS7730}, o arranjo dos componentes R1 e R2 determinará o valor da tensão de saída. No \textit{datasheet}, uma série de equações é apresentada para que se obtenham os valores adequados. Para se fornecer a tensão de 3,3V para os demais componentes, utilizou-se R1=53,8 k e R2=30,1 k.
 
-Para a comunicação serial utiliza-se um conversor Serial-USB TUSB3410. Este circuito proporciona a conectividade entre um dispositivo serial e uma interface USB. O diagrama a seguir rapresenta tal dispositivo ~\ref{fig:TUSB3410}.
+Para a comunicação serial utiliza-se um conversor Serial-USB TUSB3410. Este circuito proporciona a conectividade entre um dispositivo serial e uma interface USB. O diagrama a seguir representa tal dispositivo ~\ref{fig:TUSB3410}.
 
 \begin{figure}[!htb]
 	\centering
@@ -121,7 +121,7 @@ Como características principais, podemos citar:
 	\item Modo desligado - LPM4 1.0 µA
 	\item Rádio em RX - 15 mA, 250 kbps, 915 MHz
 	\item Periféricos do MSP430
-	\item Arquitetura RISC de 16 bits, memória extendida, clock de até 20MHz
+	\item Arquitetura RISC de 16 bits, memória estendida, clock de até 20MHz
 	\item Saída do modo Standby Mode em menos de 6 µs
 	\item Sistema de controle de energia com SVS e Brownout
 	\item Clock unificado com FLL
@@ -139,7 +139,7 @@ Possui uma memória \textit{flash} de 32KB + 256B. Ainda, para dados voláteis, o 
 \subsection{Interface da EM430F6137RF900 com placa de debug}
 Falar do motivo novamente 
 
-O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Este é um dos softwares de layout de placas de circuito impresso mais conhecidos e utilizados no mundo. Extremamente popular entre hobbistas e estudantes de eletrônica, possui uma licensa gratuita, na qual há limitaçõés para o tamanho da placa e de número de páginas de esquemático. Para nossa aplicação, assim como o de muitos outros usuários, esta licensa é mais do que suficiente.
+O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Este é um dos softwares de layout de placas de circuito impresso mais conhecidos e utilizados no mundo. Extremamente popular entre hobbistas e estudantes de eletrônica, possui uma licença gratuita, na qual há limitações para o tamanho da placa e de número de páginas de esquemático. Para nossa aplicação, assim como o de muitos outros usuários, esta licença é mais do que suficiente.
 
 \begin{figure}[!htb]
 	\centering
@@ -149,7 +149,7 @@ O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Es
 	\label{fig:conector_ez430}
 \end{figure}
 
-A placa de interfaceamento é relativamente simples, basta conectar os seis pinos da placa de debug (~\ref{fig:conector_ez430}) aos correspontes pinos da placa EM430F6137RF900(~\ref{fig:jtag}). A sequencia é a seguinte: GND-GND, 3.6V - Vcc, TEST-TST,RST-RST e os pinos TX e RX com os pinos P1.5 E P1.6 do CC430.
+A placa de interfaceamento é relativamente simples, basta conectar os seis pinos da placa de debug (~\ref{fig:conector_ez430}) aos correspondentes pinos da placa EM430F6137RF900(~\ref{fig:jtag}). A seqüência é a seguinte: GND-GND, 3.6V - Vcc, TEST-TST,RST-RST e os pinos TX e RX com os pinos P1.5 E P1.6 do CC430.
 
 \begin{figure}[!htb]
 	\centering
@@ -182,7 +182,7 @@ A placas foram confeccionadas dentro da própria UTFPR sob a supervisão do profes
 % TIRAR FOTO!!!!
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figs/IMG/placa.png}
+	\includegraphics[width=0.7\textwidth]{./figs/IMG/placainterface.png}
 	\caption[Placa de circuito impresso]{Placa de circuito impresso}
 	\fonte{Próprio}
 	\label{fig:pcb}
@@ -190,8 +190,8 @@ A placas foram confeccionadas dentro da própria UTFPR sob a supervisão do profes
 \newpage
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figs/IMG/placa.png}
-	\caption[Resultado final]{Resultado final}
+	\includegraphics[width=0.7\textwidth]{./figs/IMG/plataforma.png}
+	\caption[Plataforma de desenvolvimento]{Plataforma de desenvolvimento}
 	\fonte{Próprio}
 	\label{fig:pcb_final}
 \end{figure}
