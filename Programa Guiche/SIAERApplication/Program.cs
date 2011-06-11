@@ -15,6 +15,8 @@ namespace SIAERAplicacao
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new SIAERLocalizaencomenda("7891234000644"));
+            //Application.Run(new SIAERGeraCodigoDeBarras("7891234000309"));
             FormDeAutenticacao FormAutenticador = new FormDeAutenticacao();
             FormAutenticador.ShowDialog();
             if (FormAutenticador.Autenticado == FormDeAutenticacao.Logar.Sim)

@@ -43,7 +43,7 @@
             // TextBoxNomedoUsuario
             // 
             this.TextBoxNomedoUsuario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxNomedoUsuario.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TextBoxNomedoUsuario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.TextBoxNomedoUsuario.Location = new System.Drawing.Point(123, 72);
             this.TextBoxNomedoUsuario.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TextBoxNomedoUsuario.Name = "TextBoxNomedoUsuario";
@@ -54,7 +54,7 @@
             // TextBoxSenha
             // 
             this.TextBoxSenha.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxSenha.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.TextBoxSenha.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.TextBoxSenha.Location = new System.Drawing.Point(123, 109);
             this.TextBoxSenha.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.TextBoxSenha.Name = "TextBoxSenha";

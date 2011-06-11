@@ -11,9 +11,7 @@ namespace SIAERClassLibrary
         #region ConnectionString
 
         //public static readonly string CONN_STRING = @"Data Source=siaerserver;Initial Catalog=SIAER;Integrated Security=True";
-       // public static readonly string CONN_STRING = @"Data Source=vmsiaer01;Initial Catalog=SIAERTESTE;Integrated Security=True";
-        public static readonly string CONN_STRING = @"Data Source=VMSIAER01;Initial Catalog=SIAERTESTE;Integrated Security=True";
-        
+        public static readonly string CONN_STRING = @"Data Source=vmsiaer01;Initial Catalog=SIAERTESTE;Integrated Security=True";
         #endregion
 
         #region ExecuteNonQuery

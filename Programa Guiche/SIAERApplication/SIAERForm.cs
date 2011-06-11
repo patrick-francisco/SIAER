@@ -12,6 +12,7 @@ using System.Threading;
 using System.IO.Ports;
 using System.Collections;
 
+
 namespace SIAERAplicacao
 {
     public partial class FormSIAER : Form
@@ -54,7 +55,7 @@ namespace SIAERAplicacao
             this.LabelVc.Location = new Point(this.Width - this.LabelVc.Width - OffsetOnde, this.LabelVc.Location.Y);
             this.LabelCidade.Location = new Point(this.Width - this.LabelCidade.Width - OffsetOnde, this.LabelCidade.Location.Y);
 
-            this.PanelLeft.Location = new Point(0, this.MenuStripSIAERAplicacao.Height);
+                this.PanelLeft.Location = new Point(0, this.MenuStripSIAERAplicacao.Height);
             this.PanelLeft.Height = this.StatusStripSiaerForm.Location.Y - this.MenuStripSIAERAplicacao.Height;
             this.SizeChanged +=new EventHandler(FormSIAER_MaximumSizeChanged);
             AlturaListBoxs = (5 * this.PanelLeft.Height / 6) + OffsetAlturaListBox;
@@ -163,7 +164,7 @@ namespace SIAERAplicacao
             ComunicacaoComLeitorDeCodigoDeBarras.StopBits = "1";
             ComunicacaoComLeitorDeCodigoDeBarras.DataBits = "8";
             ComunicacaoComLeitorDeCodigoDeBarras.BaudRate = "1200";
-            ComunicacaoComLeitorDeCodigoDeBarras.PortName = "COM22";
+            ComunicacaoComLeitorDeCodigoDeBarras.PortName = "COM4";
             ComunicacaoComLeitorDeCodigoDeBarras.DisplayWindow = null;
         }
         #endregion
@@ -591,11 +592,11 @@ namespace SIAERAplicacao
             return maux;
         }
 
-        public void HabilitaTimerAtualizaListaEncomendasCarros()
+        private void HabilitaTimerAtualizaListaEncomendasCarros()
         {
             this.TimerAtualizaListaEncomendasCarros.Enabled = true;
         }
-        public void DesabilitaTimerAtualizaListaEncomendasCarros()
+        private void DesabilitaTimerAtualizaListaEncomendasCarros()
         {
             this.TimerAtualizaListaEncomendasCarros.Enabled = false;
         }

@@ -109,7 +109,7 @@
             this.serialCommunicationToolStripMenuItem});
             this.MenuStripSIAERAplicacao.Location = new System.Drawing.Point(0, 0);
             this.MenuStripSIAERAplicacao.Name = "MenuStripSIAERAplicacao";
-            this.MenuStripSIAERAplicacao.Size = new System.Drawing.Size(1214, 24);
+            this.MenuStripSIAERAplicacao.Size = new System.Drawing.Size(1114, 24);
             this.MenuStripSIAERAplicacao.TabIndex = 0;
             this.MenuStripSIAERAplicacao.Text = "Menu do Form de Apresentação do SIAER";
             // 
@@ -186,9 +186,9 @@
             // 
             this.StatusStripSiaerForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConexao});
-            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 928);
+            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 688);
             this.StatusStripSiaerForm.Name = "StatusStripSiaerForm";
-            this.StatusStripSiaerForm.Size = new System.Drawing.Size(1214, 22);
+            this.StatusStripSiaerForm.Size = new System.Drawing.Size(1114, 22);
             this.StatusStripSiaerForm.TabIndex = 1;
             this.StatusStripSiaerForm.Text = "statusStrip1";
             // 
@@ -462,9 +462,8 @@
             // Label2Carro1
             // 
             this.Label2Carro1.AutoSize = true;
-            this.Label2Carro1.BackColor = System.Drawing.Color.White;
+            this.Label2Carro1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label2Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro1.ForeColor = System.Drawing.Color.Black;
             this.Label2Carro1.Location = new System.Drawing.Point(166, 177);
             this.Label2Carro1.Name = "Label2Carro1";
             this.Label2Carro1.Size = new System.Drawing.Size(52, 16);
@@ -474,7 +473,7 @@
             // Label1Carro2
             // 
             this.Label1Carro2.AutoSize = true;
-            this.Label1Carro2.BackColor = System.Drawing.Color.Transparent;
+            this.Label1Carro2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label1Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro2.Location = new System.Drawing.Point(210, 164);
             this.Label1Carro2.Name = "Label1Carro2";
@@ -485,7 +484,7 @@
             // Label1Carro3
             // 
             this.Label1Carro3.AutoSize = true;
-            this.Label1Carro3.BackColor = System.Drawing.Color.Transparent;
+            this.Label1Carro3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label1Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro3.Location = new System.Drawing.Point(257, 164);
             this.Label1Carro3.Name = "Label1Carro3";
@@ -496,7 +495,7 @@
             // Label2Carro2
             // 
             this.Label2Carro2.AutoSize = true;
-            this.Label2Carro2.BackColor = System.Drawing.Color.White;
+            this.Label2Carro2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label2Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro2.Location = new System.Drawing.Point(216, 177);
             this.Label2Carro2.Name = "Label2Carro2";
@@ -507,7 +506,7 @@
             // Label2Carro4
             // 
             this.Label2Carro4.AutoSize = true;
-            this.Label2Carro4.BackColor = System.Drawing.Color.White;
+            this.Label2Carro4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label2Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro4.Location = new System.Drawing.Point(304, 177);
             this.Label2Carro4.Name = "Label2Carro4";
@@ -519,9 +518,9 @@
             // 
             this.PanelCarros.BackColor = System.Drawing.SystemColors.HighlightText;
             this.PanelCarros.CausesValidation = false;
-            this.PanelCarros.Location = new System.Drawing.Point(779, 108);
+            this.PanelCarros.Location = new System.Drawing.Point(902, 89);
             this.PanelCarros.Name = "PanelCarros";
-            this.PanelCarros.Size = new System.Drawing.Size(332, 163);
+            this.PanelCarros.Size = new System.Drawing.Size(200, 100);
             this.PanelCarros.TabIndex = 25;
             // 
             // ButtonCarros
@@ -539,7 +538,7 @@
             // Label1Carro1
             // 
             this.Label1Carro1.AutoSize = true;
-            this.Label1Carro1.BackColor = System.Drawing.Color.Transparent;
+            this.Label1Carro1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label1Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro1.Location = new System.Drawing.Point(166, 164);
             this.Label1Carro1.Name = "Label1Carro1";
@@ -550,7 +549,7 @@
             // Label2Carro3
             // 
             this.Label2Carro3.AutoSize = true;
-            this.Label2Carro3.BackColor = System.Drawing.Color.White;
+            this.Label2Carro3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label2Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro3.Location = new System.Drawing.Point(257, 180);
             this.Label2Carro3.Name = "Label2Carro3";
@@ -561,9 +560,8 @@
             // Label1Carro4
             // 
             this.Label1Carro4.AutoSize = true;
-            this.Label1Carro4.BackColor = System.Drawing.Color.Transparent;
+            this.Label1Carro4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label1Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Label1Carro4.Location = new System.Drawing.Point(322, 161);
             this.Label1Carro4.Name = "Label1Carro4";
             this.Label1Carro4.Size = new System.Drawing.Size(59, 16);
@@ -662,8 +660,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(1214, 950);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(1114, 710);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Label1Carro4);
             this.Controls.Add(this.Label2Carro3);
@@ -693,7 +691,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.MenuStripSIAERAplicacao;
             this.Name = "FormSIAER";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIAER - Sistema Integrado de Acompanhamento de Encomendas Rodoviárias";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SIAERForm_Load);
             this.MenuStripSIAERAplicacao.ResumeLayout(false);
             this.MenuStripSIAERAplicacao.PerformLayout();

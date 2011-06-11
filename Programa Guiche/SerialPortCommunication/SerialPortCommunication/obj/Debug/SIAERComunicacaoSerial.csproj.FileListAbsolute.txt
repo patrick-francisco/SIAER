@@ -430,17 +430,31 @@ C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Proje
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.read.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.write.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\SIAERComunicacaoSerial.FormMain.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.Properties.Resources.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.read.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\ResGen.write.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb

@@ -17,7 +17,7 @@ namespace SIAERAplicacao
     public partial class SIAERAguardaCodigoDeBarras : Form
     {
         //public CComunicacaoSerialLeitor ComunicacaoSerialEstabelecida = new CComunicacaoSerialLeitor();
-        private SerialPort PortaDeComunicacaoBarcode = new SerialPort();
+        private SerialPort PortaDeComunicacao = new SerialPort();
         CAtendente _atendente;
         string _codigodebarraslido;
         string transType = string.Empty;
@@ -42,15 +42,13 @@ namespace SIAERAplicacao
                 StopBitParaConstrutorComParametros = StopBit;
                 DatabitParaConstrutorComParametros = DataBit;
                 //-----------ProgressBar--------------
-                
+                this.timer1.Enabled = true;
                 this.timer1.Interval = 300;
                 this.progressBar1.Maximum = 100;
                 this.progressBar1.Step = 20;
                 this.progressBar1.TabIndex = 0;
                 _atendente = atendente;
-                this.timer1.Enabled = true;
-               PortaDeComunicacaoBarcode.DataReceived += new SerialDataReceivedEventHandler(DadosRecebidosNaPortaSerialBarcode);
-
+                PortaDeComunicacao.DataReceived += new SerialDataReceivedEventHandler(DadosRecebidosNaPortaSerial);
                 this.OpenPort();
                //-----------------------------------
         }
@@ -78,17 +76,17 @@ namespace SIAERAplicacao
                  try
                  {
                      //Testando se a porta serial está livre para comunicação
-                     if (PortaDeComunicacaoBarcode.IsOpen == true) PortaDeComunicacaoBarcode.Close();
+                     if (PortaDeComunicacao.IsOpen == true) PortaDeComunicacao.Close();
 
                      //Inicializa o Objeto de comunicação Serial
-                     PortaDeComunicacaoBarcode.BaudRate = int.Parse(BaudRateParaConstrutorComParametros);    //BaudRate
-                     PortaDeComunicacaoBarcode.DataBits = int.Parse(DatabitParaConstrutorComParametros);    //DataBits
-                     PortaDeComunicacaoBarcode.StopBits = (StopBits)Enum.Parse(typeof(StopBits), StopBitParaConstrutorComParametros);    //StopBits
-                     PortaDeComunicacaoBarcode.Parity = (Parity)Enum.Parse(typeof(Parity), ParityParaConstrutorComParametros);    //Parity
-                     PortaDeComunicacaoBarcode.PortName = PortNameParaConstrutorComParametros;   //PortName
+                     PortaDeComunicacao.BaudRate = int.Parse(BaudRateParaConstrutorComParametros);    //BaudRate
+                     PortaDeComunicacao.DataBits = int.Parse(DatabitParaConstrutorComParametros);    //DataBits
+                     PortaDeComunicacao.StopBits = (StopBits)Enum.Parse(typeof(StopBits), StopBitParaConstrutorComParametros);    //StopBits
+                     PortaDeComunicacao.Parity = (Parity)Enum.Parse(typeof(Parity), ParityParaConstrutorComParametros);    //Parity
+                     PortaDeComunicacao.PortName = PortNameParaConstrutorComParametros;   //PortName
                      //now open the port
-                     PortaDeComunicacaoBarcode.Open();
-                     PortaDeComunicacaoBarcode.DiscardInBuffer();//Limpa o buffer de entrada da serial antes de usá-la
+                     PortaDeComunicacao.Open();
+                     PortaDeComunicacao.DiscardInBuffer();//Limpa o buffer de entrada da serial antes de usá-la
                      return true;
                  }
                  catch (Exception ex)
@@ -105,7 +103,7 @@ namespace SIAERAplicacao
              {
                  try
                  {
-                     PortaDeComunicacaoBarcode.Close();
+                     PortaDeComunicacao.Close();
                      return true;
                  }
                  catch (Exception ex)
@@ -116,12 +114,12 @@ namespace SIAERAplicacao
              #endregion
 
              #region Dados Recebidos na Serial
-             public void DadosRecebidosNaPortaSerialBarcode(object sender, SerialDataReceivedEventArgs e)
+             public void DadosRecebidosNaPortaSerial(object sender, SerialDataReceivedEventArgs e)
              {
                  String msg = null;
                  do
                  {
-                     msg += PortaDeComunicacaoBarcode.ReadExisting();
+                     msg += PortaDeComunicacao.ReadExisting();
                  } while (msg[msg.Length - 1] != 10);//10 significa que estamos aguardando um /n, ou seja, uma quebra de linha para parar a verificação na porta
                  this.FecharPortaDeComunicacaoSerial();
                  CCodigoDeBarra bars = new CCodigoDeBarra();

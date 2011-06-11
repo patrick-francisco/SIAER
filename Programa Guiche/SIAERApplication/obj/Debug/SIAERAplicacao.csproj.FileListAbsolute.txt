@@ -824,32 +824,61 @@ C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Proje
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.cache
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.compiled
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.exe.config
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.exe
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.exe
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\BarcodeLib.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SerialPortCommunication.exe
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERFormSobeDesceOnibus.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaGerarEtiqueta.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERAguardaCodigoDeBarras.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroEncomenda.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.FormDeAutenticacao.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroCliente.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.FormSIAER.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.Properties.Resources.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERGeraCodigoDeBarras.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERLocalizaencomenda.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaLocalizaEncomenda.resources
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.9.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\ResGen.read.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\ResGen.write.1.tlog
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.cache
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.compiled
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.exe.config
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SIAERAplicacao.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERFormSobeDesceOnibus.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaGerarEtiqueta.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERAguardaCodigoDeBarras.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroEncomenda.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.FormDeAutenticacao.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroCliente.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.FormSIAER.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.Properties.Resources.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERGeraCodigoDeBarras.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERLocalizaencomenda.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaLocalizaEncomenda.resources
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.9.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\ResGen.read.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\ResGen.write.1.tlog
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.compiled
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe.config
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERFormSobeDesceOnibus.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaGerarEtiqueta.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERAguardaCodigoDeBarras.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroEncomenda.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.FormDeAutenticacao.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERCadastroCliente.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.FormSIAER.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.Properties.Resources.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERGeraCodigoDeBarras.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERLocalizaencomenda.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaLocalizaEncomenda.resources
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.9.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.read.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.write.1.tlog
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.cache
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.compiled

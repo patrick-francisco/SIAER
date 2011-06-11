@@ -210,9 +210,15 @@ C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Proje
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
 C:\Documents and Settings\Administrator\Meus documentos\Visual Studio 2010\Projects\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\bin\Debug\BarcodeLib.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
-C:\Users\Patrick\Downloads\_PROJETO FINAL\MARCUS\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\obj\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\SIAER\Programa Guiche\S2BClassLibrary\obj\Debug\SIAERClassLibrary.pdb

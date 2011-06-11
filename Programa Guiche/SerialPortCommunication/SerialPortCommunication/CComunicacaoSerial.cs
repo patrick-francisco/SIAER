@@ -110,7 +110,7 @@ namespace SIAERComunicacaoSerial
             _parity = string.Empty;
             _stopBits = string.Empty;
             _dataBits = string.Empty;
-            _portName = "COM18";
+            _portName = "COM3";
             _displayWindow = null;
             //Evento criado para reconhecer dados na porta Serial
             PortaDeComunicacao.DataReceived += new SerialDataReceivedEventHandler(DadosRecebidosNaPortaSerial);
