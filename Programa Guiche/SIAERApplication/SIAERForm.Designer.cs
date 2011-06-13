@@ -44,16 +44,12 @@
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ListBox1 = new System.Windows.Forms.ListBox();
             this.sIAERTESTEDataSet = new SIAERAplicacao.SIAERTESTEDataSet();
             this.sIAERTESTEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -77,28 +73,32 @@
             this.Label2Carro3 = new System.Windows.Forms.Label();
             this.Label1Carro4 = new System.Windows.Forms.Label();
             this.TimerAtualizaListaEncomendasCarros = new System.Windows.Forms.Timer(this.components);
-            this.PictureBoxCarro3 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro4 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro1 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro2 = new System.Windows.Forms.PictureBox();
             this.ComboBoxPortas = new System.Windows.Forms.ComboBox();
             this.ButtonConectar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.PictureBoxCarro3 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro4 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuStripSIAERAplicacao.SuspendLayout();
             this.StatusStripSiaerForm.SuspendLayout();
             this.PanelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuStripSIAERAplicacao
@@ -240,18 +240,6 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Etiqueta";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::SIAERAplicacao.Properties.Resources.SIAERCadastroEncomenda;
-            this.pictureBox4.Location = new System.Drawing.Point(29, 443);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(47, 44);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -273,18 +261,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Encomenda";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::SIAERAplicacao.Properties.Resources.SIAERCodigoDeBarrasFigura;
-            this.pictureBox3.Location = new System.Drawing.Point(21, 315);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -294,18 +270,6 @@
             this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Gerar";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SIAERAplicacao.Properties.Resources.SIAERBox;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 184);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(53, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label4
             // 
@@ -337,18 +301,6 @@
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Localizar";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SIAERAplicacao.Properties.Resources.Lupa21;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ListBox1
             // 
@@ -572,46 +524,6 @@
             // 
             this.TimerAtualizaListaEncomendasCarros.Tick += new System.EventHandler(this.TimerAtualizaListaEncomendasCarros_Tick);
             // 
-            // PictureBoxCarro3
-            // 
-            this.PictureBoxCarro3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro3.Location = new System.Drawing.Point(241, 124);
-            this.PictureBoxCarro3.Name = "PictureBoxCarro3";
-            this.PictureBoxCarro3.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro3.TabIndex = 27;
-            this.PictureBoxCarro3.TabStop = false;
-            this.PictureBoxCarro3.Click += new System.EventHandler(this.PictureBoxCarro3_Click);
-            // 
-            // PictureBoxCarro4
-            // 
-            this.PictureBoxCarro4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro4.Location = new System.Drawing.Point(269, 124);
-            this.PictureBoxCarro4.Name = "PictureBoxCarro4";
-            this.PictureBoxCarro4.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro4.TabIndex = 15;
-            this.PictureBoxCarro4.TabStop = false;
-            this.PictureBoxCarro4.Click += new System.EventHandler(this.PictureBoxCarro4_Click);
-            // 
-            // PictureBoxCarro1
-            // 
-            this.PictureBoxCarro1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro1.Location = new System.Drawing.Point(185, 124);
-            this.PictureBoxCarro1.Name = "PictureBoxCarro1";
-            this.PictureBoxCarro1.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro1.TabIndex = 12;
-            this.PictureBoxCarro1.TabStop = false;
-            this.PictureBoxCarro1.Click += new System.EventHandler(this.PictureBoxCarro1_Click);
-            // 
-            // PictureBoxCarro2
-            // 
-            this.PictureBoxCarro2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro2.Location = new System.Drawing.Point(213, 124);
-            this.PictureBoxCarro2.Name = "PictureBoxCarro2";
-            this.PictureBoxCarro2.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro2.TabIndex = 13;
-            this.PictureBoxCarro2.TabStop = false;
-            this.PictureBoxCarro2.Click += new System.EventHandler(this.PictureBoxCarro2_Click);
-            // 
             // ComboBoxPortas
             // 
             this.ComboBoxPortas.FormattingEnabled = true;
@@ -654,6 +566,94 @@
             this.label9.Size = new System.Drawing.Size(135, 16);
             this.label9.TabIndex = 31;
             this.label9.Text = "Selecione uma porta:";
+            // 
+            // PictureBoxCarro3
+            // 
+            this.PictureBoxCarro3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro3.Location = new System.Drawing.Point(241, 124);
+            this.PictureBoxCarro3.Name = "PictureBoxCarro3";
+            this.PictureBoxCarro3.Size = new System.Drawing.Size(22, 25);
+            this.PictureBoxCarro3.TabIndex = 27;
+            this.PictureBoxCarro3.TabStop = false;
+            this.PictureBoxCarro3.Click += new System.EventHandler(this.PictureBoxCarro3_Click);
+            // 
+            // PictureBoxCarro4
+            // 
+            this.PictureBoxCarro4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro4.Location = new System.Drawing.Point(269, 124);
+            this.PictureBoxCarro4.Name = "PictureBoxCarro4";
+            this.PictureBoxCarro4.Size = new System.Drawing.Size(22, 25);
+            this.PictureBoxCarro4.TabIndex = 15;
+            this.PictureBoxCarro4.TabStop = false;
+            this.PictureBoxCarro4.Click += new System.EventHandler(this.PictureBoxCarro4_Click);
+            // 
+            // PictureBoxCarro1
+            // 
+            this.PictureBoxCarro1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro1.Location = new System.Drawing.Point(185, 124);
+            this.PictureBoxCarro1.Name = "PictureBoxCarro1";
+            this.PictureBoxCarro1.Size = new System.Drawing.Size(22, 25);
+            this.PictureBoxCarro1.TabIndex = 12;
+            this.PictureBoxCarro1.TabStop = false;
+            this.PictureBoxCarro1.Click += new System.EventHandler(this.PictureBoxCarro1_Click);
+            // 
+            // PictureBoxCarro2
+            // 
+            this.PictureBoxCarro2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro2.Location = new System.Drawing.Point(213, 124);
+            this.PictureBoxCarro2.Name = "PictureBoxCarro2";
+            this.PictureBoxCarro2.Size = new System.Drawing.Size(22, 25);
+            this.PictureBoxCarro2.TabIndex = 13;
+            this.PictureBoxCarro2.TabStop = false;
+            this.PictureBoxCarro2.Click += new System.EventHandler(this.PictureBoxCarro2_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::SIAERAplicacao.Properties.Resources.register;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 419);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 64);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::SIAERAplicacao.Properties.Resources.SIAERCodigoDeBarrasFigura;
+            this.pictureBox3.Location = new System.Drawing.Point(21, 315);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(62, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SIAERAplicacao.Properties.Resources.NovaCaixa;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::SIAERAplicacao.Properties.Resources.lupa3;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FormSIAER
             // 
@@ -701,18 +701,18 @@
             this.StatusStripSiaerForm.PerformLayout();
             this.PanelLeft.ResumeLayout(false);
             this.PanelLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

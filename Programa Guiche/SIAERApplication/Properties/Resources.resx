@@ -118,41 +118,56 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SIAEROnibusFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SIAEROnibusFigura.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SIAERBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SIAERBox.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lupa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SIAERLinhaFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SIAERLinhaFigura1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SIAERGuicheFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIAERGuicheFigura1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SIAERCadastroEncomenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SIAERCadastroEncomenda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lupa21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa21.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Lupa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lupa2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SIAERCodigoDeBarrasFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SIAERCodigoDeBarrasFigura.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SIAERLinhaFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAERLinhaFigura1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SIAERlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIAERlogo.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SIAERWIRELESSFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SIAERWIRELESSFigura.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIAERCadastroEncomenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAERCadastroEncomenda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIAERBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAERBox.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lupa3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lupa3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NovaCaixa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NovaCaixa.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lupa21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa21.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIAERCodigoDeBarrasFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAERCodigoDeBarrasFigura.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIAEROnibusFigura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAEROnibusFigura.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lupa1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lupa1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="register1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="register" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\register.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SIAERlogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SIAERlogo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
