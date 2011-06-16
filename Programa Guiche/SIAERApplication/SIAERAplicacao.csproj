@@ -295,11 +295,14 @@
     <None Include="Resources\SIAERCadastroEncomenda.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\onibus1.png" />
+    <None Include="Resources\ONIBUS2.png" />
     <None Include="Resources\SIAERlogo.png" />
     <None Include="Resources\register.png" />
     <None Include="Resources\register1.png" />
     <None Include="Resources\lupa3.png" />
     <None Include="Resources\NovaCaixa.png" />
+    <None Include="Resources\background.png" />
     <Content Include="Resources\Onibus.bmp" />
     <None Include="Resources\SIAERWIRELESSFigura.jpg" />
     <None Include="Resources\SIAERGuicheFigura1.jpg" />

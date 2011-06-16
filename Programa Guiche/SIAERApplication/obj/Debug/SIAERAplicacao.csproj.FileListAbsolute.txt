@@ -875,10 +875,7 @@ C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERGeraCodigoDeBarras.resources
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERLocalizaencomenda.resources
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaLocalizaEncomenda.resources
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.1.tlog
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.read.9.tlog
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.read.1.tlog
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.write.1.tlog
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.cache
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.compiled

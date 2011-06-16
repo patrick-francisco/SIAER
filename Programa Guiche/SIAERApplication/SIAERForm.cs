@@ -95,10 +95,13 @@ namespace SIAERAplicacao
             this.Label2Carro2.Visible = false;
             this.Label2Carro3.Visible = false;
             this.Label2Carro4.Visible = false;
-            this.PictureBoxCarro1.Image = new Bitmap (Properties.Resources.SIAEROnibusFigura);
+//            this.PictureBoxCarro1.Image = new Bitmap (Properties.Resources.SIAEROnibusFigura);
+            this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.ONIBUS2); 
             this.PictureBoxCarro2.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
             this.PictureBoxCarro3.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
             this.PictureBoxCarro4.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
+        
+        
         }
 
         private void FormSIAER_MaximumSizeChanged(object sender, EventArgs e)
@@ -632,7 +635,8 @@ namespace SIAERAplicacao
                 {
                     case 0:
                         //Carro 1
-                        this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
+//                        this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
+                        this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.ONIBUS2); 
                         this.PictureBoxCarro1.SizeMode = PictureBoxSizeMode.AutoSize;
                         this.Label1Carro1.Text = c.Onibus;
                         this.Label2Carro1.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
@@ -833,5 +837,10 @@ namespace SIAERAplicacao
             }
         }
         #endregion
+
+        private void ButtonCarros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

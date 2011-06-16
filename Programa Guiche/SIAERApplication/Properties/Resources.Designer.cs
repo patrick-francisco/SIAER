@@ -60,6 +60,13 @@ namespace SIAERAplicacao.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap background {
+            get {
+                object obj = ResourceManager.GetObject("background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Lupa {
             get {
                 object obj = ResourceManager.GetObject("Lupa", resourceCulture);
@@ -98,6 +105,20 @@ namespace SIAERAplicacao.Properties {
         internal static System.Drawing.Bitmap NovaCaixa {
             get {
                 object obj = ResourceManager.GetObject("NovaCaixa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap onibus1 {
+            get {
+                object obj = ResourceManager.GetObject("onibus1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ONIBUS2 {
+            get {
+                object obj = ResourceManager.GetObject("ONIBUS2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -161,6 +182,20 @@ namespace SIAERAplicacao.Properties {
         internal static System.Drawing.Bitmap SIAERlogo1 {
             get {
                 object obj = ResourceManager.GetObject("SIAERlogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SIAERlogo2 {
+            get {
+                object obj = ResourceManager.GetObject("SIAERlogo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap SIAERlogo3 {
+            get {
+                object obj = ResourceManager.GetObject("SIAERlogo3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

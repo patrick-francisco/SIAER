@@ -44,12 +44,16 @@
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ListBox1 = new System.Windows.Forms.ListBox();
             this.sIAERTESTEDataSet = new SIAERAplicacao.SIAERTESTEDataSet();
             this.sIAERTESTEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -81,13 +85,13 @@
             this.PictureBoxCarro4 = new System.Windows.Forms.PictureBox();
             this.PictureBoxCarro1 = new System.Windows.Forms.PictureBox();
             this.PictureBoxCarro2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MenuStripSIAERAplicacao.SuspendLayout();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.StatusStripSiaerForm.SuspendLayout();
             this.PanelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -95,18 +99,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuStripSIAERAplicacao
             // 
-            this.MenuStripSIAERAplicacao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItemArquivo,
-            this.ToolStripMenuItemCadastro,
-            this.serialCommunicationToolStripMenuItem});
             this.MenuStripSIAERAplicacao.Location = new System.Drawing.Point(0, 0);
             this.MenuStripSIAERAplicacao.Name = "MenuStripSIAERAplicacao";
             this.MenuStripSIAERAplicacao.Size = new System.Drawing.Size(1114, 24);
@@ -200,7 +197,7 @@
             // 
             // PanelLeft
             // 
-            this.PanelLeft.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PanelLeft.BackColor = System.Drawing.Color.CornflowerBlue;
             this.PanelLeft.Controls.Add(this.label7);
             this.PanelLeft.Controls.Add(this.label5);
             this.PanelLeft.Controls.Add(this.pictureBox4);
@@ -240,6 +237,18 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Etiqueta";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::SIAERAplicacao.Properties.Resources.register;
+            this.pictureBox4.Location = new System.Drawing.Point(24, 419);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(55, 64);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -261,6 +270,18 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Encomenda";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::SIAERAplicacao.Properties.Resources.SIAERCodigoDeBarrasFigura;
+            this.pictureBox3.Location = new System.Drawing.Point(21, 315);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(62, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -270,6 +291,18 @@
             this.label6.Size = new System.Drawing.Size(42, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Gerar";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::SIAERAplicacao.Properties.Resources.NovaCaixa;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 168);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label4
             // 
@@ -301,6 +334,18 @@
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Localizar";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::SIAERAplicacao.Properties.Resources.lupa3;
+            this.pictureBox1.Location = new System.Drawing.Point(21, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ListBox1
             // 
@@ -414,7 +459,7 @@
             // Label2Carro1
             // 
             this.Label2Carro1.AutoSize = true;
-            this.Label2Carro1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label2Carro1.BackColor = System.Drawing.Color.White;
             this.Label2Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro1.Location = new System.Drawing.Point(166, 177);
             this.Label2Carro1.Name = "Label2Carro1";
@@ -425,7 +470,7 @@
             // Label1Carro2
             // 
             this.Label1Carro2.AutoSize = true;
-            this.Label1Carro2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label1Carro2.BackColor = System.Drawing.Color.White;
             this.Label1Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro2.Location = new System.Drawing.Point(210, 164);
             this.Label1Carro2.Name = "Label1Carro2";
@@ -436,7 +481,7 @@
             // Label1Carro3
             // 
             this.Label1Carro3.AutoSize = true;
-            this.Label1Carro3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label1Carro3.BackColor = System.Drawing.Color.White;
             this.Label1Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro3.Location = new System.Drawing.Point(257, 164);
             this.Label1Carro3.Name = "Label1Carro3";
@@ -447,7 +492,7 @@
             // Label2Carro2
             // 
             this.Label2Carro2.AutoSize = true;
-            this.Label2Carro2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label2Carro2.BackColor = System.Drawing.Color.White;
             this.Label2Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro2.Location = new System.Drawing.Point(216, 177);
             this.Label2Carro2.Name = "Label2Carro2";
@@ -458,7 +503,7 @@
             // Label2Carro4
             // 
             this.Label2Carro4.AutoSize = true;
-            this.Label2Carro4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label2Carro4.BackColor = System.Drawing.Color.White;
             this.Label2Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro4.Location = new System.Drawing.Point(304, 177);
             this.Label2Carro4.Name = "Label2Carro4";
@@ -486,11 +531,12 @@
             this.ButtonCarros.TabIndex = 0;
             this.ButtonCarros.Text = "Ônibus na plataforma";
             this.ButtonCarros.UseVisualStyleBackColor = false;
+            this.ButtonCarros.Click += new System.EventHandler(this.ButtonCarros_Click);
             // 
             // Label1Carro1
             // 
             this.Label1Carro1.AutoSize = true;
-            this.Label1Carro1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label1Carro1.BackColor = System.Drawing.Color.White;
             this.Label1Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro1.Location = new System.Drawing.Point(166, 164);
             this.Label1Carro1.Name = "Label1Carro1";
@@ -501,7 +547,7 @@
             // Label2Carro3
             // 
             this.Label2Carro3.AutoSize = true;
-            this.Label2Carro3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label2Carro3.BackColor = System.Drawing.Color.White;
             this.Label2Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2Carro3.Location = new System.Drawing.Point(257, 180);
             this.Label2Carro3.Name = "Label2Carro3";
@@ -512,7 +558,7 @@
             // Label1Carro4
             // 
             this.Label1Carro4.AutoSize = true;
-            this.Label1Carro4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Label1Carro4.BackColor = System.Drawing.Color.White;
             this.Label1Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1Carro4.Location = new System.Drawing.Point(322, 161);
             this.Label1Carro4.Name = "Label1Carro4";
@@ -590,6 +636,7 @@
             // PictureBoxCarro1
             // 
             this.PictureBoxCarro1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro1.ErrorImage = null;
             this.PictureBoxCarro1.Location = new System.Drawing.Point(185, 124);
             this.PictureBoxCarro1.Name = "PictureBoxCarro1";
             this.PictureBoxCarro1.Size = new System.Drawing.Size(22, 25);
@@ -607,61 +654,25 @@
             this.PictureBoxCarro2.TabStop = false;
             this.PictureBoxCarro2.Click += new System.EventHandler(this.PictureBoxCarro2_Click);
             // 
-            // pictureBox4
+            // pictureBox5
             // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = global::SIAERAplicacao.Properties.Resources.register;
-            this.pictureBox4.Location = new System.Drawing.Point(24, 419);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(55, 64);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::SIAERAplicacao.Properties.Resources.SIAERCodigoDeBarrasFigura;
-            this.pictureBox3.Location = new System.Drawing.Point(21, 315);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(62, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SIAERAplicacao.Properties.Resources.NovaCaixa;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 168);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::SIAERAplicacao.Properties.Resources.lupa3;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::SIAERAplicacao.Properties.Resources.SIAERlogo3;
+            this.pictureBox5.Location = new System.Drawing.Point(373, 37);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(286, 81);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 31;
+            this.pictureBox5.TabStop = false;
             // 
             // FormSIAER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1114, 710);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Label1Carro4);
             this.Controls.Add(this.Label2Carro3);
@@ -695,12 +706,14 @@
             this.Text = "SIAER - Sistema Integrado de Acompanhamento de Encomendas Rodoviárias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SIAERForm_Load);
-            this.MenuStripSIAERAplicacao.ResumeLayout(false);
-            this.MenuStripSIAERAplicacao.PerformLayout();
             this.StatusStripSiaerForm.ResumeLayout(false);
             this.StatusStripSiaerForm.PerformLayout();
             this.PanelLeft.ResumeLayout(false);
             this.PanelLeft.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -709,10 +722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -776,6 +786,7 @@
         private System.Windows.Forms.Button ButtonConectar;
         private System.Windows.Forms.ComboBox ComboBoxPortas;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 
