@@ -118,25 +118,29 @@ void main_access_point (void)
 	       }
       	}
    	 }
-   	 if(ap_desconectar==TRUE)
+  	 
+  	 if(sNumCurrentPeers!=0)
    	 {
-   	 	linkID_t temp_sLID;
-   	 	temp_sLID = get_buffer_timeout();
-   	 	SMPL_Unlink(temp_sLID);
-   	 	
-   	  BSP_ENTER_CRITICAL_SECTION(intState);
-    	Organiza_link_ID(temp_sLID);
-   	 	//Organiza_buffer_lista_de_ED();
-   	 	
-   	 	if(check_outros_buffers()==0)
-   	 	{
-   	 		// nao ha onibus para desconectar
-   	 		ap_desconectar=FALSE;
-   	 	}
-   	 	sNumCurrentPeers--;
-      BSP_EXIT_CRITICAL_SECTION(intState);
-   	 }
-
+	   	 if(ap_desconectar==TRUE)
+	   	 {
+	   	 	linkID_t temp_sLID;
+	   	 	temp_sLID = get_buffer_timeout();
+	   	 	SMPL_Unlink(temp_sLID);
+	   	 	
+	   	    BSP_ENTER_CRITICAL_SECTION(intState);
+	    	Organiza_link_ID(temp_sLID);
+	   	 	//Organiza_buffer_lista_de_ED();
+	   	 	
+	   	 	if(check_outros_buffers()==0)
+	   	 	{
+	   	 		// nao ha onibus para desconectar
+	   	 		ap_desconectar=FALSE;
+	   	 	}
+	   	 	sNumCurrentPeers--;
+	   	 	num_onibus_conectados--;
+	        BSP_EXIT_CRITICAL_SECTION(intState);
+	      }
+	  }
     }
   }
 

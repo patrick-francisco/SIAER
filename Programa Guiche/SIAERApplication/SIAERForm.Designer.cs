@@ -72,20 +72,32 @@
             this.Label2Carro2 = new System.Windows.Forms.Label();
             this.Label2Carro4 = new System.Windows.Forms.Label();
             this.PanelCarros = new System.Windows.Forms.Panel();
-            this.ButtonCarros = new System.Windows.Forms.Button();
-            this.Label1Carro1 = new System.Windows.Forms.Label();
-            this.Label2Carro3 = new System.Windows.Forms.Label();
+            this.PictureBoxCarro8 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro7 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro6 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro5 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxCarro2 = new System.Windows.Forms.PictureBox();
             this.Label1Carro4 = new System.Windows.Forms.Label();
+            this.PictureBoxCarro3 = new System.Windows.Forms.PictureBox();
+            this.Label2Carro3 = new System.Windows.Forms.Label();
+            this.PictureBoxCarro4 = new System.Windows.Forms.PictureBox();
+            this.Label1Carro1 = new System.Windows.Forms.Label();
+            this.ButtonCarros = new System.Windows.Forms.Button();
             this.TimerAtualizaListaEncomendasCarros = new System.Windows.Forms.Timer(this.components);
             this.ComboBoxPortas = new System.Windows.Forms.ComboBox();
             this.ButtonConectar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.PictureBoxCarro3 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro4 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro1 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxCarro2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.Label2Carro8 = new System.Windows.Forms.Label();
+            this.Label1Carro8 = new System.Windows.Forms.Label();
+            this.Label2Carro7 = new System.Windows.Forms.Label();
+            this.Label1Carro7 = new System.Windows.Forms.Label();
+            this.Label1Carro6 = new System.Windows.Forms.Label();
+            this.Label2Carro6 = new System.Windows.Forms.Label();
+            this.Label2Carro5 = new System.Windows.Forms.Label();
+            this.Label1Carro5 = new System.Windows.Forms.Label();
             this.StatusStripSiaerForm.SuspendLayout();
             this.PanelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -94,11 +106,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).BeginInit();
+            this.PanelCarros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,7 +200,7 @@
             // 
             this.StatusStripSiaerForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConexao});
-            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 688);
+            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 723);
             this.StatusStripSiaerForm.Name = "StatusStripSiaerForm";
             this.StatusStripSiaerForm.Size = new System.Drawing.Size(1114, 22);
             this.StatusStripSiaerForm.TabIndex = 1;
@@ -353,9 +370,9 @@
             this.ListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox1.FormattingEnabled = true;
             this.ListBox1.ItemHeight = 20;
-            this.ListBox1.Location = new System.Drawing.Point(109, 350);
+            this.ListBox1.Location = new System.Drawing.Point(108, 246);
             this.ListBox1.Name = "ListBox1";
-            this.ListBox1.Size = new System.Drawing.Size(276, 84);
+            this.ListBox1.Size = new System.Drawing.Size(336, 104);
             this.ListBox1.TabIndex = 4;
             // 
             // sIAERTESTEDataSet
@@ -370,12 +387,13 @@
             // 
             // Button1
             // 
+            this.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button1.Location = new System.Drawing.Point(110, 320);
+            this.Button1.Location = new System.Drawing.Point(109, 221);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(275, 31);
+            this.Button1.Size = new System.Drawing.Size(335, 31);
             this.Button1.TabIndex = 5;
             this.Button1.Text = "Encomendas em";
             this.Button1.UseVisualStyleBackColor = false;
@@ -385,9 +403,9 @@
             this.Button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button2.Location = new System.Drawing.Point(384, 320);
+            this.Button2.Location = new System.Drawing.Point(108, 363);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(275, 32);
+            this.Button2.Size = new System.Drawing.Size(336, 32);
             this.Button2.TabIndex = 7;
             this.Button2.Text = "Próximas encomendas a chegar";
             this.Button2.UseVisualStyleBackColor = false;
@@ -398,9 +416,9 @@
             this.ListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox2.FormattingEnabled = true;
             this.ListBox2.ItemHeight = 20;
-            this.ListBox2.Location = new System.Drawing.Point(384, 349);
+            this.ListBox2.Location = new System.Drawing.Point(109, 395);
             this.ListBox2.Name = "ListBox2";
-            this.ListBox2.Size = new System.Drawing.Size(275, 84);
+            this.ListBox2.Size = new System.Drawing.Size(335, 84);
             this.ListBox2.TabIndex = 6;
             // 
             // Button3
@@ -408,9 +426,9 @@
             this.Button3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.Location = new System.Drawing.Point(659, 319);
+            this.Button3.Location = new System.Drawing.Point(109, 475);
             this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(275, 32);
+            this.Button3.Size = new System.Drawing.Size(335, 32);
             this.Button3.TabIndex = 9;
             this.Button3.Text = "Encomendas a entregar p/ Cliente";
             this.Button3.UseVisualStyleBackColor = false;
@@ -421,9 +439,9 @@
             this.ListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBox3.FormattingEnabled = true;
             this.ListBox3.ItemHeight = 20;
-            this.ListBox3.Location = new System.Drawing.Point(659, 350);
+            this.ListBox3.Location = new System.Drawing.Point(109, 510);
             this.ListBox3.Name = "ListBox3";
-            this.ListBox3.Size = new System.Drawing.Size(275, 84);
+            this.ListBox3.Size = new System.Drawing.Size(335, 84);
             this.ListBox3.TabIndex = 8;
             // 
             // timer1
@@ -461,64 +479,234 @@
             this.Label2Carro1.AutoSize = true;
             this.Label2Carro1.BackColor = System.Drawing.Color.White;
             this.Label2Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro1.Location = new System.Drawing.Point(166, 177);
+            this.Label2Carro1.Location = new System.Drawing.Point(109, 156);
             this.Label2Carro1.Name = "Label2Carro1";
-            this.Label2Carro1.Size = new System.Drawing.Size(52, 16);
+            this.Label2Carro1.Size = new System.Drawing.Size(110, 16);
             this.Label2Carro1.TabIndex = 17;
-            this.Label2Carro1.Text = "label10";
+            this.Label2Carro1.Text = "Origem-destino 1";
+            this.Label2Carro1.Visible = false;
             // 
             // Label1Carro2
             // 
             this.Label1Carro2.AutoSize = true;
             this.Label1Carro2.BackColor = System.Drawing.Color.White;
             this.Label1Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro2.Location = new System.Drawing.Point(210, 164);
+            this.Label1Carro2.Location = new System.Drawing.Point(155, 297);
             this.Label1Carro2.Name = "Label1Carro2";
-            this.Label1Carro2.Size = new System.Drawing.Size(59, 16);
+            this.Label1Carro2.Size = new System.Drawing.Size(64, 16);
             this.Label1Carro2.TabIndex = 18;
-            this.Label1Carro2.Text = "label11";
+            this.Label1Carro2.Text = "Onibus2";
             // 
             // Label1Carro3
             // 
             this.Label1Carro3.AutoSize = true;
             this.Label1Carro3.BackColor = System.Drawing.Color.White;
             this.Label1Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro3.Location = new System.Drawing.Point(257, 164);
+            this.Label1Carro3.Location = new System.Drawing.Point(155, 452);
             this.Label1Carro3.Name = "Label1Carro3";
-            this.Label1Carro3.Size = new System.Drawing.Size(59, 16);
+            this.Label1Carro3.Size = new System.Drawing.Size(64, 16);
             this.Label1Carro3.TabIndex = 19;
-            this.Label1Carro3.Text = "label12";
+            this.Label1Carro3.Text = "Onibus3";
             // 
             // Label2Carro2
             // 
             this.Label2Carro2.AutoSize = true;
             this.Label2Carro2.BackColor = System.Drawing.Color.White;
             this.Label2Carro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro2.Location = new System.Drawing.Point(216, 177);
+            this.Label2Carro2.Location = new System.Drawing.Point(109, 313);
             this.Label2Carro2.Name = "Label2Carro2";
-            this.Label2Carro2.Size = new System.Drawing.Size(52, 16);
+            this.Label2Carro2.Size = new System.Drawing.Size(110, 16);
             this.Label2Carro2.TabIndex = 20;
-            this.Label2Carro2.Text = "label13";
+            this.Label2Carro2.Text = "Origem-destino 2";
             // 
             // Label2Carro4
             // 
             this.Label2Carro4.AutoSize = true;
             this.Label2Carro4.BackColor = System.Drawing.Color.White;
             this.Label2Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro4.Location = new System.Drawing.Point(304, 177);
+            this.Label2Carro4.Location = new System.Drawing.Point(109, 621);
             this.Label2Carro4.Name = "Label2Carro4";
-            this.Label2Carro4.Size = new System.Drawing.Size(52, 16);
+            this.Label2Carro4.Size = new System.Drawing.Size(110, 16);
             this.Label2Carro4.TabIndex = 23;
-            this.Label2Carro4.Text = "label14";
+            this.Label2Carro4.Text = "Origem-destino 4";
             // 
             // PanelCarros
             // 
             this.PanelCarros.BackColor = System.Drawing.SystemColors.HighlightText;
             this.PanelCarros.CausesValidation = false;
-            this.PanelCarros.Location = new System.Drawing.Point(902, 89);
+            this.PanelCarros.Controls.Add(this.Label1Carro8);
+            this.PanelCarros.Controls.Add(this.Label1Carro7);
+            this.PanelCarros.Controls.Add(this.Label1Carro6);
+            this.PanelCarros.Controls.Add(this.Label2Carro8);
+            this.PanelCarros.Controls.Add(this.Label2Carro7);
+            this.PanelCarros.Controls.Add(this.Label2Carro6);
+            this.PanelCarros.Controls.Add(this.Label2Carro5);
+            this.PanelCarros.Controls.Add(this.Label1Carro5);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro8);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro7);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro6);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro5);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro1);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro2);
+            this.PanelCarros.Controls.Add(this.Label1Carro4);
+            this.PanelCarros.Controls.Add(this.Label2Carro4);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro3);
+            this.PanelCarros.Controls.Add(this.Label2Carro3);
+            this.PanelCarros.Controls.Add(this.PictureBoxCarro4);
+            this.PanelCarros.Controls.Add(this.Label1Carro3);
+            this.PanelCarros.Controls.Add(this.Label1Carro1);
+            this.PanelCarros.Controls.Add(this.Label2Carro2);
+            this.PanelCarros.Controls.Add(this.Label1Carro2);
+            this.PanelCarros.Controls.Add(this.Label2Carro1);
+            this.PanelCarros.Location = new System.Drawing.Point(528, 89);
             this.PanelCarros.Name = "PanelCarros";
-            this.PanelCarros.Size = new System.Drawing.Size(200, 100);
+            this.PanelCarros.Size = new System.Drawing.Size(600, 661);
             this.PanelCarros.TabIndex = 25;
+            // 
+            // PictureBoxCarro8
+            // 
+            this.PictureBoxCarro8.BackColor = System.Drawing.Color.White;
+            this.PictureBoxCarro8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro8.ErrorImage = null;
+            this.PictureBoxCarro8.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro8.Location = new System.Drawing.Point(337, 495);
+            this.PictureBoxCarro8.Name = "PictureBoxCarro8";
+            this.PictureBoxCarro8.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro8.TabIndex = 33;
+            this.PictureBoxCarro8.TabStop = false;
+            this.PictureBoxCarro8.Visible = false;
+            // 
+            // PictureBoxCarro7
+            // 
+            this.PictureBoxCarro7.BackColor = System.Drawing.Color.White;
+            this.PictureBoxCarro7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro7.ErrorImage = null;
+            this.PictureBoxCarro7.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro7.Location = new System.Drawing.Point(340, 343);
+            this.PictureBoxCarro7.Name = "PictureBoxCarro7";
+            this.PictureBoxCarro7.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro7.TabIndex = 32;
+            this.PictureBoxCarro7.TabStop = false;
+            this.PictureBoxCarro7.Visible = false;
+            // 
+            // PictureBoxCarro6
+            // 
+            this.PictureBoxCarro6.BackColor = System.Drawing.Color.White;
+            this.PictureBoxCarro6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro6.ErrorImage = null;
+            this.PictureBoxCarro6.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro6.Location = new System.Drawing.Point(340, 187);
+            this.PictureBoxCarro6.Name = "PictureBoxCarro6";
+            this.PictureBoxCarro6.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro6.TabIndex = 31;
+            this.PictureBoxCarro6.TabStop = false;
+            this.PictureBoxCarro6.Visible = false;
+            // 
+            // PictureBoxCarro5
+            // 
+            this.PictureBoxCarro5.BackColor = System.Drawing.Color.White;
+            this.PictureBoxCarro5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro5.ErrorImage = null;
+            this.PictureBoxCarro5.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro5.Location = new System.Drawing.Point(340, 31);
+            this.PictureBoxCarro5.Name = "PictureBoxCarro5";
+            this.PictureBoxCarro5.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro5.TabIndex = 30;
+            this.PictureBoxCarro5.TabStop = false;
+            this.PictureBoxCarro5.Visible = false;
+            // 
+            // PictureBoxCarro1
+            // 
+            this.PictureBoxCarro1.BackColor = System.Drawing.Color.White;
+            this.PictureBoxCarro1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro1.ErrorImage = null;
+            this.PictureBoxCarro1.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro1.Location = new System.Drawing.Point(66, 31);
+            this.PictureBoxCarro1.Name = "PictureBoxCarro1";
+            this.PictureBoxCarro1.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro1.TabIndex = 12;
+            this.PictureBoxCarro1.TabStop = false;
+            this.PictureBoxCarro1.Visible = false;
+            this.PictureBoxCarro1.Click += new System.EventHandler(this.PictureBoxCarro1_Click);
+            // 
+            // PictureBoxCarro2
+            // 
+            this.PictureBoxCarro2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro2.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro2.Location = new System.Drawing.Point(66, 187);
+            this.PictureBoxCarro2.Name = "PictureBoxCarro2";
+            this.PictureBoxCarro2.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro2.TabIndex = 13;
+            this.PictureBoxCarro2.TabStop = false;
+            this.PictureBoxCarro2.Visible = false;
+            this.PictureBoxCarro2.Click += new System.EventHandler(this.PictureBoxCarro2_Click);
+            // 
+            // Label1Carro4
+            // 
+            this.Label1Carro4.AutoSize = true;
+            this.Label1Carro4.BackColor = System.Drawing.Color.White;
+            this.Label1Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro4.Location = new System.Drawing.Point(155, 605);
+            this.Label1Carro4.Name = "Label1Carro4";
+            this.Label1Carro4.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro4.TabIndex = 29;
+            this.Label1Carro4.Text = "Onibus4";
+            // 
+            // PictureBoxCarro3
+            // 
+            this.PictureBoxCarro3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro3.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro3.Location = new System.Drawing.Point(66, 343);
+            this.PictureBoxCarro3.Name = "PictureBoxCarro3";
+            this.PictureBoxCarro3.Size = new System.Drawing.Size(234, 107);
+            this.PictureBoxCarro3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro3.TabIndex = 27;
+            this.PictureBoxCarro3.TabStop = false;
+            this.PictureBoxCarro3.Visible = false;
+            this.PictureBoxCarro3.Click += new System.EventHandler(this.PictureBoxCarro3_Click);
+            // 
+            // Label2Carro3
+            // 
+            this.Label2Carro3.AutoSize = true;
+            this.Label2Carro3.BackColor = System.Drawing.Color.White;
+            this.Label2Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro3.Location = new System.Drawing.Point(109, 468);
+            this.Label2Carro3.Name = "Label2Carro3";
+            this.Label2Carro3.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro3.TabIndex = 28;
+            this.Label2Carro3.Text = "Origem-destino 3";
+            // 
+            // PictureBoxCarro4
+            // 
+            this.PictureBoxCarro4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PictureBoxCarro4.Image = global::SIAERAplicacao.Properties.Resources.ONIBUS2;
+            this.PictureBoxCarro4.Location = new System.Drawing.Point(66, 494);
+            this.PictureBoxCarro4.Name = "PictureBoxCarro4";
+            this.PictureBoxCarro4.Size = new System.Drawing.Size(234, 108);
+            this.PictureBoxCarro4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxCarro4.TabIndex = 15;
+            this.PictureBoxCarro4.TabStop = false;
+            this.PictureBoxCarro4.Visible = false;
+            this.PictureBoxCarro4.Click += new System.EventHandler(this.PictureBoxCarro4_Click);
+            // 
+            // Label1Carro1
+            // 
+            this.Label1Carro1.AutoSize = true;
+            this.Label1Carro1.BackColor = System.Drawing.Color.White;
+            this.Label1Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro1.Location = new System.Drawing.Point(155, 140);
+            this.Label1Carro1.Name = "Label1Carro1";
+            this.Label1Carro1.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro1.TabIndex = 26;
+            this.Label1Carro1.Text = "Onibus1";
+            this.Label1Carro1.Visible = false;
+            this.Label1Carro1.Click += new System.EventHandler(this.Label1Carro1_Click);
             // 
             // ButtonCarros
             // 
@@ -531,40 +719,6 @@
             this.ButtonCarros.TabIndex = 0;
             this.ButtonCarros.Text = "Ônibus na plataforma";
             this.ButtonCarros.UseVisualStyleBackColor = false;
-            this.ButtonCarros.Click += new System.EventHandler(this.ButtonCarros_Click);
-            // 
-            // Label1Carro1
-            // 
-            this.Label1Carro1.AutoSize = true;
-            this.Label1Carro1.BackColor = System.Drawing.Color.White;
-            this.Label1Carro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro1.Location = new System.Drawing.Point(166, 164);
-            this.Label1Carro1.Name = "Label1Carro1";
-            this.Label1Carro1.Size = new System.Drawing.Size(59, 16);
-            this.Label1Carro1.TabIndex = 26;
-            this.Label1Carro1.Text = "label10";
-            // 
-            // Label2Carro3
-            // 
-            this.Label2Carro3.AutoSize = true;
-            this.Label2Carro3.BackColor = System.Drawing.Color.White;
-            this.Label2Carro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro3.Location = new System.Drawing.Point(257, 180);
-            this.Label2Carro3.Name = "Label2Carro3";
-            this.Label2Carro3.Size = new System.Drawing.Size(52, 16);
-            this.Label2Carro3.TabIndex = 28;
-            this.Label2Carro3.Text = "label13";
-            // 
-            // Label1Carro4
-            // 
-            this.Label1Carro4.AutoSize = true;
-            this.Label1Carro4.BackColor = System.Drawing.Color.White;
-            this.Label1Carro4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro4.Location = new System.Drawing.Point(322, 161);
-            this.Label1Carro4.Name = "Label1Carro4";
-            this.Label1Carro4.Size = new System.Drawing.Size(59, 16);
-            this.Label1Carro4.TabIndex = 29;
-            this.Label1Carro4.Text = "label12";
             // 
             // TimerAtualizaListaEncomendasCarros
             // 
@@ -613,47 +767,6 @@
             this.label9.TabIndex = 31;
             this.label9.Text = "Selecione uma porta:";
             // 
-            // PictureBoxCarro3
-            // 
-            this.PictureBoxCarro3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro3.Location = new System.Drawing.Point(241, 124);
-            this.PictureBoxCarro3.Name = "PictureBoxCarro3";
-            this.PictureBoxCarro3.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro3.TabIndex = 27;
-            this.PictureBoxCarro3.TabStop = false;
-            this.PictureBoxCarro3.Click += new System.EventHandler(this.PictureBoxCarro3_Click);
-            // 
-            // PictureBoxCarro4
-            // 
-            this.PictureBoxCarro4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro4.Location = new System.Drawing.Point(269, 124);
-            this.PictureBoxCarro4.Name = "PictureBoxCarro4";
-            this.PictureBoxCarro4.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro4.TabIndex = 15;
-            this.PictureBoxCarro4.TabStop = false;
-            this.PictureBoxCarro4.Click += new System.EventHandler(this.PictureBoxCarro4_Click);
-            // 
-            // PictureBoxCarro1
-            // 
-            this.PictureBoxCarro1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro1.ErrorImage = null;
-            this.PictureBoxCarro1.Location = new System.Drawing.Point(185, 124);
-            this.PictureBoxCarro1.Name = "PictureBoxCarro1";
-            this.PictureBoxCarro1.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro1.TabIndex = 12;
-            this.PictureBoxCarro1.TabStop = false;
-            this.PictureBoxCarro1.Click += new System.EventHandler(this.PictureBoxCarro1_Click);
-            // 
-            // PictureBoxCarro2
-            // 
-            this.PictureBoxCarro2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PictureBoxCarro2.Location = new System.Drawing.Point(213, 124);
-            this.PictureBoxCarro2.Name = "PictureBoxCarro2";
-            this.PictureBoxCarro2.Size = new System.Drawing.Size(22, 25);
-            this.PictureBoxCarro2.TabIndex = 13;
-            this.PictureBoxCarro2.TabStop = false;
-            this.PictureBoxCarro2.Click += new System.EventHandler(this.PictureBoxCarro2_Click);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -665,28 +778,115 @@
             this.pictureBox5.TabIndex = 31;
             this.pictureBox5.TabStop = false;
             // 
+            // Label2Carro8
+            // 
+            this.Label2Carro8.AutoSize = true;
+            this.Label2Carro8.BackColor = System.Drawing.Color.White;
+            this.Label2Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro8.Location = new System.Drawing.Point(383, 621);
+            this.Label2Carro8.Name = "Label2Carro8";
+            this.Label2Carro8.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro8.TabIndex = 38;
+            this.Label2Carro8.Text = "Origem-destino 8";
+            this.Label2Carro8.Visible = false;
+            // 
+            // Label1Carro8
+            // 
+            this.Label1Carro8.AutoSize = true;
+            this.Label1Carro8.BackColor = System.Drawing.Color.White;
+            this.Label1Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro8.Location = new System.Drawing.Point(429, 605);
+            this.Label1Carro8.Name = "Label1Carro8";
+            this.Label1Carro8.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro8.TabIndex = 41;
+            this.Label1Carro8.Text = "Onibus8";
+            this.Label1Carro8.Visible = false;
+            // 
+            // Label2Carro7
+            // 
+            this.Label2Carro7.AutoSize = true;
+            this.Label2Carro7.BackColor = System.Drawing.Color.White;
+            this.Label2Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro7.Location = new System.Drawing.Point(383, 468);
+            this.Label2Carro7.Name = "Label2Carro7";
+            this.Label2Carro7.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro7.TabIndex = 37;
+            this.Label2Carro7.Text = "Origem-destino 7";
+            this.Label2Carro7.Visible = false;
+            // 
+            // Label1Carro7
+            // 
+            this.Label1Carro7.AutoSize = true;
+            this.Label1Carro7.BackColor = System.Drawing.Color.White;
+            this.Label1Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro7.Location = new System.Drawing.Point(429, 452);
+            this.Label1Carro7.Name = "Label1Carro7";
+            this.Label1Carro7.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro7.TabIndex = 40;
+            this.Label1Carro7.Text = "Onibus7";
+            this.Label1Carro7.Visible = false;
+            // 
+            // Label1Carro6
+            // 
+            this.Label1Carro6.AutoSize = true;
+            this.Label1Carro6.BackColor = System.Drawing.Color.White;
+            this.Label1Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro6.Location = new System.Drawing.Point(429, 297);
+            this.Label1Carro6.Name = "Label1Carro6";
+            this.Label1Carro6.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro6.TabIndex = 39;
+            this.Label1Carro6.Text = "Onibus6";
+            this.Label1Carro6.Visible = false;
+            // 
+            // Label2Carro6
+            // 
+            this.Label2Carro6.AutoSize = true;
+            this.Label2Carro6.BackColor = System.Drawing.Color.White;
+            this.Label2Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro6.Location = new System.Drawing.Point(383, 313);
+            this.Label2Carro6.Name = "Label2Carro6";
+            this.Label2Carro6.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro6.TabIndex = 36;
+            this.Label2Carro6.Text = "Origem-destino 6";
+            this.Label2Carro6.Visible = false;
+            // 
+            // Label2Carro5
+            // 
+            this.Label2Carro5.AutoSize = true;
+            this.Label2Carro5.BackColor = System.Drawing.Color.White;
+            this.Label2Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro5.Location = new System.Drawing.Point(383, 156);
+            this.Label2Carro5.Name = "Label2Carro5";
+            this.Label2Carro5.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro5.TabIndex = 35;
+            this.Label2Carro5.Text = "Origem-destino 5";
+            this.Label2Carro5.Visible = false;
+            // 
+            // Label1Carro5
+            // 
+            this.Label1Carro5.AccessibleDescription = "";
+            this.Label1Carro5.AccessibleName = "";
+            this.Label1Carro5.AutoSize = true;
+            this.Label1Carro5.BackColor = System.Drawing.Color.White;
+            this.Label1Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro5.Location = new System.Drawing.Point(429, 140);
+            this.Label1Carro5.Name = "Label1Carro5";
+            this.Label1Carro5.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro5.TabIndex = 34;
+            this.Label1Carro5.Text = "Onibus5";
+            this.Label1Carro5.Visible = false;
+            this.Label1Carro5.Click += new System.EventHandler(this.label10_Click);
+            // 
             // FormSIAER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1114, 710);
+            this.ClientSize = new System.Drawing.Size(1114, 745);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Label1Carro4);
-            this.Controls.Add(this.Label2Carro3);
-            this.Controls.Add(this.PictureBoxCarro3);
-            this.Controls.Add(this.Label1Carro1);
-            this.Controls.Add(this.PictureBoxCarro4);
-            this.Controls.Add(this.Label1Carro3);
-            this.Controls.Add(this.PictureBoxCarro1);
-            this.Controls.Add(this.Label1Carro2);
-            this.Controls.Add(this.Label2Carro2);
             this.Controls.Add(this.ButtonCarros);
-            this.Controls.Add(this.Label2Carro1);
-            this.Controls.Add(this.PictureBoxCarro2);
-            this.Controls.Add(this.Label2Carro4);
             this.Controls.Add(this.PanelCarros);
             this.Controls.Add(this.LabelCidade);
             this.Controls.Add(this.LabelVc);
@@ -716,12 +916,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sIAERTESTEDataSetBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).EndInit();
+            this.PanelCarros.ResumeLayout(false);
+            this.PanelCarros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxCarro4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -787,6 +993,18 @@
         private System.Windows.Forms.ComboBox ComboBoxPortas;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox PictureBoxCarro8;
+        private System.Windows.Forms.PictureBox PictureBoxCarro7;
+        private System.Windows.Forms.PictureBox PictureBoxCarro6;
+        private System.Windows.Forms.PictureBox PictureBoxCarro5;
+        private System.Windows.Forms.Label Label1Carro8;
+        private System.Windows.Forms.Label Label1Carro7;
+        private System.Windows.Forms.Label Label1Carro6;
+        private System.Windows.Forms.Label Label2Carro8;
+        private System.Windows.Forms.Label Label2Carro7;
+        private System.Windows.Forms.Label Label2Carro6;
+        private System.Windows.Forms.Label Label2Carro5;
+        private System.Windows.Forms.Label Label1Carro5;
     }
 }
 

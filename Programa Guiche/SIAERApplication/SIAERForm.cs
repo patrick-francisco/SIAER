@@ -55,7 +55,7 @@ namespace SIAERAplicacao
             this.LabelVc.Location = new Point(this.Width - this.LabelVc.Width - OffsetOnde, this.LabelVc.Location.Y);
             this.LabelCidade.Location = new Point(this.Width - this.LabelCidade.Width - OffsetOnde, this.LabelCidade.Location.Y);
 
-                this.PanelLeft.Location = new Point(0, this.MenuStripSIAERAplicacao.Height);
+            this.PanelLeft.Location = new Point(0, this.MenuStripSIAERAplicacao.Height);
             this.PanelLeft.Height = this.StatusStripSiaerForm.Location.Y - this.MenuStripSIAERAplicacao.Height;
             this.SizeChanged +=new EventHandler(FormSIAER_MaximumSizeChanged);
             AlturaListBoxs = (5 * this.PanelLeft.Height / 6) + OffsetAlturaListBox;
@@ -68,7 +68,7 @@ namespace SIAERAplicacao
             //Localização e Redimensionamento listbox1
             this.Button1.Location = new Point(this.PanelLeft.Width, AlturaListBoxs);
             this.ListBox1.Location = new Point(this.PanelLeft.Width, AlturaListBoxs + this.Button1.Height);
-            this.ListBox1.Width = (this.Width - this.PanelLeft.Width) / 3;
+            this.ListBox1.Width = (this.Width - this.PanelLeft.Width - this.PanelCarros.Width) / 3;
             this.ListBox1.Height = this.StatusStripSiaerForm.Location.Y - (this.Button1.Location.Y + this.Button1.Height) + OffsetListBoxWidth;
             //Localização e Redimensionamento listbox2
             this.Button2.Location = new Point(this.PanelLeft.Width + this.Button1.Width, AlturaListBoxs);
@@ -80,9 +80,12 @@ namespace SIAERAplicacao
             this.ListBox3.Location = new Point(this.PanelLeft.Width + this.Button1.Width + this.Button2.Width, AlturaListBoxs + this.Button3.Height);
             this.ListBox3.Width = (this.Width - this.PanelLeft.Width) / 3;
             this.ListBox3.Height = this.StatusStripSiaerForm.Location.Y - (this.Button3.Location.Y + this.Button3.Height) + OffsetListBoxWidth;
-           //Preenche as ListBox com os códigos das encomendas
+           
+            //Preenche as ListBox com os códigos das encomendas
             this.Button1.Text += " " + this.Atendente.Cidade;
+                        
             PreencherListBoxs();
+           
             this.PictureBoxCarro1.Visible = false;
             this.PictureBoxCarro2.Visible = false;
             this.PictureBoxCarro3.Visible = false;
@@ -95,13 +98,8 @@ namespace SIAERAplicacao
             this.Label2Carro2.Visible = false;
             this.Label2Carro3.Visible = false;
             this.Label2Carro4.Visible = false;
-//            this.PictureBoxCarro1.Image = new Bitmap (Properties.Resources.SIAEROnibusFigura);
             this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.ONIBUS2); 
-            this.PictureBoxCarro2.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-            this.PictureBoxCarro3.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-            this.PictureBoxCarro4.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-        
-        
+       
         }
 
         private void FormSIAER_MaximumSizeChanged(object sender, EventArgs e)
@@ -136,7 +134,7 @@ namespace SIAERAplicacao
             this.ListBox3.Height = this.StatusStripSiaerForm.Location.Y - (this.Button3.Location.Y + this.Button3.Height) + OffsetListBoxWidth;
             //Redimensionamento PanelCarros
             this.PanelCarros.Height = (this.Button3.Location.Y - (this.LabelCidade.Location.Y + this.LabelCidade.Height));
-            this.PanelCarros.Width = 250;
+            this.PanelCarros.Width =700;
             this.PanelCarros.Location = new Point((this.LabelCidade.Location.X + this.LabelCidade.Width) - this.PanelCarros.Width, this.LabelCidade.Location.Y + this.LabelCidade.Height);
             this.ButtonCarros.Location = this.PanelCarros.Location;
             this.ButtonCarros.Width = this.PanelCarros.Width;
@@ -635,22 +633,8 @@ namespace SIAERAplicacao
                 {
                     case 0:
                         //Carro 1
-//                        this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-                        this.PictureBoxCarro1.Image = new Bitmap(Properties.Resources.ONIBUS2); 
-                        this.PictureBoxCarro1.SizeMode = PictureBoxSizeMode.AutoSize;
                         this.Label1Carro1.Text = c.Onibus;
                         this.Label2Carro1.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
-                        if ((this.PictureBoxCarro1.Width - this.Label2Carro1.Width) < 0)
-                        {
-                            this.PictureBoxCarro1.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.PictureBoxCarro1.Width) / 2, this.PanelCarros.Location.Y + this.ButtonCarros.Height + AlturaInicial);
-                            this.Label2Carro1.Location = new Point(this.PictureBoxCarro1.Location.X - (Math.Abs(this.PictureBoxCarro1.Width - this.Label2Carro1.Width) / 2), this.PanelCarros.Location.Y + this.PictureBoxCarro1.Height + this.Label1Carro1.Height + this.ButtonCarros.Height + AlturaInicial);
-                        }
-                        else
-                        {
-                            this.Label2Carro1.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.Label2Carro1.Width) / 2, this.PanelCarros.Location.Y + this.PictureBoxCarro1.Height + this.Label1Carro1.Height + this.ButtonCarros.Height + AlturaInicial);
-                            this.PictureBoxCarro1.Location = new Point(this.Label2Carro1.Location.X + (Math.Abs(this.PictureBoxCarro1.Width - this.Label2Carro1.Width) / 2), this.PanelCarros.Location.Y + this.ButtonCarros.Height + AlturaInicial);
-                        }
-                        Label1Carro1.Location = new Point(this.PictureBoxCarro1.Location.X + (this.PictureBoxCarro1.Width - this.Label1Carro1.Width) / 2, this.PanelCarros.Location.Y + this.PictureBoxCarro1.Height + this.ButtonCarros.Height + AlturaInicial);
                         this.PictureBoxCarro1.Visible = true;
                         this.Label1Carro1.Visible = true;
                         this.Label2Carro1.Visible = true;
@@ -660,21 +644,8 @@ namespace SIAERAplicacao
                         break;
                     case 1:
                         //Carro 2
-                        this.PictureBoxCarro2.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-                        this.PictureBoxCarro2.SizeMode = PictureBoxSizeMode.AutoSize;
                         this.Label1Carro2.Text = c.Onibus;
                         this.Label2Carro2.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
-                        if ((this.PictureBoxCarro2.Width - this.Label2Carro2.Width) < 0)
-                        {
-                            this.PictureBoxCarro2.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.PictureBoxCarro2.Width) / 2, AlturaAtehAqui);
-                            this.Label2Carro2.Location = new Point(this.PictureBoxCarro2.Location.X + (Math.Abs(this.PictureBoxCarro2.Width - this.Label2Carro2.Width) / 2), AlturaAtehAqui + this.PictureBoxCarro2.Height + this.Label1Carro2.Height);
-                        }
-                        else
-                        {
-                            this.Label2Carro2.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.Label2Carro2.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro2.Height + this.Label1Carro2.Height);
-                            this.PictureBoxCarro2.Location = new Point(this.Label2Carro2.Location.X - (Math.Abs(this.PictureBoxCarro2.Width - this.Label2Carro2.Width) / 2), AlturaAtehAqui);
-                        }
-                        Label1Carro2.Location = new Point(this.PictureBoxCarro2.Location.X + (this.PictureBoxCarro2.Width - this.Label1Carro2.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro2.Height);
                         this.PictureBoxCarro2.Visible = true;
                         this.Label1Carro2.Visible = true;
                         this.Label2Carro2.Visible = true;
@@ -684,21 +655,8 @@ namespace SIAERAplicacao
                         break;
                     case 2:
                         //Carro 3
-                        this.PictureBoxCarro3.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-                        this.PictureBoxCarro3.SizeMode = PictureBoxSizeMode.AutoSize;
                         this.Label1Carro3.Text = c.Onibus;
                         this.Label2Carro3.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
-                        if ((this.PictureBoxCarro3.Width - this.Label2Carro3.Width) < 0)
-                        {
-                            this.PictureBoxCarro3.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.PictureBoxCarro3.Width) / 2, AlturaAtehAqui);
-                            this.Label2Carro3.Location = new Point(this.PictureBoxCarro3.Location.X + (Math.Abs(this.PictureBoxCarro3.Width - this.Label2Carro3.Width) / 2), AlturaAtehAqui + this.PictureBoxCarro3.Height + this.Label1Carro3.Height);
-                        }
-                        else
-                        {
-                            this.Label2Carro3.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.Label2Carro3.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro3.Height + this.Label1Carro3.Height);
-                            this.PictureBoxCarro3.Location = new Point(this.Label2Carro3.Location.X - (Math.Abs(this.PictureBoxCarro3.Width - this.Label2Carro3.Width) / 2), AlturaAtehAqui);
-                        }
-                        Label1Carro3.Location = new Point(this.PictureBoxCarro3.Location.X + (this.PictureBoxCarro3.Width - this.Label1Carro3.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro3.Height);
                         this.PictureBoxCarro3.Visible = true;
                         this.Label1Carro3.Visible = true;
                         this.Label2Carro3.Visible = true;
@@ -708,25 +666,47 @@ namespace SIAERAplicacao
                         break;
                     case 3:
                         //Carro 4
-
-                        this.PictureBoxCarro4.Image = new Bitmap(Properties.Resources.SIAEROnibusFigura);
-                        this.PictureBoxCarro4.SizeMode = PictureBoxSizeMode.AutoSize;
                         this.Label1Carro4.Text = c.Onibus;
                         this.Label2Carro4.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
-                        if ((this.PictureBoxCarro4.Width - this.Label2Carro4.Width) < 0)
-                        {
-                            this.PictureBoxCarro4.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.PictureBoxCarro4.Width) / 2, AlturaAtehAqui);
-                            this.Label2Carro4.Location = new Point(this.PictureBoxCarro4.Location.X + (Math.Abs(this.PictureBoxCarro4.Width - this.Label2Carro4.Width) / 2), AlturaAtehAqui + this.PictureBoxCarro4.Height + this.Label1Carro4.Height);
-                        }
-                        else
-                        {
-                            this.Label2Carro4.Location = new Point(this.PanelCarros.Location.X + (this.PanelCarros.Width - this.Label2Carro4.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro4.Height + this.Label1Carro4.Height);
-                            this.PictureBoxCarro4.Location = new Point(this.Label2Carro4.Location.X - (Math.Abs(this.PictureBoxCarro4.Width - this.Label2Carro4.Width) / 2), AlturaAtehAqui);
-                        }
-                        Label1Carro4.Location = new Point(this.PictureBoxCarro4.Location.X + (this.PictureBoxCarro4.Width - this.Label1Carro4.Width) / 2, AlturaAtehAqui + this.PictureBoxCarro4.Height);
                         this.PictureBoxCarro4.Visible = true;
                         this.Label1Carro4.Visible = true;
                         this.Label2Carro4.Visible = true;
+                        i++;
+                        break;
+                    case 4:
+                        //Carro 5
+                        this.Label1Carro5.Text = c.Onibus;
+                        this.Label2Carro5.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
+                        this.PictureBoxCarro5.Visible = true;
+                        this.Label1Carro5.Visible = true;
+                        this.Label2Carro5.Visible = true;
+                        i++;
+                        break;
+                    case 5:
+                        //Carro 6
+                        this.Label1Carro6.Text = c.Onibus;
+                        this.Label2Carro6.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
+                        this.PictureBoxCarro6.Visible = true;
+                        this.Label1Carro6.Visible = true;
+                        this.Label2Carro6.Visible = true;
+                        i++;
+                        break;
+                    case 6:
+                        //Carro 6
+                        this.Label1Carro7.Text = c.Onibus;
+                        this.Label2Carro7.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
+                        this.PictureBoxCarro7.Visible = true;
+                        this.Label1Carro7.Visible = true;
+                        this.Label2Carro7.Visible = true;
+                        i++;
+                        break;
+                    case 7:
+                        //Carro 6
+                        this.Label1Carro8.Text = c.Onibus;
+                        this.Label2Carro8.Text = c.CidadeDeOrigemDoCarro() + " -> " + c.CidadeDeDestinoDoCarro();
+                        this.PictureBoxCarro8.Visible = true;
+                        this.Label1Carro8.Visible = true;
+                        this.Label2Carro8.Visible = true;
                         i++;
                         break;
                 }
@@ -838,9 +818,15 @@ namespace SIAERAplicacao
         }
         #endregion
 
-        private void ButtonCarros_Click(object sender, EventArgs e)
+        private void Label1Carro1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
