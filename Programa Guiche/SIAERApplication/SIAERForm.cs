@@ -165,7 +165,7 @@ namespace SIAERAplicacao
             ComunicacaoComLeitorDeCodigoDeBarras.StopBits = "1";
             ComunicacaoComLeitorDeCodigoDeBarras.DataBits = "8";
             ComunicacaoComLeitorDeCodigoDeBarras.BaudRate = "1200";
-            ComunicacaoComLeitorDeCodigoDeBarras.PortName = "COM4";
+            ComunicacaoComLeitorDeCodigoDeBarras.PortName = "COM22";
             ComunicacaoComLeitorDeCodigoDeBarras.DisplayWindow = null;
         }
         #endregion
