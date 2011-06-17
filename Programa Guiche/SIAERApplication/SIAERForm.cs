@@ -134,7 +134,7 @@ namespace SIAERAplicacao
             this.ListBox3.Height = this.StatusStripSiaerForm.Location.Y - (this.Button3.Location.Y + this.Button3.Height) + OffsetListBoxWidth;
             //Redimensionamento PanelCarros
             this.PanelCarros.Height = (this.Button3.Location.Y - (this.LabelCidade.Location.Y + this.LabelCidade.Height));
-            this.PanelCarros.Width =700;
+            this.PanelCarros.Width =800;
             this.PanelCarros.Location = new Point((this.LabelCidade.Location.X + this.LabelCidade.Width) - this.PanelCarros.Width, this.LabelCidade.Location.Y + this.LabelCidade.Height);
             this.ButtonCarros.Location = this.PanelCarros.Location;
             this.ButtonCarros.Width = this.PanelCarros.Width;
