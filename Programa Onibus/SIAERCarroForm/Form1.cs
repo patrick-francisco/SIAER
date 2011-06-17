@@ -15,7 +15,6 @@ namespace SIAERCarroForm
 {
     public partial class Form1 : Form
     {
-         
         CXml XmlAtual = new CXml();
         List<CBufferDeEntrada> BufferDeChegada = new List<CBufferDeEntrada>();//Deve ser atualizada pelo MSP
         public delegate void DelegateThisClose();
@@ -58,7 +57,12 @@ namespace SIAERCarroForm
         }
         private void RedimensionaComponentes()
         { 
-            this.SizeChanged += new EventHandler(FormSIAERCarro_MaximumSizeChanged);
+//            this.SizeChanged += new EventHandler(FormSIAERCarro_MaximumSizeChanged);
+            Inicializa_form();
+        }
+        private void Inicializa_form()
+        {
+            this.LabelCodOnibus.Visible = false;
         }
         private void FormSIAERCarro_MaximumSizeChanged(object sender, EventArgs e)
         {
@@ -72,7 +76,7 @@ namespace SIAERCarroForm
             this.GroupBoxSubir.Width = (this.Width / 2) - OffsetGroupBoxX;
             this.GroupBoxSubir.Height = 2*(this.Height / 5);
             //GroupBoxDescer
-            this.GroupBoxDescer.Location = new Point(this.Width / 2 + PosicaoXGroupBoxSubir, PosicaoYGroupBox);
+            this.GroupBoxDescer.Location = new Point(PosicaoXGroupBoxSubir, PosicaoYGroupBox*2);
             this.GroupBoxDescer.Width = (this.Width / 2) - OffsetGroupBoxDescerWidth;
             this.GroupBoxDescer.Height = 2*(this.Height / 5);
             //PictureBoxSubir
@@ -91,7 +95,7 @@ namespace SIAERCarroForm
             this.ListBoxDescer.Width = this.PictureBoxDescer.Width/2;
             this.ListBoxDescer.Height = this.PictureBoxDescer.Height-60;
             this.ListBoxDescer.Location = new Point((this.PictureBoxDescer.Width - this.ListBoxDescer.Width) / 2+27, (this.PictureBoxDescer.Height - this.ListBoxDescer.Height) / 2 + PictureBoxDescer.Location.Y-10);
-            //GroupBoxEncomendasNoCarro            
+            //GroupBoxEncomendasNoCarro
             this.GroupBoxEncomendasNoCarro.Location = new Point(this.GroupBoxSubir.Location.X,this.GroupBoxSubir.Location.Y + this.GroupBoxSubir.Height + OffsetGroupBoxEncomendasNoCarro);
             this.GroupBoxEncomendasNoCarro.Width = this.GroupBoxDescer.Location.X + this.GroupBoxDescer.Width - PosicaoXGroupBoxSubir;
             this.GroupBoxEncomendasNoCarro.Height = this.Height - this.GroupBoxEncomendasNoCarro.Location.Y - 30;
@@ -179,19 +183,31 @@ namespace SIAERCarroForm
                     }
                     MissingPack Form = new MissingPack(list1, list2);
                     Form.Show();
-                    
                 }
                     this.LabelStatus.Text = "Viajando...";
-                    this.PictureBoxSubir.Image = Properties.Resources.SetaDesabilitadoUP;
-                    this.PictureBoxDescer.Image = Properties.Resources.SetaDesabilitadoDOWN;
-                    this.ListBoxSubir.Visible = false;
+                    //this.PictureBoxSubir.Image = Properties.Resources.SetaDesabilitadoUP;
+                    //this.PictureBoxDescer.Image = Properties.Resources.SetaDesabilitadoDOWN;
+                    this.PictureBoxSubir.Visible = false;
+                    this.PictureBoxDescer.Visible = false;
+                    this.Mapa.Visible = true;
+                    this.GroupBoxDescer.Visible = false;
+                    this.GroupBoxSubir.Visible = false;
+                    this.GroupBoxEncomendasNoCarro.Visible = false;
                     this.ListBoxDescer.Visible = false;
                     this.ListBoxSubir.Items.Clear();
                     this.BufferDeChegada.Clear();
-
             }
             else
             {
+                this.Mapa.Visible = false;
+                this.GroupBoxDescer.Visible = true;
+                this.GroupBoxSubir.Visible = true;
+                this.GroupBoxEncomendasNoCarro.Visible = true;
+                this.pictureBox1.Visible = true;
+                this.PictureBoxDescer.Visible = true;
+                this.PictureBoxSubir.Visible = true;
+                this.ListBoxEncomendasNoCarro.Visible = true;
+
                 this.LabelStatus.Text = this.CidadeAtual;
                 this.PictureBoxSubir.Image = Properties.Resources.SetaSubida;
                 this.PictureBoxDescer.Image = Properties.Resources.SetaDescida;
@@ -401,6 +417,7 @@ namespace SIAERCarroForm
             if(this.OpenPort())
             PortaDeComunicacao.Write(newMsg, 0, newMsg.Length);
 
+            this.LabelStatus.Visible = true;
             this.TextBoxIDCarro.Visible = false;
             this.ButtonIniciar.Visible = false;
             //lABEL
@@ -409,6 +426,11 @@ namespace SIAERCarroForm
         }
 
         private void GroupBoxEncomendasNoCarro_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LabelSubir_Click(object sender, EventArgs e)
         {
 
         }
