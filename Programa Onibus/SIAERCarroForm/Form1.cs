@@ -105,9 +105,6 @@ namespace SIAERCarroForm
             this.ListBoxEncomendasNoCarro.Width = this.GroupBoxEncomendasNoCarro.Width - 40;
             this.ListBoxEncomendasNoCarro.Height = this.GroupBoxEncomendasNoCarro.Height - 40;
             //LabelSubir
-            this.LabelSubir.Location = new Point(this.GroupBoxSubir.Location.X + (this.GroupBoxSubir.Width - this.LabelSubir.Width) / 2, this.GroupBoxSubir.Location.Y - 20);
-            //LabelDescer
-            this.LabelDescer.Location = new Point(this.GroupBoxDescer.Location.X + (this.GroupBoxDescer.Width - this.LabelDescer.Width) / 2, this.GroupBoxDescer.Location.Y - 20);
             //LabelStatus
             //this.LabelStatus.Text = this.textBox1.Text;
             this.LabelStatus.Location = new Point((this.Width - this.LabelStatus.Width)/2, 20);
