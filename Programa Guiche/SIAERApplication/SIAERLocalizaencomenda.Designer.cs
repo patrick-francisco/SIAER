@@ -53,20 +53,38 @@
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.PanelDensenho = new System.Windows.Forms.Panel();
+            this.LabelAt7 = new System.Windows.Forms.Label();
+            this.LabelAt6 = new System.Windows.Forms.Label();
+            this.LabelAt5 = new System.Windows.Forms.Label();
+            this.LabelAt4 = new System.Windows.Forms.Label();
+            this.LabelAt3 = new System.Windows.Forms.Label();
+            this.LabelAt2 = new System.Windows.Forms.Label();
+            this.LabelAt1 = new System.Windows.Forms.Label();
+            this.LabelAtendente1 = new System.Windows.Forms.Label();
             this.LabelCliente = new System.Windows.Forms.Label();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.GroupBoxDesenho = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.LabelText = new System.Windows.Forms.Label();
-            this.LabelAtendente1 = new System.Windows.Forms.Label();
-            this.LabelAt1 = new System.Windows.Forms.Label();
-            this.LabelAt2 = new System.Windows.Forms.Label();
-            this.LabelAt3 = new System.Windows.Forms.Label();
-            this.LabelAt4 = new System.Windows.Forms.Label();
-            this.LabelAt5 = new System.Windows.Forms.Label();
-            this.LabelAt6 = new System.Windows.Forms.Label();
-            this.LabelAt7 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.PanelDensenho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.GroupBoxDesenho.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -271,7 +289,7 @@
             // 
             // PanelDensenho
             // 
-            this.PanelDensenho.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PanelDensenho.BackColor = System.Drawing.Color.White;
             this.PanelDensenho.Controls.Add(this.LabelAt7);
             this.PanelDensenho.Controls.Add(this.LabelAt6);
             this.PanelDensenho.Controls.Add(this.LabelAt5);
@@ -310,6 +328,77 @@
             this.PanelDensenho.Name = "PanelDensenho";
             this.PanelDensenho.Size = new System.Drawing.Size(420, 175);
             this.PanelDensenho.TabIndex = 40;
+            // 
+            // LabelAt7
+            // 
+            this.LabelAt7.AutoSize = true;
+            this.LabelAt7.Location = new System.Drawing.Point(164, 151);
+            this.LabelAt7.Name = "LabelAt7";
+            this.LabelAt7.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt7.TabIndex = 53;
+            this.LabelAt7.Text = "La7";
+            // 
+            // LabelAt6
+            // 
+            this.LabelAt6.AutoSize = true;
+            this.LabelAt6.Location = new System.Drawing.Point(139, 150);
+            this.LabelAt6.Name = "LabelAt6";
+            this.LabelAt6.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt6.TabIndex = 52;
+            this.LabelAt6.Text = "La6";
+            // 
+            // LabelAt5
+            // 
+            this.LabelAt5.AutoSize = true;
+            this.LabelAt5.Location = new System.Drawing.Point(114, 151);
+            this.LabelAt5.Name = "LabelAt5";
+            this.LabelAt5.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt5.TabIndex = 51;
+            this.LabelAt5.Text = "La5";
+            // 
+            // LabelAt4
+            // 
+            this.LabelAt4.AutoSize = true;
+            this.LabelAt4.Location = new System.Drawing.Point(92, 151);
+            this.LabelAt4.Name = "LabelAt4";
+            this.LabelAt4.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt4.TabIndex = 50;
+            this.LabelAt4.Text = "La4";
+            // 
+            // LabelAt3
+            // 
+            this.LabelAt3.AutoSize = true;
+            this.LabelAt3.Location = new System.Drawing.Point(67, 150);
+            this.LabelAt3.Name = "LabelAt3";
+            this.LabelAt3.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt3.TabIndex = 49;
+            this.LabelAt3.Text = "La3";
+            // 
+            // LabelAt2
+            // 
+            this.LabelAt2.AutoSize = true;
+            this.LabelAt2.Location = new System.Drawing.Point(42, 150);
+            this.LabelAt2.Name = "LabelAt2";
+            this.LabelAt2.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt2.TabIndex = 48;
+            this.LabelAt2.Text = "La2";
+            // 
+            // LabelAt1
+            // 
+            this.LabelAt1.AutoSize = true;
+            this.LabelAt1.Location = new System.Drawing.Point(20, 150);
+            this.LabelAt1.Name = "LabelAt1";
+            this.LabelAt1.Size = new System.Drawing.Size(25, 13);
+            this.LabelAt1.TabIndex = 43;
+            this.LabelAt1.Text = "La1";
+            // 
+            // LabelAtendente1
+            // 
+            this.LabelAtendente1.AutoSize = true;
+            this.LabelAtendente1.Location = new System.Drawing.Point(17, 151);
+            this.LabelAtendente1.Name = "LabelAtendente1";
+            this.LabelAtendente1.Size = new System.Drawing.Size(0, 13);
+            this.LabelAtendente1.TabIndex = 42;
             // 
             // LabelCliente
             // 
@@ -357,77 +446,6 @@
             this.LabelText.TabIndex = 47;
             this.LabelText.Text = "Encomenda nº";
             // 
-            // LabelAtendente1
-            // 
-            this.LabelAtendente1.AutoSize = true;
-            this.LabelAtendente1.Location = new System.Drawing.Point(17, 151);
-            this.LabelAtendente1.Name = "LabelAtendente1";
-            this.LabelAtendente1.Size = new System.Drawing.Size(0, 13);
-            this.LabelAtendente1.TabIndex = 42;
-            // 
-            // LabelAt1
-            // 
-            this.LabelAt1.AutoSize = true;
-            this.LabelAt1.Location = new System.Drawing.Point(20, 150);
-            this.LabelAt1.Name = "LabelAt1";
-            this.LabelAt1.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt1.TabIndex = 43;
-            this.LabelAt1.Text = "La1";
-            // 
-            // LabelAt2
-            // 
-            this.LabelAt2.AutoSize = true;
-            this.LabelAt2.Location = new System.Drawing.Point(42, 150);
-            this.LabelAt2.Name = "LabelAt2";
-            this.LabelAt2.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt2.TabIndex = 48;
-            this.LabelAt2.Text = "La2";
-            // 
-            // LabelAt3
-            // 
-            this.LabelAt3.AutoSize = true;
-            this.LabelAt3.Location = new System.Drawing.Point(67, 150);
-            this.LabelAt3.Name = "LabelAt3";
-            this.LabelAt3.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt3.TabIndex = 49;
-            this.LabelAt3.Text = "La3";
-            // 
-            // LabelAt4
-            // 
-            this.LabelAt4.AutoSize = true;
-            this.LabelAt4.Location = new System.Drawing.Point(92, 151);
-            this.LabelAt4.Name = "LabelAt4";
-            this.LabelAt4.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt4.TabIndex = 50;
-            this.LabelAt4.Text = "La4";
-            // 
-            // LabelAt5
-            // 
-            this.LabelAt5.AutoSize = true;
-            this.LabelAt5.Location = new System.Drawing.Point(114, 151);
-            this.LabelAt5.Name = "LabelAt5";
-            this.LabelAt5.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt5.TabIndex = 51;
-            this.LabelAt5.Text = "La5";
-            // 
-            // LabelAt6
-            // 
-            this.LabelAt6.AutoSize = true;
-            this.LabelAt6.Location = new System.Drawing.Point(139, 150);
-            this.LabelAt6.Name = "LabelAt6";
-            this.LabelAt6.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt6.TabIndex = 52;
-            this.LabelAt6.Text = "La6";
-            // 
-            // LabelAt7
-            // 
-            this.LabelAt7.AutoSize = true;
-            this.LabelAt7.Location = new System.Drawing.Point(164, 151);
-            this.LabelAt7.Name = "LabelAt7";
-            this.LabelAt7.Size = new System.Drawing.Size(25, 13);
-            this.LabelAt7.TabIndex = 53;
-            this.LabelAt7.Text = "La7";
-            // 
             // SIAERLocalizaencomenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,8 +460,26 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.PanelDensenho.ResumeLayout(false);
             this.PanelDensenho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.GroupBoxDesenho.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
