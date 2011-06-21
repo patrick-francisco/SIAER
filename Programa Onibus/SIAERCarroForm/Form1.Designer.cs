@@ -30,9 +30,12 @@
         {
             this.GroupBoxSubir = new System.Windows.Forms.GroupBox();
             this.ListBoxSubir = new System.Windows.Forms.ListBox();
+            this.PictureBoxSubir = new System.Windows.Forms.PictureBox();
             this.GroupBoxDescer = new System.Windows.Forms.GroupBox();
             this.ListBoxDescer = new System.Windows.Forms.ListBox();
+            this.PictureBoxDescer = new System.Windows.Forms.PictureBox();
             this.GroupBoxEncomendasNoCarro = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ListBoxEncomendasNoCarro = new System.Windows.Forms.ListBox();
             this.ButtonFechar = new System.Windows.Forms.Button();
             this.LabelStatus = new System.Windows.Forms.Label();
@@ -40,16 +43,14 @@
             this.ButtonIniciar = new System.Windows.Forms.Button();
             this.LabelCodOnibus = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.PictureBoxDescer = new System.Windows.Forms.PictureBox();
-            this.PictureBoxSubir = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.GroupBoxSubir.SuspendLayout();
-            this.GroupBoxDescer.SuspendLayout();
-            this.GroupBoxEncomendasNoCarro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Mapa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).BeginInit();
+            this.GroupBoxDescer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).BeginInit();
+            this.GroupBoxEncomendasNoCarro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mapa)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBoxSubir
@@ -60,9 +61,8 @@
             this.GroupBoxSubir.Controls.Add(this.PictureBoxSubir);
             this.GroupBoxSubir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBoxSubir.Location = new System.Drawing.Point(19, 138);
-            this.GroupBoxSubir.Margin = new System.Windows.Forms.Padding(10);
             this.GroupBoxSubir.Name = "GroupBoxSubir";
-            this.GroupBoxSubir.Size = new System.Drawing.Size(971, 210);
+            this.GroupBoxSubir.Size = new System.Drawing.Size(978, 214);
             this.GroupBoxSubir.TabIndex = 0;
             this.GroupBoxSubir.TabStop = false;
             this.GroupBoxSubir.Text = "Carregar as encomendas:";
@@ -79,17 +79,27 @@
             this.ListBoxSubir.TabIndex = 1;
             this.ListBoxSubir.Visible = false;
             // 
+            // PictureBoxSubir
+            // 
+            this.PictureBoxSubir.Image = global::SIAERCarroForm.Properties.Resources.setaverde;
+            this.PictureBoxSubir.Location = new System.Drawing.Point(17, 31);
+            this.PictureBoxSubir.Name = "PictureBoxSubir";
+            this.PictureBoxSubir.Size = new System.Drawing.Size(168, 160);
+            this.PictureBoxSubir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxSubir.TabIndex = 0;
+            this.PictureBoxSubir.TabStop = false;
+            this.PictureBoxSubir.Visible = false;
+            // 
             // GroupBoxDescer
             // 
-            this.GroupBoxDescer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupBoxDescer.AutoSize = true;
             this.GroupBoxDescer.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.GroupBoxDescer.Controls.Add(this.ListBoxDescer);
             this.GroupBoxDescer.Controls.Add(this.PictureBoxDescer);
             this.GroupBoxDescer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxDescer.Location = new System.Drawing.Point(12, 375);
+            this.GroupBoxDescer.Location = new System.Drawing.Point(19, 365);
             this.GroupBoxDescer.Name = "GroupBoxDescer";
-            this.GroupBoxDescer.Size = new System.Drawing.Size(978, 206);
+            this.GroupBoxDescer.Size = new System.Drawing.Size(978, 210);
             this.GroupBoxDescer.TabIndex = 1;
             this.GroupBoxDescer.TabStop = false;
             this.GroupBoxDescer.Text = "Descarregar as encomendas:";
@@ -106,27 +116,49 @@
             this.ListBoxDescer.TabIndex = 4;
             this.ListBoxDescer.Visible = false;
             // 
+            // PictureBoxDescer
+            // 
+            this.PictureBoxDescer.Image = global::SIAERCarroForm.Properties.Resources.setavermelha;
+            this.PictureBoxDescer.Location = new System.Drawing.Point(17, 23);
+            this.PictureBoxDescer.Name = "PictureBoxDescer";
+            this.PictureBoxDescer.Size = new System.Drawing.Size(168, 160);
+            this.PictureBoxDescer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxDescer.TabIndex = 3;
+            this.PictureBoxDescer.TabStop = false;
+            this.PictureBoxDescer.Visible = false;
+            // 
             // GroupBoxEncomendasNoCarro
             // 
             this.GroupBoxEncomendasNoCarro.AutoSize = true;
             this.GroupBoxEncomendasNoCarro.Controls.Add(this.pictureBox1);
             this.GroupBoxEncomendasNoCarro.Controls.Add(this.ListBoxEncomendasNoCarro);
             this.GroupBoxEncomendasNoCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBoxEncomendasNoCarro.Location = new System.Drawing.Point(12, 591);
+            this.GroupBoxEncomendasNoCarro.Location = new System.Drawing.Point(19, 577);
             this.GroupBoxEncomendasNoCarro.Name = "GroupBoxEncomendasNoCarro";
-            this.GroupBoxEncomendasNoCarro.Size = new System.Drawing.Size(984, 157);
+            this.GroupBoxEncomendasNoCarro.Size = new System.Drawing.Size(978, 170);
             this.GroupBoxEncomendasNoCarro.TabIndex = 2;
             this.GroupBoxEncomendasNoCarro.TabStop = false;
             this.GroupBoxEncomendasNoCarro.Text = "Encomendas no bagageiro do ônibus";
             this.GroupBoxEncomendasNoCarro.Visible = false;
             this.GroupBoxEncomendasNoCarro.Enter += new System.EventHandler(this.GroupBoxEncomendasNoCarro_Enter);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SIAERCarroForm.Properties.Resources.pacotes;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // ListBoxEncomendasNoCarro
             // 
             this.ListBoxEncomendasNoCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBoxEncomendasNoCarro.FormattingEnabled = true;
             this.ListBoxEncomendasNoCarro.ItemHeight = 25;
-            this.ListBoxEncomendasNoCarro.Location = new System.Drawing.Point(214, 32);
+            this.ListBoxEncomendasNoCarro.Location = new System.Drawing.Point(207, 32);
             this.ListBoxEncomendasNoCarro.Name = "ListBoxEncomendasNoCarro";
             this.ListBoxEncomendasNoCarro.Size = new System.Drawing.Size(752, 104);
             this.ListBoxEncomendasNoCarro.TabIndex = 0;
@@ -158,18 +190,18 @@
             // TextBoxIDCarro
             // 
             this.TextBoxIDCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxIDCarro.Location = new System.Drawing.Point(19, 90);
+            this.TextBoxIDCarro.Location = new System.Drawing.Point(19, 94);
             this.TextBoxIDCarro.Name = "TextBoxIDCarro";
-            this.TextBoxIDCarro.Size = new System.Drawing.Size(40, 22);
+            this.TextBoxIDCarro.Size = new System.Drawing.Size(52, 22);
             this.TextBoxIDCarro.TabIndex = 11;
             this.TextBoxIDCarro.Text = "8005";
             // 
             // ButtonIniciar
             // 
             this.ButtonIniciar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ButtonIniciar.Location = new System.Drawing.Point(65, 92);
+            this.ButtonIniciar.Location = new System.Drawing.Point(77, 94);
             this.ButtonIniciar.Name = "ButtonIniciar";
-            this.ButtonIniciar.Size = new System.Drawing.Size(43, 20);
+            this.ButtonIniciar.Size = new System.Drawing.Size(62, 22);
             this.ButtonIniciar.TabIndex = 12;
             this.ButtonIniciar.Text = "Iniciar";
             this.ButtonIniciar.UseVisualStyleBackColor = false;
@@ -181,7 +213,7 @@
             this.LabelCodOnibus.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.LabelCodOnibus.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCodOnibus.ForeColor = System.Drawing.SystemColors.Info;
-            this.LabelCodOnibus.Location = new System.Drawing.Point(78, 43);
+            this.LabelCodOnibus.Location = new System.Drawing.Point(24, 25);
             this.LabelCodOnibus.Name = "LabelCodOnibus";
             this.LabelCodOnibus.Size = new System.Drawing.Size(180, 73);
             this.LabelCodOnibus.TabIndex = 13;
@@ -199,38 +231,14 @@
             this.Mapa.TabIndex = 15;
             this.Mapa.TabStop = false;
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.Image = global::SIAERCarroForm.Properties.Resources.pacotes;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            // 
-            // PictureBoxDescer
-            // 
-            this.PictureBoxDescer.Image = global::SIAERCarroForm.Properties.Resources.setavermelha;
-            this.PictureBoxDescer.Location = new System.Drawing.Point(10, 23);
-            this.PictureBoxDescer.Name = "PictureBoxDescer";
-            this.PictureBoxDescer.Size = new System.Drawing.Size(168, 160);
-            this.PictureBoxDescer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxDescer.TabIndex = 3;
-            this.PictureBoxDescer.TabStop = false;
-            this.PictureBoxDescer.Visible = false;
-            // 
-            // PictureBoxSubir
-            // 
-            this.PictureBoxSubir.Image = global::SIAERCarroForm.Properties.Resources.setaverde;
-            this.PictureBoxSubir.Location = new System.Drawing.Point(17, 35);
-            this.PictureBoxSubir.Name = "PictureBoxSubir";
-            this.PictureBoxSubir.Size = new System.Drawing.Size(161, 150);
-            this.PictureBoxSubir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxSubir.TabIndex = 0;
-            this.PictureBoxSubir.TabStop = false;
-            this.PictureBoxSubir.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Indique o identificador do ônibus";
             // 
             // Form1
             // 
@@ -239,6 +247,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1016, 760);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Mapa);
             this.Controls.Add(this.LabelCodOnibus);
             this.Controls.Add(this.ButtonIniciar);
@@ -254,12 +263,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.GroupBoxSubir.ResumeLayout(false);
-            this.GroupBoxDescer.ResumeLayout(false);
-            this.GroupBoxEncomendasNoCarro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Mapa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).EndInit();
+            this.GroupBoxDescer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).EndInit();
+            this.GroupBoxEncomendasNoCarro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mapa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +291,7 @@
         private System.Windows.Forms.Label LabelCodOnibus;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox Mapa;
+        private System.Windows.Forms.Label label1;
     }
 }
 

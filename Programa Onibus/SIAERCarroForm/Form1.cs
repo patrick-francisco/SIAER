@@ -415,6 +415,7 @@ namespace SIAERCarroForm
             PortaDeComunicacao.Write(newMsg, 0, newMsg.Length);
 
             this.LabelStatus.Visible = true;
+            this.label1.Visible = false;
             this.TextBoxIDCarro.Visible = false;
             this.ButtonIniciar.Visible = false;
             //lABEL
