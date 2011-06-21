@@ -33,8 +33,8 @@ namespace SIAERCarroForm
         public Form1()
         {
             InitializeComponent();
-            this.PictureBoxSubir.Image = Properties.Resources.SetaDesabilitadoUP;
-            this.PictureBoxDescer.Image = Properties.Resources.SetaDesabilitadoDOWN;
+            //this.PictureBoxSubir.Image = Properties.Resources.SetaDesabilitadoUP;
+            //this.PictureBoxDescer.Image = Properties.Resources.SetaDesabilitadoDOWN;
             this.ListBoxSubir.Visible = false;
             this.ListBoxDescer.Visible = false;
             RedimensionaComponentes();
@@ -206,8 +206,8 @@ namespace SIAERCarroForm
                 this.ListBoxEncomendasNoCarro.Visible = true;
 
                 this.LabelStatus.Text = this.CidadeAtual;
-                this.PictureBoxSubir.Image = Properties.Resources.SetaSubida;
-                this.PictureBoxDescer.Image = Properties.Resources.SetaDescida;
+                //this.PictureBoxSubir.Image = Properties.Resources.SetaSubida;
+                //this.PictureBoxDescer.Image = Properties.Resources.SetaDescida;
                 this.ListBoxSubir.Visible = true;
                 this.ListBoxDescer.Visible = true;
                 //Preencher ListBox de Descida

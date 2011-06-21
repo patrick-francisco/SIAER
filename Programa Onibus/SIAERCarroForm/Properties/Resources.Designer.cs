@@ -88,6 +88,13 @@ namespace SIAERCarroForm.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap pacotes {
+            get {
+                object obj = ResourceManager.GetObject("pacotes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap SetaDesabilitadoDOWN {
             get {
                 object obj = ResourceManager.GetObject("SetaDesabilitadoDOWN", resourceCulture);
@@ -126,6 +133,20 @@ namespace SIAERCarroForm.Properties {
         internal static System.Drawing.Bitmap SetaSubida1 {
             get {
                 object obj = ResourceManager.GetObject("SetaSubida1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap setaverde {
+            get {
+                object obj = ResourceManager.GetObject("setaverde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap setavermelha {
+            get {
+                object obj = ResourceManager.GetObject("setavermelha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

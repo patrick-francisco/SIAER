@@ -30,12 +30,9 @@
         {
             this.GroupBoxSubir = new System.Windows.Forms.GroupBox();
             this.ListBoxSubir = new System.Windows.Forms.ListBox();
-            this.PictureBoxSubir = new System.Windows.Forms.PictureBox();
             this.GroupBoxDescer = new System.Windows.Forms.GroupBox();
             this.ListBoxDescer = new System.Windows.Forms.ListBox();
-            this.PictureBoxDescer = new System.Windows.Forms.PictureBox();
             this.GroupBoxEncomendasNoCarro = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ListBoxEncomendasNoCarro = new System.Windows.Forms.ListBox();
             this.ButtonFechar = new System.Windows.Forms.Button();
             this.LabelStatus = new System.Windows.Forms.Label();
@@ -43,13 +40,16 @@
             this.ButtonIniciar = new System.Windows.Forms.Button();
             this.LabelCodOnibus = new System.Windows.Forms.Label();
             this.Mapa = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxDescer = new System.Windows.Forms.PictureBox();
+            this.PictureBoxSubir = new System.Windows.Forms.PictureBox();
             this.GroupBoxSubir.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).BeginInit();
             this.GroupBoxDescer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).BeginInit();
             this.GroupBoxEncomendasNoCarro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mapa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBoxSubir
@@ -79,17 +79,6 @@
             this.ListBoxSubir.TabIndex = 1;
             this.ListBoxSubir.Visible = false;
             // 
-            // PictureBoxSubir
-            // 
-            this.PictureBoxSubir.Image = global::SIAERCarroForm.Properties.Resources.SetaSubida1;
-            this.PictureBoxSubir.Location = new System.Drawing.Point(17, 35);
-            this.PictureBoxSubir.Name = "PictureBoxSubir";
-            this.PictureBoxSubir.Size = new System.Drawing.Size(161, 150);
-            this.PictureBoxSubir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxSubir.TabIndex = 0;
-            this.PictureBoxSubir.TabStop = false;
-            this.PictureBoxSubir.Visible = false;
-            // 
             // GroupBoxDescer
             // 
             this.GroupBoxDescer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,17 +106,6 @@
             this.ListBoxDescer.TabIndex = 4;
             this.ListBoxDescer.Visible = false;
             // 
-            // PictureBoxDescer
-            // 
-            this.PictureBoxDescer.Image = global::SIAERCarroForm.Properties.Resources.SetaDescida;
-            this.PictureBoxDescer.Location = new System.Drawing.Point(10, 23);
-            this.PictureBoxDescer.Name = "PictureBoxDescer";
-            this.PictureBoxDescer.Size = new System.Drawing.Size(168, 160);
-            this.PictureBoxDescer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxDescer.TabIndex = 3;
-            this.PictureBoxDescer.TabStop = false;
-            this.PictureBoxDescer.Visible = false;
-            // 
             // GroupBoxEncomendasNoCarro
             // 
             this.GroupBoxEncomendasNoCarro.AutoSize = true;
@@ -142,17 +120,6 @@
             this.GroupBoxEncomendasNoCarro.Text = "Encomendas no bagageiro do ônibus";
             this.GroupBoxEncomendasNoCarro.Visible = false;
             this.GroupBoxEncomendasNoCarro.Enter += new System.EventHandler(this.GroupBoxEncomendasNoCarro_Enter);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SIAERCarroForm.Properties.Resources.BAGAGEIRO;
-            this.pictureBox1.Location = new System.Drawing.Point(22, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
             // 
             // ListBoxEncomendasNoCarro
             // 
@@ -232,6 +199,39 @@
             this.Mapa.TabIndex = 15;
             this.Mapa.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SIAERCarroForm.Properties.Resources.pacotes;
+            this.pictureBox1.Location = new System.Drawing.Point(22, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // PictureBoxDescer
+            // 
+            this.PictureBoxDescer.Image = global::SIAERCarroForm.Properties.Resources.setavermelha;
+            this.PictureBoxDescer.Location = new System.Drawing.Point(10, 23);
+            this.PictureBoxDescer.Name = "PictureBoxDescer";
+            this.PictureBoxDescer.Size = new System.Drawing.Size(168, 160);
+            this.PictureBoxDescer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxDescer.TabIndex = 3;
+            this.PictureBoxDescer.TabStop = false;
+            this.PictureBoxDescer.Visible = false;
+            // 
+            // PictureBoxSubir
+            // 
+            this.PictureBoxSubir.Image = global::SIAERCarroForm.Properties.Resources.setaverde;
+            this.PictureBoxSubir.Location = new System.Drawing.Point(17, 35);
+            this.PictureBoxSubir.Name = "PictureBoxSubir";
+            this.PictureBoxSubir.Size = new System.Drawing.Size(161, 150);
+            this.PictureBoxSubir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxSubir.TabIndex = 0;
+            this.PictureBoxSubir.TabStop = false;
+            this.PictureBoxSubir.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,12 +254,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.GroupBoxSubir.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).EndInit();
             this.GroupBoxDescer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).EndInit();
             this.GroupBoxEncomendasNoCarro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mapa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxDescer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSubir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
