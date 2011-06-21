@@ -65,7 +65,7 @@
             this.GroupBoxSubir.Size = new System.Drawing.Size(971, 210);
             this.GroupBoxSubir.TabIndex = 0;
             this.GroupBoxSubir.TabStop = false;
-            this.GroupBoxSubir.Text = "Encomendas a subir";
+            this.GroupBoxSubir.Text = "Carregar as encomendas:";
             this.GroupBoxSubir.Visible = false;
             // 
             // ListBoxSubir
@@ -103,7 +103,7 @@
             this.GroupBoxDescer.Size = new System.Drawing.Size(978, 206);
             this.GroupBoxDescer.TabIndex = 1;
             this.GroupBoxDescer.TabStop = false;
-            this.GroupBoxDescer.Text = "Encomendas a descer";
+            this.GroupBoxDescer.Text = "Descarregar as encomendas:";
             this.GroupBoxDescer.Visible = false;
             // 
             // ListBoxDescer
@@ -214,7 +214,7 @@
             this.LabelCodOnibus.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.LabelCodOnibus.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelCodOnibus.ForeColor = System.Drawing.SystemColors.Info;
-            this.LabelCodOnibus.Location = new System.Drawing.Point(16, 36);
+            this.LabelCodOnibus.Location = new System.Drawing.Point(78, 43);
             this.LabelCodOnibus.Name = "LabelCodOnibus";
             this.LabelCodOnibus.Size = new System.Drawing.Size(180, 73);
             this.LabelCodOnibus.TabIndex = 13;
