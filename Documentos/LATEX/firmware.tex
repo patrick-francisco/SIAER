@@ -10,7 +10,7 @@
 %---------- Primeiro Capitulo ----------
 \section{\textit{Firmware}}
 
-Nesta seção serão abordados os detalhes sobre a implementação do protocolo do comunicação proposto no capítulo Comunicação sem fio e sobre a comunicação com o PC. O objetivo é explicar os métodos que levam o sistema ao seu funcionamento desejado. Busca-se fazer isso de forma clara e objetiva, separando o sistema em blocos.
+Nesta seção serão abordados os detalhes sobre a implementação do protocolo do comunicação proposto no capítulo \ref{cap:comunicacaosemfio}. O objetivo é explicar os métodos que levam o sistema ao seu funcionamento desejado. Busca-se fazer isso de forma clara e objetiva, separando o sistema em blocos.
 
 \subsection{Considerações Iniciais}
 O código fonte  do \textit{firmware} foi desenvolvido utilizando-se o compilador Code Composer Studio v 4.20. Este compilador foi criado pela própria Texas Instruments e é um ambiente de desenvolvimento criado sobre a plataforma java-eclipse. Apresenta uma série de vantagens em relação ao seu principal concorrente, o compilador IAR. Dentre as vantagens pode-se citar a bela interface e facilidade de organizar projetos. Sua principal desvantagem é a sua velocidade, significativamente menor que a do IAR, devido a sua alta carga computacional. Dentre as distribuições disponíveis na internet, utilizou-se a versão evaluation por 30 dias. Nesta versão pode-se utilizar o software por 30 dias sem qualquer tipo de restrição. Vale lembrar que também há a versão free, a qual possui o limite de 16KB para o código.
@@ -34,14 +34,14 @@ A inicialização se dá através de uma série de funções que trata de configurar os
 \end{figure}
 
 \subsubsection{Desabilitação do \textit{Watchdog}}
-Os microprocessadores da família CC430, assim como os MSP430, possuem um sistema de proteção contra laços infinitos. Esta proteção é conhecida como watchdog. Ele é basicamente um contador que deve ser resetado durante o programa constantemente, em diferentes lugares. Caso seu valor estoure ele dispara a reinicialização do microcontrolador.
+Os microprocessadores da família CC430, assim como os MSP430, possuem um sistema de proteção contra travamentos. Esta proteção é conhecida como \textit{Watchdog}. Ele atua como um contador, o qual deve ser resetado durante a execução do programa. Caso o programa fique preso em algu lugar, o contador do Watchdog estoura e isso dispara a reinicialização do microcontrolador.
 
 No nosso caso escolheu-se por desabilitar o, pois o programa é baseado em um laço infinito, do qual sai após receber uma interrupção de uart ou de rádio.
 
 \subsubsection{Inicialização da UART}
 O CC430F6137 oferece dois módulos denominados \sigla{USCI}{\textit{Universal Serial Communication Interface} (Interface Universal de Comunicação Serial)} (\textit{Universal Serial Communication Interface}) os quais podem ser configurados de acordo com as necessidades de uso. No nosso projeto, utilizamos somente um destes módulos, o qual é responsável por trocar informações com o computador do guichê ou do ônibus. O nome deste módulo é \sigla{UART}{Universal Asynchronous Receiver/Transmitter (Receptor/Transmissor Universal As-síncrono)}.
 	
-O UART usa um modelo de transmissão assíncrona que se utiliza de dois sinais distintos:  RX e TX. Desta forma o uso de um clock não se faz necessário. Como principais configurações adotadas, devem-se ressaltar: um baudrate de 9600 , sem bit de paridade, 8 bits de dados, um de stop e nenhum controle de fluxo. Os pinos de TX e RX são, respectivamente os pinos P1.6 P1.5. A comunicação se dá através de uma porta de com virtual criada pelo driver da texas instruments juntamente com a placa de debug.
+O UART usa um modelo de transmissão assíncrona que se utiliza de dois sinais distintos:  RX e TX. Desta forma o uso de um clock não se faz necessário. Como principais configurações adotadas, devem-se ressaltar: um baudrate de 9600 , sem bit de paridade, 8 bits de dados, um de stop e nenhum controle de fluxo. Os pinos de TX e RX são, respectivamente os pinos P1.6 P1.5. A comunicação se dá através de uma porta de com virtual criada pelo driver da Texas Instruments juntamente com a placa de debug.
 
 \subsubsection{Inicialização do \textit{Timer}}
 Para o tratamento de desconexão foi necessário a configuração de um timer que incrementa as variáveis de timeout tanto do guichê quanto do ônibus.
@@ -90,7 +90,7 @@ Usando-se a máquina de estados descrita na figura~\ref{fig:UART_SM}, caso o firm
 	\label{fig:inicia_guiche}
 \end{figure}
 
-Caso ele encontre algum ônibus, há a alocação de de algumas variáveis e o sistema ônibus/guichê entra num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsectionprocessamento}.
+Caso ele encontre algum ônibus, há a alocação de algumas variáveis e o sistema ônibus e do guichê entram num estado estável de comunicação. Nesta etapa eles trocam mensagens a cada segundo, buscando manter a conexão e zerando suas variáveis de TIMEOUT. Ao mesmo tempo, o guichê está ativo para receber novas conexões de ônibus. Mais detalhes acerca da troca de dados sobre encomendas podem ser encontrados no ítem ~\ref{subsectionprocessamento}.
 
 \subsection{Processamento/Transmissão de Mensagens}\label{subsectionprocessamento}
 As informações acerca do \textit{status} de cada encomenda podem ser obtidas através do banco de dados. Uma vez que haja conexão entre um ônibus e um guichê, ocorre regularmente a chamada de funções que visam atualizar o verificar e atualizar o \textit{status} das encomendas. Através deste processo, o software do PC transmite para o firmware as informações a serem transmitidas para um ônibus. Tais informações preenchem um buffer de envio. Caso o sistema esteja estável ( \textit{Polling2}), o ônibus envia mensagem que está pronto para receber, o \texit{firmware} do guichê envia os dados e o ônibus envia um ACK, confirmando recebimento. No diagrama que segue, tem-se o fluxograma dos evendos previamente descritos. A figura ~\ref{fig:TX_ENC} representa o fluxograma do firmware do guichê perante a chegada de uma encomenda no seu buffer da UART. Esta mensagem teve origem no SW. 
@@ -108,3 +108,19 @@ O fluxo de informações parte inicialmente do ônibus, o qual envia uma mensagem d
 Ao final, faz-se a verificação da existência de encomendas não enviadas na fila. Em caso positivo, procede-se ao envio das encomendas até que se zere este \textit{buffer} e retorna-se ao estado IDLE.
 
 Informações mais detalhadas sobre a troca de mensagens via RF encontram-se no ítem 3.4.3.3.
+
+
+\nocite{eZWSN}
+\nocite{Chraim2003}
+\nocite{TPS7730}
+\nocite{MSP430_1}
+\nocite{MSP430_2}
+\nocite{TUSB3410}
+\nocite{CC2500}
+\nocite{EZ430}
+\nocite{Pereira2005}
+\nocite{Schildt1997}
+\nocite{CC430}
+\nocite{EM430F6137RF900}
+\nocite{SIMPLICITI}
+\nocite{IBGE}

@@ -8,9 +8,9 @@
 \def\inputGnumericTable{}
 
 \section{\textit{Hardware}}\label{hardware}
-O Sistema Integrado de Acompanhamento de Encomendas Rodoviárias utilizou inicialmente, devido a disponibilidade, baixo custo e possibilidade tanto de trabalhar com RF quanto de se comunicar via uart, o kit de desenvolvimento EZ430-RF2500, da Texas Instruments. O problema deste kit se dá na freqüência de operação de sua comunicação sem fio (2.4GHz) e no tamanho de sua antena. Esses fatores levam este kit a ser um excelente escolha caso a distância em um transmissor e um receptor for pequena (até 10 metros). No caso do projeto SIAER, a distância entre guichê e ônibus é bem significativa, e um sistema de comunicação mais robusto se faz necessário.
+O Sistema Integrado de Acompanhamento de Encomendas Rodoviárias utilizou, inicialmente, o kit de desenvolvimento EZ430-RF2500, da Texas Instruments. Esta decisão foi fundada na disponibilidade, baixo custo e possibilidade tanto de trabalhar com RF quanto de se comunicar via UART presentes no kit. O problema desta plataforma de desenvolvimento se dá na freqüência de operação de sua comunicação sem fio (2.4GHz) e no tamanho de sua antena. Esses fatores levam tal kit a ser um excelente escolha caso a distância em um transmissor e um receptor for pequena (até 10 metros). No caso do projeto SIAER, a distância entre guichê e ônibus é bem significativa, e um sistema de comunicação mais robusto se faz necessário.
 
-Através de contatos com a filial da Texas Instruments em Freising, Alemanha, uma parceria foi criada. Recebi gratuitamente os kits de desenvolvimento necessários e o compilador Code Composer para que pudesse tornar viável as melhorias sugeridas no início deste relatório. Em contrapartida, eu deveria usar preferencialmente as ferramentas daquela empresa e no fim do projeto reportar os resultados, adicionando minha experiência como usuário e sugerindo possíveis melhorias. O kit de desenvolvimento escolhido foi o EM430F6137RF900, no qual está incluso:
+Através de contatos com a filial da Texas Instruments em Freising, Alemanha, uma parceria foi criada. Recebeu-se gratuitamente os kits de desenvolvimento necessários e o compilador Code Composer para que se pudesse tornar viável as melhorias sugeridas no início deste relatório. Em contrapartida, deveria-se usar preferencialmente as ferramentas daquela empresa e no fim do projeto reportar os resultados, adicionando as experiências obtidas e sugerindo possíveis melhorias. O kit de desenvolvimento escolhido foi o EM430F6137RF900, no qual estão inclusos, segundo \cite{EM430F6137RF900}:
 
 \begin{itemize}
 	\item 2 placas baseadas no processador XCC430F6137
@@ -21,7 +21,7 @@ Através de contatos com a filial da Texas Instruments em Freising, Alemanha, uma
 	\item Arquitetura voltada ao baixo consumo;
 \end{itemize}
 
-Este kit possui bem menos funcionalidades que o EZ430-RF2500. Ele é basicamente um microprocessor e acoplado, com as devidas precauções de impedância, a uma antena, sendo que praticamente todos os pinos de I/O estão disponíveis ao usuário. Além disso, diferentemente EZ430-RF2500, ele não possui um canal de comunicação uart pronto para ser usado. Em suma, ele serve basicamente para testar as capacidades de comunicação RF deste microprocessador. No entanto, nesse quesito ele é bem superior ao EZ430.  
+Este kit, segundo \cite{CC430}, possui bem menos funcionalidades que o EZ430-RF2500. Ele é basicamente um microprocessor acoplado, com as devidas precauções de impedância, a uma antena, sendo que praticamente todos os pinos de I/O estão disponíveis ao usuário. Além disso, diferentemente EZ430-RF2500, ele não possui um canal de comunicação UART pronto para ser usado. Em suma, ele serve basicamente para testar as capacidades de comunicação RF deste microprocessador. No entanto, nesse quesito ele é bem superior ao EZ430.  
 
 \begin{figure}[!htb]
 	\centering
@@ -31,7 +31,7 @@ Este kit possui bem menos funcionalidades que o EZ430-RF2500. Ele é basicamente 
 	\label{fig:Kit_cc430}
 \end{figure}
 
-Também foi fornecido o MSP-FET430UIF, através do qual é possível escrever os códigos criados com o Code Composer, na memória dos processadores.
+Também foi fornecido o MSP-FET430UIF, através do qual é possível escrever os códigos, criados com o Code Composer, na memória dos processadores.
 
 \begin{figure}[!htb]
 	\centering
@@ -45,10 +45,10 @@ Também foi fornecido o MSP-FET430UIF, através do qual é possível escrever os cód
 %descrever pq usar o outro modulo.
 Para que este projeto se torne viável, é necessária a comunicação entre o kit de desenvolvimento e o PC. Na última versão apresentada, esta comunicação se deu através da comunicação serial entre kit e PC. Vale lembrar que o kit utilizado anteriormente contava com um canal pronto para comunicação serial. Ao escolher o EM430F6137RF900 como base para o novo projeto, acabamos por perder tal conectividade.
 
-Após extensa pesquisa dentre as possíveis soluções, encontrou-se uma solução não trivial, mas que se adequou muito bem ao nosso protótipo. Outro produto da família EZ430 da Texas Instruments se utiliza de uma interface USB de debug  totalmente compatível com o EM430F6137RF900. Seu nome é EZ430-CHRONOS. Sua placa de debug é praticamente idêntica a do EZ430-RF2500, diferenciando-se somente em seu firmware, o qual possibilita a programação de dispositivos da família CC430. As vantagens ao se utilizar tal placa seriam que a alimentação do circuito viria através do USB, haveria um canal de comunicação uart e a programação das placas seria facilitada. O único problema seria interfacear os pinos da EM430F6137RF900 com o da placa de debug.
+Após extensa pesquisa dentre as possíveis soluções, encontrou-se uma solução não trivial, mas que se adequou muito bem ao nosso protótipo. Outro produto da família EZ430 da Texas Instruments se utiliza de uma interface USB de debug  totalmente compatível com o EM430F6137RF900. Seu nome é EZ430-CHRONOS. Sua placa de debug é praticamente idêntica a do EZ430-RF2500, diferenciando-se somente em seu firmware, o qual possibilita a programação de dispositivos da família CC430. As vantagens ao se utilizar tal placa seriam que a alimentação do circuito se daria através da conexão USB, haveria um canal de comunicação UART e a programação das placas seria facilitada. O único problema seria interfacear os pinos da EM430F6137RF900 com o da placa de debug.
 
 \subsection{Características da placa de debug}
-As principais vantagens da utilização desta placa são a alimentação do circuito provém da conexão USB, o canal para comunicação serial entre PC e o kit de desenvolvimento e a facilidade para programação.
+As principais vantagens da utilização desta placa são que a alimentação do circuito provém da conexão USB, o canal para comunicação serial entre PC e o kit de desenvolvimento e a facilidade para programação.
 
 \begin{figure}[!htb]
 	\centering
@@ -58,7 +58,7 @@ As principais vantagens da utilização desta placa são a alimentação do circuito 
 	\label{fig:debug}
 \end{figure}
 
-Um conector USB convencional oferece 4 linhas: GND, D+, D- e +5V. As linhas D+ e D- são utilizadas para a transmissão das informações, adotando o padrão NRZI (\textit{Non return to zero inverted}). Caso os descritores USB sejam configurados no modo \textit{BusPower Mode}, o dispositivo conectado ao barramento USB pode obter até 500 mA, em pacotes quantizado de 100mA. 
+Um conector USB convencional oferece 4 linhas: GND, D+, D- e +5V. As linhas D+ e D- são utilizadas para a transmissão das informações, adotando o padrão NRZI (\textit{Non return to zero inverted}). Caso os descritores USB sejam configurados no modo \textit{BusPower Mode}, o dispositivo conectado ao barramento USB pode obter até 500 mA, em pacotes quantizados de 100mA. 
 
 \begin{figure}[!htb]
 	\centering
@@ -67,7 +67,6 @@ Um conector USB convencional oferece 4 linhas: GND, D+, D- e +5V. As linhas D+ e
 	\fonte{\textit{datasheet} do TPS7730}
 	\label{fig:TPS7730}
 \end{figure}
-
 
 Na placa de debug, há a necessidade da utilização de algum controlador para transformar o sinal do barramento de 5V para, no nosso caso, 3,3V. Por isso, utilizou-se o TPS7730, o qual é um regulador linear de tensão, podendo fornecer até 250mA a uma carga. Sua tensão de saída pode ser regulada até 5,5V de acordo com os resistores conectados ao componente. No \textit{datasheet} do componente, a  nota explicativa da figura ~\ref{fig:TPS7730} especifica um esquema de conexão recomendável. Conforme é notado observando-se a figura ~\ref{fig:TPS7730}, o arranjo dos componentes R1 e R2 determinará o valor da tensão de saída. No \textit{datasheet}, uma série de equações é apresentada para que se obtenham os valores adequados. Para se fornecer a tensão de 3,3V para os demais componentes, utilizou-se R1=53,8 k e R2=30,1 k.
 
@@ -88,7 +87,7 @@ Como características principais, podem-se citar:
 	\item	Suporta operação sobre modo \textit{self-powered} ou \textit{bus-powered}, obtendo alimentação através da linha +5V do barramento USB.
 \end{itemize}
 
-Neste projeto, toda comunicação entre kit e PC passa por este dispositivo. Ele é reconhecido no windows como uma porta virtual de COM através de um driver apropriado que é instalado ao se conectar o dispositivo na porta USB. Esta porta é chamada de virtual por não haver, de fato, nenhum dispositivo serial conectado ao PC, mas sim, um conjunto da atividade de um driver USB e do kit de desenvolvimento, o qual, no fim das contas, se comporta como uma porta convencional de comunicação serial. Vale lembrar que para o driver necessário pode ser encontrado nas respectivas pastas dos compiladores IAR ou Code Composer. O \textit{baud-rate} adotado no projeto foi de 9600 bps.
+Neste projeto, toda comunicação entre kit e PC passa por este dispositivo. Ele é reconhecido no MS windows como uma porta virtual de COM através de um driver apropriado que é instalado ao se conectar o dispositivo na porta USB. Esta porta é chamada de virtual por não haver, de fato, nenhum dispositivo serial conectado ao PC, mas sim, um conjunto da atividade de um driver USB e do kit de desenvolvimento, o qual, no fim das contas, se comporta como uma porta convencional de comunicação serial. Vale lembrar que para o driver necessário pode ser encontrado nas respectivas pastas dos compiladores IAR ou Code Composer. O \textit{baud-rate} adotado no projeto foi de 9600 bps.
 
 \begin{figure}[!htb]
 	\centering
@@ -137,9 +136,8 @@ Como características principais, podemos citar:
 Possui uma memória \textit{flash} de 32KB + 256B. Ainda, para dados voláteis, o MSP430 apresenta uma memória RAM de tamanho 4KB.
 \newpage
 \subsection{Interface da EM430F6137RF900 com placa de debug}
-Falar do motivo novamente 
 
-O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Este é um dos softwares de layout de placas de circuito impresso mais conhecidos e utilizados no mundo. Extremamente popular entre hobbistas e estudantes de eletrônica, possui uma licença gratuita, na qual há limitações para o tamanho da placa e de número de páginas de esquemático. Para nossa aplicação, assim como o de muitos outros usuários, esta licença é mais do que suficiente.
+O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Este é um dos softwares de layout de PCBs mais conhecidos e utilizados no mundo. Extremamente popular entre hobbistas e estudantes de eletrônica, possui uma licença gratuita, na qual há limitações para o tamanho da placa e de número de páginas de esquemático. Para nossa aplicação, assim como o de muitos outros usuários, esta licença é mais do que suficiente.
 
 \begin{figure}[!htb]
 	\centering
@@ -149,7 +147,7 @@ O software utilizado para o layout da placa de circuito impresso foi o EAGLE. Es
 	\label{fig:conector_ez430}
 \end{figure}
 
-A placa de interfaceamento é relativamente simples, basta conectar os seis pinos da placa de debug (~\ref{fig:conector_ez430}) aos correspondentes pinos da placa EM430F6137RF900(~\ref{fig:jtag}). A seqüência é a seguinte: GND-GND, 3.6V - Vcc, TEST-TST,RST-RST e os pinos TX e RX com os pinos P1.5 E P1.6 do CC430.
+A placa de interfaceamento é relativamente simples, basta conectar os seis pinos da placa de debug, conforme a figura(~\ref{fig:conector_ez430}) aos correspondentes pinos da placa EM430F6137RF900, como mostrado na imagem (~\ref{fig:jtag}). A sequência é a seguinte: GND-GND, 3.6V - Vcc, TEST-TST,RST-RST e os pinos TX e RX com uma barra de pinos que será ligada aos pinos P1.5 E P1.6 do CC430.
 
 \begin{figure}[!htb]
 	\centering
@@ -159,20 +157,18 @@ A placa de interfaceamento é relativamente simples, basta conectar os seis pinos
 	\label{fig:jtag}
 \end{figure}
 
-Durante a compra dos componentes necessários, notou-se que não havia o conector macho da placa de debug (MOLEX com distancia de 0.1 mm) em nenhuma loja online no Brasil. Buscando no site americano de componentes eletrônica digikey, verificou-se que o preço de importação e o tempo necessário seriam proibitivos. Neste ponto optou-se pela utilização de uma barra de pinos de 2.54mm. A seguir temos as figuras do esquemático final e do layout da placa.
+Durante a compra dos componentes necessários, notou-se que não havia o conector macho da placa de debug (MOLEX com distancia de 0.1 mm) em nenhuma loja de componentes eletrônicos no Brasil. Buscando no site americano de componentes eletrônica Digikey, verificou-se que o preço de importação e o tempo necessário seriam proibitivos. Neste ponto optou-se pela utilização de uma barra de pinos de 2.54mm. A seguir temos as figuras do esquemático final e do layout da placa.
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{./figs/IMG/interface_esquematico.png} % <- formatos PNG, JPG e PDF
 	\caption[Esquematico]{Esquemático da placa de interfaceamento}
-	\fonte{Próprio}
 	\label{fig:esquematico_eagle}
 \end{figure}
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./figs/IMG/placa.png}
 	\caption[Placa no eagle]{Layout da placa}
-	\fonte{Próprio}
 	\label{fig:circuito_eagle}
 \end{figure}
 \newpage
@@ -184,7 +180,6 @@ A placas foram confeccionadas dentro da própria UTFPR sob a supervisão do profes
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figs/IMG/placainterface.png}
 	\caption[Placa de circuito impresso]{Placa de circuito impresso}
-	\fonte{Próprio}
 	\label{fig:pcb}
 \end{figure}
 \newpage
@@ -192,7 +187,6 @@ A placas foram confeccionadas dentro da própria UTFPR sob a supervisão do profes
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figs/IMG/plataforma.png}
 	\caption[Plataforma de desenvolvimento]{Plataforma de desenvolvimento}
-	\fonte{Próprio}
 	\label{fig:pcb_final}
 \end{figure}
 

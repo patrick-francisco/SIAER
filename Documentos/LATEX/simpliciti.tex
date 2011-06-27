@@ -7,9 +7,9 @@
 
 \def\inputGnumericTable{}
 %---------- Primeiro Capitulo ----------
-\section{Comunicação sem fio}
+\section{Comunicação sem fio} \label{cap:comunicacaosemfio}
 
-Nesta seção iremos discorrer sobre a parcela do projeto referente à comunicação sem fio. Com já foi dito anteriormente, esta parte é crucial para o projeto e representa o principal diferencial deste projeto perante os concorrentes.
+Nesta seção iremos discorrer sobre a parcela do projeto referente à comunicação sem fio. Como já foi dito anteriormente, esta parte é crucial para o projeto e representa o principal diferencial deste projeto perante os concorrentes.
 
 Primeiramente, de forma breve e concisa, discorreremos sobre como era o protocolo de comunicação SIAER antes das modificações. Nesta etapa também mostrar-se-ão as limitações daquele protocolo, e suas implicações no produto final. 
 
@@ -17,7 +17,7 @@ Na segunda etapa apresentaremos o protocolo SimpliciTI, cuja utilização sanou os
 
 \subsection {Protocolo de comunicação SIAER}
 
-A rede foi montada utilizando o nó do guichê como mestre e os ônibus como escravos, pois o guichê têm todas as informações necessárias da rede e tem também o controle sobre as ações que ocorrem no processo, como a leitura de um código de barras, ou o cadastro de uma nova encomenda, enquanto os ônibus trabalham somente sobre os dados provenientes do guichê.
+A rede era montada utilizando o nó do guichê como mestre e os ônibus como escravos, pois o guichê têm todas as informações necessárias da rede e tem também o controle sobre as ações que ocorrem no processo, como a leitura de um código de barras, ou o cadastro de uma nova encomenda, enquanto os ônibus trabalham somente sobre os dados provenientes do guichê.
 
 O protocolo foi montado baseado no modelo OSI, o qual serve como base para o desenvolvimento de sistemas de comunicação. Este modelo apresenta sete camadas, porém devido a complexidade do projeto, nem todas as camadas foram contempladas.
 
@@ -41,16 +41,16 @@ Cada vez que um ônibus é encontrado na rede, um dos quatro timeslots é a ele alo
 
 Os dados a serem transmitidos mostraram-se pertinentes para este projeto, e com isso pouco foi alterado. Mais detalhes sobre os pacotes, encontra-se na seção de enlace de dados. Todavia, em todos os processos em que a transmissão sem fio se realizava, os pacotes transmitidos, sejam de conexão ou de dados, era feita de maneira direta, ou seja, os dados saiam do microcontrolador e eram jogados para o ambiente sem qualquer controle perante a segurança.
 
-Observando tais comportamentos do sistema vigente, optamos pela troca deste protocolo de comunicação por outro mais robusto e com mais recursos, cuja utilização por si só já adicionasse um maior valor agregado ao produto. Vale lembrar que o protocolo de comunicação SIAER foi inteiramente desenvolvido por BASSAN JUNIOR, Luiz Alberto e FITZ LUCCETTI, Marcus Vinícius. Tal desenvolvimento foi louvável para alunos de graduação, e seu funcionamento mostrou estabilidade, sendo suficiente para o primeiro protótipo do projeto SIAER.
+Observando tais comportamentos do sistema vigente, optamos pela troca deste protocolo de comunicação por outro mais robusto e com mais recursos, cuja utilização por si só já adicionasse um maior valor agregado ao produto. Vale lembrar que o protocolo de comunicação SIAER foi inteiramente desenvolvido por \cite{siaer2010}. Tal desenvolvimento foi louvável para alunos de graduação, e seu funcionamento mostrou estabilidade, sendo suficiente para o primeiro protótipo do projeto SIAER.
 
 \subsection {Protocolo de comunicação SimpliciTI}
 
-As especificações para a escolha de um novo protocolo de comunicação são quantidade de conexões simultâneas possíveis, custo, possibilidade de criptografia e freqüência de operação.
+As especificações para a escolha de um novo protocolo de comunicação são: quantidade de conexões simultâneas possíveis, custo, possibilidade de criptografia e freqüência de operação.
 
-Dentre os diversos protocolos de comunicação no mercado que poderiam suprir tais especificações podemos listar rapidamente três: zigbee, bluetooth e simpliciTI. Vale dizer que qualquer um destes protocolos seria uma opção viável para nosso projeto, no entanto, por questão de custo e pela boa relação com a Texas Instruments utilizamos o simpliciTI. Em relação a custo, precisamos basicamente de uma placa com algum processador da família CC430, uma antena e alguns capacitores e resistores para ajustar a impedância. Além disso, existe uma vasta documentação disponível no site da Texas Instruments.
+Dentre os diversos protocolos de comunicação no mercado que poderiam suprir tais especifi-cações podemos listar rapidamente três: zigbee, bluetooth e simpliciTI. Vale dizer que qualquer um destes protocolos seria uma opção viável para nosso projeto, no entanto, por questão de custo e pela boa relação com a Texas Instruments utilizamos o simpliciTI. Em relação a custo, precisamos basicamente de uma placa com algum processador da família CC430, uma antena e alguns capacitores e resistores para ajustar a impedância. Além disso, existe uma vasta documentação disponível no site da Texas Instruments.
 
 \subsubsection {Premissas do SimpliciTI}
-SimpliciTI é um protocolo peer-to-peer baseado em conexão. Suas premissas são baixo custo, baixo consumo, tipos de dispositivos de rede bem definidos e fácil utilização. Ele tem foco em dispositivos de baixo consumo, tipicamente energizados através de uma bateria. O controle de recursos de energia do microcontrolador e do rádio porem ser feitas através de algumas poucas funções pré-definidas no protocolo. Sua modulação é MSK (\textit{minimum shift key}). Para uma rede simpliciTI, todo nó é um peer, e cada peer pode ter adicionado em si outras funcionalidades, como mostra a figura ~\ref{fig:simpliciti_basico}. 
+Segundo  \cite{SIMPLICITI}, este é um protocolo peer-to-peer baseado em conexão. Suas premissas são baixo custo, tipos de dispositivos de rede bem definidos, fácil utilização e tem um grande seu foco em dispositivos de baixo consumo, tipicamente energizados através de uma bateria. O controle de recursos de energia do microcontrolador e do rádio porem ser feitas através de algumas poucas funções pré-definidas no protocolo. Sua modulação é MSK (\textit{minimum shift key}). Para uma rede simpliciTI, todo nó é um peer, e cada peer pode ter adicionado em si outras funcionalidades, como mostra a figura ~\ref{fig:simpliciti_basico}.
 
  \begin{figure}[!htb]
 	\centering
@@ -60,7 +60,7 @@ SimpliciTI é um protocolo peer-to-peer baseado em conexão. Suas premissas são ba
 	\label{fig:simpliciti_basico}
 \end{figure}
 
-O baixo custo do simpliciTI é traduzido em nível real através da facilidade de sua implementação. Ele pode ser configurado de duas formas: através de um microcontrolador acoplado a um chip de rádio (CC1101, por exemplo) ou então através dos chamados SoC (system-on-chip), os quais apresentam tanto o microcontrolador quanto o rádio em um único chip. Sua simplicidade transparece ao observar-se sua baixa carga para o processador, a qual pode ser de apenas 8KB de flash e 512B de RAM ou 4KB de flash e 256B de RAM, dependendo do dispositivo.
+O baixo custo do simpliciTI é traduzido em nível real através da facilidade de sua implementa-ção. Ele pode ser configurado de duas formas: através de um microcontrolador acoplado a um chip de rádio (CC1101, por exemplo) ou então através dos chamados SoC (system-on-chip), os quais apresentam tanto o microcontrolador quanto o rádio em um único chip. Sua simplicidade transparece ao observar-se sua baixa carga para o processador, a qual pode ser de apenas 8KB de flash e 512B de RAM ou 4KB de flash e 256B de RAM, dependendo do dispositivo.
 
 Uma rede baseada no simpliciTI é realmente de fácil implementação. O ambiente simplificado de desenvolvimento ajuda os desenvolvedores a estabelecer comunicação RF sem configurações complexas. A camada de rádio e as configurações de rede ficam encapsuladas e escondidas do resto da camada de aplicação, sendo que as configurações de rádio referentes à freqüência e tipo de conexão podem ser feitas com a ajuda do software livre SmartRF Studio, também de autoria da Texas Instruments.
 
@@ -74,13 +74,13 @@ Os chips de rádio compatíveis com o simpliciTI são:
 Os tipos de dispositivos de rede são basicamente três: End Device, Access Point e Range extender.
 
 \subsubsection {Os tipos de dispositivo de rede}
-Os Access Point são dispositivos mestres e, de um modo geral, gastam mais energia. Em uma dada rede, somente um Access Point é permitido. Ele pode ter funcionalidades de um \textit{End Device} ou de um \textit{Range Extender}. Em nosso projeto, o guichê foi escolhido para ter funcionalidade de \sigla{AP}{Access Point}, por ter todas as informações pertinentes para o sistema. As funções que diferenciam o Access Point são:
+Os Access Point são dispositivos mestres e, de um modo geral, gastam mais energia. Em uma dada rede, somente um Access Point é permitido. Ele pode ter funcionalidades de um \textit{End Device} ou de um \textit{Range Extender}. Em nosso projeto, o guichê foi escolhido para ter funcionalidade de \sigla{AP}{Access Point}, uma vez que tem todas as informações pertinentes para o sistema. As funções que diferenciam o Access Point são:
 \begin{itemize}
 	\item gerenciamento dos endereços dos dispositivos da rede
 	\item Receber e encaminhar mensagens de dispositivos que precisam ficar em modo \textit {sleep}	
 \end{itemize}
 
-Os dispositivos do tipo \textit {Range extender}, como o próprio nome já diz, retransmitem as mensagens da rede até que cheguem ao destino servindo como extensores do alcance da rede. Presume-se que eles estejam sempre ligados, e por tal razão, uma linha direta com energia é recomendável. No nosso caso não foi utilizado nenhum deste dispositivo, mas em casos extremos, como rodoviárias muito grandes, os chamados \textit{Range Extender} teriam grande aplicabilidade.  
+Os dispositivos do tipo \textit {Range extender}, como o próprio nome já diz, retransmitem as mensagens da rede até que cheguem ao destino servindo como extensores do alcance da rede. Presume-se que eles estejam sempre ligados, e por tal razão, uma linha direta com energia é recomendável. No nosso caso não foi utilizado nenhum deste dispositivo, mas em casos extremos, como rodoviárias muito grandes, os chamados \textit{Range Extender} teriam grande aplicabilidade.
 
 Os\textit{End Device} compreendem a camada de aplicação de um projeto. Dependendo do escassez de energia, os \sigla{ED}{End Devices} podem:
 \begin{itemize}
@@ -141,7 +141,7 @@ O SimpliciTI conceitualmente suporta três camadas, como é mostrado na figura ~\r
 	\label{fig:simpliciti_arquitetura}
 \end{figure}
 
-\subsubsection {Criptrografia} 
+\subsubsection {Criptrografia} \label{subsection:criptografia}
 
 A infraestrutura que suporta a criptografia está contida totalmente na camada de rede, assim, não há qualquer impacto na camada de aplicação em relação a modificações neste quesito.
 Cada vez que a aplicação envia um \textit{frame}, os dados contidos no \textit{payload} são criptografados antes que tal \textit{frame} seja enviado. Os dados recebidos são decriptados antes que sejam repassados para a aplicação. 
@@ -160,7 +160,7 @@ O processo encripta blocos de 64 bis usando o algoritmo de domínio público (XTEA
 
 Um processo similar ocorre para recuperar os dados criptografados. O mais importante aqui é manter os contadores sincronizados. Para isso, os valores são trocados entre s dispositivos na hora em que ocorre o \textit{link}. Como a comunicação é bidirecional e como a comunicação é assíncrona, há um contador separado para o envio e para o recebimento de pacotes. Como o simpliciTI não garante recebimento de pacotes, foi criado um mecanismo de sincronização dos timers. Tal sincronização é realizada através de um byte chamado de \textit {hint} byte (do inglês: byte de dica). Ele é transmitido juntamente com o frame e representa o byte menos significativo do contador, ou seja, aquele que possui maior variação. Este byte deve ter o mesmo valor que o byte menos significativo do contador do receptor. No caso de um erro de sincronia, o sistema tenta ajustar ambos contadores. O sistema em si suporta uma pequena diferença entre os contadores. Caso a diferença entre eles for maior do que o esperado, o frame é rejeitado, sendo reconhecido como um frame invasor.
 
-No código a criptografia pode ser adicionada através de uma macro chamada de SMPL_SECURE, e sua real aplicação se dá na hora da compilação.
+No código a criptografia pode ser adicionada através de uma macro chamada de SMPL\_SECURE, e sua real aplicação se dá na hora da compilação.
 
 \subsubsection {Frame padrão} 
 O frame do simpliciTI pode ser separado em três partes: 
@@ -183,12 +183,12 @@ Na parte referente a camada de aplicação estão encapsulados o payload.
 	\label{fig:simpliciti_frame}
 \end{figure}
 
-Neste protocolo, o endereço é de 4 bytes e deve ser único em uma dada rede. O controle do endereço é realizado pela camada de rede. A figura ~\ref{fig:simpliciti_frame} representa o frame utilizado neste protocolo, já com a criptografia. No nosso caso, o payload tem o valor de 15 bytes. A próxima seção discorrerá sobre os detalhes do projeto SIAER no que tange a comunicação sem fio. 
+Neste protocolo, o endereço é de 4 bytes e deve ser único em uma dada rede. O controle do endereço é realizado pela camada de rede. A figura ~\ref{fig:simpliciti_frame} representa o frame utilizado neste protocolo, já com a criptografia. No nosso caso, o payload tem o valor de 15 bytes. A próxima seção discorrerá sobre os detalhes do projeto SIAER no que tange a comunicação sem fio.
 
 \subsection {Detalhes da aplicação do simpliciTI no projeto SIAER}\label{subsection:SIMPLICITI}
 A configuração do simpliciTI utilizada no projeto é de 8 conexões simultâneas do guichê com o ônibus. Este número pode ser facilmente modificado através de uma variável de controle, caso haja necessidade.
 
-As conexões utilizam o sistema de segurança descrito no item Criptografia. Essas duas modificações permitem um grande adicional no valor agregado do projeto, ao transmitir maior confiabilidade ao processo e aproximar a nossa solução ao ambiente real de sua utilização.
+As conexões utilizam o sistema de segurança descrito na subseção \ref{subsection:criptografia}. Essas duas modificações permitem um grande adicional no valor agregado do projeto, ao transmitir maior confiabilidade ao processo e aproximar a nossa solução ao ambiente real de sua utilização.
 
 Os itens a seguir descrevem os processos que tornam a comunicação sem fio viável e eficaz. 
 % Chegada de onibus
@@ -197,7 +197,7 @@ Os itens a seguir descrevem os processos que tornam a comunicação sem fio viável
 
 \subsubsection {Processo de Detecção de Chegada de Ônibus}
 \begin{enumerate}
-	\item {Processo de \textit{Listen} do Access Point} 
+	\item {Processo de \textit{Listen} do Access Point}
 	
 Para se haver uma conexão no simpliciTI, um dispositivo deve estar realizando o processo de \textit{Listen} enquanto outro \textit{Link}. Em nosso caso, quem faz o processo de \textit{Listen} é o \textit{Access Point}, enquanto o \textit{End Device} realiza o  \textit{Link}. 
 
@@ -206,7 +206,7 @@ O programa foi feito de tal modo que o \textit{AP} fica constantemente ``ouvindo
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{./figs/IMG/frameonibusinicial.png}
-	\caption[Quatro da mensagem inicial do ônibus]{Quatro da mensagem inicial do ônibus}
+	\caption[Quadro da mensagem inicial do ônibus]{Quadro da mensagem inicial do ônibus}
 	\label{fig:msg_onibus}
 \end{figure}
 
