@@ -853,16 +853,6 @@ C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERAppli
 C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\ResGen.write.1.tlog
 C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.cache
 C:\Users\Patrick\Downloads\_PROJETO FINAL\Guiche e onibus\SoftwareV49\SIAERApplication\obj\Debug\RdlCompile.compiled
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe.config
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.exe
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.pdb
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.pdb
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\BarcodeLib.dll
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.exe
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
-C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERFormSobeDesceOnibus.resources
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.SIAERPerguntaGerarEtiqueta.resources
@@ -879,3 +869,13 @@ C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.read.1.
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\ResGen.write.1.tlog
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.cache
 C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\RdlCompile.compiled
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe.config
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERAplicacao.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\BarcodeLib.dll
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.dll
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SIAERClassLibrary.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.exe
+C:\Users\Patrick\SIAER\Programa Guiche\SIAERApplication\obj\Debug\SIAERAplicacao.pdb

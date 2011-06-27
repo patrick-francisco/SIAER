@@ -57,6 +57,7 @@ namespace SIAERAplicacao
 
             this.PanelLeft.Location = new Point(0, this.MenuStripSIAERAplicacao.Height);
             this.PanelLeft.Height = this.StatusStripSiaerForm.Location.Y - this.MenuStripSIAERAplicacao.Height;
+
             this.SizeChanged +=new EventHandler(FormSIAER_MaximumSizeChanged);
             AlturaListBoxs = (5 * this.PanelLeft.Height / 6) + OffsetAlturaListBox;
             this.Button1.Height = 30;
@@ -804,7 +805,6 @@ namespace SIAERAplicacao
                     toolstriplabelconexaotext = "Desconectado ao dispostivo para comunicação com ônibus...";
                     ComboBoxPortas.Enabled = true;
                     ToolStripLabelConexao.Text = toolstriplabelconexaotext;
-                    
                 }
         }
 

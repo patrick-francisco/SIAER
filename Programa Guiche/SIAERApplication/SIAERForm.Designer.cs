@@ -30,17 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.MenuStripSIAERAplicacao = new System.Windows.Forms.MenuStrip();
-            this.ToolStripMenuItemArquivo = new System.Windows.Forms.ToolStripMenuItem();
-            this.localizarEncomendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemCadastro = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemCadastroClientes = new System.Windows.Forms.ToolStripMenuItem();
-            this.encomendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.serialCommunicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemOnibus = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemLeitorDeCodigoDeBarras = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusStripSiaerForm = new System.Windows.Forms.StatusStrip();
-            this.ToolStripLabelConexao = new System.Windows.Forms.ToolStripStatusLabel();
             this.PanelLeft = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,6 +62,14 @@
             this.Label2Carro2 = new System.Windows.Forms.Label();
             this.Label2Carro4 = new System.Windows.Forms.Label();
             this.PanelCarros = new System.Windows.Forms.Panel();
+            this.Label1Carro8 = new System.Windows.Forms.Label();
+            this.Label1Carro7 = new System.Windows.Forms.Label();
+            this.Label1Carro6 = new System.Windows.Forms.Label();
+            this.Label2Carro8 = new System.Windows.Forms.Label();
+            this.Label2Carro7 = new System.Windows.Forms.Label();
+            this.Label2Carro6 = new System.Windows.Forms.Label();
+            this.Label2Carro5 = new System.Windows.Forms.Label();
+            this.Label1Carro5 = new System.Windows.Forms.Label();
             this.PictureBoxCarro8 = new System.Windows.Forms.PictureBox();
             this.PictureBoxCarro7 = new System.Windows.Forms.PictureBox();
             this.PictureBoxCarro6 = new System.Windows.Forms.PictureBox();
@@ -90,15 +88,19 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.Label2Carro8 = new System.Windows.Forms.Label();
-            this.Label1Carro8 = new System.Windows.Forms.Label();
-            this.Label2Carro7 = new System.Windows.Forms.Label();
-            this.Label1Carro7 = new System.Windows.Forms.Label();
-            this.Label1Carro6 = new System.Windows.Forms.Label();
-            this.Label2Carro6 = new System.Windows.Forms.Label();
-            this.Label2Carro5 = new System.Windows.Forms.Label();
-            this.Label1Carro5 = new System.Windows.Forms.Label();
-            this.StatusStripSiaerForm.SuspendLayout();
+            this.ToolStripMenuItemArquivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.localizarEncomendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemFechar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemCadastro = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemCadastroClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.encomendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serialCommunicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemOnibus = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.ToolStripLabelConexao = new System.Windows.Forms.ToolStripStatusLabel();
+
+            this.ToolStripMenuItemLeitorDeCodigoDeBarras = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStripSIAERAplicacao.SuspendLayout();
             this.PanelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,11 +123,14 @@
             // 
             // MenuStripSIAERAplicacao
             // 
+            this.MenuStripSIAERAplicacao.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemArquivo,
+            this.ToolStripMenuItemCadastro,
+            this.serialCommunicationToolStripMenuItem});
             this.MenuStripSIAERAplicacao.Location = new System.Drawing.Point(0, 0);
             this.MenuStripSIAERAplicacao.Name = "MenuStripSIAERAplicacao";
             this.MenuStripSIAERAplicacao.Size = new System.Drawing.Size(1114, 24);
-            this.MenuStripSIAERAplicacao.TabIndex = 0;
-            this.MenuStripSIAERAplicacao.Text = "Menu do Form de Apresentação do SIAER";
+            this.MenuStripSIAERAplicacao.TabIndex = 33;
             // 
             // ToolStripMenuItemArquivo
             // 
@@ -162,14 +167,14 @@
             // ToolStripMenuItemCadastroClientes
             // 
             this.ToolStripMenuItemCadastroClientes.Name = "ToolStripMenuItemCadastroClientes";
-            this.ToolStripMenuItemCadastroClientes.Size = new System.Drawing.Size(151, 22);
+            this.ToolStripMenuItemCadastroClientes.Size = new System.Drawing.Size(152, 22);
             this.ToolStripMenuItemCadastroClientes.Text = "Clientes...";
             this.ToolStripMenuItemCadastroClientes.Click += new System.EventHandler(this.ToolStripMenuItemCadastroClientes_Click);
             // 
             // encomendasToolStripMenuItem
             // 
             this.encomendasToolStripMenuItem.Name = "encomendasToolStripMenuItem";
-            this.encomendasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.encomendasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.encomendasToolStripMenuItem.Text = "Encomendas...";
             this.encomendasToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItemCadastroEncomendas_Click);
             // 
@@ -195,12 +200,13 @@
             this.ToolStripMenuItemLeitorDeCodigoDeBarras.Size = new System.Drawing.Size(222, 22);
             this.ToolStripMenuItemLeitorDeCodigoDeBarras.Text = "Leitor de Código de Barras...";
             this.ToolStripMenuItemLeitorDeCodigoDeBarras.Click += new System.EventHandler(this.ToolStripMenuItemLeitorDeCodigoDeBarras_Click);
+
             // 
             // StatusStripSiaerForm
             // 
             this.StatusStripSiaerForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripLabelConexao});
-            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 723);
+            this.StatusStripSiaerForm.Location = new System.Drawing.Point(0, 688);
             this.StatusStripSiaerForm.Name = "StatusStripSiaerForm";
             this.StatusStripSiaerForm.Size = new System.Drawing.Size(1114, 22);
             this.StatusStripSiaerForm.TabIndex = 1;
@@ -563,6 +569,105 @@
             this.PanelCarros.Size = new System.Drawing.Size(600, 661);
             this.PanelCarros.TabIndex = 25;
             // 
+            // Label1Carro8
+            // 
+            this.Label1Carro8.AutoSize = true;
+            this.Label1Carro8.BackColor = System.Drawing.Color.White;
+            this.Label1Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro8.Location = new System.Drawing.Point(429, 605);
+            this.Label1Carro8.Name = "Label1Carro8";
+            this.Label1Carro8.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro8.TabIndex = 41;
+            this.Label1Carro8.Text = "Onibus8";
+            this.Label1Carro8.Visible = false;
+            // 
+            // Label1Carro7
+            // 
+            this.Label1Carro7.AutoSize = true;
+            this.Label1Carro7.BackColor = System.Drawing.Color.White;
+            this.Label1Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro7.Location = new System.Drawing.Point(429, 452);
+            this.Label1Carro7.Name = "Label1Carro7";
+            this.Label1Carro7.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro7.TabIndex = 40;
+            this.Label1Carro7.Text = "Onibus7";
+            this.Label1Carro7.Visible = false;
+            // 
+            // Label1Carro6
+            // 
+            this.Label1Carro6.AutoSize = true;
+            this.Label1Carro6.BackColor = System.Drawing.Color.White;
+            this.Label1Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro6.Location = new System.Drawing.Point(429, 297);
+            this.Label1Carro6.Name = "Label1Carro6";
+            this.Label1Carro6.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro6.TabIndex = 39;
+            this.Label1Carro6.Text = "Onibus6";
+            this.Label1Carro6.Visible = false;
+            // 
+            // Label2Carro8
+            // 
+            this.Label2Carro8.AutoSize = true;
+            this.Label2Carro8.BackColor = System.Drawing.Color.White;
+            this.Label2Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro8.Location = new System.Drawing.Point(383, 621);
+            this.Label2Carro8.Name = "Label2Carro8";
+            this.Label2Carro8.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro8.TabIndex = 38;
+            this.Label2Carro8.Text = "Origem-destino 8";
+            this.Label2Carro8.Visible = false;
+            // 
+            // Label2Carro7
+            // 
+            this.Label2Carro7.AutoSize = true;
+            this.Label2Carro7.BackColor = System.Drawing.Color.White;
+            this.Label2Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro7.Location = new System.Drawing.Point(383, 468);
+            this.Label2Carro7.Name = "Label2Carro7";
+            this.Label2Carro7.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro7.TabIndex = 37;
+            this.Label2Carro7.Text = "Origem-destino 7";
+            this.Label2Carro7.Visible = false;
+            // 
+            // Label2Carro6
+            // 
+            this.Label2Carro6.AutoSize = true;
+            this.Label2Carro6.BackColor = System.Drawing.Color.White;
+            this.Label2Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro6.Location = new System.Drawing.Point(383, 313);
+            this.Label2Carro6.Name = "Label2Carro6";
+            this.Label2Carro6.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro6.TabIndex = 36;
+            this.Label2Carro6.Text = "Origem-destino 6";
+            this.Label2Carro6.Visible = false;
+            // 
+            // Label2Carro5
+            // 
+            this.Label2Carro5.AutoSize = true;
+            this.Label2Carro5.BackColor = System.Drawing.Color.White;
+            this.Label2Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label2Carro5.Location = new System.Drawing.Point(383, 156);
+            this.Label2Carro5.Name = "Label2Carro5";
+            this.Label2Carro5.Size = new System.Drawing.Size(110, 16);
+            this.Label2Carro5.TabIndex = 35;
+            this.Label2Carro5.Text = "Origem-destino 5";
+            this.Label2Carro5.Visible = false;
+            // 
+            // Label1Carro5
+            // 
+            this.Label1Carro5.AccessibleDescription = "";
+            this.Label1Carro5.AccessibleName = "";
+            this.Label1Carro5.AutoSize = true;
+            this.Label1Carro5.BackColor = System.Drawing.Color.White;
+            this.Label1Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label1Carro5.Location = new System.Drawing.Point(429, 140);
+            this.Label1Carro5.Name = "Label1Carro5";
+            this.Label1Carro5.Size = new System.Drawing.Size(64, 16);
+            this.Label1Carro5.TabIndex = 34;
+            this.Label1Carro5.Text = "Onibus5";
+            this.Label1Carro5.Visible = false;
+            this.Label1Carro5.Click += new System.EventHandler(this.label10_Click);
+            // 
             // PictureBoxCarro8
             // 
             this.PictureBoxCarro8.BackColor = System.Drawing.Color.White;
@@ -778,104 +883,68 @@
             this.pictureBox5.TabIndex = 31;
             this.pictureBox5.TabStop = false;
             // 
-            // Label2Carro8
+            // ToolStripMenuItemArquivo
             // 
-            this.Label2Carro8.AutoSize = true;
-            this.Label2Carro8.BackColor = System.Drawing.Color.White;
-            this.Label2Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro8.Location = new System.Drawing.Point(383, 621);
-            this.Label2Carro8.Name = "Label2Carro8";
-            this.Label2Carro8.Size = new System.Drawing.Size(110, 16);
-            this.Label2Carro8.TabIndex = 38;
-            this.Label2Carro8.Text = "Origem-destino 8";
-            this.Label2Carro8.Visible = false;
+            this.ToolStripMenuItemArquivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.localizarEncomendaToolStripMenuItem,
+            this.ToolStripMenuItemFechar});
+            this.ToolStripMenuItemArquivo.Name = "ToolStripMenuItemArquivo";
+            this.ToolStripMenuItemArquivo.Size = new System.Drawing.Size(61, 20);
+            this.ToolStripMenuItemArquivo.Text = "Arquivo";
             // 
-            // Label1Carro8
+            // localizarEncomendaToolStripMenuItem
             // 
-            this.Label1Carro8.AutoSize = true;
-            this.Label1Carro8.BackColor = System.Drawing.Color.White;
-            this.Label1Carro8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro8.Location = new System.Drawing.Point(429, 605);
-            this.Label1Carro8.Name = "Label1Carro8";
-            this.Label1Carro8.Size = new System.Drawing.Size(64, 16);
-            this.Label1Carro8.TabIndex = 41;
-            this.Label1Carro8.Text = "Onibus8";
-            this.Label1Carro8.Visible = false;
+            this.localizarEncomendaToolStripMenuItem.Name = "localizarEncomendaToolStripMenuItem";
+            this.localizarEncomendaToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.localizarEncomendaToolStripMenuItem.Text = "Localizar Encomenda...";
             // 
-            // Label2Carro7
+            // ToolStripMenuItemFechar
             // 
-            this.Label2Carro7.AutoSize = true;
-            this.Label2Carro7.BackColor = System.Drawing.Color.White;
-            this.Label2Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro7.Location = new System.Drawing.Point(383, 468);
-            this.Label2Carro7.Name = "Label2Carro7";
-            this.Label2Carro7.Size = new System.Drawing.Size(110, 16);
-            this.Label2Carro7.TabIndex = 37;
-            this.Label2Carro7.Text = "Origem-destino 7";
-            this.Label2Carro7.Visible = false;
+            this.ToolStripMenuItemFechar.Name = "ToolStripMenuItemFechar";
+            this.ToolStripMenuItemFechar.Size = new System.Drawing.Size(195, 22);
+            this.ToolStripMenuItemFechar.Text = "Fechar";
             // 
-            // Label1Carro7
+            // ToolStripMenuItemCadastro
             // 
-            this.Label1Carro7.AutoSize = true;
-            this.Label1Carro7.BackColor = System.Drawing.Color.White;
-            this.Label1Carro7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro7.Location = new System.Drawing.Point(429, 452);
-            this.Label1Carro7.Name = "Label1Carro7";
-            this.Label1Carro7.Size = new System.Drawing.Size(64, 16);
-            this.Label1Carro7.TabIndex = 40;
-            this.Label1Carro7.Text = "Onibus7";
-            this.Label1Carro7.Visible = false;
+            this.ToolStripMenuItemCadastro.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemCadastroClientes,
+            this.encomendasToolStripMenuItem});
+            this.ToolStripMenuItemCadastro.Name = "ToolStripMenuItemCadastro";
+            this.ToolStripMenuItemCadastro.Size = new System.Drawing.Size(66, 20);
+            this.ToolStripMenuItemCadastro.Text = "Cadastro";
             // 
-            // Label1Carro6
+            // ToolStripMenuItemCadastroClientes
             // 
-            this.Label1Carro6.AutoSize = true;
-            this.Label1Carro6.BackColor = System.Drawing.Color.White;
-            this.Label1Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro6.Location = new System.Drawing.Point(429, 297);
-            this.Label1Carro6.Name = "Label1Carro6";
-            this.Label1Carro6.Size = new System.Drawing.Size(64, 16);
-            this.Label1Carro6.TabIndex = 39;
-            this.Label1Carro6.Text = "Onibus6";
-            this.Label1Carro6.Visible = false;
+            this.ToolStripMenuItemCadastroClientes.Name = "ToolStripMenuItemCadastroClientes";
+            this.ToolStripMenuItemCadastroClientes.Size = new System.Drawing.Size(151, 22);
+            this.ToolStripMenuItemCadastroClientes.Text = "Clientes...";
             // 
-            // Label2Carro6
+            // encomendasToolStripMenuItem
             // 
-            this.Label2Carro6.AutoSize = true;
-            this.Label2Carro6.BackColor = System.Drawing.Color.White;
-            this.Label2Carro6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro6.Location = new System.Drawing.Point(383, 313);
-            this.Label2Carro6.Name = "Label2Carro6";
-            this.Label2Carro6.Size = new System.Drawing.Size(110, 16);
-            this.Label2Carro6.TabIndex = 36;
-            this.Label2Carro6.Text = "Origem-destino 6";
-            this.Label2Carro6.Visible = false;
+            this.encomendasToolStripMenuItem.Name = "encomendasToolStripMenuItem";
+            this.encomendasToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.encomendasToolStripMenuItem.Text = "Encomendas...";
             // 
-            // Label2Carro5
+            // serialCommunicationToolStripMenuItem
             // 
-            this.Label2Carro5.AutoSize = true;
-            this.Label2Carro5.BackColor = System.Drawing.Color.White;
-            this.Label2Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2Carro5.Location = new System.Drawing.Point(383, 156);
-            this.Label2Carro5.Name = "Label2Carro5";
-            this.Label2Carro5.Size = new System.Drawing.Size(110, 16);
-            this.Label2Carro5.TabIndex = 35;
-            this.Label2Carro5.Text = "Origem-destino 5";
-            this.Label2Carro5.Visible = false;
+            this.serialCommunicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemOnibus,
+            this.ToolStripMenuItemLeitorDeCodigoDeBarras});
+            this.serialCommunicationToolStripMenuItem.Name = "serialCommunicationToolStripMenuItem";
+            this.serialCommunicationToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.serialCommunicationToolStripMenuItem.Text = "Comunicação";
             // 
-            // Label1Carro5
+            // ToolStripMenuItemOnibus
             // 
-            this.Label1Carro5.AccessibleDescription = "";
-            this.Label1Carro5.AccessibleName = "";
-            this.Label1Carro5.AutoSize = true;
-            this.Label1Carro5.BackColor = System.Drawing.Color.White;
-            this.Label1Carro5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label1Carro5.Location = new System.Drawing.Point(429, 140);
-            this.Label1Carro5.Name = "Label1Carro5";
-            this.Label1Carro5.Size = new System.Drawing.Size(64, 16);
-            this.Label1Carro5.TabIndex = 34;
-            this.Label1Carro5.Text = "Onibus5";
-            this.Label1Carro5.Visible = false;
-            this.Label1Carro5.Click += new System.EventHandler(this.label10_Click);
+            this.ToolStripMenuItemOnibus.Name = "ToolStripMenuItemOnibus";
+            this.ToolStripMenuItemOnibus.Size = new System.Drawing.Size(222, 22);
+            this.ToolStripMenuItemOnibus.Text = "Ônibus...";
+            // 
+            // ToolStripMenuItemLeitorDeCodigoDeBarras
+            // 
+            this.ToolStripMenuItemLeitorDeCodigoDeBarras.Name = "ToolStripMenuItemLeitorDeCodigoDeBarras";
+            this.ToolStripMenuItemLeitorDeCodigoDeBarras.Size = new System.Drawing.Size(222, 22);
+            this.ToolStripMenuItemLeitorDeCodigoDeBarras.Text = "Leitor de Código de Barras...";
             // 
             // FormSIAER
             // 
@@ -906,8 +975,8 @@
             this.Text = "SIAER - Sistema Integrado de Acompanhamento de Encomendas Rodoviárias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SIAERForm_Load);
-            this.StatusStripSiaerForm.ResumeLayout(false);
-            this.StatusStripSiaerForm.PerformLayout();
+            this.MenuStripSIAERAplicacao.ResumeLayout(false);
+            this.MenuStripSIAERAplicacao.PerformLayout();
             this.PanelLeft.ResumeLayout(false);
             this.PanelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -935,19 +1004,10 @@
         }
 
         #endregion
-
         private System.Windows.Forms.MenuStrip MenuStripSIAERAplicacao;
-        private System.Windows.Forms.ToolStripMenuItem serialCommunicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOnibus;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLeitorDeCodigoDeBarras;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCadastro;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCadastroClientes;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemArquivo;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFechar;
-        private System.Windows.Forms.ToolStripMenuItem encomendasToolStripMenuItem;
+     
         private System.Windows.Forms.StatusStrip StatusStripSiaerForm;
-        private System.Windows.Forms.ToolStripStatusLabel ToolStripLabelConexao;
-        private System.Windows.Forms.ToolStripMenuItem localizarEncomendaToolStripMenuItem;
+
         private System.Windows.Forms.Panel PanelLeft;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -1005,6 +1065,16 @@
         private System.Windows.Forms.Label Label2Carro6;
         private System.Windows.Forms.Label Label2Carro5;
         private System.Windows.Forms.Label Label1Carro5;
+        private System.Windows.Forms.ToolStripStatusLabel ToolStripLabelConexao;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemArquivo;
+        private System.Windows.Forms.ToolStripMenuItem localizarEncomendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFechar;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCadastro;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCadastroClientes;
+        private System.Windows.Forms.ToolStripMenuItem encomendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serialCommunicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemOnibus;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemLeitorDeCodigoDeBarras;
     }
 }
 
